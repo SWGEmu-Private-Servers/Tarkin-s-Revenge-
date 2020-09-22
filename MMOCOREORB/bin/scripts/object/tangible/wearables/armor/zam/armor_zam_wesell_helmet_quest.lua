@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest = object_tangible_wearables_armor_zam_shared_armor_zam_wesell_helmet_quest:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -78,26 +80,26 @@ object_tangible_wearables_armor_zam_armor_zam_wesell_helmet_quest = object_tangi
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = ACID + ENERGY + STUN + LIGHTSABER,
+	vulnerability = STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 6,
-	actionEncumbrance = 3,
-	mindEncumbrance = 54,
+	healthEncumbrance = 25,
+	actionEncumbrance = 22,
+	mindEncumbrance = 150,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	maxCondition = 15000,
-
-	kinetic = 10,
-	energy = 0,
-	electricity = 10,
+	kinetic = 15,
+	energy = 15,
+	electricity = 15,
 	stun = 0,
-	blast = 5,
-	heat = 20,
-	cold = 10,
-	acid = 0,
+	blast = 15,
+	heat = 15,
+	cold = 15,
+	acid = 15,
 	lightSaber = 0
 }
 

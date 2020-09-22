@@ -218,6 +218,30 @@ object_tangible_wearables_armor_marine_shared_armor_marine_bicep_r = SharedTangi
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bicep_r, "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_r.iff")
 
+--Rebel Marine Bracer Left
+object_tangible_wearables_armor_marine_shared_armor_marine_bracer_l = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_l.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bracer_l, "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_l.iff")
+
+--Rebel Marine Bracer Right
+object_tangible_wearables_armor_marine_shared_armor_marine_bracer_r = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_r.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bracer_r, "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_r.iff")
+
+
+--Rebel Marine Gloves
+object_tangible_wearables_armor_marine_shared_armor_marine_gloves = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_gloves.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_gloves, "object/tangible/wearables/armor/marine/shared_armor_marine_gloves.iff")
+
 object_tangible_wearables_armor_marine_shared_armor_marine_boots = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_boots.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
@@ -512,3 +536,83 @@ object_tangible_wearables_armor_marine_shared_armor_marine_leggings = SharedTang
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_leggings, "object/tangible/wearables/armor/marine/shared_armor_marine_leggings.iff")
+
+--Battle Worn Rebel Marine Armor Belt
+object_tangible_wearables_armor_marine_shared_armor_marine_belt_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_belt_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_belt_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_belt_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Left Bicep
+object_tangible_wearables_armor_marine_shared_armor_marine_bicep_l_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_l_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bicep_l_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_l_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Right Bicep
+object_tangible_wearables_armor_marine_shared_armor_marine_bicep_r_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_r_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bicep_r_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_bicep_r_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Boots
+object_tangible_wearables_armor_marine_shared_armor_marine_boots_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_boots_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_boots_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_boots_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Left Bracer
+object_tangible_wearables_armor_marine_shared_armor_marine_bracer_l_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_l_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bracer_l_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_l_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Right Bracer
+object_tangible_wearables_armor_marine_shared_armor_marine_bracer_r_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_r_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_bracer_r_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_bracer_r_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Chestplate
+object_tangible_wearables_armor_marine_shared_armor_marine_chest_plate_rebel_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_chest_plate_rebel_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_chest_plate_rebel_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_chest_plate_rebel_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Gloves
+object_tangible_wearables_armor_marine_shared_armor_marine_gloves_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_gloves_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_gloves_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_gloves_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Helmet
+object_tangible_wearables_armor_marine_shared_armor_marine_helmet_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_helmet_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_helmet_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_helmet_gcw.iff")
+
+--Battle Worn Rebel Marine Armor Leggings
+object_tangible_wearables_armor_marine_shared_armor_marine_leggings_gcw = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/armor/marine/shared_armor_marine_leggings_gcw.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_armor_marine_shared_armor_marine_leggings_gcw, "object/tangible/wearables/armor/marine/shared_armor_marine_leggings_gcw.iff")

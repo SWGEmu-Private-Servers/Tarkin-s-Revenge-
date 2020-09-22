@@ -6,6 +6,7 @@ foraged_schule_nef = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_vegetable_s2.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

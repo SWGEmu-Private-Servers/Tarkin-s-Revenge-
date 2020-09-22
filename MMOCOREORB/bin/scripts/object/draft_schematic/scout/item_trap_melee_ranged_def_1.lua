@@ -66,7 +66,7 @@ object_draft_schematic_scout_item_trap_melee_ranged_def_1 = object_draft_schemat
    ingredientTitleNames = {"trap_housing", "entangling_mesh", "bioluminescence"},
    ingredientSlotType = {0, 0, 0},
    resourceTypes = {"bone", "hide", "organic"},
-   resourceQuantities = {7, 10, 3},
+   resourceQuantities = {70, 100, 30},
    contribution = {100, 100, 100},
 
 

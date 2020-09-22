@@ -12,9 +12,9 @@ kliknik_scout = Creature:new {
 	armor = 0,
 	resists = {135,120,15,130,15,15,15,-1,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 6,
+	meatAmount = 35,
 	hideType = "hide_scaley",
-	hideAmount = 4,
+	hideAmount = 60,
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
@@ -35,7 +35,13 @@ kliknik_scout = Creature:new {
 				{group = "kliknik_common", chance = 10000000}
 			},
 			lootChance = 1540000
-		}
+		},
+		{	
+			groups = {
+				{group = "kliknik_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",

@@ -144,6 +144,11 @@ function recruiterScreenplay:isInstallation(faction, strItem)
 	return factionRewardData.installations[strItem] ~= nil and factionRewardData.installations[strItem].type == factionRewardType.installation
 end
 
+function recruiterScreenplay:isVehicle(faction, strItem)
+	local factionRewardData = self:getFactionDataTable(faction)
+	return factionRewardData.vehicles[strItem] ~= nil
+end
+
 function recruiterScreenplay:getWeaponsArmorOptions(faction, gcwDiscount, smugglerDiscount)
 	local optionsTable = { }
 	local factionRewardData = self:getFactionDataTable(faction)
@@ -192,6 +197,18 @@ function recruiterScreenplay:getHirelingsOptions(faction, gcwDiscount, smugglerD
 	return optionsTable
 end
 
+function recruiterScreenplay:getVehiclesOptions(faction, gcwDiscount, smugglerDiscount)
+	local optionsTable = { }
+	local factionRewardData = self:getFactionDataTable(faction)
+	for k,v in pairs(factionRewardData.vehicleList) do
+		if ( factionRewardData.vehicles[v] ~= nil and factionRewardData.vehicles[v].display ~= nil and factionRewardData.vehicles[v].cost ~= nil ) then
+			local option = {self:generateSuiString(factionRewardData.vehicles[v].display, math.ceil(factionRewardData.vehicles[v].cost * gcwDiscount * smugglerDiscount)), 0}
+			table.insert(optionsTable, option)
+		end
+	end
+	return optionsTable
+end
+
 function recruiterScreenplay:getUniformsOptions(faction, gcwDiscount, smugglerDiscount)
 	local optionsTable = { }
 	local factionRewardData = self:getFactionDataTable(faction)
@@ -220,6 +237,8 @@ function recruiterScreenplay:getItemCost(faction, itemString)
 		return factionRewardData.installations[itemString].cost
 	elseif self:isHireling(faction, itemString) and factionRewardData.hirelings[itemString].cost ~= nil then
 		return factionRewardData.hirelings[itemString].cost
+	elseif self:isVehicle(faction, itemString) and factionRewardData.vehicles[itemString].cost ~= nil then
+		return factionRewardData.vehicles[itemString].cost
 	end
 	return nil
 end
@@ -236,6 +255,8 @@ function recruiterScreenplay:getTemplatePath(faction, itemString)
 		return factionRewardData.installations[itemString].item
 	elseif self:isHireling(faction, itemString) then
 		return factionRewardData.hirelings[itemString].item
+	elseif self:isVehicle(faction, itemString) then
+		return factionRewardData.vehicles[itemString].item
 	end
 	return nil
 end
@@ -252,6 +273,8 @@ function recruiterScreenplay:getDisplayName(faction, itemString)
 		return factionRewardData.installations[itemString].display
 	elseif self:isHireling(faction, itemString) then
 		return factionRewardData.hirelings[itemString].display
+	elseif self:isVehicle(faction, itemString) then
+		return factionRewardData.vehicles[itemString].display
 	end
 	return nil
 end
@@ -311,6 +334,8 @@ function recruiterScreenplay:sendPurchaseSui(pNpc, pPlayer, screenID)
 		options = self:getUniformsOptions(faction, gcwDiscount, smugglerDiscount)
 	elseif screenID == "fp_hirelings" then
 		options = self:getHirelingsOptions(faction, gcwDiscount, smugglerDiscount)
+	elseif screenID == "fp_vehicles" then
+		options = self:getVehiclesOptions(faction, gcwDiscount, smugglerDiscount)
 	end
 
 	suiManager:sendListBox(pNpc, pPlayer, "@faction_recruiter:faction_purchase", "@faction_recruiter:select_item_purchase", 2, "@cancel", "", "@ok", "recruiterScreenplay", "handleSuiPurchase", 32, options)
@@ -587,6 +612,8 @@ function recruiterScreenplay:getItemListTable(faction, screenID)
 		return dataTable.uniformList
 	elseif screenID == "fp_hirelings" then
 		return dataTable.hirelingList
+	elseif screenID == "fp_vehicles" then
+		return dataTable.vehicleList
 	end
 end
 

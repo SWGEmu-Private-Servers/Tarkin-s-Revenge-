@@ -57,5 +57,6 @@ includeFile("static/structure/rori/serverobjects.lua")
 includeFile("static/structure/talus/serverobjects.lua")
 includeFile("static/structure/tatooine/serverobjects.lua")
 includeFile("static/structure/yavin/serverobjects.lua")
+includeFile("static/structure/tarkin_custom/serverobjects.lua")
 
 -- Server Objects

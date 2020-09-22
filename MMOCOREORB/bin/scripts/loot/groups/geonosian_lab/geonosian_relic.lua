@@ -7,12 +7,14 @@ geonosian_relic = {
 	lootItems = {
 		{itemTemplate = "geo_relic_chemical_tablet", weight = 1000000},
 		{itemTemplate = "geo_relic_data_tablet", weight = 1000000},
-		{itemTemplate = "geo_relic_honey_carafe", weight = 2000000},
-		{itemTemplate = "geo_relic_ration_kit", weight = 2000000},
+		{itemTemplate = "geo_relic_honey_carafe", weight = 1000000},
+		{itemTemplate = "geo_relic_ration_kit", weight = 1000000},
 		{itemTemplate = "geo_relic_small_ball", weight = 1000000},
 		{itemTemplate = "geo_passkey", weight = 1000000},
 		{itemTemplate = "geo_relic_spice_container", weight = 1000000},
-		{itemTemplate = "geo_relic_tech_kit", weight = 1000000}
+		{itemTemplate = "geo_relic_tech_kit", weight = 1000000},
+		{itemTemplate = "geonosian_speeder_schematic", weight = 1000000},
+		{itemTemplate = "mechno_chair_schematic", weight = 1000000}
 	}
 }
 

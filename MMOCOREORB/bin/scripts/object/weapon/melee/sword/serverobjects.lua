@@ -45,6 +45,7 @@
 --Children folder includes
 includeFile("weapon/melee/sword/base/serverobjects.lua")
 includeFile("weapon/melee/sword/crafted_saber/serverobjects.lua")
+includeFile("weapon/melee/sword/ep3/serverobjects.lua")
 
 -- Server Objects
 includeFile("weapon/melee/sword/bestine_quest_sword.lua")
@@ -69,3 +70,15 @@ includeFile("weapon/melee/sword/sword_lightsaber_sleeksilver.lua")
 includeFile("weapon/melee/sword/sword_lightsaber_vader.lua")
 includeFile("weapon/melee/sword/sword_nyax.lua")
 includeFile("weapon/melee/sword/sword_rantok.lua")
+
+--Post 14 Weapons
+includeFile("weapon/melee/sword/ep3_loot_eventide.lua")
+includeFile("weapon/melee/sword/som_sword_mustafar_bandit.lua")
+includeFile("weapon/melee/sword/som_sword_obsidian.lua")
+includeFile("weapon/melee/sword/sword_acid.lua")
+includeFile("weapon/melee/sword/sword_mandalorian.lua")
+includeFile("weapon/melee/sword/sword_marauder.lua")
+includeFile("weapon/melee/sword/sword_massassi.lua")
+includeFile("weapon/melee/sword/sword_pvp_bf_01.lua")
+includeFile("weapon/melee/sword/sword_rebel.lua")
+includeFile("weapon/melee/sword/sword_rsf.lua")

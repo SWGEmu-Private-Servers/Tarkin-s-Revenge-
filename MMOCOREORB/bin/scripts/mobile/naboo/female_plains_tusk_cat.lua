@@ -27,7 +27,7 @@ female_plains_tusk_cat = Creature:new {
 
 	templates = {"object/mobile/tusk_cat_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/tusk_cat_hue.iff",
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 17, 18, 22, 27, 32, 48, 57, 62, 67, 72, 77, 82 },
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

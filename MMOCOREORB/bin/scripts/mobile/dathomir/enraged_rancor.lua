@@ -37,7 +37,13 @@ enraged_rancor = Creature:new {
 				{group = "wearables_all", chance = 1500000}
 			},
 			lootChance = 2600000
-		}
+		},
+		{	
+			groups = {
+				{group = "rancor_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

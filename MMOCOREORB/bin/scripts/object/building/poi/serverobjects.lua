@@ -46,6 +46,7 @@
 includeFile("building/poi/base/serverobjects.lua")
 includeFile("building/poi/farm/serverobjects.lua")
 includeFile("building/poi/hq/serverobjects.lua")
+includeFile("building/poi/tarkin_custom/serverobjects.lua")
 
 -- Server Objects
 includeFile("building/poi/anywhere_fs_intro_camp.lua")

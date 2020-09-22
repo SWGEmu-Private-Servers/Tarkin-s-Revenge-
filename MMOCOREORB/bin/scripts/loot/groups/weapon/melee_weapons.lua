@@ -16,7 +16,7 @@ melee_weapons = {
 		{itemTemplate = "melee_vibroknuckler", weight = 400000},
 		{itemTemplate = "polearm_staff_metal", weight = 500000},
 		{itemTemplate = "polearm_staff_wood", weight = 500000},
-		{itemTemplate = "polearm_staff_wood_reinforced", weight = 500000},
+		{itemTemplate = "polearm_staff_wood_reinforced", weight = 400000},
 		{itemTemplate = "polearm_vibro_axe", weight = 400000},
 		{itemTemplate = "polearm_lance", weight = 500000},
 		{itemTemplate = "polearm_lance_vibrolance", weight = 400000},
@@ -27,6 +27,7 @@ melee_weapons = {
 		{itemTemplate = "two_handed_sword_cleaver", weight = 500000},
 		{itemTemplate = "two_handed_sword_maul", weight = 400000},
 		{itemTemplate = "two_handed_sword_katana", weight = 400000},
+		{groupTemplate = "cu_nge_melee", weight = 100000}
 	}
 }
 

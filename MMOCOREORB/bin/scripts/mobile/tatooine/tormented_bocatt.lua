@@ -29,7 +29,14 @@ tormented_bocatt = Creature:new {
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	controlDeviceTemplate = "object/intangible/pet/bocatt_hue.iff",
 	scale = 1.1,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "bocatt_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {

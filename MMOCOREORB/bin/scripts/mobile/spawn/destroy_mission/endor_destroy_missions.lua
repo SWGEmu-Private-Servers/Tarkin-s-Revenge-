@@ -9,6 +9,12 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_squall_elder_neutral_small",
+			minDifficulty = 7,
+			maxDifficulty = 11,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_pouncing_jax_lair_neutral_small_boss_01",
 			minDifficulty = 11,
 			maxDifficulty = 15,
@@ -16,6 +22,18 @@ endor_destroy_missions = {
 		},
 		{
 			lairTemplateName = "endor_gurreck_cowardly_lair_neutral_small",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_blurrg_pup_lair_neutral_small",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_bounding_jax_lair_neutral_small",
 			minDifficulty = 13,
 			maxDifficulty = 17,
 			size = 25,
@@ -75,6 +93,18 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_blurrg_hunter_lair_neutral_small",
+			minDifficulty = 18,
+			maxDifficulty = 22,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_domesticated_blurrg_lair_netural_medium",
+			minDifficulty = 18,
+			maxDifficulty = 22,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_lantern_bird_neutral_small",
 			minDifficulty = 19,
 			maxDifficulty = 23,
@@ -82,6 +112,12 @@ endor_destroy_missions = {
 		},
 		{
 			lairTemplateName = "endor_hanadak_young_rock_crusher_neutral_small",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 30,
+		},
+		{
+			lairTemplateName = "endor_gurreck_desert_charger_neutral_small",
 			minDifficulty = 20,
 			maxDifficulty = 24,
 			size = 30,
@@ -147,13 +183,49 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_bolle_bol_bark_biter_lair_neutral_medium",
+			minDifficulty = 27,
+			maxDifficulty = 31,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_swirl_prong_impaler_neutral_small",
 			minDifficulty = 28,
 			maxDifficulty = 32,
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_lantern_bird_shimmering_neutral_small",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_hanadak_mature_neutral_small",
+			minDifficulty = 29,
+			maxDifficulty = 33,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_bolle_bol_male_female_neutral_small",
+			minDifficulty = 29,
+			maxDifficulty = 33,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_merek_lair_neutral_boss_01",
+			minDifficulty = 29,
+			maxDifficulty = 33,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_domesticated_bordok_lair_neutral_medium",
+			minDifficulty = 29,
+			maxDifficulty = 33,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_squill_festering_neutral_small_boss_01",
 			minDifficulty = 29,
 			maxDifficulty = 33,
 			size = 25,
@@ -171,7 +243,25 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_borgle_desert_roamer_neutral_small",
+			minDifficulty = 30,
+			maxDifficulty = 34,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_gurreck_woodland_neutral_small",
+			minDifficulty = 30,
+			maxDifficulty = 34,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_bordok_stud_mare_neutral_small",
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_lantern_bird_gleaming_neutral_small",
 			minDifficulty = 32,
 			maxDifficulty = 36,
 			size = 25,
@@ -189,7 +279,25 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_hanadak_matriarch_neutral_small",
+			minDifficulty = 33,
+			maxDifficulty = 37,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_arachne_venom_filled_lair_neutral_small",
+			minDifficulty = 34,
+			maxDifficulty = 38,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_diseased_blurrg_lair_netural_medium",
+			minDifficulty = 34,
+			maxDifficulty = 38,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_bloodseeker_mite_queen_lair_neutral_small",
 			minDifficulty = 34,
 			maxDifficulty = 38,
 			size = 25,
@@ -201,7 +309,31 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_merek_lair_neutral_boss_02",
+			minDifficulty = 39,
+			maxDifficulty = 43,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_hanadak_ancient_neutral_small",
+			minDifficulty = 39,
+			maxDifficulty = 43,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_arachne_lair_neutral_boss_03",
+			minDifficulty = 40,
+			maxDifficulty = 44,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_bordok_herd_master_lair_neutral_large",
+			minDifficulty = 40,
+			maxDifficulty = 44,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_blurrg_sand_crawler_lair_neutral_small",
 			minDifficulty = 40,
 			maxDifficulty = 44,
 			size = 25,
@@ -219,7 +351,19 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_boar_wolf_bloodfrenzied_lair_neutral_small",
+			minDifficulty = 43,
+			maxDifficulty = 47,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_marauder_frenzied_neutral_medium_theater",
+			minDifficulty = 44,
+			maxDifficulty = 50,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_gurreck_lair_neutral_medium",
 			minDifficulty = 44,
 			maxDifficulty = 50,
 			size = 25,
@@ -237,7 +381,31 @@ endor_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "endor_arachne_lair_neutral_boss_04",
+			minDifficulty = 48,
+			maxDifficulty = 52,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_roba_young_elder_neutral_small_boss_01",
+			minDifficulty = 48,
+			maxDifficulty = 52,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_merek_king_queen_neutral_small",
+			minDifficulty = 48,
+			maxDifficulty = 52,
+			size = 25,
+		},
+		{
 			lairTemplateName = "endor_mantigrue_screecher_lair_neutral_small",
+			minDifficulty = 53,
+			maxDifficulty = 57,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_merek_lair_neutral_boss_04",
 			minDifficulty = 53,
 			maxDifficulty = 57,
 			size = 25,
@@ -248,6 +416,30 @@ endor_destroy_missions = {
 			maxDifficulty = 58,
 			size = 25,
 		},
+		{
+			lairTemplateName = "endor_merek_blood_king_neutral_small",
+			minDifficulty = 54,
+			maxDifficulty = 58,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_arachne_queen_lair_neutral_small",
+			minDifficulty = 58,
+			maxDifficulty = 62,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_bark_mite_burrower_queen_lair_neutral_small",
+			minDifficulty = 58,
+			maxDifficulty = 62,
+			size = 25,
+		},
+		{
+			lairTemplateName = "endor_mutant_roba_neutral_small",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

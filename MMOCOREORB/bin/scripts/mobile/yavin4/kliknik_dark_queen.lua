@@ -12,9 +12,9 @@ kliknik_dark_queen = Creature:new {
 	armor = 0,
 	resists = {145,145,30,135,135,-1,-1,-1,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 7,
+	meatAmount = 35,
 	hideType = "hide_scaley",
-	hideAmount = 4,
+	hideAmount = 60,
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
@@ -34,7 +34,13 @@ kliknik_dark_queen = Creature:new {
 				{group = "kliknik_common", chance = 10000000}
 			},
 			lootChance = 1800000
-		}
+		},
+		{	
+			groups = {
+				{group = "kliknik_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",

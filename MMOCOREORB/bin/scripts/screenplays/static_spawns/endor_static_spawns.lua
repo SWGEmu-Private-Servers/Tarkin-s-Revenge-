@@ -63,4 +63,12 @@ function EndorStaticSpawnsScreenPlay:spawnMobiles()
 	spawnMobile("endor", "merek_harvester", 300, 3915, 202, 5793, getRandomNumber(360), 0)
 	spawnMobile("endor", "merek_harvester", 300, 3942, 199, 5754, getRandomNumber(360), 0)
 	spawnMobile("endor", "merek_harvester", 300, 3938, 199, 5734, getRandomNumber(360), 0)
+
+--Tarkin Specific
+	local pGoraxOne = spawnMobile("endor", "gorax", 10800, getRandomNumber(1500) + 4900, 0, getRandomNumber(1500) + 4526, getRandomNumber(360), 0)
+	local pGoraxTwo = spawnMobile("endor", "gorax", 10800, getRandomNumber(1500) + 5223, 0, getRandomNumber(1500) + 4409,  getRandomNumber(360), 0)
+	local pGoraxThree = spawnMobile("endor", "gorax", 10800, getRandomNumber(1500) + 5202, 0, getRandomNumber(1500) + 3985, getRandomNumber(360), 0)
+	AiAgent(pGoraxOne):setAiTemplate("")
+	AiAgent(pGoraxTwo):setAiTemplate("")
+	AiAgent(pGoraxThree):setAiTemplate("")
 end

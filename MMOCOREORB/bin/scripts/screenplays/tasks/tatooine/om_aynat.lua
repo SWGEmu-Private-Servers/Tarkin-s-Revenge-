@@ -61,7 +61,7 @@ om_aynat_missions =
 npcMapOmAynat =
 	{
 		{
-			spawnData = { npcTemplate = "om_aynat", x = 1615.5, z = 7.0, y = 2956.4, direction = 168, cellID = 0, position = SIT },
+			spawnData = { npcTemplate = "om_aynat", x = 1683.62, z = 7.0, y = 3063.3, direction = 285, cellID = 0, position = STAND },
 			npcNumber = 1,
 			stfFile = "@static_npc/tatooine/om_aynat",
 			missions = om_aynat_missions

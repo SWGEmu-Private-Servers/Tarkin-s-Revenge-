@@ -57,10 +57,10 @@ object_tangible_food_foraged_foraged_fruit_s4 = object_tangible_food_foraged_sha
 	flavorMax = 0,
 	nutritionMin = 0,
 	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
+	quantityMin = 1,
+	quantityMax = 10,
 	
-	modifiers = { "action", 50, "mind", 50 },
+	modifiers = { "action", 100, "mind", 100 },
 
 	buffName = "ko-do_fruit",
 	buffCRC = 0,

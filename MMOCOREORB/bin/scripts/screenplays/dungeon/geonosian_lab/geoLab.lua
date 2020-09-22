@@ -305,7 +305,7 @@ function GeonosianLab:spawnMobiles()
 
 	-- largecavehall2 (1627794)
 	spawnMobile("yavin4", "biogenic_construction", 1, -134.5, -21.7, -74.8, 90, 1627794)
-	spawnMobile("yavin4", "enhanced_gaping_spider",3600,-130,-22.1,-85,-180,1627794, true) -- Randomized respawn
+--	spawnMobile("yavin4", "enhanced_gaping_spider",3600,-130,-22.1,-85,-180,1627794, true) -- Randomized respawn
 
 	-- hall4 (1627795)
 
@@ -422,7 +422,7 @@ function GeonosianLab:spawnMobiles()
 	spawnMobile("yavin4", "cavern_spider",180,13.4,-22.0,-337.3,-179,1627822)
 
 	-- largeendcave (1627823)
-	spawnMobile("yavin4", "acklay",7200,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
+--	spawnMobile("yavin4", "acklay",7200,101.1,-34.3,-321.6,-136,1627823, true) --Randomized respawn
 	spawnMobile("yavin4", "enhanced_kwi",180,48.0,-34.0,-334.4,0,1627823)
 	spawnMobile("yavin4", "cavern_spider",180,91.2,-33.9,-347.9,5,1627823)
 	spawnMobile("yavin4", "enhanced_kliknik",180,98.0,-34.1,-334.4,-53,1627823)
@@ -445,6 +445,15 @@ function GeonosianLab:spawnMobiles()
 	end
 
 	spawnMobile("yavin4", "herald_biogenic_gardo", 60, -3.8, 0.1, -3.8, 88, 1713374)
+
+	--Tarkin Specific
+	spawnMobile("yavin4", "acklay_elder",900,101.1,-34.3,-321.6,-136,1627823)
+	spawnMobile("yavin4", "enhanced_gaping_spider",600,-130,-22.1,-85,-180,1627794)
+	spawnMobile("yavin4", "acklay_youngling", 600,105.0,-33.7,-325.0,-94,1627823)
+	spawnMobile("yavin4", "acklay_youngling", 600,100.6,-33.8,-315.4,-157,1627823)
+	spawnMobile("yavin4", "acklay_youngling", 600,98.2,-34.4,-324.7,-133,1627823)
+	spawnMobile("yavin4", "enhanced_gaping_spider",900,-130,-22.1,-85,-180,1627794)
+
 end
 
 function GeonosianLab:turnOnTrap(pTrap)

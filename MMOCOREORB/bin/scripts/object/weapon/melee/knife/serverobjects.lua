@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("weapon/melee/knife/base/serverobjects.lua")
+includeFile("weapon/melee/knife/ep3/serverobjects.lua")
 
 -- Server Objects
 includeFile("weapon/melee/knife/knife_dagger.lua")

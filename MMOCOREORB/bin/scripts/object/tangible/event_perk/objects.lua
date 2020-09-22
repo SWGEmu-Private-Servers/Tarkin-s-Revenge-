@@ -1692,3 +1692,92 @@ object_tangible_event_perk_shared_yavn_imprv_flagpole_s01 = SharedTangibleObject
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_yavn_imprv_flagpole_s01, "object/tangible/event_perk/shared_yavn_imprv_flagpole_s01.iff")
+
+object_tangible_event_perk_shared_halloween_painting = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_painting.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_painting, "object/tangible/event_perk/shared_halloween_painting.iff")
+
+--Web 1
+object_tangible_event_perk_shared_halloween_spider_web_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_spider_web_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_spider_web_01, "object/tangible/event_perk/shared_halloween_spider_web_01.iff")
+
+--Web 2
+object_tangible_event_perk_shared_halloween_spider_web_02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_spider_web_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_spider_web_02, "object/tangible/event_perk/shared_halloween_spider_web_02.iff")
+
+--Web 3
+object_tangible_event_perk_shared_halloween_spider_web_03 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_spider_web_03.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_spider_web_03, "object/tangible/event_perk/shared_halloween_spider_web_03.iff")
+
+--Gold Loyalty Plaque
+object_tangible_event_perk_shared_frn_loyalty_award_plaque_gold = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_frn_loyalty_award_plaque_gold.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_frn_loyalty_award_plaque_gold, "object/tangible/event_perk/shared_frn_loyalty_award_plaque_gold.iff")
+
+--Silver Loyalty Plaque
+object_tangible_event_perk_shared_frn_loyalty_award_plaque_silver = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_frn_loyalty_award_plaque_silver.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_frn_loyalty_award_plaque_silver, "object/tangible/event_perk/shared_frn_loyalty_award_plaque_silver.iff")
+
+--Holo Table
+object_tangible_event_perk_shared_lifeday_holo_table = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_lifeday_holo_table.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_lifeday_holo_table, "object/tangible/event_perk/shared_lifeday_holo_table.iff")
+
+--Krayt Skeleton
+object_tangible_event_perk_shared_halloween_krayt_dragon_skeleton = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_krayt_dragon_skeleton.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_krayt_dragon_skeleton, "object/tangible/event_perk/shared_halloween_krayt_dragon_skeleton.iff")
+
+--Skull Candle 1
+object_tangible_event_perk_shared_halloween_skull_candle_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_skull_candle_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_skull_candle_01, "object/tangible/event_perk/shared_halloween_skull_candle_01.iff")
+
+--Skull Candle 2
+object_tangible_event_perk_shared_halloween_skull_candle_02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_skull_candle_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_skull_candle_02, "object/tangible/event_perk/shared_halloween_skull_candle_02.iff")
+
+--Halloween Song Book
+object_tangible_event_perk_shared_halloween_song_book = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_halloween_song_book.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_halloween_song_book, "object/tangible/event_perk/shared_halloween_song_book.iff")
+
+--Hologram Disk 1
+object_tangible_event_perk_shared_frn_hologram_data_disk_s01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_frn_hologram_data_disk_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_frn_hologram_data_disk_s01, "object/tangible/event_perk/shared_frn_hologram_data_disk_s01.iff")
+
+--Hologram Disk 2
+object_tangible_event_perk_shared_frn_hologram_data_disk_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_frn_hologram_data_disk_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_frn_hologram_data_disk_s02, "object/tangible/event_perk/shared_frn_hologram_data_disk_s02.iff")
+
+--Bat Pheromone
+object_tangible_event_perk_shared_gmf_crafted_bat_pheromone = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_gmf_crafted_bat_pheromone.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_gmf_crafted_bat_pheromone, "object/tangible/event_perk/shared_gmf_crafted_bat_pheromone.iff")
+
+--Spider Pheromone
+object_tangible_event_perk_shared_gmf_crafted_spider_pheromone = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/event_perk/shared_gmf_crafted_spider_pheromone.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_event_perk_shared_gmf_crafted_spider_pheromone, "object/tangible/event_perk/shared_gmf_crafted_spider_pheromone.iff")

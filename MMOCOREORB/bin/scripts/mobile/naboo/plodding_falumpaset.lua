@@ -16,7 +16,7 @@ plodding_falumpaset = Creature:new {
 	hideType = "hide_leathery",
 	hideAmount = 130,
 	boneType = "bone_mammal",
-	boneAmount = 80,
+	boneAmount = 90,
 	milkType = "milk_domesticated",
 	milk = 125,
 	tamingChance = 0.25,
@@ -28,6 +28,7 @@ plodding_falumpaset = Creature:new {
 
 	templates = {"object/mobile/falumpaset_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/falumpaset_hue.iff",
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.9,
 	lootGroups = {},
 	weapons = {"creature_spit_small_yellow"},

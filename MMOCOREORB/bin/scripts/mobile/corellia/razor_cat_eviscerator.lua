@@ -29,7 +29,14 @@ razor_cat_eviscerator = Creature:new {
 	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/corellian_sand_panther_hue.iff",
 	scale = 1.1,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "corellian_sand_panther_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

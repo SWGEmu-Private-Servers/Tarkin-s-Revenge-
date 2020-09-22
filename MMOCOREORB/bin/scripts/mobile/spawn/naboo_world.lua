@@ -1389,12 +1389,93 @@ naboo_world = {
 		},
 		{
 			lairTemplateName = "naboo_peko_peko_albatross_neutral_none",
-			spawnLimit = 5,
+			spawnLimit = -1,
 			minDifficulty = 155,
 			maxDifficulty = 159,
 			numberToSpawn = 0,
-			weighting = 3,
+			weighting = 15,
 			size = 35
+		},
+		{
+			lairTemplateName = "naboo_elder_gualama_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_giant_cave_veermok_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_giant_peko_peko_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 22,
+			maxDifficulty = 26,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_gungan_fambaaa_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_ikopi_stag_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_narglatch_hunter_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_rogue_falumpaset_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 16,
+			maxDifficulty = 20,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_rogue_fambaa_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "naboo_veermok_hunter_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
 		},
 	}
 }

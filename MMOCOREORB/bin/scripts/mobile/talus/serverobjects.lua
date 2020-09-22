@@ -133,3 +133,5 @@ includeFile("talus/vicious_huf_dun.lua")
 includeFile("talus/voracious_rasp.lua")
 includeFile("talus/wolf_kima.lua")
 includeFile("talus/woodland_kima.lua")
+
+includeFile("talus/mutant_mire_marauder.lua")

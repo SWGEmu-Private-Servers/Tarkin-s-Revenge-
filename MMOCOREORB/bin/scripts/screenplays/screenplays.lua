@@ -535,13 +535,13 @@ includeFile("caves/tatooine_tusken_bunker.lua")
 -- Cities
 includeFile("cities/city.lua")
 includeFile("cities/corellia_bela_vistal.lua")
-includeFile("cities/corellia_coronet.lua")
+--includeFile("cities/corellia_coronet.lua")
 includeFile("cities/corellia_doaba_guerfel.lua")
 includeFile("cities/corellia_kor_vella.lua")
 includeFile("cities/corellia_tyrena.lua")
 includeFile("cities/corellia_vreni_island.lua")
 includeFile("cities/dantooine_agro_outpost.lua")
-includeFile("cities/dantooine_imperial_outpost.lua")
+--includeFile("cities/dantooine_imperial_outpost.lua")
 includeFile("cities/dantooine_mining_outpost.lua")
 includeFile("cities/dathomir_science_outpost.lua")
 includeFile("cities/dathomir_trade_outpost.lua")
@@ -552,17 +552,17 @@ includeFile("cities/naboo_deeja_peak.lua")
 includeFile("cities/naboo_kaadara.lua")
 includeFile("cities/naboo_keren.lua")
 includeFile("cities/naboo_moenia.lua")
-includeFile("cities/naboo_theed.lua")
+--includeFile("cities/naboo_theed.lua")
 includeFile("cities/rori_narmle.lua")
-includeFile("cities/rori_rebel_outpost.lua")
+--includeFile("cities/rori_rebel_outpost.lua")
 includeFile("cities/rori_restuss.lua")
 includeFile("cities/talus_dearic.lua")
-includeFile("cities/talus_imperial_outpost.lua")
+--includeFile("cities/talus_imperial_outpost.lua")
 includeFile("cities/talus_nashal.lua")
 includeFile("cities/tatooine_anchorhead.lua")
 includeFile("cities/tatooine_bestine.lua")
 includeFile("cities/tatooine_mos_eisley.lua")
-includeFile("cities/tatooine_mos_entha.lua")
+--includeFile("cities/tatooine_mos_entha.lua")
 includeFile("cities/tatooine_mos_espa.lua")
 includeFile("cities/tatooine_mos_taike.lua")
 includeFile("cities/tatooine_wayfar.lua")
@@ -571,13 +571,13 @@ includeFile("cities/yavin4_mining_outpost.lua")
 
 -- POIs
 includeFile("poi/corellia_rogue_corsec_base.lua")
-includeFile("poi/corellia_rebel_hideout.lua")
+--includeFile("poi/corellia_rebel_hideout.lua")
 includeFile("poi/corellia_stronghold.lua")
 includeFile("poi/dantooine_abandoned_rebel_base.lua")
 includeFile("poi/dantooine_dantari_village.lua")
 includeFile("poi/dantooine_mokk_stronghold.lua")
 includeFile("poi/dathomir_crash_site.lua")
-includeFile("poi/dathomir_imperial_prison.lua")
+--includeFile("poi/dathomir_imperial_prison.lua")
 includeFile("poi/dathomir_nightsister_stronghold.lua")
 includeFile("poi/dathomir_nightsister_labor_camp.lua")
 includeFile("poi/dathomir_nightsister_vs_singing_mountain.lua")
@@ -592,7 +592,7 @@ includeFile("poi/endor_ewok_tree_village_02.lua")
 includeFile("poi/endor_marauder_stronghold.lua")
 includeFile("poi/lok_canyon_corsairs_stronghold.lua")
 includeFile("poi/lok_downed_blood_razer_transport.lua")
-includeFile("poi/lok_imperial_outpost.lua")
+--includeFile("poi/lok_imperial_outpost.lua")
 includeFile("poi/lok_kimogila_town.lua")
 includeFile("poi/naboo_abandoned_imperial_outpost.lua")
 includeFile("poi/naboo_amidalas_beach.lua")
@@ -606,9 +606,9 @@ includeFile("poi/rori_cobral_hideout.lua")
 includeFile("poi/rori_garyn_raiders_bunker.lua")
 includeFile("poi/rori_gungans_swamp_town.lua")
 includeFile("poi/rori_hyperdrive_research_facility.lua")
-includeFile("poi/rori_imperial_encampment.lua")
+--includeFile("poi/rori_imperial_encampment.lua")
 includeFile("poi/rori_poacher_vs_creature_battle.lua")
-includeFile("poi/rori_rebel_military_base.lua")
+--includeFile("poi/rori_rebel_military_base.lua")
 includeFile("poi/talus_corsec_vs_flail_battle.lua")
 includeFile("poi/talus_lost_village_of_durbin.lua")
 includeFile("poi/talus_imperial_vs_rebel_battle.lua")
@@ -616,15 +616,15 @@ includeFile("poi/tatooine_ancient_krayt_dragon_skeleton.lua")
 includeFile("poi/tatooine_ben_kenobis_house.lua")
 includeFile("poi/tatooine_darklighters_estate.lua")
 includeFile("poi/tatooine_fort_tusken.lua")
-includeFile("poi/tatooine_imperial_detachment_hq.lua")
-includeFile("poi/tatooine_imperial_oasis_base.lua")
+--includeFile("poi/tatooine_imperial_detachment_hq.lua")
+--includeFile("poi/tatooine_imperial_oasis_base.lua")
 includeFile("poi/tatooine_jabbas_palace_mobs.lua")
 includeFile("poi/tatooine_jawa_traders.lua")
 includeFile("poi/tatooine_krayt_graveyard.lua")
 includeFile("poi/tatooine_sandcrawler_ne.lua")
 includeFile("poi/tatooine_village_ruins.lua")
 includeFile("poi/yavin4_blueleaf_temple.lua")
-includeFile("poi/yavin4_imperial_base.lua")
+--includeFile("poi/yavin4_imperial_base.lua")
 includeFile("poi/yavin4_woolamander_temple.lua")
 
 --Static Spawns
@@ -668,6 +668,77 @@ includeFile("tests/tests.lua")
 
 -- Server Event Automation
 includeFile("events/ServerEventAutomation.lua")
+
+--Tarkin Custom Tools
+includeFile("tools/crafting_training_handler.lua")
+includeFile("tools/house_plop.lua")
+includeFile("tools/mission_direction_choice.lua")
+includeFile("tools/mission_level_choice.lua")
+includeFile("tools/star_tours.lua")
+includeFile("tools/star_tours_table.lua")
+includeFile("tools/TarkinBuffTerminal.lua")
+includeFile("tools/tarkin_costume_table.lua")
+includeFile("tools/tarkin_custom_menu_components.lua")
+includeFile("tools/tarkin_housing_system.lua")
+includeFile("tools/tarkin_travel.lua")
+
+--Tarkin Custom City
+includeFile("cities/tarkin_custom/tarkin_corellia_coronet.lua")
+includeFile("cities/tarkin_custom/tarkin_naboo_theed.lua")
+includeFile("cities/tarkin_custom/tarkin_tatooine_mos_entha.lua")
+
+--Tarkin Custom Military POIs
+--Imperial
+includeFile("military/imperial/bestine_imperial_outpost.lua")
+includeFile("military/imperial/corellia_stronghold.lua")
+includeFile("military/imperial/dathomir_imperial_prison.lua")
+includeFile("military/imperial/dantooine_imperial_outpost.lua")
+includeFile("military/imperial/lok_imperial_outpost.lua")
+includeFile("military/imperial/naboo_imperial_emp_retreat.lua")
+includeFile("military/imperial/naboo_kaadara_outpost.lua")
+includeFile("military/imperial/rori_imperial_encampment.lua")
+includeFile("military/imperial/talus_imperial_outpost.lua")
+includeFile("military/imperial/tatooine_imperial_detachment_hq.lua")
+includeFile("military/imperial/tatooine_imperial_oasis_outpost.lua")
+includeFile("military/imperial/yavin4_imperial_base.lua")
+
+--Rebel
+includeFile("military/rebel/corellia_rebel_hideout.lua")
+includeFile("military/rebel/dantooine_abandoned_rebel_base.lua")
+includeFile("military/rebel/lok_rebel_safehouse.lua")
+includeFile("military/rebel/rori_rebel_military_base.lua")
+includeFile("military/rebel/rori_rebel_outpost.lua")
+includeFile("military/rebel/talus_rebel_installation.lua")
+includeFile("military/rebel/tatooine_anchorhead_rebel_base.lua")
+
+--Tarkin Custom Dungeon
+includeFile("caves/lok_kimogila_cave.lua")
+includeFile("caves/yavin4_temple_exar_kun.lua")
+
+--Tarkin Custom Event
+includeFile("events/tarkin_custom/tarkin_world_boss.lua")
+includeFile("events/tarkin_custom/spawn_points_table.lua")
+--includeFile("events/tarkin_custom/bad_easter_bunny_terror.lua") --Easter 2019
+--includeFile("events/tarkin_custom/rasps_of_death.lua") --Summer 2019
+includeFile("events/tarkin_custom/cooperative_thanksgiving.lua") --Thanksgiving 2019
+includeFile("events/tarkin_custom/lifeday_dreams.lua") --Life Day 2019
+includeFile("events/tarkin_custom/new_year_new_regime.lua")  --January 2020 (don't deactivate)
+
+--Tarkin Custom Event Conversation Handlers
+--includeFile("events/tarkin_custom/conversations/weddingScavHuntConvoHandler.lua") --Wedding Event, June 2019
+includeFile("events/tarkin_custom/conversations/halloweenHostage2019ConvoHandler.lua") --Halloween 2019
+includeFile("events/tarkin_custom/conversations/LifeDayDreamsAttilochitConvoHandler.lua") --Life Day 2019
+includeFile("events/tarkin_custom/conversations/LifeDayDreamsReyyruaConvoHandler.lua") --Life Day 2019
+includeFile("events/tarkin_custom/conversations/LifeDayDreamsShorbaccaConvoHandler.lua") --Life Day 2019
+includeFile("events/tarkin_custom/conversations/LifeDayDreamsBaccaConvoHandler.lua") --Life Day 2019
+includeFile("events/tarkin_custom/conversations/LifeDayDreamsArritharConvoHandler.lua") --Life Day 2019
+includeFile("events/tarkin_custom/conversations/NewYearNewRegimeConvoHandler.lua") --January 2019
+
+--Tarkin Custom Misc
+includeFile("misc/home_for_the_holidays.lua")
+includeFile("misc/junk_shop.lua")
+includeFile("misc/junk_shop_data.lua")
+
 
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")

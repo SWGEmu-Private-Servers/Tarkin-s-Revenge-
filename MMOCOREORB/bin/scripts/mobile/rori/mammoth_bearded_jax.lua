@@ -26,7 +26,7 @@ mammoth_bearded_jax = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/mammoth_bearded_jax.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	hues = { 0, 1, 2, 3, 4, 7, 12, 17, 22, 47, 87 },
 	controlDeviceTemplate = "object/intangible/pet/bearded_jax_hue.iff",
 	scale = 2.8,
 	lootGroups = {},

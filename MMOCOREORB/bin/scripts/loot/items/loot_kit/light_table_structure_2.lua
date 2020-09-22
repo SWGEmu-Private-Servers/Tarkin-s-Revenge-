@@ -8,7 +8,10 @@ light_table_structure_2 = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 50,
+	junkMaxValue = 50
 }
 
 addLootItemTemplate("light_table_structure_2", light_table_structure_2)

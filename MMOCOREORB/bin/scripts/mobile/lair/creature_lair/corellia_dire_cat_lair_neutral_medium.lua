@@ -1,5 +1,5 @@
 corellia_dire_cat_lair_neutral_medium = Lair:new {
-	mobiles = {{"dire_cat",1}},
+	mobiles = {{"dire_cat",1},{"female_dire_cat",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rocks_small.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rocks_small.iff"},

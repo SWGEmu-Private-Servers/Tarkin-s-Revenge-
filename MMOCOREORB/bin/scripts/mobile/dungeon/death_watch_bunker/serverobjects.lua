@@ -32,3 +32,7 @@ includeFile("dungeon/death_watch_bunker/mand_bunker_technician.lua")
 includeFile("dungeon/death_watch_bunker/mand_bunker_vent_droid.lua")
 includeFile("dungeon/death_watch_bunker/rageon_vart.lua")
 includeFile("dungeon/death_watch_bunker/technician.lua")
+
+--Tarkin Custom
+includeFile("dungeon/death_watch_bunker/tarkin_custom/black_sun_assassin_02.lua")
+includeFile("dungeon/death_watch_bunker/tarkin_custom/black_sun_guard_02.lua")

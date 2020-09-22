@@ -7,17 +7,18 @@ NightSisterStrongholdScreenPlay = ScreenPlay:new {
 		5035775
 	},
 
-	lootLevel = 38,
+	lootLevel = 95,
 
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 3500000},
-				{group = "junk", chance = 3500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000}
+				{group = "color_crystals", chance = 1800000},	
+				{group = "nightsister_common", chance = 3350000},
+				{group = "rifles", chance = 2100000},
+				{group = "pistols", chance = 2100000},
+				{group = "clothing_attachments", chance = 300000},
+				{group = "armor_attachments", chance = 300000},
+				{group = "deed_voucher", chance = 50000}
 			},
 			lootChance = 8000000
 		}
@@ -278,7 +279,7 @@ function NightSisterStrongholdScreenPlay:respawnAxkvaMin()
 end
 
 function NightSisterStrongholdScreenPlay:axkvaKilled(pAxkvaMin)
-	createEvent(86400 * 1000, "NightSisterStrongholdScreenPlay", "respawnAxkvaMin", nil, "")
+	createEvent(6400 * 1000, "NightSisterStrongholdScreenPlay", "respawnAxkvaMin", nil, "")
 
 	return 1
 end

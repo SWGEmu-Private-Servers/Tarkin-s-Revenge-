@@ -512,3 +512,138 @@ object_tangible_wearables_backpack_shared_singing_mountain_clan_backpack = Share
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_singing_mountain_clan_backpack, "object/tangible/wearables/backpack/shared_singing_mountain_clan_backpack.iff")
+
+
+--Galactic Marine Backpack
+object_tangible_wearables_backpack_shared_backpack_galactic_marine = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_galactic_marine.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_galactic_marine, "object/tangible/wearables/backpack/shared_backpack_galactic_marine.iff")
+
+--Chiss Poacher Backpack
+object_tangible_wearables_backpack_shared_ep3_chiss_poacher_backpack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_ep3_chiss_poacher_backpack.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_ep3_chiss_poacher_backpack, "object/tangible/wearables/backpack/shared_ep3_chiss_poacher_backpack.iff")
+
+--Nyms Backpack
+object_tangible_wearables_backpack_shared_nym_themepark_backpack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_nym_themepark_backpack.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_nym_themepark_backpack, "object/tangible/wearables/backpack/shared_nym_themepark_backpack.iff")
+
+--Rebel Snow Backpack
+object_tangible_wearables_backpack_shared_backpack_rebel_snow_soldier = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_rebel_snow_soldier.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_rebel_snow_soldier, "object/tangible/wearables/backpack/shared_backpack_rebel_snow_soldier.iff")
+
+--Rebel Backpack
+object_tangible_wearables_backpack_shared_backpack_s07 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s07.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s07, "object/tangible/wearables/backpack/shared_backpack_s07.iff")
+
+--Imperial Backpack
+object_tangible_wearables_backpack_shared_backpack_s08 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s08.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s08, "object/tangible/wearables/backpack/shared_backpack_s08.iff")
+
+--Neutral Backpack
+object_tangible_wearables_backpack_shared_backpack_s09 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s09.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s09, "object/tangible/wearables/backpack/shared_backpack_s09.iff")
+
+--Snowtrooper Backpack
+object_tangible_wearables_backpack_shared_backpack_snowtrooper = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_snowtrooper.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_snowtrooper, "object/tangible/wearables/backpack/shared_backpack_snowtrooper.iff")
+
+--Rebel Endor Backpack
+object_tangible_wearables_backpack_shared_empireday_rebel_endor_backpack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_empireday_rebel_endor_backpack.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_empireday_rebel_endor_backpack, "object/tangible/wearables/backpack/shared_empireday_rebel_endor_backpack.iff")
+
+--Sandtrooper Backpack
+object_tangible_wearables_backpack_shared_empireday_sandtrooper_backpack = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_empireday_sandtrooper_backpack.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_empireday_sandtrooper_backpack, "object/tangible/wearables/backpack/shared_empireday_sandtrooper_backpack.iff")
+
+--Armored Backpack
+object_tangible_wearables_backpack_shared_wearable_backpack_armored = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_wearable_backpack_armored.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_wearable_backpack_armored, "object/tangible/wearables/backpack/shared_wearable_backpack_armored.iff")
+
+
+--Recon Backpack
+object_tangible_wearables_backpack_shared_wearable_backpack_recon = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_wearable_backpack_recon.iff"
+
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_wearable_backpack_recon, "object/tangible/wearables/backpack/shared_wearable_backpack_recon.iff")
+
+--Elite Backpacks
+object_tangible_wearables_backpack_shared_backpack_s01_elite = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s01_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s01_elite, "object/tangible/wearables/backpack/shared_backpack_s01_elite.iff")
+
+
+object_tangible_wearables_backpack_shared_backpack_s03_elite = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s03_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s03_elite, "object/tangible/wearables/backpack/shared_backpack_s03_elite.iff")
+
+
+object_tangible_wearables_backpack_shared_backpack_s04_elite = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s04_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s04_elite, "object/tangible/wearables/backpack/shared_backpack_s04_elite.iff")
+
+
+object_tangible_wearables_backpack_shared_backpack_s05_elite = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s05_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s05_elite, "object/tangible/wearables/backpack/shared_backpack_s05_elite.iff")
+
+
+object_tangible_wearables_backpack_shared_backpack_s06_elite = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_backpack_s06_elite.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_backpack_s06_elite, "object/tangible/wearables/backpack/shared_backpack_s06_elite.iff")
+
+object_tangible_wearables_backpack_shared_back_gmf_wings = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/backpack/shared_back_gmf_wings.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_backpack_shared_back_gmf_wings, "object/tangible/wearables/backpack/shared_back_gmf_wings.iff")

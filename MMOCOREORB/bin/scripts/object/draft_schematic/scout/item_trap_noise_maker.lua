@@ -66,7 +66,7 @@ object_draft_schematic_scout_item_trap_noise_maker = object_draft_schematic_scou
    ingredientTitleNames = {"device_housing", "device_interior"},
    ingredientSlotType = {0, 0},
    resourceTypes = {"hide", "bone"},
-   resourceQuantities = {10, 5},
+   resourceQuantities = {100, 50},
    contribution = {100, 100},
 
 

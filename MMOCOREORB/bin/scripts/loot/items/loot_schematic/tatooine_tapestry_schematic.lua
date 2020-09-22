@@ -6,7 +6,10 @@ tatooine_tapestry_schematic = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 40
 }
 
 addLootItemTemplate("tatooine_tapestry_schematic", tatooine_tapestry_schematic)

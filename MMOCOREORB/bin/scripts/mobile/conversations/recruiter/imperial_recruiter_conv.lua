@@ -55,7 +55,7 @@ member_overt_start = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_imperial:s_310", -- Greetings, soldier. What may I do for you?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
+--		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
 		{"@conversation/faction_recruiter_imperial:s_374", "leave_time_overt"}, -- I would like to use my personal leave time.
 		{"@conversation/faction_recruiter_imperial:s_386", "resign_overt"}, -- I believe it is time to end my tour of duty. I would like to resign.
 		{"@conversation/faction_recruiter_imperial:s_410", "show_gcw_score"}, -- How are we doing in the war effort against the Rebel scum?
@@ -156,7 +156,7 @@ stay_special_forces = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_imperial:s_362", -- I find your dedication admirable. You will go far in the Empire. Is there something else you need?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
+--		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
 		{"@conversation/faction_recruiter_imperial:s_374", "leave_time_overt"}, -- I would like to use my personal leave time.
 		{"@conversation/faction_recruiter_imperial:s_386", "resign_overt"}, -- I believe it is time to end my tour of duty. I would like to resign.
 		{"@conversation/faction_recruiter_imperial:s_410", "show_gcw_score"}, -- How are we doing in the war effort against the Rebel scum?
@@ -228,7 +228,7 @@ stay_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_imperial:s_384", -- Your sense of duty is admirable. Long live the Emperor!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
+--		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
 		{"@conversation/faction_recruiter_imperial:s_374", "leave_time_covert"}, -- I would like to use my personal leave time.
 		{"@conversation/faction_recruiter_imperial:s_386", "resign_covert"}, -- I believe it is time to end my tour of duty. I would like to resign.
 		{"@conversation/faction_recruiter_imperial:s_410", "show_gcw_score"}, -- How are we doing in the war effort against the Rebel scum?
@@ -239,7 +239,7 @@ imperialRecruiterConvoTemplate:addScreen(stay_overt);
 
 accepted_go_on_leave = ConvoScreen:new {
 	id = "accepted_go_on_leave",
-	leftDialog = "@conversation/faction_recruiter_imperial:s_380", -- I need to process your paperwork. You will officially be on leave in 5 minutes.
+	leftDialog = "@conversation/faction_recruiter_imperial:s_380", -- I need to process your paperwork. You will officially be on leave in 1 minute.
 	stopConversation = "true",
 	options = {
 	}
@@ -290,7 +290,7 @@ dont_resign_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_imperial:s_396", -- That type of humor is unbecoming of an officer. I'll thank you to not engage in it again. You will remain in the military.
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
+--		{"@conversation/faction_recruiter_imperial:s_352", "confirm_go_covert"}, -- I would like to reevaluate my active military status.
 		{"@conversation/faction_recruiter_imperial:s_374", "leave_time_covert"}, -- I would like to use my personal leave time.
 		{"@conversation/faction_recruiter_imperial:s_386", "resign_covert"}, -- I believe it is time to end my tour of duty. I would like to resign.
 		{"@conversation/faction_recruiter_imperial:s_410", "show_gcw_score"}, -- How are we doing in the war effort against the Rebel scum?
@@ -425,6 +425,7 @@ faction_purchase = ConvoScreen:new {
 		--{ "@conversation/faction_recruiter_imperial:s_340", "fp_schematics" }, -- I want to see what schematics you have.
 		{ "@conversation/faction_recruiter_imperial:s_344", "fp_furniture"}, -- Furniture. I am improving my quality of my life.
 		{ "@conversation/faction_recruiter_imperial:s_348", "fp_hirelings" }, -- I would like to requisition additional troops.
+		{ "I would like to get some transportation.", "fp_vehicles" },
 	},
 }
 
@@ -478,6 +479,15 @@ fp_hirelings = ConvoScreen:new {
 
 }
 imperialRecruiterConvoTemplate:addScreen(fp_hirelings);
+
+fp_vehicles = ConvoScreen:new {
+	id = "fp_vehicles",
+	leftDialog = "@conversation/faction_recruiter_imperial:s_346", 
+	stopConversation = "true",
+	options = {},
+
+}
+imperialRecruiterConvoTemplate:addScreen(fp_vehicles);
 
 show_gcw_score = ConvoScreen:new {
 	id = "show_gcw_score",

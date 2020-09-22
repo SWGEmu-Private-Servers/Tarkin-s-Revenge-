@@ -530,3 +530,64 @@ object_intangible_data_item_shared_warren_evidence_04 = SharedIntangibleObjectTe
 }
 
 ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_warren_evidence_04, "object/intangible/data_item/shared_warren_evidence_04.iff")
+
+--Tarkin Custom
+object_intangible_data_item_shared_wedding_hint_painting_1 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_1.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_1, "object/intangible/data_item/shared_wedding_hint_painting_1.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_2 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_2.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_2, "object/intangible/data_item/shared_wedding_hint_painting_2.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_3 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_3.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_3, "object/intangible/data_item/shared_wedding_hint_painting_3.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_4 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_4.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_4, "object/intangible/data_item/shared_wedding_hint_painting_4.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_5 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_5.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_5, "object/intangible/data_item/shared_wedding_hint_painting_5.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_6 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_6.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_6, "object/intangible/data_item/shared_wedding_hint_painting_6.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_7 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_7.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_7, "object/intangible/data_item/shared_wedding_hint_painting_7.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_8 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_8.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_8, "object/intangible/data_item/shared_wedding_hint_painting_8.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_9 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_9.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_9, "object/intangible/data_item/shared_wedding_hint_painting_9.iff")
+
+object_intangible_data_item_shared_wedding_hint_painting_10 = SharedIntangibleObjectTemplate:new {
+	clientTemplateFileName = "object/intangible/data_item/shared_wedding_hint_painting_10.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_intangible_data_item_shared_wedding_hint_painting_10, "object/intangible/data_item/shared_wedding_hint_painting_10.iff")

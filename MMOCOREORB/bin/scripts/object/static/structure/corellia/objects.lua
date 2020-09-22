@@ -2488,3 +2488,9 @@ object_static_structure_corellia_shared_corl_tent_small = SharedStaticObjectTemp
 }
 
 ObjectTemplates:addClientTemplate(object_static_structure_corellia_shared_corl_tent_small, "object/static/structure/corellia/shared_corl_tent_small.iff")
+
+object_static_structure_corellia_shared_wall_corellia_street_large_style_8000 = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/structure/corellia/shared_wall_corellia_street_large_style_8000.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_static_structure_corellia_shared_wall_corellia_street_large_style_8000, "object/static/structure/corellia/shared_wall_corellia_street_large_style_8000.iff")

@@ -5,7 +5,10 @@ be_poster = {
 	directObjectTemplate = "object/tangible/painting/painting_bioengineer_orange.iff",
 	craftingValues = {},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 40
 }
 
 addLootItemTemplate("be_poster", be_poster)

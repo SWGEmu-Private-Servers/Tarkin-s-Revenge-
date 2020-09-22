@@ -6,6 +6,7 @@ foraged_alever_tweth_pek = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_fruit_s3.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

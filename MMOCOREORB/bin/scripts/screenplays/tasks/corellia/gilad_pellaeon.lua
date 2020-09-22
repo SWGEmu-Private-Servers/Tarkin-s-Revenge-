@@ -117,14 +117,14 @@ gilad_pellaeon_missions =
 npcMapGiladPellaeon =
 	{
 		{
-			spawnData = { npcTemplate = "captain_gilad_pellaeon", x = -10.8, z = 1.7, y = -19.0, direction = 21, cellID = 1935576, position = STAND },
+			spawnData = { npcTemplate = "captain_gilad_pellaeon", x = -255.367, z = 28, y = -4371.19, direction = 0, cellID = 0, position = STAND },
 			worldPosition = { x = -199, y = -4301 },
 			npcNumber = 2,
 			stfFile = "@static_npc/corellia/gilad_pellaeon",
 			missions = gilad_pellaeon_missions
 		},
 		{
-			spawnData = { npcTemplate = "sergeant_tarl", x = -5.0, z = 1.2, y = -3.1, direction = 119, cellID = 1935575, position = STAND },
+			spawnData = { npcTemplate = "sergeant_tarl", x = -228.465, z = 28, y = -4372, direction = 0, cellID = 0, position = STAND },
 			worldPosition = { x = -203, y = -4316 },
 			npcNumber = 1,
 			stfFile = "@static_npc/corellia/tarl",

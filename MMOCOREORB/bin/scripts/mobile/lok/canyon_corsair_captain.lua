@@ -47,7 +47,8 @@ canyon_corsair_captain = Creature:new {
 				{group = "clothing_attachments", chance = 450000},
 				{group = "armor_attachments", chance = 450000},
 				{group = "canyon_corsair_common", chance = 1350000},
-				{group = "wearables_uncommon", chance = 500000},
+				{group = "wearables_uncommon", chance = 300000},
+				{group = "corsairs_rare", chance = 200000}
 			}
 		}
 	},

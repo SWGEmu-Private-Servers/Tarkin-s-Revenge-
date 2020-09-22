@@ -57,6 +57,18 @@ naboo_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_flewt_lair_neutral_boss_03",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_flewt_lair_neutral_boss_04",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 25,
+		},
+		{
 			lairTemplateName = "naboo_ankura_gungan_camp_neutral_large_theater",
 			minDifficulty = 6,
 			maxDifficulty = 10,
@@ -70,6 +82,18 @@ naboo_destroy_missions = {
 		},
 		{
 			lairTemplateName = "naboo_plasma_thief_camp_neutral_large_theater",
+			minDifficulty = 6,
+			maxDifficulty = 10,
+			size = 30,
+		},
+		{
+			lairTemplateName = "naboo_capper_spineflap_workerpod_neutral_medium",
+			minDifficulty = 6,
+			maxDifficulty = 10,
+			size = 30,
+		},
+		{
+			lairTemplateName = "naboo_kaadu_domesticated_neutral_small",
 			minDifficulty = 6,
 			maxDifficulty = 10,
 			size = 30,
@@ -105,6 +129,30 @@ naboo_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_bark_mite_lair_neutral_boss_03",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_falumpaset_domesticated_neutral_medium",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_hermit_spider_lair_neutral_boss_04",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_nightspider_lair_neutral_boss_04",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
 			lairTemplateName = "naboo_trade_federation_camp_neutral_large_theater",
 			minDifficulty = 9,
 			maxDifficulty = 13,
@@ -112,6 +160,12 @@ naboo_destroy_missions = {
 		},
 		{
 			lairTemplateName = "naboo_veermok_camp_neutral_medium",
+			minDifficulty = 9,
+			maxDifficulty = 13,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_krevol_lair_neutral_boss_03",
 			minDifficulty = 9,
 			maxDifficulty = 13,
 			size = 25,
@@ -159,6 +213,12 @@ naboo_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_narglatch_hunter_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
 			lairTemplateName = "naboo_plains_tusk_cat_pride_neutral_medium",
 			minDifficulty = 14,
 			maxDifficulty = 18,
@@ -168,6 +228,48 @@ naboo_destroy_missions = {
 			lairTemplateName = "naboo_rsf_outpost_neutral_large_theater",
 			minDifficulty = 14,
 			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_veermok_holdfast_neutral_medium",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_elder_gualama_lair_neutral_medium",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_swamp_tusk_cat_pride_neutral_medium",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_veermok_hunter_lair_neutral_medium",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_capper_spineflap_hive_neutral_large",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_mountain_ikopi_lair_neutral_medium",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_rogue_falumpaset_lair_neutral_medium",
+			minDifficulty = 16,
+			maxDifficulty = 20,
 			size = 25,
 		},
 		{
@@ -195,7 +297,25 @@ naboo_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_veermok_holdfast_neutral_large",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 25,
+		},
+		{
 			lairTemplateName = "naboo_fanned_rawl_lair_neutral_small_boss_01",
+			minDifficulty = 22,
+			maxDifficulty = 26,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_giant_peko_peko_lair_neutral_medium",
+			minDifficulty = 22,
+			maxDifficulty = 26,
+			size = 25,
+		},
+		{
+			lairTemplateName = "naboo_fanned_rawl_lair_neutral_small",
 			minDifficulty = 22,
 			maxDifficulty = 26,
 			size = 25,
@@ -207,9 +327,21 @@ naboo_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "naboo_giant_cave_veermok_lair_neutral_medium",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 25,
+		},
+		{
 			lairTemplateName = "naboo_bolle_bol_lair_neutral_large_boss_01",
 			minDifficulty = 25,
 			maxDifficulty = 29,
+			size = 30,
+		},
+		{
+			lairTemplateName = "naboo_ikopi_stag_lair_neutral_medium",
+			minDifficulty = 28,
+			maxDifficulty = 32,
 			size = 30,
 		},
 		{
@@ -218,6 +350,24 @@ naboo_destroy_missions = {
 			maxDifficulty = 36,
 			size = 35,
 		},
+		{
+			lairTemplateName = "naboo_rogue_fambaa_lair_neutral_medium",
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			size = 35,
+		},
+		{
+			lairTemplateName = "naboo_gungan_fambaaa_lair_neutral_medium",
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			size = 35,
+		},
+		{
+			lairTemplateName = "naboo_mutant_veermok_lair_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

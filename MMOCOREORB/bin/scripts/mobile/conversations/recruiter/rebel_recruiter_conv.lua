@@ -55,7 +55,7 @@ member_overt_start = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_466", -- Hello friend. Is there something that I may do to help you?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+--		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
 		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
 		{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
@@ -156,7 +156,7 @@ stay_special_forces = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_514", -- Good show! Show those Imperials what for. May I help you with something else instead?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+--		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
 		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
 		{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
@@ -228,7 +228,7 @@ stay_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_536", -- I wish all of our soldiers had your dedication. I salute you!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+--		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
 		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
 		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
@@ -239,7 +239,7 @@ rebelRecruiterConvoTemplate:addScreen(stay_overt);
 
 accepted_go_on_leave = ConvoScreen:new {
 	id = "accepted_go_on_leave",
-	leftDialog = "@conversation/faction_recruiter_rebel:s_532", -- It will take me some time to process, but you will be on leave beginning in 5 minutes.
+	leftDialog = "@conversation/faction_recruiter_rebel:s_532", -- It will take me some time to process, but you will be on leave beginning in 1 minute.
 	stopConversation = "true",
 	options = {
 	}
@@ -290,7 +290,7 @@ dont_resign_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_548", -- Doubt is understandable, but have faith. We are on the right side. No one wants to cater to a tyrant. Down with the Empire!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+--		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
 		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
 		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
@@ -424,6 +424,7 @@ faction_purchase = ConvoScreen:new {
 		--{ "@conversation/faction_recruiter_rebel:s_492", "fp_schematics" }, -- I like to build. What schematics are available?
 		{ "@conversation/faction_recruiter_rebel:s_496", "fp_furniture"}, -- I would like to do some decorating. I need furniture.
 		{ "@conversation/faction_recruiter_rebel:s_500", "fp_hirelings" }, -- I need some back-up troops.
+		{ "I need a new ride.  What vehicles do you have available?", "fp_vehicles" }, -- I need some back-up troops.
 	},
 }
 
@@ -469,6 +470,15 @@ fp_hirelings = ConvoScreen:new {
 
 }
 rebelRecruiterConvoTemplate:addScreen(fp_hirelings);
+
+fp_vehicles = ConvoScreen:new {
+	id = "fp_vehicles",
+	leftDialog = "@conversation/faction_recruiter_rebel:s_498", 
+	stopConversation = "true",
+	options = {},
+
+}
+rebelRecruiterConvoTemplate:addScreen(fp_vehicles);
 
 show_gcw_score = ConvoScreen:new {
 	id = "show_gcw_score",

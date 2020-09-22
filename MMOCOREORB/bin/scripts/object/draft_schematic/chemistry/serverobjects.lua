@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("draft_schematic/chemistry/component/serverobjects.lua")
+includeFile("draft_schematic/chemistry/tarkin_custom/serverobjects.lua")
 
 -- Server Objects
 includeFile("draft_schematic/chemistry/antidote_sm_s1.lua")

@@ -36,18 +36,18 @@ nightsister_ranger = Creature:new {
 				{group = "nightsister_common", chance = 2000000},
 				{group = "armor_attachments", chance = 250000},
 				{group = "clothing_attachments", chance = 250000},
-				{group = "melee_weapons", chance = 2500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "wearables_common", chance = 500000},
+				{group = "melee_weapons", chance = 875000},
+				{group = "rifles", chance = 875000},
+				{group = "pistols", chance = 875000},
+				{group = "carbines", chance = 875000},
+				{group = "ns_clothing", chance = 2500000},
 				{group = "tailor_components", chance = 500000}
 			}
 		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(fencermid,swordsmanmid,tkamid,pikemanmid,brawlermaster,forcewielder)
+	attacks = merge(pikemanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(nightsister_ranger, "nightsister_ranger")

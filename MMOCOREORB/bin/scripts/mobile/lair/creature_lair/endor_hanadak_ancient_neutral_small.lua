@@ -1,5 +1,6 @@
 endor_hanadak_ancient_neutral_small = Lair:new {
 	mobiles = {{"hanadak_ancient",1}},
+	bossMobiles = {{"stoneskin_hanadak",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rocks_large_fog_red.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rocks_large_fog_red.iff"},

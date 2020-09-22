@@ -12,9 +12,9 @@ kliknik_dark_worker = Creature:new {
 	armor = 0,
 	resists = {25,25,25,25,25,-1,25,-1,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 6,
+	meatAmount = 35,
 	hideType = "hide_scaley",
-	hideAmount = 4,
+	hideAmount = 60,
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
@@ -35,7 +35,13 @@ kliknik_dark_worker = Creature:new {
 				{group = "kliknik_common", chance = 10000000}
 			},
 			lootChance = 1600000
-		}
+		},
+		{	
+			groups = {
+				{group = "kliknik_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

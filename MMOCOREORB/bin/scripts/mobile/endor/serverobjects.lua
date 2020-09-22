@@ -279,3 +279,7 @@ includeFile("endor/wise_gondula_ritualist.lua")
 includeFile("endor/wise_jinda_ritualist.lua")
 includeFile("endor/wise_panshee_ritualist.lua")
 includeFile("endor/young_hanadak_rock_crusher.lua")
+
+includeFile("endor/domesticated_bordok_stud.lua")
+includeFile("endor/domesticated_bordok_mare.lua")
+includeFile("endor/mutant_roba.lua")

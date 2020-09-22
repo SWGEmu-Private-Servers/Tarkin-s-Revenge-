@@ -29,7 +29,14 @@ swirl_prong_pack_leader = Creature:new {
 	templates = {"object/mobile/swirl_prong_hue.iff"},
 	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
 	scale = 1.25,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "swirlprong_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -7,15 +7,15 @@ eventPromoterScreenplay = ScreenPlay:new {
 	promoterLocs = {
 		{ planet = "naboo", x = -6.5, z = 1.6, y = -16.2, angle = 0, cell = 1393868 }, -- Keren
 		{ planet = "naboo", x = -6.5, z = 1.6, y = -16.1, angle = 0, cell = 1717473 }, -- Moenia
-		{ planet = "naboo", x = -23.6, z = 1.6, y = -16.8, angle = 0, cell = 1677400 }, -- Theed 1
-		{ planet = "naboo", x = -23.6, z = 1.6, y = -16.8, angle = 0, cell = 1697383 }, -- Theed 2
+		{ planet = "naboo", x = -5729.79, z = 6, y = 4255.1, angle = 38, cell = 0 }, -- Theed 1
+		{ planet = "naboo", x = -5050.09, z = 6, y = 4073.03, angle = 89, cell = 0 }, -- Theed 2
 		{ planet = "naboo", x = -6.5, z = 1.6, y = -16.2, angle = 0, cell = 1419017 }, -- Deeja Peak
 		{ planet = "naboo", x = -23.6, z = 1.6, y = -16.8, angle = 0, cell = 1741483 }, -- Kaadarra
 		{ planet = "naboo", x = -23.6, z = 1.6, y = -16.8, angle = 0, cell = 1865369 }, -- Lake Retreat
-		{ planet = "tatooine", x = -5.5, z = 1.6, y = -7.2, angle = -146, cell = 1233979 }, -- Mos Entha
+		{ planet = "tatooine", x = 1717, z = 7, y = -3074, angle = 0, cell = 0 }, -- Mos Entha
 		{ planet = "tatooine", x = -24, z = 1.6, y = -4, angle = 175, cell = 1261023 }, -- Mos Espa
 		{ planet = "tatooine", x = -24, z = 1.6, y = -4, angle = 175, cell = 1223855 }, -- Bestine
-		{ planet = "corellia", x = -24, z = 1.6, y = -4, angle = 175, cell = 1855554 }, -- Coronet
+		{ planet = "corellia", x = -484.269, z = 28, y = -4697.11, angle = -46, cell = 0 }, -- Coronet
 		{ planet = "corellia", x = -24, z = 1.6, y = -4, angle = 175, cell = 1935532 }, -- Tyrena 1
 		{ planet = "corellia", x = -24, z = 1.6, y = -4, angle = 175, cell = 1935828 }, -- Tyrena 2
 		{ planet = "corellia", x = -24, z = 1.6, y = -4, angle = 175, cell = 2365813 }, -- Bela Vistal

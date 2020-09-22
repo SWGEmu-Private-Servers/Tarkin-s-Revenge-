@@ -5,7 +5,10 @@ freedom_painting = {
 	directObjectTemplate = "object/tangible/painting/painting_freedom.iff",
 	craftingValues = {},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 40
 }
 
 addLootItemTemplate("freedom_painting", freedom_painting)

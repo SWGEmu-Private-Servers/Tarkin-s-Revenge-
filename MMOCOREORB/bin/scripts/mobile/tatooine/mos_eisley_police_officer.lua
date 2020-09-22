@@ -51,7 +51,7 @@ mos_eisley_police_officer = Creature:new {
 				{group = "pistols", chance = 1000000},
 				{group = "melee_weapons", chance = 1000000},
 				{group = "carbines", chance = 1000000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "misc_decoloot_schemes", chance = 1000000}
 			}
 		}
 	},

@@ -58,3 +58,32 @@ includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_que
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_quest.lua")
 includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt.lua")
+
+--Officer's Pauldron Chestplate
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_pvp_officer_chest_plate.lua")
+
+--Stormtrooper Camo Armor
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bicep_camo_l.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bicep_camo_r.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_boots_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_camo_l.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_camo_r.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_gloves_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt_camo.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate_groupleader_camo.lua")
+
+--Battle-Worn Stormtrooper Armor
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bicep_l_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bicep_r_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_boots_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_l_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_bracer_r_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_gloves_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_helmet_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_leggings_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_utility_belt_gcw.lua")
+includeFile("tangible/wearables/armor/stormtrooper/armor_stormtrooper_chest_plate_groupleader_gcw.lua")

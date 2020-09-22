@@ -229,3 +229,10 @@ object_weapon_melee_baton_shared_victor_baton_gaderiffi = SharedWeaponObjectTemp
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_melee_baton_shared_victor_baton_gaderiffi, "object/weapon/melee/baton/shared_victor_baton_gaderiffi.iff")
+
+
+--Elite Gaderiffi Baton
+object_weapon_melee_baton_shared_baton_gaderiffi_elite = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/baton/shared_baton_gaderiffi_elite.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_baton_shared_baton_gaderiffi_elite, "object/weapon/melee/baton/shared_baton_gaderiffi_elite.iff")

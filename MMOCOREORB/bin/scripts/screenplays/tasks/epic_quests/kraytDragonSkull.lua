@@ -183,7 +183,7 @@ npcMapKraytDragonSkull =
 			missions = borvo_the_hutt_missions
 		},
 		{
-			spawnData = { planetName = "corellia", npcTemplate = "thale_dustrunner", x = -0.05, z = 3.08, y = -10.94, direction = 187.3, cellID = 1855463, position = STAND },
+			spawnData = { planetName = "corellia", npcTemplate = "thale_dustrunner", x = -141.521, z = 28, y = -4527.49, direction = -157, cellID = 0, position = STAND },
 			worldPosition = { x = -209, y = -4581 },
 			npcNumber = 2,
 			stfFile = "@epic_quest/krayt_skull/corsec_captain",

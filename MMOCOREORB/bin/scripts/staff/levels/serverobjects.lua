@@ -57,3 +57,10 @@ includeFile("levels/eci.lua")
 includeFile("levels/csi.lua")
 includeFile("levels/cc.lua")
 includeFile("levels/ct.lua")
+
+--Tarkin staff levels
+includeFile("levels/tarkin_custom/tarkin_intern.lua")
+includeFile("levels/tarkin_custom/tarkin_storyteller.lua")
+includeFile("levels/tarkin_custom/tarkin_csr.lua")
+includeFile("levels/tarkin_custom/tarkin_gm.lua")
+includeFile("levels/tarkin_custom/tarkin_admin.lua")

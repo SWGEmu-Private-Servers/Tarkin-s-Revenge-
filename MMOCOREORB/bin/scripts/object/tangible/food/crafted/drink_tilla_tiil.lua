@@ -66,7 +66,7 @@ object_tangible_food_crafted_drink_tilla_tiil = object_tangible_food_crafted_sha
 	speciesRestriction = "",
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 1},
-	experimentalProperties = {"XX", "XX", "XX", "XX", "DR", "OQ", "OQ", "PE", "DR", "FL", "XX"},
+	experimentalProperties = {"XX", "XX", "XX", "XX", "DR", "OQ", "OQ", "PE", "DR", "DR", "XX"},
 	experimentalWeights = {1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1},
 	experimentalGroupTitles = {"null", "null", "null", "null", "exp_nutrition", "exp_quantity", "exp_filling", "null"},
 	experimentalSubGroupTitles = {"null", "null", "hitpoints", "quantity_bonus", "nutrition", "quantity", "filling", "stomach"},

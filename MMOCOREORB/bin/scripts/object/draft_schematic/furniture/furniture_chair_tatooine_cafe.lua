@@ -72,6 +72,11 @@ object_draft_schematic_furniture_furniture_chair_tatooine_cafe = object_draft_sc
 
 	targetTemplate = "object/tangible/furniture/tatooine/frn_tato_chair_cafe_style_01.iff",
 
-	additionalTemplates = {}
+	additionalTemplates = {
+		"object/tangible/furniture/tatooine/shared_frn_tato_chair_cafe_style_02.iff",
+		"object/tangible/camp/shared_camp_chair_s1.iff",
+		"object/tangible/camp/shared_camp_chair_s2.iff",
+		"object/tangible/camp/shared_camp_chair_s3.iff",
+	}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_furniture_furniture_chair_tatooine_cafe, "object/draft_schematic/furniture/furniture_chair_tatooine_cafe.iff")

@@ -32,7 +32,7 @@ blood_crazed_plains_marauder = Creature:new {
 				{group = "pistols", chance = 750000},
 				{group = "carbines", chance = 750000},
 				{group = "rifles", chance = 750000},
-				{group = "melee_baton", chance = 1000000},
+				{group = "melee_baton", chance = 800000},
 				{group = "loot_kit_parts", chance = 1000000},
 				{group = "armor_attachments", chance = 500000},
 				{group = "clothing_attachments", chance = 500000},
@@ -42,6 +42,7 @@ blood_crazed_plains_marauder = Creature:new {
 				{group = "tantel_armor", chance = 800000},
 				{group = "ubese_armor", chance = 800000},
 				{group = "color_crystals", chance = 750000},
+				{group = "marauder_rare", chance = 200000}
 			}
 		}
 	},

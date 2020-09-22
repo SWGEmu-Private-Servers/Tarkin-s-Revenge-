@@ -110,14 +110,14 @@ zekka_thyne_missions =
 npcMapBlkSunTasks =
 {
 	{
-		spawnData = { npcTemplate = "grobber", x = -15.5, z = 1.0, y = -8.3, direction = 0, cellID = 1855551, position = STAND },
+		spawnData = { npcTemplate = "grobber", x = -490.67, z = 28, y = -4697.21, direction = 22, cellID = 0, position = STAND },
 		worldPosition = { x = -453.7, y = -4688.5 },
 		npcNumber = 1,
 		stfFile = "@static_npc/corellia/grobber",
 		missions = grobber_missions
 	},
 	{
-		spawnData = { npcTemplate = "zekka_thyne", x = -22.4, z = 1.6, y = -15.4, direction = 0, cellID = 1855554, position = STAND },
+		spawnData = { npcTemplate = "zekka_thyne", x = -490.67, z = 28, y = -4697.21, direction = 0, cellID = 0, position = STAND },
 		worldPosition = { x = -447.5, y = -4695.5 },
 		npcNumber = 2,
 		stfFile = "@static_npc/corellia/zekka_thyne",

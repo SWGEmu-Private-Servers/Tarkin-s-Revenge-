@@ -1161,3 +1161,115 @@ object_tangible_furniture_tatooine_shared_frn_tatt_table_cantina_table_3 = Share
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_frn_tatt_table_cantina_table_3, "object/tangible/furniture/tatooine/shared_frn_tatt_table_cantina_table_3.iff")
+
+--Energy Coil
+object_tangible_furniture_tatooine_shared_uber_energy_coil = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_energy_coil.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_energy_coil, "object/tangible/furniture/tatooine/shared_uber_energy_coil.iff")
+
+--Crystal
+object_tangible_furniture_tatooine_shared_uber_aurila_crystal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_aurila_crystal.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_aurila_crystal, "object/tangible/furniture/tatooine/shared_uber_aurila_crystal.iff")
+
+--Obelisk
+object_tangible_furniture_tatooine_shared_uber_aurilia_obelisk = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_aurilia_obelisk.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_aurilia_obelisk, "object/tangible/furniture/tatooine/shared_uber_aurilia_obelisk.iff")
+
+--Dantooine Totem Pole
+object_tangible_furniture_tatooine_shared_uber_dant_totem_pole = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_dant_totem_pole.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_dant_totem_pole, "object/tangible/furniture/tatooine/shared_uber_dant_totem_pole.iff")
+
+--Kashyyyk Bar
+object_tangible_furniture_tatooine_shared_uber_kash_bar = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_kash_bar.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_kash_bar, "object/tangible/furniture/tatooine/shared_uber_kash_bar.iff")
+
+--Kashyyyk Bar Shelf
+object_tangible_furniture_tatooine_shared_uber_kash_bar_shelf = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_kash_bar_shelf.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_kash_bar_shelf, "object/tangible/furniture/tatooine/shared_uber_kash_bar_shelf.iff")
+
+--Kashyyyk Bar Table
+object_tangible_furniture_tatooine_shared_uber_kash_bar_table = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_kash_bar_table.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_kash_bar_table, "object/tangible/furniture/tatooine/shared_uber_kash_bar_table.iff")
+
+--Basket Holder
+object_tangible_furniture_tatooine_shared_uber_basket_holder = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_basket_holder.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_basket_holder, "object/tangible/furniture/tatooine/shared_uber_basket_holder.iff")
+
+--Shallow Basket
+object_tangible_furniture_tatooine_shared_uber_basket_shallow = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_basket_shallow.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_basket_shallow, "object/tangible/furniture/tatooine/shared_uber_basket_shallow.iff")
+
+--Mining Device
+object_tangible_furniture_tatooine_shared_uber_mining_device = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_mining_device.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_mining_device, "object/tangible/furniture/tatooine/shared_uber_mining_device.iff")
+
+--Mining Tower 
+object_tangible_furniture_tatooine_shared_uber_mining_tower = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_mining_tower.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_mining_tower, "object/tangible/furniture/tatooine/shared_uber_mining_tower.iff")
+
+--Cooling Unit
+object_tangible_furniture_tatooine_shared_uber_must_cooling_unit = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_must_cooling_unit.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_must_cooling_unit, "object/tangible/furniture/tatooine/shared_uber_must_cooling_unit.iff")
+
+--Generator
+object_tangible_furniture_tatooine_shared_uber_must_generator = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_must_generator.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_must_generator, "object/tangible/furniture/tatooine/shared_uber_must_generator.iff")
+
+--Mining Console 
+object_tangible_furniture_tatooine_shared_uber_must_mining_console_s01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_must_mining_console_s01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_must_mining_console_s01, "object/tangible/furniture/tatooine/shared_uber_must_mining_console_s01.iff")
+
+--Mining Console 2
+object_tangible_furniture_tatooine_shared_uber_must_mining_console_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_must_mining_console_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_must_mining_console_s02, "object/tangible/furniture/tatooine/shared_uber_must_mining_console_s02.iff")
+
+--Uber Altar
+object_tangible_furniture_tatooine_shared_uber_altar = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/tatooine/shared_uber_altar.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_tatooine_shared_uber_altar, "object/tangible/furniture/tatooine/shared_uber_altar.iff")

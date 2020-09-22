@@ -12,7 +12,7 @@ death_watch_black_sun_thug = Creature:new {
 	baseHAM = 15000,
 	baseHAMmax = 15000,
 	armor = 1,
-	resists = {40,40,60,35,55,70,35,40,-1},
+	resists = {40,40,60,35,55,70,35,40,55},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,10 +32,27 @@ death_watch_black_sun_thug = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000}
+				{group = "pistols", chance = 3333333},
+				{group = "rifles", chance = 3333333},
+				{group = "carbines", chance = 3333334},
 			},
-			lootChance = 1000000
-		}
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+				{group = "armor_attachments", chance = 5000000}
+			},
+			lootChance = 4000000
+		},	
+		{
+			groups = {
+				{group = "jetpack_parts", chance = 1000000},				
+				{group = "bounty_hunter_schemes", chance = 8000000},
+				{group = "jetpack_base", chance = 1000000}
+			},
+			lootChance = 2000000
+		},
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

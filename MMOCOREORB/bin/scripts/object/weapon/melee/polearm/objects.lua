@@ -796,3 +796,75 @@ object_weapon_melee_polearm_shared_polearm_vibro_axe = SharedWeaponObjectTemplat
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_polearm_vibro_axe, "object/weapon/melee/polearm/shared_polearm_vibro_axe.iff")
+
+--Kaminoan Great Staff
+object_weapon_melee_polearm_shared_lance_kaminoan = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_kaminoan.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_kaminoan, "object/weapon/melee/polearm/shared_lance_kaminoan.iff")
+
+--Kashyyyk Bladestick
+object_weapon_melee_polearm_shared_lance_kashyyk = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_kashyyk.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_kashyyk, "object/weapon/melee/polearm/shared_lance_kashyyk.iff")
+
+--Obsidian Lance
+object_weapon_melee_polearm_shared_som_lance_obsidian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_som_lance_obsidian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_som_lance_obsidian, "object/weapon/melee/polearm/shared_som_lance_obsidian.iff")
+
+--Massassi Lance
+object_weapon_melee_polearm_shared_lance_massassi = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_massassi.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_massassi, "object/weapon/melee/polearm/shared_lance_massassi.iff")
+
+--Poisonspike
+object_weapon_melee_polearm_shared_ep3_loot_poisonspike = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_ep3_loot_poisonspike.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_ep3_loot_poisonspike, "object/weapon/melee/polearm/shared_ep3_loot_poisonspike.iff")
+
+--Xandank Lance
+object_weapon_melee_polearm_shared_som_lance_xandank = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_som_lance_xandank.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_som_lance_xandank, "object/weapon/melee/polearm/shared_som_lance_xandank.iff")
+
+--Gand Shockprod Staff
+object_weapon_melee_polearm_shared_lance_gcw_gand_shockprod = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_gcw_gand_shockprod.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_gcw_gand_shockprod, "object/weapon/melee/polearm/shared_lance_gcw_gand_shockprod.iff")
+
+--Cryo Lance
+object_weapon_melee_polearm_shared_lance_cryo = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_cryo.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_cryo, "object/weapon/melee/polearm/shared_lance_cryo.iff")
+
+--Shock Lance
+object_weapon_melee_polearm_shared_lance_shock = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_shock.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_shock, "object/weapon/melee/polearm/shared_lance_shock.iff")
+
+--Electric Polearm
+object_weapon_melee_polearm_shared_lance_electric_polearm = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_electric_polearm.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_electric_polearm, "object/weapon/melee/polearm/shared_lance_electric_polearm.iff")
+
+--Acidic Paragon Vibro Axe
+object_weapon_melee_polearm_shared_polearm_heroic_sd = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_polearm_heroic_sd.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_polearm_heroic_sd, "object/weapon/melee/polearm/shared_polearm_heroic_sd.iff")
+
+--MagnaGuard Electrostaff
+object_weapon_melee_polearm_shared_lance_staff_magna_guard = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/polearm/shared_lance_staff_magna_guard.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_polearm_shared_lance_staff_magna_guard, "object/weapon/melee/polearm/shared_lance_staff_magna_guard.iff")

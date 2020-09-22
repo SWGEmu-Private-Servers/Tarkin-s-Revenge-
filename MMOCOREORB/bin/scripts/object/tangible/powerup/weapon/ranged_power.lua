@@ -50,16 +50,20 @@ object_tangible_powerup_weapon_ranged_power = object_tangible_powerup_weapon_sha
 	baseName = "Coupler",
 
 	primary = {
-		{"minDamage", "Short-Circuit", "cat_pup.pup_wpn_damage_min"}, 
-		{"attackSpeed", "Quick-Charge", "cat_pup.pup_wpn_attack_speed"}, 
-  		{"maxDamage", "Hot-Wired", "cat_pup.pup_wpn_damage_max"},
-		{"actionAttackCost", "Tweaked", "cat_pup.pup_wpn_attack_cost_action"}
+		{"maxDamage", "Hot-Wired", "cat_pup.pup_wpn_damage_max"}, 
+		{"attackSpeed", "Hair-Trigger", "cat_pup.pup_wpn_attack_speed"}, 
 	},
 
 	secondary = {
-		{"idealRange", "Overpowering", "cat_pup.pup_wpn_range_attack_mod_mid"}, 
+		{"minDamage", "Sighting", "cat_pup.pup_wpn_damage_min"},
+		{"healthAttackCost", "Recoil-Deadening", "cat_pup.pup_wpn_attack_cost_health"},
+   		{"actionAttackCost", "Cushioning", "cat_pup.pup_wpn_attack_cost_action"},
 		{"mindAttackCost", "Compensation", "cat_pup.pup_wpn_attack_cost_mind"}, 
-		{"pointBlankAccuracy", "Searing", "cat_pup.pup_wpn_range_attack_mod_zero"}
+		{"idealAccuracy", "Accuracy", "cat_pup.pup_wpn_range_attack_mod_mid"},
+		{"maxRangeAccuracy", "Steadying", "cat_pup.pup_wpn_range_attack_mod_max"}, 
+  		{"woundsRatio", "Reckoning", "cat_pup.pup_wpn_wound_chance"},
+		{"pointBlankAccuracy", "Searing", "cat_pup.pup_wpn_range_attack_mod_zero"}, 
+		{"idealRange", "Overpowering", "cat_pup.pup_wpn_range_mid"},
 	},
 
 	numberExperimentalProperties = {1, 1, 1, 1},

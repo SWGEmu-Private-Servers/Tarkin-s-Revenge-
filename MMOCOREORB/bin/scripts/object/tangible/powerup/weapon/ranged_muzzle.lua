@@ -50,17 +50,20 @@ object_tangible_powerup_weapon_ranged_muzzle = object_tangible_powerup_weapon_sh
 	baseName = "Muzzle",
 
 	primary = {
-		{"idealAccuracy", "Scattered", "cat_pup.pup_wpn_range_attack_mod_mid"}, 
-		{"mindAttackCost", "Muffled", "cat_pup.pup_wpn_attack_cost_mind"}, 
-  		{"woundsRatio", "Polished", "cat_pup.pup_wpn_wound_chance"},
-		{"maxDamage", "Tuned", "cat_pup.pup_wpn_damage_max"}
+		{"maxDamage", "Hot-Wired", "cat_pup.pup_wpn_damage_max"}, 
+		{"attackSpeed", "Hair-Trigger", "cat_pup.pup_wpn_attack_speed"}, 
 	},
 
 	secondary = {
-		{"healthAttackCost", "Braking", "cat_pup.pup_wpn_attack_cost_health"}, 
-		{"maxRangeAccuracy", "Focusing", "cat_pup.pup_wpn_range_attack_mod_max"}, 
-		{"minDamage", "Sighting", "cat_pup.pup_wpn_damage_min"}, 
-		{"pointBlankAccuracy", "Flaring", "cat_pup.pup_wpn_range_attack_mod_zero"}
+		{"minDamage", "Sighting", "cat_pup.pup_wpn_damage_min"},
+		{"healthAttackCost", "Recoil-Deadening", "cat_pup.pup_wpn_attack_cost_health"},
+   		{"actionAttackCost", "Cushioning", "cat_pup.pup_wpn_attack_cost_action"},
+		{"mindAttackCost", "Compensation", "cat_pup.pup_wpn_attack_cost_mind"}, 
+		{"idealAccuracy", "Accuracy", "cat_pup.pup_wpn_range_attack_mod_mid"},
+		{"maxRangeAccuracy", "Steadying", "cat_pup.pup_wpn_range_attack_mod_max"}, 
+  		{"woundsRatio", "Reckoning", "cat_pup.pup_wpn_wound_chance"},
+		{"pointBlankAccuracy", "Searing", "cat_pup.pup_wpn_range_attack_mod_zero"}, 
+		{"idealRange", "Overpowering", "cat_pup.pup_wpn_range_mid"},
 	},
 
 	numberExperimentalProperties = {1, 1, 1, 1},

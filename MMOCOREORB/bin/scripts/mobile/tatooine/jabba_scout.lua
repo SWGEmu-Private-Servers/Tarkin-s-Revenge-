@@ -38,7 +38,7 @@ jabba_scout = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 1500000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "pistols", chance = 2000000},
 				{group = "tailor_components", chance = 1500000},
 				{group = "loot_kit_parts", chance = 1500000},

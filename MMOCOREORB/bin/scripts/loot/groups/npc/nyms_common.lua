@@ -5,14 +5,17 @@ nyms_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "balanced_feed_mechanism", weight = 1250000},
-		{itemTemplate = "fine_tuned_vibro_motor", weight = 1250000},
-		{itemTemplate = "high_frequency_vibro_motor", weight = 1250000},
-		{itemTemplate = "high_powered_energy_capacitor", weight = 1250000},
-		{itemTemplate = "high_powered_vibro_motor", weight = 1250000},
-		{itemTemplate = "high_valocity_feed_mechanism", weight = 1250000},
-		{itemTemplate = "large_energy_capacitor", weight = 1250000},
-		{itemTemplate = "wearables_common", weight = 1250000},
+		{itemTemplate = "balanced_feed_mechanism", weight = 1000000},
+		{itemTemplate = "fine_tuned_vibro_motor", weight = 1000000},
+		{itemTemplate = "high_frequency_vibro_motor", weight = 1000000},
+		{itemTemplate = "high_powered_energy_capacitor", weight = 1000000},
+		{itemTemplate = "high_powered_vibro_motor", weight = 1000000},
+		{itemTemplate = "high_valocity_feed_mechanism", weight = 1000000},
+		{itemTemplate = "large_energy_capacitor", weight = 1000000},
+--		{itemTemplate = "wearables_common", weight = 1250000},
+		{groupTemplate = "misc_decoloot_schemes", weight = 1000000},
+		{itemTemplate = "rifle_jinkins_schematic", weight = 1000000},
+		{itemTemplate = "powerpack_rifle_jinkins", weight = 1000000},
 	}
 }
 

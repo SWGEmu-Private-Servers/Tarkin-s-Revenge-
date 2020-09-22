@@ -14,9 +14,9 @@ desert_gurreck_charger = Creature:new {
 	meatType = "meat_carnivore",
 	meatAmount = 55,
 	hideType = "hide_wooly",
-	hideAmount = 20,
-	boneType = "",
-	boneAmount = 0,
+	hideAmount = 35,
+	boneType = "bone_mammal",
+	boneAmount = 30,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -26,10 +26,17 @@ desert_gurreck_charger = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurreck_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	hues = { 0, 1, 2, 3, 7, 12, 17 },
 	controlDeviceTemplate = "object/intangible/pet/gurreck_hue.iff",
 	scale = 0.9,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "gurreck_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {"creature_spit_small_yellow"},
 	conversationTemplate = "",
 	attacks = {

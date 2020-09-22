@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("tangible/theme_park/alderaan/serverobjects.lua")
+includeFile("tangible/theme_park/wod/serverobjects.lua")
 
 -- Server Objects
 includeFile("tangible/theme_park/invisible_object.lua")

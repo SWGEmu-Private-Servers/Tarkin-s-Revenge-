@@ -29,7 +29,14 @@ female_slice_hound = Creature:new {
 	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	controlDeviceTemplate = "object/intangible/pet/corellian_slice_hound_hue.iff",
 	scale = 0.95,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "slice_hound_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

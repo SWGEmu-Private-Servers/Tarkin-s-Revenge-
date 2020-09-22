@@ -6,6 +6,7 @@ foraged_flurr_clie_onion = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_vegetable_s3.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

@@ -64,13 +64,13 @@ object_draft_schematic_armor_armor_segment_bone = object_draft_schematic_armor_s
 	customizationDefaults = {},
 
 	ingredientTemplateNames = {"craft_armor_ingredients_n", "craft_armor_ingredients_n", "craft_armor_ingredients_n"},
-	ingredientTitleNames = {"armor_segment_bone", "segment_mounting_tabs", "segment_enhancement"},
-	ingredientSlotType = {0, 0, 3},
-	resourceTypes = {"bone", "metal", "object/tangible/component/armor/shared_base_armor_segment_enhancement.iff"},
-	resourceQuantities = {14, 3, 1},
+	ingredientTitleNames = {"armor_segment_bone", "segment_mounting_tabs", "defensive_layer"},
+	ingredientSlotType = {0, 0, 0},
+	resourceTypes = {"bone", "metal", "petrochem_inert_polymer"},
+	resourceQuantities = {10, 5, 3},
 	contribution = {100, 100, 100},
 
-	targetTemplate = "object/tangible/component/armor/armor_segment_bone.iff",
+	targetTemplate = "object/tangible/component/armor/armor_segment_composite.iff",
 
 	additionalTemplates = {}
 }

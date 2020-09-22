@@ -2518,3 +2518,31 @@ object_tangible_wearables_necklace_shared_necklace_wampum = SharedTangibleObject
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_necklace_shared_necklace_wampum, "object/tangible/wearables/necklace/shared_necklace_wampum.iff")
+
+--Primitive Necklace 01
+object_tangible_wearables_necklace_shared_necklace_primitive_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/necklace/shared_necklace_primitive_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_necklace_shared_necklace_primitive_01, "object/tangible/wearables/necklace/shared_necklace_primitive_01.iff")
+
+--Primitive Necklace 02
+object_tangible_wearables_necklace_shared_necklace_primitive_02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/necklace/shared_necklace_primitive_02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_necklace_shared_necklace_primitive_02, "object/tangible/wearables/necklace/shared_necklace_primitive_02.iff")
+
+--Primitive Necklace 03
+object_tangible_wearables_necklace_shared_necklace_primitive_03 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/necklace/shared_necklace_primitive_03.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_necklace_shared_necklace_primitive_03, "object/tangible/wearables/necklace/shared_necklace_primitive_03.iff")
+
+--Primitive Necklace 04
+object_tangible_wearables_necklace_shared_necklace_primitive_04 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/necklace/shared_necklace_primitive_04.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_necklace_shared_necklace_primitive_04, "object/tangible/wearables/necklace/shared_necklace_primitive_04.iff")

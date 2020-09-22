@@ -12,11 +12,11 @@ choku = Creature:new {
 	armor = 0,
 	resists = {110,0,0,0,0,0,0,-1,-1},
 	meatType = "meat_avian",
-	meatAmount = 10,
-	hideType = "",
-	hideAmount = 0,
+	meatAmount = 65,
+	hideType = "hide_bristley",
+	hideAmount = 35,
 	boneType = "bone_avian",
-	boneAmount = 8,
+	boneAmount = 30,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -28,7 +28,14 @@ choku = Creature:new {
 	templates = {"object/mobile/choku_hue.iff"},
 	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
 	controlDeviceTemplate = "object/intangible/pet/choku_hue.iff",
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "choku_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -33,8 +33,9 @@ frenzied_pubam = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 9000000},
-				{group = "wearables_uncommon", chance = 1000000},
+				{group = "ewok", chance = 3600000},
+				{group = "wookiee_loot_common", chance = 4400000},
+				{group = "donkuwah_loot", chance = 2000000}
 			},
 			lootChance = 1800000
 		}

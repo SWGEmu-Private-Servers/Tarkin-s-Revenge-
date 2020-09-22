@@ -14,9 +14,9 @@ cowardly_gurreck = Creature:new {
 	meatType = "meat_carnivore",
 	meatAmount = 55,
 	hideType = "hide_wooly",
-	hideAmount = 20,
-	boneType = "",
-	boneAmount = 0,
+	hideAmount = 35,
+	boneType = "bone_mammal",
+	boneAmount = 30,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -26,10 +26,17 @@ cowardly_gurreck = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurreck_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	hues = { 0, 1, 2, 3, 7, 12, 17 },
 	controlDeviceTemplate = "object/intangible/pet/gurreck_hue.iff",
 	scale = 0.85,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "gurreck_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

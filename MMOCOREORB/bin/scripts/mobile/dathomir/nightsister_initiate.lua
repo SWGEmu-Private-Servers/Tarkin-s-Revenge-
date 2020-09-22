@@ -32,22 +32,23 @@ nightsister_initiate = Creature:new {
 		{
 			groups = {
 				{group = "power_crystals", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "nightsister_common", chance = 2000000},
+				{group = "color_crystals", chance = 1000000},
+				{group = "nightsister_common", chance = 1500000},
 				{group = "armor_attachments", chance = 250000},
 				{group = "clothing_attachments", chance = 250000},
-				{group = "melee_weapons", chance = 2500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
+				{group = "melee_weapons", chance = 875000},
+				{group = "rifles", chance = 708333},
+				{group = "pistols", chance = 708333},
+				{group = "carbines", chance = 708334},
 				{group = "wearables_common", chance = 500000},
-				{group = "tailor_components", chance = 500000}
-			}
+				{group = "ns_clothing", chance = 3000000}
+			},
+			lootChance = 7000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
-	attacks = merge(tkamid,fencermid,swordsmanmid,pikemanmid,brawlermaster)
+	attacks = merge(pikemanmid,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(nightsister_initiate, "nightsister_initiate")

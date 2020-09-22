@@ -8,7 +8,10 @@ sculpture_goldinlay_2 = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 50,
+	junkMaxValue = 50
 }
 
 addLootItemTemplate("sculpture_goldinlay_2", sculpture_goldinlay_2)

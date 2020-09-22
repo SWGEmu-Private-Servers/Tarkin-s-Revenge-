@@ -830,3 +830,7 @@ RunSlashCommandsFile("waypoint.lua")
 RunSlashCommandsFile("unstick.lua")
 RunSlashCommandsFile("launchIntoSpace.lua")
 RunSlashCommandsFile("createVendor.lua")
+
+RunSlashCommandsFile("tarkin.lua")
+RunSlashCommandsFile("installBillboard.lua")
+RunSlashCommandsFile("wearCostume.lua")

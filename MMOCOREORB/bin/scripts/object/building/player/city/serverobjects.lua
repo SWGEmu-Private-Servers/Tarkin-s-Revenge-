@@ -121,3 +121,7 @@ includeFile("building/player/city/shuttleport_tatooine.lua")
 includeFile("building/player/city/theater_corellia.lua")
 includeFile("building/player/city/theater_naboo.lua")
 includeFile("building/player/city/theater_tatooine.lua")
+
+--NGE Houses
+includeFile("building/player/city/barn_no_planet_restriction.lua")
+includeFile("building/player/city/diner_no_planet_restriction.lua")

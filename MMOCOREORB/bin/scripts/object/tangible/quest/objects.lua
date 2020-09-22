@@ -40,3 +40,40 @@
 --this exception also makes it possible to release a modified version
 --which carries forward this exception.
 
+object_tangible_quest_shared_naktra_crystals = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_naktra_crystals.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_naktra_crystals, "object/tangible/quest/shared_naktra_crystals.iff")
+
+object_tangible_quest_shared_prof_force_sensitive_crystal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_prof_force_sensitive_crystal.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_prof_force_sensitive_crystal, "object/tangible/quest/shared_prof_force_sensitive_crystal.iff")
+
+object_tangible_quest_shared_r_naktra_crystals = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_r_naktra_crystals.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_r_naktra_crystals, "object/tangible/quest/shared_r_naktra_crystals.iff")
+
+object_tangible_quest_shared_som_kenobi_final_force_crystal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_som_kenobi_final_force_crystal.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_som_kenobi_final_force_crystal, "object/tangible/quest/shared_som_kenobi_final_force_crystal.iff")
+
+--Blooming Sapflower
+object_tangible_quest_shared_blooming_sapflower = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_blooming_sapflower.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_blooming_sapflower, "object/tangible/quest/shared_blooming_sapflower.iff")
+
+--Xharnoh Plant
+object_tangible_quest_shared_naboo_theed_xharnoh_plant = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/quest/shared_naboo_theed_xharnoh_plant.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_quest_shared_naboo_theed_xharnoh_plant, "object/tangible/quest/shared_naboo_theed_xharnoh_plant.iff")

@@ -33,8 +33,9 @@ tricky_donkuwah_scout = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "donkuwah_common", chance = 9000000},
-				{group = "wearables_uncommon", chance = 1000000},
+				{group = "donkuwah_common", chance = 3600000},
+				{group = "wookiee_loot_common", chance = 4400000},
+				{group = "donkuwah_loot", chance = 2000000}
 			},
 			lootChance = 1620000
 		}

@@ -8,7 +8,10 @@ gong_skin_back = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 50,
+	junkMaxValue = 50
 }
 
 addLootItemTemplate("gong_skin_back", gong_skin_back)

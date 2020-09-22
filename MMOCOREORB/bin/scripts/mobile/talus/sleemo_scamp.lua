@@ -32,7 +32,7 @@ sleemo_scamp = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 3200000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "rifles", chance = 700000},
 				{group = "melee_knife", chance = 700000},
 				{group = "pistols", chance = 700000},

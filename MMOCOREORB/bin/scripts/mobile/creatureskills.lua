@@ -55,3 +55,18 @@ forcepowermaster = { {"forcelightningsingle2",""},{"forcelightningcone2",""},{"m
 -- npc force wielders use standard profession mastery with the addition of this command
 forcewielder ={ {"forcelightningsingle1",""},{"mindblast1",""},{"forcechoke",""},{"forceweaken1",""},{"forceknockdown1",""},{"forcelightningcone1",""} }
 --Server Administrator NPC skill trees place below
+
+--Tarkin's Revenge fight arenas (must avoid AOE attacks)
+arenamarksmanmaster = { {"overchargeshot2",""},{"pointblanksingle1",""},{"diveshot",""},{"kipupshot",""},{"rollshot",""},{"bodyshot2",""},{"healthshot1",""},{"legshot2",""},{"fullautosingle1",""},{"actionshot1",""},{"headshot2",""},{"mindshot1",""},{"warningshot",""},{"suppressionfire1",""} }
+arenabrawlermaster = { {"unarmedlunge2",""},{"unarmedhit1",""},{"unarmedstun1",""},{"unarmedblind1",""},{"melee1hlunge2",""},{"melee1hdizzyhit1",""},{"melee1hhit1",""},{"melee1hbodyhit1",""},{"melee2hhit1",""},{"melee2hlunge2",""},{"melee2hheadhit1",""},{"melee2hsweep1",""},{"polearmlunge2",""},{"polearmhit1",""},{"polearmleghit1",""},{"polearmstun1",""} }
+arenabountyhuntermaster = { {"firelightningsingle1",""},{"firelightningsingle2",""},{"bleedingshot",""},{"underhandshot",""},{"eyeshot",""},{"knockdownfire",""},{"torsoshot",""},{"confusionshot",""},{"fastblast",""},{"sprayshot",""} }
+arenacommandomaster = { {"flamesingle1",""},{"flamesingle2",""},{"fireacidsingle1",""},{"fireacidsingle2",""} }
+arenacarbineermaster = { {"actionshot2",""},{"fullautosingle2",""},{"scattershot2",""},{"legshot3",""},{"cripplingshot",""},{"suppressionfire2",""} }
+arenapistoleermaster = { {"healthshot2",""},{"pointblanksingle2",""},{"bodyshot3",""},{"pistolmeleedefense2",""},{"doubletap",""},{"stoppingshot",""} }
+arenariflemanmaster = { {"headshot3",""},{"strafeshot1",""},{"mindshot2",""},{"startleshot1",""} }
+arenafencermaster = { {"melee1hhit3",""},{"melee1hscatterhit2",""},{"melee1hhealthhit2",""},{"melee1hbodyhit2",""},{"melee1hblindhit1",""} }
+arenaswordsmanmaster = { {"melee2hhit3",""},{"melee2hsweep1",""},{"melee2hmindhit2",""},{"melee2hheadhit3",""} }
+arenapikemanmaster = { {"polearmactionhit2",""},{"polearmhit3",""},{"polearmleghit3",""},{"polearmstun1",""},{"polearmsweep1",""} }
+arenatkamaster = { {"unarmedhit3",""},{"unarmedleghit1",""},{"unarmedbodyhit1",""},{"unarmedheadhit1",""},{"unarmedcombo2",""},{"unarmedknockdown2",""},{"unarmeddizzy1",""} }
+arenalightsabermaster = { {"saber1hheadhit1",""},{"saber1hhit1",""},{"saber1hcombohit1",""},{"saber2hbodyhit1",""},{"saber2hhit1",""},{"saber2hsweep1",""},{"saberpolearmhit1",""},{"saberpolearmleghit1",""},{"saberslash1",""},{"saberthrow1",""} }
+arenaforcepowermaster = { {"forcelightningsingle2",""},{"mindblast1",""},{"forceknockdown1",""},{"forceweaken2",""},{"forcethrow2",""},{"forcechoke",""} }

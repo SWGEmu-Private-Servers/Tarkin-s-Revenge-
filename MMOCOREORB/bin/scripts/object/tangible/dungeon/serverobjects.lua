@@ -45,6 +45,7 @@
 --Children folder includes
 includeFile("tangible/dungeon/corellian_corvette/serverobjects.lua")
 includeFile("tangible/dungeon/death_watch_bunker/serverobjects.lua")
+includeFile("tangible/dungeon/mustafar/serverobjects.lua")
 
 -- Server Objects
 includeFile("tangible/dungeon/cave_stalagmite_ice_style_01.lua")
@@ -62,3 +63,4 @@ includeFile("tangible/dungeon/wall_terminal_s1.lua")
 includeFile("tangible/dungeon/wall_terminal_s2.lua")
 includeFile("tangible/dungeon/wall_terminal_s3.lua")
 includeFile("tangible/dungeon/wall_terminal_s4.lua")
+

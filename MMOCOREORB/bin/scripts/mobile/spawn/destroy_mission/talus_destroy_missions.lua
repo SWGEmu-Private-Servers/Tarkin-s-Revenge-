@@ -69,7 +69,25 @@ talus_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "talus_minor_sludge_panther_lair_neutral_medium",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_docile_kahmurra_lair_neutral_medium",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_rot_mite_lair_neutral_boss_02",
+			minDifficulty = 9,
+			maxDifficulty = 13,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_rot_mite_lair_neutral_boss_03",
 			minDifficulty = 9,
 			maxDifficulty = 13,
 			size = 25,
@@ -99,6 +117,30 @@ talus_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_minor_guf_drolg_lair_neutral_medium",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_crazed_roba_lair_neutral_large",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_guf_drolg_minor_lair_neutral_small",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_fynock_lair_neutral_boss_04",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_aakuan_steward_camp_neutral_small_theater",
 			minDifficulty = 11,
 			maxDifficulty = 15,
@@ -106,6 +148,12 @@ talus_destroy_missions = {
 		},
 		{
 			lairTemplateName = "talus_dung_mite_lair_neutral_boss_02",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_jungle_fynock_lair_neutral_medium",
 			minDifficulty = 11,
 			maxDifficulty = 15,
 			size = 25,
@@ -129,6 +177,18 @@ talus_destroy_missions = {
 			size = 35,
 		},
 		{
+			lairTemplateName = "talus_decay_mite_lair_neutral_boss_04",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 35,
+		},
+		{
+			lairTemplateName = "talus_foaming_vynock_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 35,
+		},
+		{
 			lairTemplateName = "talus_binayre_pirate_camp_neutral_medium_theater",
 			minDifficulty = 13,
 			maxDifficulty = 17,
@@ -142,6 +202,12 @@ talus_destroy_missions = {
 		},
 		{
 			lairTemplateName = "talus_savage_guf_drolg_lair_neutral_medium",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_dung_mite_lair_neutral_small_03",
 			minDifficulty = 13,
 			maxDifficulty = 17,
 			size = 25,
@@ -171,6 +237,12 @@ talus_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_dung_mite_lair_neutral_boss_04",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_lost_aqualish_captain_camp_neutral_large_theater",
 			minDifficulty = 15,
 			maxDifficulty = 20,
@@ -195,6 +267,12 @@ talus_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "talus_giant_dalyrake_lair_neutral_medium",
+			minDifficulty = 16,
+			maxDifficulty = 20,
+			size = 20,
+		},
+		{
 			lairTemplateName = "talus_vicious_huf_dun_lair_neutral_medium",
 			minDifficulty = 17,
 			maxDifficulty = 21,
@@ -202,6 +280,12 @@ talus_destroy_missions = {
 		},
 		{
 			lairTemplateName = "talus_wolf_kima_lair_neutral_medium",
+			minDifficulty = 17,
+			maxDifficulty = 21,
+			size = 30,
+		},
+		{
+			lairTemplateName = "talus_famished_sludge_panther_lair_neutral_mdium",
 			minDifficulty = 17,
 			maxDifficulty = 21,
 			size = 30,
@@ -219,7 +303,31 @@ talus_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_beserk_kahmurra_lair_neutral_medium",
+			minDifficulty = 19,
+			maxDifficulty = 23,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_huf_dun_lair_neutral_medium",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 30,
+		},
+		{
+			lairTemplateName = "talus_giant_decay_mite_lair_neutral_medium",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 30,
+		},
+		{
+			lairTemplateName = "talus_hilltop_kima_lair_neutral_medium",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 30,
+		},
+		{
+			lairTemplateName = "talus_tortur_bull_lair_neutral_large",
 			minDifficulty = 20,
 			maxDifficulty = 24,
 			size = 30,
@@ -243,6 +351,18 @@ talus_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_savage_humbaba_lair_neutral_medium",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 25,
+		},
+		{
+			lairTemplateName = "talus_grand_wrix_lair_neutral_medium",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_mutated_kahmurra_lair_neutral_medium",
 			minDifficulty = 24,
 			maxDifficulty = 28,
@@ -255,11 +375,23 @@ talus_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "talus_voracious_rasp_lair_neutral_small",
+			minDifficulty = 25,
+			maxDifficulty = 29,
+			size = 25,
+		},
+		{
 			lairTemplateName = "talus_aakuan_champion_camp_neutral_large_theater",
 			minDifficulty = 29,
 			maxDifficulty = 33,
 			size = 25,
 		},
+		{
+			lairTemplateName = "talus_mutant_mire_marauder_lair_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

@@ -1,6 +1,8 @@
 local ObjectManager = require("managers.object.object_manager")
 
 DeathWatchBunkerScreenPlay = ScreenPlay:new {
+	numberOfActs = 1,
+
 	passkey = {
 		hall = "object/tangible/dungeon/death_watch_bunker/passkey_hall.iff",
 		storage = "object/tangible/dungeon/death_watch_bunker/passkey_storage.iff",
@@ -208,19 +210,11 @@ end
 
 function DeathWatchBunkerScreenPlay:spawnMobiles()
 	for i,v in ipairs(deathWatchStaticSpawns) do
-		local pMobile = spawnMobile("endor", v[1], v[2], v[3], v[4], v[5], v[6], v[7])
-
-		if (pMobile ~= nil) then
-			writeData("dwb:staticMobile" .. i, SceneObject(pMobile):getObjectID())
-		end
+		spawnMobile("endor", v[1], v[2], v[3], v[4], v[5], v[6], v[7])
 	end
 	for i,v in ipairs(deathWatchQuestNpcs) do
 		if (isZoneEnabled(v[8])) then
-			local pMobile = spawnMobile(v[8], v[1], v[2], v[3], v[4], v[5], v[6], v[7])
-
-			if (pMobile ~= nil) then
-				writeData("dwb:questMobile" .. i, SceneObject(pMobile):getObjectID())
-			end
+			spawnMobile(v[8], v[1], v[2], v[3], v[4], v[5], v[6], v[7])
 		end
 	end
 end
@@ -843,7 +837,7 @@ function DeathWatchBunkerScreenPlay:notifyEnteredVoiceTerminalArea(pArea, pPlaye
 end
 
 function DeathWatchBunkerScreenPlay:notifyTerminalChatSent(pPlayer, pChatMessage)
-	if (pPlayer == nil or not SceneObject(pPlayer):isPlayerCreature() or pChatMessage == nil) then
+	if (pPlayer == nil or not SceneObject(pPlayer):isPlayerCreature()) then
 		return 0
 	end
 
@@ -877,21 +871,10 @@ function DeathWatchBunkerScreenPlay:notifyTerminalChatSent(pPlayer, pChatMessage
 
 	local spatialMsg = getChatMessage(pChatMessage)
 
-	if (spatialMsg == nil or spatialMsg == "") then
-		printLuaError("Invalid spatial message from player " .. SceneObject(pPlayer):getDisplayedName())
-		return 0
-	end
-
 	local tokenizer = {}
 	for word in spatialMsg:gmatch("%w+") do table.insert(tokenizer, word) end
 
 	local spatialCommand = tokenizer[1]
-
-	if (spatialCommand == nil or spatialCommand == "") then
-		printLuaError("Invalid spatial command from player " .. SceneObject(pPlayer):getDisplayedName() .. ", spatial message: " .. spatialMsg)
-		return 0
-	end
-
 	writeStringData("dwb:bombDroidHandlerLastSpatialCommand", spatialCommand)
 
 	local moveDistance = 0

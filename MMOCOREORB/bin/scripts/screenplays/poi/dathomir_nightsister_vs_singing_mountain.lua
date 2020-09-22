@@ -10,17 +10,17 @@ NightSisterVsSingingMountainClanScreenPlay = ScreenPlay:new {
 		164430			
 	},
 	
-	lootLevel = 38,	
+	lootLevel = 95,	
 
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 3500000},
-				{group = "junk", chance = 3500000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "armor_attachments", chance = 500000}
+				{group = "nightsister_common", chance = 500000},
+				{group = "rifles", chance = 2000000},
+				{group = "pistols", chance = 2000000},
+				{group = "clothing_attachments", chance = 300000},
+				{group = "armor_attachments", chance = 300000},
+				{group = "deed_voucher", chance = 50000}
 			},
 			lootChance = 8000000
 		}					

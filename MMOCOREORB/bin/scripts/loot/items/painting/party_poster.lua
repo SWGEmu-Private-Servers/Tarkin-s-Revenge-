@@ -5,7 +5,10 @@ party_poster = {
 	directObjectTemplate = "object/tangible/painting/painting_dance_party.iff",
 	craftingValues = {},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 40
 }
 
 addLootItemTemplate("party_poster", party_poster)

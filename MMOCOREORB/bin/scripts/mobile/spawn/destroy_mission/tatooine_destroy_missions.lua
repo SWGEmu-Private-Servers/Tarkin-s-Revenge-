@@ -45,6 +45,12 @@ tatooine_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "tatooine_rill_rill_neutral_medium_boss_01",
+			minDifficulty = 4,
+			maxDifficulty = 8,
+			size = 25,
+		},
+		{
 			lairTemplateName = "tatooine_eopie_lair_neutral_small",
 			minDifficulty = 5,
 			maxDifficulty = 9,
@@ -52,6 +58,12 @@ tatooine_destroy_missions = {
 		},
 		{
 			lairTemplateName = "tatooine_sevorrt_lair_neutral_medium",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_eopie_eopie_neutral_medium_boss_01",
 			minDifficulty = 5,
 			maxDifficulty = 9,
 			size = 25,
@@ -70,6 +82,12 @@ tatooine_destroy_missions = {
 		},
 		{
 			lairTemplateName = "tatooine_spice_fiend_neutral_small_theater",
+			minDifficulty = 6,
+			maxDifficulty = 10,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_dewback_lesser_lair_neutral_small",
 			minDifficulty = 6,
 			maxDifficulty = 10,
 			size = 25,
@@ -135,6 +153,18 @@ tatooine_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "tatooine_bantha_lair_neutral_large",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_mound_mite_click_neutral_small",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
 			lairTemplateName = "tatooine_mutant_womprat_lair_neutral_small",
 			minDifficulty = 12,
 			maxDifficulty = 16,
@@ -148,6 +178,24 @@ tatooine_destroy_missions = {
 		},
 		{
 			lairTemplateName = "tatooine_swarming_lesser_dewback_lair_neutral_large",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_rogue_bantha_lair_neutral_large",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_feral_bantha_lair_neutral_large",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_bocatt_lair_neutral_medium",
 			minDifficulty = 13,
 			maxDifficulty = 17,
 			size = 25,
@@ -213,6 +261,12 @@ tatooine_destroy_missions = {
 			size = 30,
 		},
 		{
+			lairTemplateName = "tatooine_cu_pa_wasteland_lair_neutral_medium",
+			minDifficulty = 17,
+			maxDifficulty = 21,
+			size = 30,
+		},
+		{
 			lairTemplateName = "tatooine_bull_bantha_lair_neutral_large",
 			minDifficulty = 18,
 			maxDifficulty = 22,
@@ -255,13 +309,31 @@ tatooine_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "tatooine_ronto_male_neutral_medium_boss_01",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 25,
+		},
+		{
 			lairTemplateName = "tatooine_matriarch_bantha_lair_neutral_large",
 			minDifficulty = 23,
 			maxDifficulty = 27,
 			size = 25,
 		},
 		{
+			lairTemplateName = "tatooine_tusken_bantha_lair_neutral_large",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 25,
+		},
+		{
 			lairTemplateName = "tatooine_grizzled_dewback_lair_neutral_large",
+			minDifficulty = 25,
+			maxDifficulty = 29,
+			size = 25,
+		},
+		{
+			lairTemplateName = "tatooine_desert_razorback_razorback_neutral_medium_boss_01",
 			minDifficulty = 25,
 			maxDifficulty = 29,
 			size = 25,
@@ -284,6 +356,12 @@ tatooine_destroy_missions = {
 			maxDifficulty = 36,
 			size = 25,
 		},
+		{
+			lairTemplateName = "tatooine_mutant_dragonet_dragonet_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

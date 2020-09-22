@@ -66,7 +66,7 @@ object_draft_schematic_scout_item_trap_melee_def_1 = object_draft_schematic_scou
    ingredientTitleNames = {"trap_housing", "entangling_mesh"},
    ingredientSlotType = {0, 0},
    resourceTypes = {"bone", "hide"},
-   resourceQuantities = {3, 3},
+   resourceQuantities = {30, 30},
    contribution = {100, 100},
 
 

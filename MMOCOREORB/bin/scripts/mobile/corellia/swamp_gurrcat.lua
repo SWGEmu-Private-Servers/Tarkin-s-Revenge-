@@ -26,7 +26,7 @@ swamp_gurrcat = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurrcat.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	hues = {  0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 17, 18, 22, 27, 32, 48, 57, 62, 67, 72, 77, 82 },
 	controlDeviceTemplate = "object/intangible/pet/tusk_cat_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

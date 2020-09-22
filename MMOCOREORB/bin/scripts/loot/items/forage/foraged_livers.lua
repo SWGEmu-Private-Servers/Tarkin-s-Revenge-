@@ -6,6 +6,7 @@ foraged_livers = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/edible_jar_livers.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

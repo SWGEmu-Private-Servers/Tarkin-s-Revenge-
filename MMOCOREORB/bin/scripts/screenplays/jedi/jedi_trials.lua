@@ -132,6 +132,7 @@ function JediTrials:unlockJediPadawan(pPlayer, dontSendSui)
 
 	CreatureObject(pPlayer):playEffect("clienteffect/trap_electric_01.cef", "")
 	CreatureObject(pPlayer):playMusicMessage("sound/music_become_jedi.snd")
+	broadcastGalaxy("\\#faff00IMPERIAL COMMUNICATIONS CENTER: Lord Vader has detected a disturbance in the Force. Be on the lookout for persons that exhibit odd or very unique abilities. The Governor has authorized the deadly use of force to erradicate this threat from the galaxy. Monetary Rewards will be posted.")
 
 	PlayerObject(pGhost):setJediState(2)
 
@@ -507,11 +508,6 @@ function JediTrials:completeKnightForTesting(pPlayer, councilType)
 			enclaveLoc = { 5079, 0, 305 }
 		end
 
-		local player = CreatureObject(pPlayer)
-
-		if (player:isRidingMount()) then
-			player:dismount()
-		end
 		SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
 	end
 end

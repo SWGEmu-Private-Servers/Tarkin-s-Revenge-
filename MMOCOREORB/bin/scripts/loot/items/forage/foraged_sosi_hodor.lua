@@ -6,6 +6,7 @@ foraged_sosi_hodor = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_vegetable_s5.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

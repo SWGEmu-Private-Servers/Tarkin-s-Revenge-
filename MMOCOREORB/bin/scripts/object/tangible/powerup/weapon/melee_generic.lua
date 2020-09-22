@@ -50,10 +50,9 @@ object_tangible_powerup_weapon_melee_generic = object_tangible_powerup_weapon_sh
 	baseName = "Melee Powerup",
 
 	primary = {
-		{"idealRange", "Ideal Range", "cat_pup.pup_wpn_range_mid"},
 		{"healthAttackCost", "Balancing", "cat_pup.pup_wpn_attack_cost_health"},
   		{"mindAttackCost", "Compensating", "cat_pup.pup_wpn_attack_cost_mind"},
-		{"pointBlankAccuracy", "Precision", "cat_pup.pup_wpn_range_attack_mod_zero"}
+  		{"actionAttackCost", "Cushioning", "cat_pup.pup_wpn_attack_cost_action"},
 	},
 
 	secondary = {
@@ -61,7 +60,9 @@ object_tangible_powerup_weapon_melee_generic = object_tangible_powerup_weapon_sh
 		{"attackSpeed", "Control Enhancement", "cat_pup.pup_wpn_attack_speed"},
 		{"woundsRatio", "Wounding", "cat_pup.pup_wpn_wound_chance"},
 		{"minDamage", "Precision", "cat_pup.pup_wpn_damage_min"},
-		{"maxDamage", "Refining", "cat_pup.pup_wpn_damage_max"}
+		{"maxDamage", "Refining", "cat_pup.pup_wpn_damage_max"},
+		{"idealRange", "Overpowering", "cat_pup.pup_wpn_range_mid"},
+		{"pointBlankAccuracy", "Searing", "cat_pup.pup_wpn_range_attack_mod_zero"},
 	},
 
 	numberExperimentalProperties = {1, 1, 1, 1},

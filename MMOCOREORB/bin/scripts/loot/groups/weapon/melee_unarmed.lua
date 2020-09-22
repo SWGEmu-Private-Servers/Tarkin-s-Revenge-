@@ -5,7 +5,8 @@ melee_unarmed = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "melee_vibroknuckler", weight = 10000000}
+		{itemTemplate = "melee_vibroknuckler", weight = 9900000},
+		{groupTemplate = "cu_nge_unarmed", weight = 100000}
 	}
 }
 

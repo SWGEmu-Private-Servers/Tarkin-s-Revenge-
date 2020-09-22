@@ -47,8 +47,8 @@ object_building_player_city_cloning_corellia = object_building_player_city_share
 	planetMapCategory = "cloningfacility",
 	facilityType = CLONER_PLAYER_CITY,
 	allowedZones = {"corellia", "talus"},
-	length = 5,
-	width = 5,
+	length = 1,
+	width = 1,
 	cityRankRequired = 3,
 	uniqueStructure = true,
 	cityMaintenanceBase = 20000,
@@ -64,7 +64,8 @@ object_building_player_city_cloning_corellia = object_building_player_city_share
 		{templateFile = "object/tangible/sign/municipal/municipal_sign_hanging_cloning.iff", x = 9.65, z = 2, y = 3, ox = 0, oy = 0.707107, oz = 0, ow = -0.707107, cellid = -1, containmentType = -1},
 		{templateFile = "object/tangible/terminal/terminal_player_structure.iff", x = -13.28604, z = -2.110639, y = -6.443224, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = 4, containmentType = -1},
 		{templateFile = "object/tangible/terminal/terminal_cloning.iff", x = -13.57625, z = -2.5, y = 3.1, ox = 0, oy = 0.707107, oz = 0, ow = 0.707107, cellid = 4, containmentType = -1},
-		{templateFile = "object/tangible/terminal/terminal_insurance.iff", x = 6.3812, z = 0.7, y = -6.61366, ox = 0, oy = 0.751335, oz = 0, ow = -0.659921, cellid = 4, containmentType = -1}
+		{templateFile = "object/tangible/terminal/terminal_insurance.iff", x = 6.3812, z = 0.7, y = -6.61366, ox = 0, oy = 0.751335, oz = 0, ow = -0.659921, cellid = 4, containmentType = -1},
+		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", x = 0.728736, z = 0.7, y = -9.51749, ox = 0, oy = 0, oz = 0, ow = 0, cellid = 4, containmentType = -1}
 	},
 }
 

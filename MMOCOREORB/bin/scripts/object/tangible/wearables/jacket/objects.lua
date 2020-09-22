@@ -1574,3 +1574,9 @@ object_tangible_wearables_jacket_shared_jacket_s36 = SharedTangibleObjectTemplat
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_jacket_shared_jacket_s36, "object/tangible/wearables/jacket/shared_jacket_s36.iff")
+
+object_tangible_wearables_jacket_shared_jacket_gmf_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/jacket/shared_jacket_gmf_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_wearables_jacket_shared_jacket_gmf_01, "object/tangible/wearables/jacket/shared_jacket_gmf_01.iff")

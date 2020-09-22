@@ -33,10 +33,18 @@ archaic_gondula_ritualist = Creature:new {
 	lootGroups = {
 		 {
 	        groups = {
-				{group = "ewok", chance = 10000000}
+				{group = "ewok", chance = 5000000},
+				{group = "wookiee_loot_common", chance = 3900000},
+				{group = "gondula_loot", chance = 1100000}
 			},
 			lootChance = 1600000
-		}
+		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

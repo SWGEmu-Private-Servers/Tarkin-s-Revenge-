@@ -108,3 +108,7 @@ includeFile("yavin4/woolamander_harrower.lua")
 includeFile("yavin4/woolamander_harvester.lua")
 includeFile("yavin4/woolamander.lua")
 includeFile("yavin4/woolamander_reaper.lua")
+
+includeFile("yavin4/domesticated_tybis.lua")
+includeFile("yavin4/domesticated_female_tybis.lua")
+includeFile("yavin4/mutant_angler.lua")

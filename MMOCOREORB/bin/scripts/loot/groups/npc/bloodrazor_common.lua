@@ -3,8 +3,9 @@ bloodrazor_common = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{groupTemplate = "wearables_common", weight = 9500000},
 		{itemTemplate = "flora_recycler_schematic", weight = 500000},
+		{groupTemplate = "misc_decoloot_schemes", weight = 9000000},
+		{itemTemplate = "speeder_lava_skiff_schematic", weight = 500000}
 	}
 }
 

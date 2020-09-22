@@ -1552,3 +1552,102 @@ object_weapon_ranged_pistol_shared_pistol_tangle = SharedWeaponObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_tangle, "object/weapon/ranged/pistol/shared_pistol_tangle.iff")
+
+--Intimidator Pistol
+object_weapon_ranged_pistol_shared_pistol_intimidator = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_intimidator.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_intimidator, "object/weapon/ranged/pistol/shared_pistol_intimidator.iff")
+
+--Alliance Disruptor Pistol
+object_weapon_ranged_pistol_shared_pistol_alliance_disruptor = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_alliance_disruptor.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_alliance_disruptor, "object/weapon/ranged/pistol/shared_pistol_alliance_disruptor.iff")
+
+--P-8 Lamprey Pistol
+object_weapon_ranged_pistol_shared_pistol_heroic_sd = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_heroic_sd.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_heroic_sd, "object/weapon/ranged/pistol/shared_pistol_heroic_sd.iff")
+
+--DD6 Pistol
+object_weapon_ranged_pistol_shared_pistol_dd6 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_dd6.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_dd6, "object/weapon/ranged/pistol/shared_pistol_dd6.iff")
+
+--Tchotchee Pistol
+object_weapon_ranged_pistol_shared_pistol_flare = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_flare.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_flare, "object/weapon/ranged/pistol/shared_pistol_flare.iff")
+
+--Renegade Pistol
+object_weapon_ranged_pistol_shared_pistol_renegade = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_renegade.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_renegade, "object/weapon/ranged/pistol/shared_pistol_renegade.iff")
+
+--Disruptor Pistol
+object_weapon_ranged_pistol_shared_som_disruptor_pistol = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_som_disruptor_pistol.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_som_disruptor_pistol, "object/weapon/ranged/pistol/shared_som_disruptor_pistol.iff")
+
+--Death-Hammer Pistol
+object_weapon_ranged_pistol_shared_pistol_deathhammer = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_deathhammer.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_deathhammer, "object/weapon/ranged/pistol/shared_pistol_deathhammer.iff")
+
+--Vexa Flechette Pistol
+object_weapon_ranged_pistol_shared_pistol_flechette = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_flechette.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_flechette, "object/weapon/ranged/pistol/shared_pistol_flechette.iff")
+
+--WESTAR-34 Pistol
+object_weapon_ranged_pistol_shared_pistol_westar_34 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_westar_34.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_westar_34, "object/weapon/ranged/pistol/shared_pistol_westar_34.iff")
+
+--Crusader M-XII Pistol
+object_weapon_ranged_pistol_shared_pistol_mandalorian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_mandalorian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_mandalorian, "object/weapon/ranged/pistol/shared_pistol_mandalorian.iff")
+
+--Ion Relic Pistol
+object_weapon_ranged_pistol_shared_som_ion_relic_pistol = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_som_ion_relic_pistol.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_som_ion_relic_pistol, "object/weapon/ranged/pistol/shared_som_ion_relic_pistol.iff")
+
+--Jawa Ion Pistol
+object_weapon_ranged_pistol_shared_pistol_jawa = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_jawa.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_jawa, "object/weapon/ranged/pistol/shared_pistol_jawa.iff")
+
+--C-M "Dead Bolt" Pistol
+object_weapon_ranged_pistol_shared_pistol_rebel = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_rebel, "object/weapon/ranged/pistol/shared_pistol_rebel.iff")
+
+--DH-18A Pistol Prototype
+object_weapon_ranged_pistol_shared_pistol_dh18a_gcw = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_dh18a_gcw.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_dh18a_gcw, "object/weapon/ranged/pistol/shared_pistol_dh18a_gcw.iff")
+
+--The Legendary Crimson Nova Pistol
+object_weapon_ranged_pistol_shared_pistol_pvp = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/pistol/shared_pistol_pvp.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_pistol_shared_pistol_pvp, "object/weapon/ranged/pistol/shared_pistol_pvp.iff")
+
+
+

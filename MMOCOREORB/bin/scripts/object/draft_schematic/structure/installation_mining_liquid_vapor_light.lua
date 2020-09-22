@@ -50,7 +50,7 @@ object_draft_schematic_structure_installation_mining_liquid_vapor_light = object
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 15,
 	size = 8,
-	factoryCrateSize = 1,
+	factoryCrateSize = 10,
 
 	xpType = "crafting_general",
 	xp = 425,

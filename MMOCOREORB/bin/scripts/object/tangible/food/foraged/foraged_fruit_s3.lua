@@ -57,10 +57,10 @@ object_tangible_food_foraged_foraged_fruit_s3 = object_tangible_food_foraged_sha
 	flavorMax = 0,
 	nutritionMin = 0,
 	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
+	quantityMin = 1,
+	quantityMax = 10,
 	
-	modifiers = { "action", 100, "mind", 25 },
+	modifiers = { "action", 200, "mind", 50 },
 
 	buffName = "alever_tweth'pek",
 	buffCRC = 0,

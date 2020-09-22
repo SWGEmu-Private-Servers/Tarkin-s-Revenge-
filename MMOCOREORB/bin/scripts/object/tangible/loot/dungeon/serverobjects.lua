@@ -46,5 +46,7 @@
 includeFile("tangible/loot/dungeon/corellian_corvette/serverobjects.lua")
 includeFile("tangible/loot/dungeon/death_watch_bunker/serverobjects.lua")
 includeFile("tangible/loot/dungeon/geonosian_mad_bunker/serverobjects.lua")
+includeFile("tangible/loot/dungeon/tarkin_custom/serverobjects.lua")
+includeFile("tangible/loot/dungeon/meatlump/serverobjects.lua")
 
 -- Server Objects

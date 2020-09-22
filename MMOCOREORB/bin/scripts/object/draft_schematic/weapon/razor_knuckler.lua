@@ -45,7 +45,7 @@ object_draft_schematic_weapon_razor_knuckler = object_draft_schematic_weapon_sha
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Blacksun Razor Knuckler Schematic",
+   customObjectName = "Black Sun Razor Knuckler",
 
    craftingToolTab = 1, -- (See DraftSchematicObjectTemplate.h)
    complexity = 25, 
@@ -57,17 +57,18 @@ object_draft_schematic_weapon_razor_knuckler = object_draft_schematic_weapon_sha
    assemblySkill = "weapon_assembly", 
    experimentingSkill = "weapon_experimentation", 
    customizationSkill = "weapon_customization", 
+   factoryCrateSize = 0,
 
    customizationOptions = {},
    customizationStringNames = {},
    customizationDefaults = {},
 
-   ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
-   ingredientTitleNames = {"grip_unit", "strike_face", "vibro_unit_and_power_cell_brackets", "power_cell_socket", "vibration_generator"},
-   ingredientSlotType = {0, 0, 0, 0, 1},
-   resourceTypes = {"metal_ferrous", "steel", "metal", "copper", "object/tangible/component/weapon/shared_vibro_unit_nightsister.iff"},
-   resourceQuantities = {12, 8, 8, 4, 1},
-   contribution = {100, 100, 100, 100, 100},
+   ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_item_ingredients_n", "craft_weapon_ingredients_n"},
+   ingredientTitleNames = {"grip_unit", "strike_face", "vibro_unit_and_power_cell_brackets", "power_cell_socket", "razor_blade", "vibration_generator"},
+   ingredientSlotType = {0, 0, 0, 0, 1, 1},
+   resourceTypes = {"steel_quadranium", "aluminum", "metal", "copper_platinite", "object/tangible/loot/dungeon/tarkin_custom/shared_razor_blade.iff", "object/tangible/component/weapon/shared_vibro_unit.iff"},
+   resourceQuantities = {60, 38, 12, 12, 1, 1},
+   contribution = {100, 100, 100, 100, 100, 100},
 
 
    targetTemplate = "object/weapon/melee/special/blacksun_razor.iff",

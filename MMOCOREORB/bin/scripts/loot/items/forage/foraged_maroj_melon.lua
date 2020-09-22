@@ -6,6 +6,7 @@ foraged_maroj_melon = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_fruit_s1.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

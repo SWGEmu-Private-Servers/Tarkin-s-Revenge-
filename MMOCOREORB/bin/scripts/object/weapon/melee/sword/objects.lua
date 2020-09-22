@@ -1426,3 +1426,63 @@ object_weapon_melee_sword_shared_sword_rantok = SharedWeaponObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_rantok, "object/weapon/melee/sword/shared_sword_rantok.iff")
+
+--Mustafar Bandit Sword
+object_weapon_melee_sword_shared_som_sword_mustafar_bandit = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_som_sword_mustafar_bandit.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_som_sword_mustafar_bandit, "object/weapon/melee/sword/shared_som_sword_mustafar_bandit.iff")
+
+--Urnsor'is Soulleecher
+object_weapon_melee_sword_shared_sword_massassi = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_massassi.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_massassi, "object/weapon/melee/sword/shared_sword_massassi.iff")
+
+--Eventide Smasher
+object_weapon_melee_sword_shared_ep3_loot_eventide = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_ep3_loot_eventide.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_ep3_loot_eventide, "object/weapon/melee/sword/shared_ep3_loot_eventide.iff")
+
+--Sith Sword
+object_weapon_melee_sword_shared_sword_pvp_bf_01 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_pvp_bf_01.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_pvp_bf_01, "object/weapon/melee/sword/shared_sword_pvp_bf_01.iff")
+
+--Nova Edge Sword
+object_weapon_melee_sword_shared_sword_rebel = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_rebel, "object/weapon/melee/sword/shared_sword_rebel.iff")
+
+--Obsidian Sword
+object_weapon_melee_sword_shared_som_sword_obsidian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_som_sword_obsidian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_som_sword_obsidian, "object/weapon/melee/sword/shared_som_sword_obsidian.iff")
+
+--Champion's Sword
+object_weapon_melee_sword_shared_sword_marauder = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_marauder.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_marauder, "object/weapon/melee/sword/shared_sword_marauder.iff")
+
+--RSF Sword
+object_weapon_melee_sword_shared_sword_rsf = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_rsf.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_rsf, "object/weapon/melee/sword/shared_sword_rsf.iff")
+
+--Xris Acid Sword
+object_weapon_melee_sword_shared_sword_acid = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_acid.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_acid, "object/weapon/melee/sword/shared_sword_acid.iff")
+
+--Crusader "Templar" Sword
+object_weapon_melee_sword_shared_sword_mandalorian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/sword/shared_sword_mandalorian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_sword_shared_sword_mandalorian, "object/weapon/melee/sword/shared_sword_mandalorian.iff")

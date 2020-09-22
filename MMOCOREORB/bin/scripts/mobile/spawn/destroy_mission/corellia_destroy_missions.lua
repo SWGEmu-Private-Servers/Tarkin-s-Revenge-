@@ -21,6 +21,12 @@ corellia_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "corellia_vrelt_lair_neutral_small",
+			minDifficulty = 4,
+			maxDifficulty = 8,
+			size = 25,
+		},
+		{
 			lairTemplateName = "corellia_durni_warren_neutral_small_boss_01",
 			minDifficulty = 5,
 			maxDifficulty = 9,
@@ -33,6 +39,24 @@ corellia_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "corellia_wooded_paralope_lair_neutral_medium",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_domestic_humbaba_lair_neutral_medium",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_domestic_krahbu_lair_neutral_medium",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 20,
+		},
+		{
 			lairTemplateName = "corellia_diseased_vrelt_lair_neutral_boss_02",
 			minDifficulty = 6,
 			maxDifficulty = 10,
@@ -40,6 +64,12 @@ corellia_destroy_missions = {
 		},
 		{
 			lairTemplateName = "corellia_scavenger_rat_lair_neutral_small",
+			minDifficulty = 6,
+			maxDifficulty = 10,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_domestic_bageraset_lair_neutral_medium",
 			minDifficulty = 6,
 			maxDifficulty = 10,
 			size = 20,
@@ -147,6 +177,18 @@ corellia_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "corellia_crazed_durni_warren_neutral_small",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
+			lairTemplateName = "corellia_diseased_vrelt_lair_neutral_boss_03",
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			size = 25,
+		},
+		{
 			lairTemplateName = "corellia_tabage_lair_neutral_medium",
 			minDifficulty = 9,
 			maxDifficulty = 13,
@@ -154,6 +196,30 @@ corellia_destroy_missions = {
 		},
 		{
 			lairTemplateName = "corellia_monumenter_base_neutral_medium_theater",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_forest_murra_lair_neutral_medium",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_plumed_rasp_eyrie_neutral_medium",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_swamp_gurrcat_lair_neutral_medium",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_wrix_lair_neutral_medium",
 			minDifficulty = 10,
 			maxDifficulty = 14,
 			size = 20,
@@ -171,6 +237,18 @@ corellia_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "corellia_violent_krahbu_lair_neutral_medium",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
+			lairTemplateName = "corellia_rogue_bageraset_lair_neutral_medium",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
 			lairTemplateName = "corellia_dire_cat_lair_neutral_medium",
 			minDifficulty = 12,
 			maxDifficulty = 16,
@@ -183,7 +261,25 @@ corellia_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "corellia_corellian_butterfly_hive_neutral_large_boss_01",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "corellia_grassland_slice_hound_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
 			lairTemplateName = "corellia_hidden_daggers_outpost_neutral_medium_theater",
+			minDifficulty = 13,
+			maxDifficulty = 18,
+			size = 25,
+		},
+		{
+			lairTemplateName = "corellia_forest_slice_hound_lair_neutral_medium",
 			minDifficulty = 13,
 			maxDifficulty = 18,
 			size = 25,
@@ -213,7 +309,25 @@ corellia_destroy_missions = {
 			size = 30,
 		},
 		{
+			lairTemplateName = "corellia_corellian_butterfly_hive_neutral_large",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 30,
+		},
+		{
 			lairTemplateName = "corellia_humbaba_lair_neutral_medium",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 30,
+		},
+		{
+			lairTemplateName = "corellia_dalyrake_nest_neutral_medium",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 30,
+		},
+		{
+			lairTemplateName = "corellia_mountain_murra_lair_neutral_medium",
 			minDifficulty = 15,
 			maxDifficulty = 19,
 			size = 30,
@@ -243,13 +357,37 @@ corellia_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "corellia_devil_gulginaw_nest_neutral_medium",
+			minDifficulty = 16,
+			maxDifficulty = 20,
+			size = 20,
+		},
+		{
+			lairTemplateName = "corellia_giant_dalyrake_lair_neutral_large",
+			minDifficulty = 16,
+			maxDifficulty = 20,
+			size = 20,
+		},
+		{
 			lairTemplateName = "corellia_corsec_camp_neutral_medium_theater",
 			minDifficulty = 17,
 			maxDifficulty = 21,
 			size = 30,
 		},
 		{
+			lairTemplateName = "corellia_swamp_humbaba_lair_neutral_medium",
+			minDifficulty = 17,
+			maxDifficulty = 21,
+			size = 30,
+		},
+		{
 			lairTemplateName = "corellia_razor_cat_pride_neutral_medium_boss_01",
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			size = 25,
+		},
+		{
+			lairTemplateName = "corellia_greater_gulginaw_nest_neutral_medium",
 			minDifficulty = 20,
 			maxDifficulty = 24,
 			size = 25,
@@ -279,6 +417,12 @@ corellia_destroy_missions = {
 			size = 30,
 		},
 		{
+			lairTemplateName = "corellia_grand_wrix_lair_neutral_medium",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 30,
+		},
+		{
 			lairTemplateName = "corellia_lord_nyax_visionary_neutral_large_theater",
 			minDifficulty = 25,
 			maxDifficulty = 31,
@@ -289,6 +433,18 @@ corellia_destroy_missions = {
 			minDifficulty = 27,
 			maxDifficulty = 31,
 			size = 30,
+		},
+		{
+			lairTemplateName = "corellia_varactyl_lair_neutral_medium",
+			minDifficulty = 27,
+			maxDifficulty = 31,
+			size = 35,
+		},
+		{
+			lairTemplateName = "corellia_crimson_sand_panther_pride_neutral_medium",
+			minDifficulty = 27,
+			maxDifficulty = 31,
+			size = 35,
 		},
 		{
 			lairTemplateName = "corellia_sharnaff_lair_neutral_large_boss_01",
@@ -302,6 +458,24 @@ corellia_destroy_missions = {
 			maxDifficulty = 34,
 			size = 35,
 		},
+		{
+			lairTemplateName = "corellia_varactyl_preystalker_neutral_large_boss_01",
+			minDifficulty = 31,
+			maxDifficulty = 35,
+			size = 35,
+		},
+		{
+			lairTemplateName = "corellia_elder_gronda_lair_neutral_large_boss_01",
+			minDifficulty = 33,
+			maxDifficulty = 35,
+			size = 35,
+		},
+		{
+			lairTemplateName = "corellia_mutant_gronda_lair_neutral_large",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

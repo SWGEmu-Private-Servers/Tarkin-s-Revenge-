@@ -16,7 +16,9 @@ generic_scientist_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "drall", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -32,7 +34,9 @@ generic_scientist_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "gungan", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -45,7 +49,9 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "drall", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -58,7 +64,24 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "alkhara", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
+			}
+		},
+		{
+			missionType = "escort",
+			primarySpawns =
+			{
+				{ npcTemplate = "gungan_hermit", npcName = "random" }
+			},
+			secondarySpawns = {},
+			itemSpawns = {},
+			rewards =
+			{
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "gungan", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -71,20 +94,9 @@ generic_scientist_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/insects_rare_s01.iff" }
-			}
-		},
-		{
-			missionType = "escort",
-			primarySpawns =
-			{
-				{ npcTemplate = "scientist_target_scientist", npcName = "random" }
-			},
-			secondarySpawns = {},
-			itemSpawns = {},
-			rewards =
-			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/picture_handheld_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "alkhara", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		}
 	}

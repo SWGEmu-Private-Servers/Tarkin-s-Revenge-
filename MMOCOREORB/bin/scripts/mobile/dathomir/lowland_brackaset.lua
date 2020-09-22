@@ -27,7 +27,7 @@ lowland_brackaset = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/brackaset_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	hues = { 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 32, 33, 34, 35, 36, 37, 38, 39, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 },
 	controlDeviceTemplate = "object/intangible/pet/brackaset_hue.iff",
 	scale = 0.9,
 	lootGroups = {

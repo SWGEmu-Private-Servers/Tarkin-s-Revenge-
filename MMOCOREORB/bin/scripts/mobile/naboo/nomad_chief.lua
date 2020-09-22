@@ -31,7 +31,7 @@ nomad_chief = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 2000000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "melee_knife", chance = 2000000},
 				{group = "tailor_components", chance = 2000000},
 				{group = "loot_kit_parts", chance = 2000000}

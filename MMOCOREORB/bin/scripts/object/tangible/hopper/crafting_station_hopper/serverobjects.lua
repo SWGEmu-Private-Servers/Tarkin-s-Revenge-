@@ -51,3 +51,4 @@ includeFile("tangible/hopper/crafting_station_hopper/crafting_station_ingredient
 includeFile("tangible/hopper/crafting_station_hopper/crafting_station_ingredient_hopper_structure_large.lua")
 includeFile("tangible/hopper/crafting_station_hopper/crafting_station_ingredient_hopper_structure_medium.lua")
 includeFile("tangible/hopper/crafting_station_hopper/crafting_station_ingredient_hopper_structure_small.lua")
+includeFile("tangible/hopper/crafting_station_hopper/crafting_station_ingredient_hopper_structure_incubator.lua")

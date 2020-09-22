@@ -42,6 +42,9 @@
 
 
 object_tangible_wearables_dress_nightsister_dress = object_tangible_wearables_dress_shared_nightsister_dress:new {
+
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_female.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/moncal_female.iff",

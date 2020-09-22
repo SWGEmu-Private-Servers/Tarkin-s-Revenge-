@@ -1300,3 +1300,106 @@ object_weapon_ranged_rifle_shared_rifle_victor_tusken = SharedWeaponObjectTempla
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_victor_tusken, "object/weapon/ranged/rifle/shared_rifle_victor_tusken.iff")
+
+--Massassi Ink Rifle
+object_weapon_ranged_rifle_shared_rifle_massassi_ink = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_massassi_ink.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_massassi_ink, "object/weapon/ranged/rifle/shared_rifle_massassi_ink.iff")
+
+--TC-22 Blaster Rifle
+object_weapon_ranged_rifle_shared_rifle_tc22_blaster = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_tc22_blaster.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_tc22_blaster, "object/weapon/ranged/rifle/shared_rifle_tc22_blaster.iff")
+
+--Disruptor Rifle
+object_weapon_ranged_rifle_shared_som_rifle_mustafar_disruptor = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_som_rifle_mustafar_disruptor.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_som_rifle_mustafar_disruptor, "object/weapon/ranged/rifle/shared_som_rifle_mustafar_disruptor.iff")
+
+--Proton Rifle
+object_weapon_ranged_rifle_shared_rifle_proton = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_proton.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_proton, "object/weapon/ranged/rifle/shared_rifle_proton.iff")
+
+--Geonosian Drill Rifle
+object_weapon_ranged_rifle_shared_rifle_geo_drill = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_geo_drill.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_geo_drill, "object/weapon/ranged/rifle/shared_rifle_geo_drill.iff")
+
+--BWDL19 Rifle
+object_weapon_ranged_rifle_shared_rifle_deathtroopers = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_deathtroopers.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_deathtroopers, "object/weapon/ranged/rifle/shared_rifle_deathtroopers.iff")
+
+--A280 Blaster Rifle
+object_weapon_ranged_rifle_shared_rifle_a280 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_a280.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_a280, "object/weapon/ranged/rifle/shared_rifle_a280.iff")
+
+--Alliance Gauss Rifle
+object_weapon_ranged_rifle_shared_rifle_alliance_gauss_generic = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_alliance_gauss_generic.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_alliance_gauss_generic, "object/weapon/ranged/rifle/shared_rifle_alliance_gauss_generic.iff")
+
+--LD-1 Rifle
+object_weapon_ranged_rifle_shared_rifle_ld1 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_ld1.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_ld1, "object/weapon/ranged/rifle/shared_rifle_ld1.iff")
+
+--C-M "Reaper" Sniper Rifle
+object_weapon_ranged_rifle_shared_rifle_rebel = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_rebel, "object/weapon/ranged/rifle/shared_rifle_rebel.iff")
+
+--DP-23 Rifle
+object_weapon_ranged_rifle_shared_som_rifle_dp23 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_som_rifle_dp23.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_som_rifle_dp23, "object/weapon/ranged/rifle/shared_som_rifle_dp23.iff")
+
+--The Legendary Vortex Rifle
+object_weapon_ranged_rifle_shared_rifle_pvp = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_pvp.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_pvp, "object/weapon/ranged/rifle/shared_rifle_pvp.iff")
+
+--WESTAR-M5 Blaster Rifle
+object_weapon_ranged_rifle_shared_rifle_westar_m5 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_westar_m5.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_westar_m5, "object/weapon/ranged/rifle/shared_rifle_westar_m5.iff")
+
+--Jinkins J-1 Rifle
+object_weapon_ranged_rifle_shared_jinkins_j1_rifle = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_jinkins_j1_rifle.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_jinkins_j1_rifle, "object/weapon/ranged/rifle/shared_jinkins_j1_rifle.iff")
+
+--E-Web Rifle
+object_weapon_ranged_rifle_shared_rifle_eweb = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_eweb.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_eweb, "object/weapon/ranged/rifle/shared_rifle_eweb.iff")
+
+--Crusader M-XIV Rifle
+object_weapon_ranged_rifle_shared_rifle_mandalorian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_mandalorian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_mandalorian, "object/weapon/ranged/rifle/shared_rifle_mandalorian.iff")
+
+--Fallann Hyper-Rifle
+object_weapon_ranged_rifle_shared_rifle_adventurer = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_adventurer.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_adventurer, "object/weapon/ranged/rifle/shared_rifle_adventurer.iff")
+

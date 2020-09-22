@@ -16,7 +16,7 @@ zucca_boar = Creature:new {
 	hideType = "hide_leathery",
 	hideAmount = 40,
 	boneType = "bone_mammal",
-	boneAmount = 25,
+	boneAmount = 30,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -27,8 +27,15 @@ zucca_boar = Creature:new {
 
 	templates = {"object/mobile/zucca_boar_hue.iff"},
 	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
-	controlDeviceTemplate = "object/intangible/pet/pet_control.iff", -- zucca_boar_hue.iff bugged in client
-	lootGroups = {},
+	controlDeviceTemplate = "object/intangible/pet/zucca_boar_hue.iff",
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "zucca_boar_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

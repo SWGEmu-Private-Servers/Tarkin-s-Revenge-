@@ -6,6 +6,7 @@ foraged_etost_ew_zann = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_vegetable_s4.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

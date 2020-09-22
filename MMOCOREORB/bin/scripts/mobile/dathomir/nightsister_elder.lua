@@ -12,7 +12,7 @@ nightsister_elder = Creature:new {
 	baseHAM = 321000,
 	baseHAMmax = 392000,
 	armor = 3,
-	resists = {200,25,25,200,200,200,200,200,-1},
+	resists = {200,25,25,200,200,200,200,200,40},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -39,14 +39,16 @@ nightsister_elder = Creature:new {
 				{group = "pistols", chance = 800000},
 				{group = "rifles", chance = 800000},
 				{group = "carbines", chance = 900000},
-				{group = "melee_weapons", chance = 2000000},
-				{group = "wearables_scarce", chance = 500000}
+				{group = "melee_weapons", chance = 1850000},
+				{group = "wearables_scarce", chance = 500000},
+				{group = "melee_weapons", chance = 100000},
+				{group = "deed_voucher", chance = 50000}
 			}
 		}
 	},
-	weapons = {"mixed_force_weapons"},
+	weapons = {},
 	conversationTemplate = "",
-	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
+	attacks = merge(tkamaster,brawlermaster,forcepowermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(nightsister_elder, "nightsister_elder")

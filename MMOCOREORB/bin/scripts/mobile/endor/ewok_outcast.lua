@@ -34,7 +34,13 @@ ewok_outcast = Creature:new {
 				{group = "ewok", chance = 10000000}
 			},
 			lootChance = 1620000
-		}
+		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

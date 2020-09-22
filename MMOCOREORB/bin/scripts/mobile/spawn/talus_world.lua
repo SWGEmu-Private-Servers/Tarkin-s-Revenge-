@@ -1414,6 +1414,60 @@ talus_world = {
 			weighting = 2,
 			size = 25
 		},
+		{
+			lairTemplateName = "talus_docile_kahmurra_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "talus_giant_decay_mite_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "talus_minor_guf_drolg_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "talus_minor_sludge_panther_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 8,
+			maxDifficulty = 12,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "talus_tortur_bull_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 20,
+			maxDifficulty = 24,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "talus_voracious_rasp_lair_neutral_small",
+			spawnLimit = -1,
+			minDifficulty = 25,
+			maxDifficulty = 29,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
 	}
 }
 

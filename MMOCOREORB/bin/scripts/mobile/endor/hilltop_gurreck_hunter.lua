@@ -15,8 +15,8 @@ hilltop_gurreck_hunter = Creature:new {
 	meatAmount = 75,
 	hideType = "hide_wooly",
 	hideAmount = 45,
-	boneType = "",
-	boneAmount = 0,
+	boneType = "bone_mammal",
+	boneAmount = 40,
 	milkType = "milk_wild",
 	milk = 45,
 	tamingChance = 0,
@@ -27,9 +27,16 @@ hilltop_gurreck_hunter = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurreck_hue.iff"},
-	hues = { 0, 1, 2, 3, 4, 5, 6, 7 },
+	hues = { 0, 1, 2, 3, 7, 12, 17 },
 	scale = 1.05,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "gurreck_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

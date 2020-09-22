@@ -29,7 +29,14 @@ female_razor_cat = Creature:new {
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	controlDeviceTemplate = "object/intangible/pet/corellian_sand_panther_hue.iff",
 	scale = 0.95,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "corellian_sand_panther_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

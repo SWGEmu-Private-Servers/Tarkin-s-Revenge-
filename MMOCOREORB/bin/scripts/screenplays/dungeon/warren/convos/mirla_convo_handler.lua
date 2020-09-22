@@ -52,12 +52,10 @@ function MirlaConversationHandler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 		return convoTemplate:getScreen("mirla_start")
 	end
 
-	if (PlayerObject(pGhost):hasBadge(38)) then -- Compassion
-		if (PlayerObject(pGhost):hasBadge(39)) then -- Hero
-			return convoTemplate:getScreen("mirla_done")
-		else
-			return convoTemplate:getScreen("mirla_get_teraud")
-		end
+	if (PlayerObject(pGhost):hasBadge(39)) then
+		return convoTemplate:getScreen("mirla_done")
+	elseif (PlayerObject(pGhost):hasBadge(38)) then
+		return convoTemplate:getScreen("mirla_get_teraud")
 	end
 
 	return convoTemplate:getScreen("mirla_start")

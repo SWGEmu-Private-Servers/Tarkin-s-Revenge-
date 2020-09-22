@@ -28,15 +28,15 @@ corellia_medium = {
 			weighting = 10,
 			size = 20
 		},
-		{
-			lairTemplateName = "corellia_lord_nyax_chapel_neutral_medium_theater",
-			spawnLimit = -1,
-			minDifficulty = 8,
-			maxDifficulty = 12,
-			numberToSpawn = 0,
-			weighting = 10,
-			size = 25
-		},
+--		{
+--			lairTemplateName = "corellia_lord_nyax_chapel_neutral_medium_theater",
+--			spawnLimit = -1,
+--			minDifficulty = 8,
+--			maxDifficulty = 12,
+--			numberToSpawn = 0,
+--			weighting = 10,
+--			size = 25
+--		},
 		{
 			lairTemplateName = "corellia_meatlump_outpost_neutral_medium_theater",
 			spawnLimit = -1,

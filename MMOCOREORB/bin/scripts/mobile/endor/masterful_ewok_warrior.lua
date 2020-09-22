@@ -35,7 +35,13 @@ masterful_ewok_warrior = Creature:new {
 				{group = "ewok", chance = 10000000}
 			},
 			lootChance = 1220000
-		}
+		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	attacks = merge(marksmanmid,brawlermid)

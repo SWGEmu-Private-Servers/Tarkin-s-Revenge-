@@ -35,7 +35,7 @@ local artistPaintingZAxis = {
 
 local artistMobiles = {
 	{ template = "vanvi_hotne", x = 3312.29, z = 5, y = -4655.46, direction = 228.889, cellID = 0, position = STAND },
-	{ template = "kolka_zteht", x = 1521.78, z = 7, y = 3259.81, direction = 184.256, cellID = 0, position = STAND },
+	{ template = "kolka_zteht", x = 1531.35, z = 7, y = 3222.47, direction = 184.256, cellID = 0, position = STAND },
 	{ template = "giaal_itotr", x = -3102.7, z = 5, y = 2185, direction = 118, cellID = 0, position = SIT },
 	{ template = "kahfr_oladi", x = 3473.4, z = 5, y = -4974.8, direction = 104, cellID = 0, position = SIT },
 	{ template = "klepa_laeel", x = -2769.5, z = 5, y = 2111.1, direction = 104, cellID = 0, position = SIT },

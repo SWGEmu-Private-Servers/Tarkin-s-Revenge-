@@ -5881,3 +5881,598 @@ object_tangible_deed_pet_deed_shared_zucca_boar_deed = SharedTangibleObjectTempl
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_zucca_boar_deed, "object/tangible/deed/pet_deed/shared_zucca_boar_deed.iff")
+
+object_tangible_deed_pet_deed_shared_baz_nitch_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_baz_nitch_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_baz_nitch_deed, "object/tangible/deed/pet_deed/shared_baz_nitch_deed.iff")
+
+object_tangible_deed_pet_deed_shared_borgle_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_borgle_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_borgle_deed, "object/tangible/deed/pet_deed/shared_borgle_deed.iff")
+
+object_tangible_deed_pet_deed_shared_chuba_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_chuba_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_chuba_deed, "object/tangible/deed/pet_deed/shared_chuba_deed.iff")
+
+object_tangible_deed_pet_deed_shared_corellian_butterfly_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_corellian_butterfly_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_corellian_butterfly_deed, "object/tangible/deed/pet_deed/shared_corellian_butterfly_deed.iff")
+
+object_tangible_deed_pet_deed_shared_female_narglatch_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_female_narglatch_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_female_narglatch_deed, "object/tangible/deed/pet_deed/shared_female_narglatch_deed.iff")
+
+object_tangible_deed_pet_deed_shared_flewt_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_flewt_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_flewt_deed, "object/tangible/deed/pet_deed/shared_flewt_deed.iff")
+
+object_tangible_deed_pet_deed_shared_flit_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_flit_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_flit_deed, "object/tangible/deed/pet_deed/shared_flit_deed.iff")
+
+object_tangible_deed_pet_deed_shared_fynock_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_fynock_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_fynock_deed, "object/tangible/deed/pet_deed/shared_fynock_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gackle_bat_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gackle_bat_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gackle_bat_deed, "object/tangible/deed/pet_deed/shared_gackle_bat_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gualaar_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gualaar_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gualaar_deed, "object/tangible/deed/pet_deed/shared_gualaar_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gubbur_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gubbur_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gubbur_deed, "object/tangible/deed/pet_deed/shared_gubbur_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gulginaw_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gulginaw_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gulginaw_deed, "object/tangible/deed/pet_deed/shared_gulginaw_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gurk_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gurk_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gurk_deed, "object/tangible/deed/pet_deed/shared_gurk_deed.iff")
+
+object_tangible_deed_pet_deed_shared_hanadak_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_hanadak_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_hanadak_deed, "object/tangible/deed/pet_deed/shared_hanadak_deed.iff")
+
+object_tangible_deed_pet_deed_shared_horned_krevol_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_horned_krevol_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_horned_krevol_deed, "object/tangible/deed/pet_deed/shared_horned_krevol_deed.iff")
+
+object_tangible_deed_pet_deed_shared_horned_rasp_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_horned_rasp_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_horned_rasp_deed, "object/tangible/deed/pet_deed/shared_horned_rasp_deed.iff")
+
+object_tangible_deed_pet_deed_shared_kai_tok_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_kai_tok_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_kai_tok_deed, "object/tangible/deed/pet_deed/shared_kai_tok_deed.iff")
+
+object_tangible_deed_pet_deed_shared_lantern_bird_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_lantern_bird_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_lantern_bird_deed, "object/tangible/deed/pet_deed/shared_lantern_bird_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mamien_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mamien_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mamien_deed, "object/tangible/deed/pet_deed/shared_mamien_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mynock_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mynock_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mynock_deed, "object/tangible/deed/pet_deed/shared_mynock_deed.iff")
+
+object_tangible_deed_pet_deed_shared_nuna_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_nuna_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_nuna_deed, "object/tangible/deed/pet_deed/shared_nuna_deed.iff")
+
+object_tangible_deed_pet_deed_shared_peko_peko_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_peko_peko_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_peko_peko_deed, "object/tangible/deed/pet_deed/shared_peko_peko_deed.iff")
+
+object_tangible_deed_pet_deed_shared_perlek_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_perlek_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_perlek_deed, "object/tangible/deed/pet_deed/shared_perlek_deed.iff")
+
+object_tangible_deed_pet_deed_shared_pharple_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_pharple_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_pharple_deed, "object/tangible/deed/pet_deed/shared_pharple_deed.iff")
+
+object_tangible_deed_pet_deed_shared_plumed_rasp_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_plumed_rasp_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_plumed_rasp_deed, "object/tangible/deed/pet_deed/shared_plumed_rasp_deed.iff")
+
+object_tangible_deed_pet_deed_shared_purbole_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_purbole_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_purbole_deed, "object/tangible/deed/pet_deed/shared_purbole_deed.iff")
+
+object_tangible_deed_pet_deed_shared_quenker_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_quenker_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_quenker_deed, "object/tangible/deed/pet_deed/shared_quenker_deed.iff")
+
+object_tangible_deed_pet_deed_shared_reptilian_flier_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_reptilian_flier_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_reptilian_flier_deed, "object/tangible/deed/pet_deed/shared_reptilian_flier_deed.iff")
+
+object_tangible_deed_pet_deed_shared_salt_mynock_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_salt_mynock_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_salt_mynock_deed, "object/tangible/deed/pet_deed/shared_salt_mynock_deed.iff")
+
+object_tangible_deed_pet_deed_shared_shaupaut_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_shaupaut_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_shaupaut_deed, "object/tangible/deed/pet_deed/shared_shaupaut_deed.iff")
+
+object_tangible_deed_pet_deed_shared_skreeg_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_skreeg_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_skreeg_deed, "object/tangible/deed/pet_deed/shared_skreeg_deed.iff")
+
+object_tangible_deed_pet_deed_shared_spined_snake_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_spined_snake_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_spined_snake_deed, "object/tangible/deed/pet_deed/shared_spined_snake_deed.iff")
+
+object_tangible_deed_pet_deed_shared_squill_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_squill_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_squill_deed, "object/tangible/deed/pet_deed/shared_squill_deed.iff")
+
+object_tangible_deed_pet_deed_shared_varactyl_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_varactyl_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_varactyl_deed, "object/tangible/deed/pet_deed/shared_varactyl_deed.iff")
+
+object_tangible_deed_pet_deed_shared_voritor_lizard_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_voritor_lizard_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_voritor_lizard_deed, "object/tangible/deed/pet_deed/shared_voritor_lizard_deed.iff")
+
+object_tangible_deed_pet_deed_shared_vynock_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_vynock_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_vynock_deed, "object/tangible/deed/pet_deed/shared_vynock_deed.iff")
+
+object_tangible_deed_pet_deed_shared_womp_rat_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_womp_rat_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_womp_rat_deed, "object/tangible/deed/pet_deed/shared_womp_rat_deed.iff")
+
+object_tangible_deed_pet_deed_shared_worrt_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_worrt_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_worrt_deed, "object/tangible/deed/pet_deed/shared_worrt_deed.iff")
+
+object_tangible_deed_pet_deed_shared_bane_back_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_bane_back_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_bane_back_deed, "object/tangible/deed/pet_deed/shared_bane_back_deed.iff")
+
+object_tangible_deed_pet_deed_shared_barbed_quenker_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_barbed_quenker_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_barbed_quenker_deed, "object/tangible/deed/pet_deed/shared_barbed_quenker_deed.iff")
+
+object_tangible_deed_pet_deed_shared_blistmok_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_blistmok_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_blistmok_deed, "object/tangible/deed/pet_deed/shared_blistmok_deed.iff")
+
+object_tangible_deed_pet_deed_shared_crystal_snake_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_crystal_snake_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_crystal_snake_deed, "object/tangible/deed/pet_deed/shared_crystal_snake_deed.iff")
+
+object_tangible_deed_pet_deed_shared_fanned_rawl_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_fanned_rawl_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_fanned_rawl_deed, "object/tangible/deed/pet_deed/shared_fanned_rawl_deed.iff")
+
+object_tangible_deed_pet_deed_shared_finned_blaggart_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_finned_blaggart_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_finned_blaggart_deed, "object/tangible/deed/pet_deed/shared_finned_blaggart_deed.iff")
+
+object_tangible_deed_pet_deed_shared_forage_worm_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_forage_worm_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_forage_worm_deed, "object/tangible/deed/pet_deed/shared_forage_worm_deed.iff")
+
+object_tangible_deed_pet_deed_shared_hawk_bat_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_hawk_bat_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_hawk_bat_deed, "object/tangible/deed/pet_deed/shared_hawk_bat_deed.iff")
+
+object_tangible_deed_pet_deed_shared_jundak_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_jundak_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_jundak_deed, "object/tangible/deed/pet_deed/shared_jundak_deed.iff")
+
+object_tangible_deed_pet_deed_shared_kittle_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_kittle_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_kittle_deed, "object/tangible/deed/pet_deed/shared_kittle_deed.iff")
+
+object_tangible_deed_pet_deed_shared_kubaza_beetle_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_kubaza_beetle_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_kubaza_beetle_deed, "object/tangible/deed/pet_deed/shared_kubaza_beetle_deed.iff")
+
+object_tangible_deed_pet_deed_shared_lava_flea_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_lava_flea_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_lava_flea_deed, "object/tangible/deed/pet_deed/shared_lava_flea_deed.iff")
+
+object_tangible_deed_pet_deed_shared_minstyngar_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_minstyngar_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_minstyngar_deed, "object/tangible/deed/pet_deed/shared_minstyngar_deed.iff")
+
+object_tangible_deed_pet_deed_shared_monkey_lizard_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_monkey_lizard_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_monkey_lizard_deed, "object/tangible/deed/pet_deed/shared_monkey_lizard_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mooc_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mooc_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mooc_deed, "object/tangible/deed/pet_deed/shared_mooc_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mouf_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mouf_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mouf_deed, "object/tangible/deed/pet_deed/shared_mouf_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_narglatch_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_narglatch_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_narglatch_deed, "object/tangible/deed/pet_deed/shared_mutated_narglatch_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_acklay_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_acklay_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_acklay_deed, "object/tangible/deed/pet_deed/shared_mutated_acklay_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_boar_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_boar_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_boar_deed, "object/tangible/deed/pet_deed/shared_mutated_boar_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_bol_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_bol_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_bol_deed, "object/tangible/deed/pet_deed/shared_mutated_bol_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_bolle_bol_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_bolle_bol_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_bolle_bol_deed, "object/tangible/deed/pet_deed/shared_mutated_bolle_bol_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_borgax_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_borgax_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_borgax_deed, "object/tangible/deed/pet_deed/shared_mutated_borgax_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_cat_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_cat_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_cat_deed, "object/tangible/deed/pet_deed/shared_mutated_cat_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_chuba_fly_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_chuba_fly_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_chuba_fly_deed, "object/tangible/deed/pet_deed/shared_mutated_chuba_fly_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_cu_pa_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_cu_pa_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_cu_pa_deed, "object/tangible/deed/pet_deed/shared_mutated_cu_pa_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_dewback_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_dewback_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_dewback_deed, "object/tangible/deed/pet_deed/shared_mutated_dewback_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_durni_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_durni_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_durni_deed, "object/tangible/deed/pet_deed/shared_mutated_durni_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_griffon_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_griffon_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_griffon_deed, "object/tangible/deed/pet_deed/shared_mutated_griffon_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_hermit_spider_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_hermit_spider_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_hermit_spider_deed, "object/tangible/deed/pet_deed/shared_mutated_hermit_spider_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_jax_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_jax_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_jax_deed, "object/tangible/deed/pet_deed/shared_mutated_jax_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_kimogila_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_kimogila_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_kimogila_deed, "object/tangible/deed/pet_deed/shared_mutated_kimogila_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_malkloc_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_malkloc_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_malkloc_deed, "object/tangible/deed/pet_deed/shared_mutated_malkloc_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_quenker_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_quenker_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_quenker_deed, "object/tangible/deed/pet_deed/shared_mutated_quenker_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_rancor_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_rancor_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_rancor_deed, "object/tangible/deed/pet_deed/shared_mutated_rancor_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_reek_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_reek_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_reek_deed, "object/tangible/deed/pet_deed/shared_mutated_reek_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_slice_hound_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_slice_hound_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_slice_hound_deed, "object/tangible/deed/pet_deed/shared_mutated_slice_hound_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_thune_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_thune_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_thune_deed, "object/tangible/deed/pet_deed/shared_mutated_thune_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_varasquactyl_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_varasquactyl_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_varasquactyl_deed, "object/tangible/deed/pet_deed/shared_mutated_varasquactyl_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mutated_vesp_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mutated_vesp_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mutated_vesp_deed, "object/tangible/deed/pet_deed/shared_mutated_vesp_deed.iff")
+
+object_tangible_deed_pet_deed_shared_nexu_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_nexu_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_nexu_deed, "object/tangible/deed/pet_deed/shared_nexu_deed.iff")
+
+object_tangible_deed_pet_deed_shared_pangrack_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_pangrack_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_pangrack_deed, "object/tangible/deed/pet_deed/shared_pangrack_deed.iff")
+
+object_tangible_deed_pet_deed_shared_reek_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_reek_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_reek_deed, "object/tangible/deed/pet_deed/shared_reek_deed.iff")
+
+object_tangible_deed_pet_deed_shared_spiderclan_consort_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_spiderclan_consort_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_spiderclan_consort_deed, "object/tangible/deed/pet_deed/shared_spiderclan_consort_deed.iff")
+
+object_tangible_deed_pet_deed_shared_spiderclan_queen_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_spiderclan_queen_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_spiderclan_queen_deed, "object/tangible/deed/pet_deed/shared_spiderclan_queen_deed.iff")
+
+object_tangible_deed_pet_deed_shared_tanray_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_tanray_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_tanray_deed, "object/tangible/deed/pet_deed/shared_tanray_deed.iff")
+
+object_tangible_deed_pet_deed_shared_tulrus_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_tulrus_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_tulrus_deed, "object/tangible/deed/pet_deed/shared_tulrus_deed.iff")
+
+object_tangible_deed_pet_deed_shared_uller_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_uller_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_uller_deed, "object/tangible/deed/pet_deed/shared_uller_deed.iff")
+
+object_tangible_deed_pet_deed_shared_urnsoris_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_urnsoris_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_urnsoris_deed, "object/tangible/deed/pet_deed/shared_urnsoris_deed.iff")
+
+object_tangible_deed_pet_deed_shared_uwari_beetle_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_uwari_beetle_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_uwari_beetle_deed, "object/tangible/deed/pet_deed/shared_uwari_beetle_deed.iff")
+
+object_tangible_deed_pet_deed_shared_walluga_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_walluga_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_walluga_deed, "object/tangible/deed/pet_deed/shared_walluga_deed.iff")
+
+object_tangible_deed_pet_deed_shared_wampa_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_wampa_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_wampa_deed, "object/tangible/deed/pet_deed/shared_wampa_deed.iff")
+
+object_tangible_deed_pet_deed_shared_webweaver_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_webweaver_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_webweaver_deed, "object/tangible/deed/pet_deed/shared_webweaver_deed.iff")
+
+object_tangible_deed_pet_deed_shared_xandank_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_xandank_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_xandank_deed, "object/tangible/deed/pet_deed/shared_xandank_deed.iff")
+
+object_tangible_deed_pet_deed_shared_armored_bantha_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_armored_bantha_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_armored_bantha_deed, "object/tangible/deed/pet_deed/shared_armored_bantha_deed.iff")
+
+object_tangible_deed_pet_deed_shared_armored_dewback_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_armored_dewback_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_armored_dewback_deed, "object/tangible/deed/pet_deed/shared_armored_dewback_deed.iff")
+
+object_tangible_deed_pet_deed_shared_armored_tauntaun_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_armored_tauntaun_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_armored_tauntaun_deed, "object/tangible/deed/pet_deed/shared_armored_tauntaun_deed.iff")
+
+object_tangible_deed_pet_deed_shared_armored_varactyl_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_armored_varactyl_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_armored_varactyl_deed, "object/tangible/deed/pet_deed/shared_armored_varactyl_deed.iff")
+
+object_tangible_deed_pet_deed_shared_whisper_bird_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_whisper_bird_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_whisper_bird_deed, "object/tangible/deed/pet_deed/shared_whisper_bird_deed.iff")
+
+object_tangible_deed_pet_deed_shared_bark_mite_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_bark_mite_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_bark_mite_deed, "object/tangible/deed/pet_deed/shared_bark_mite_deed.iff")
+
+object_tangible_deed_pet_deed_shared_blackwing_rancor_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_blackwing_rancor_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_blackwing_rancor_deed, "object/tangible/deed/pet_deed/shared_blackwing_rancor_deed.iff")
+
+object_tangible_deed_pet_deed_shared_capper_spineflap_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_capper_spineflap_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_capper_spineflap_deed, "object/tangible/deed/pet_deed/shared_capper_spineflap_deed.iff")
+
+object_tangible_deed_pet_deed_shared_razor_angler_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_razor_angler_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_razor_angler_deed, "object/tangible/deed/pet_deed/shared_razor_angler_deed.iff")
+
+object_tangible_deed_pet_deed_shared_remmer_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_remmer_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_remmer_deed, "object/tangible/deed/pet_deed/shared_remmer_deed.iff")
+
+object_tangible_deed_pet_deed_shared_spined_puc_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_spined_puc_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_spined_puc_deed, "object/tangible/deed/pet_deed/shared_spined_puc_deed.iff")
+
+object_tangible_deed_pet_deed_shared_stintaril_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_stintaril_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_stintaril_deed, "object/tangible/deed/pet_deed/shared_stintaril_deed.iff")
+
+object_tangible_deed_pet_deed_shared_tanc_mite_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_tanc_mite_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_tanc_mite_deed, "object/tangible/deed/pet_deed/shared_tanc_mite_deed.iff")
+
+object_tangible_deed_pet_deed_shared_dwarf_nuna_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_dwarf_nuna_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_dwarf_nuna_deed, "object/tangible/deed/pet_deed/shared_dwarf_nuna_deed.iff")
+
+object_tangible_deed_pet_deed_shared_gaping_spider_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_gaping_spider_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_gaping_spider_deed, "object/tangible/deed/pet_deed/shared_gaping_spider_deed.iff")
+
+object_tangible_deed_pet_deed_shared_mantigrue_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_mantigrue_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_mantigrue_deed, "object/tangible/deed/pet_deed/shared_mantigrue_deed.iff")
+
+object_tangible_deed_pet_deed_shared_katarn_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_katarn_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_katarn_deed, "object/tangible/deed/pet_deed/shared_katarn_deed.iff")
+
+object_tangible_deed_pet_deed_shared_kkorrwrot_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_kkorrwrot_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_kkorrwrot_deed, "object/tangible/deed/pet_deed/shared_kkorrwrot_deed.iff")
+
+object_tangible_deed_pet_deed_shared_flite_rasp_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_flite_rasp_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_flite_rasp_deed, "object/tangible/deed/pet_deed/shared_flite_rasp_deed.iff")
+
+object_tangible_deed_pet_deed_shared_crowned_rasp_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_crowned_rasp_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_crowned_rasp_deed, "object/tangible/deed/pet_deed/shared_crowned_rasp_deed.iff")
+
+object_tangible_deed_pet_deed_shared_painted_spat_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_painted_spat_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_painted_spat_deed, "object/tangible/deed/pet_deed/shared_painted_spat_deed.iff")
+
+object_tangible_deed_pet_deed_shared_murra_blanca_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_murra_blanca_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_murra_blanca_deed, "object/tangible/deed/pet_deed/shared_murra_blanca_deed.iff")
+
+object_tangible_deed_pet_deed_shared_spiketail_blurrg_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_spiketail_blurrg_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_spiketail_blurrg_deed, "object/tangible/deed/pet_deed/shared_spiketail_blurrg_deed.iff")
+
+object_tangible_deed_pet_deed_shared_scorpion_kliknik_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_scorpion_kliknik_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_scorpion_kliknik_deed, "object/tangible/deed/pet_deed/shared_scorpion_kliknik_deed.iff")
+
+object_tangible_deed_pet_deed_shared_nerf_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_nerf_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_nerf_deed, "object/tangible/deed/pet_deed/shared_nerf_deed.iff")
+
+object_tangible_deed_pet_deed_shared_bolotaur_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_bolotaur_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_bolotaur_deed, "object/tangible/deed/pet_deed/shared_bolotaur_deed.iff")
+
+object_tangible_deed_pet_deed_shared_kashyyyk_bantha_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_kashyyyk_bantha_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_kashyyyk_bantha_deed, "object/tangible/deed/pet_deed/shared_kashyyyk_bantha_deed.iff")
+
+object_tangible_deed_pet_deed_shared_skeletal_tauntaun_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/pet_deed/shared_skeletal_tauntaun_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_pet_deed_shared_skeletal_tauntaun_deed, "object/tangible/deed/pet_deed/shared_skeletal_tauntaun_deed.iff")

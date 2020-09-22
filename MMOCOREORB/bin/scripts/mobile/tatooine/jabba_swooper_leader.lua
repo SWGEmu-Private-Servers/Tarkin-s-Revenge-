@@ -32,11 +32,11 @@ jabba_swooper_leader = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 1500000},
-				{group = "wearables_common", chance = 2000000},
 				{group = "melee_weapons", chance = 2000000},
 				{group = "tailor_components", chance = 1500000},
-				{group = "loot_kit_parts", chance = 1500000},
-				{group = "jabba_common", chance = 1500000}
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "jabba_common", chance = 1500000},
+				{group = "swooper_common", chance = 1500000}
 			}
 		}
 	},

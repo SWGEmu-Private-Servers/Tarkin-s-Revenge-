@@ -57,10 +57,10 @@ object_tangible_food_foraged_edible_jar_livers = object_tangible_food_foraged_sh
 	flavorMax = 0,
 	nutritionMin = 0,
 	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
+	quantityMin = 1,
+	quantityMax = 10,
 	
-	modifiers = { "health", 100, "action", 50 },
+	modifiers = { "health", 200, "action", 150 },
 
 	buffName = "jar_livers",
 	buffCRC = 0,

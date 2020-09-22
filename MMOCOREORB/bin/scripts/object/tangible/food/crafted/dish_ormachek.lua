@@ -44,21 +44,21 @@
 object_tangible_food_crafted_dish_ormachek = object_tangible_food_crafted_shared_dish_ormachek:new {
 	templateType = CONSUMABLE,
 
-	duration = 11,
-	filling = 10,
+	duration = 3600,
+	filling = 35,
 	nutrition = 10,
 
-	effectType = 3, -- Event Based Buff
+	effectType = 2, -- Duration Based Buff
 	eventTypes = {XPAWARDED},
 
-	fillingMin = 90,
-	fillingMax = 55,
-	flavorMin = 11,
-	flavorMax = 25,
-	nutritionMin = 3,
-	nutritionMax = 5,
-	quantityMin = 1,
-	quantityMax = 1,
+	fillingMin = 35,
+	fillingMax = 15,
+	flavorMin = 3600,
+	flavorMax = 10800,
+	nutritionMin = 5,
+	nutritionMax = 25,
+	quantityMin = 5,
+	quantityMax = 10,
 
 	modifiers = { "xp_increase", 0 },
 
@@ -66,15 +66,15 @@ object_tangible_food_crafted_dish_ormachek = object_tangible_food_crafted_shared
 	buffCRC = 0,
 	speciesRestriction = "",
 
-	numberExperimentalProperties = {1, 1, 1, 2, 2, 1, 2},
-	experimentalProperties = {"XX", "XX", "XX", "OQ", "PE", "FL", "OQ", "XX", "DR", "OQ"},
-	experimentalWeights = {1, 1, 1, 1, 2, 2, 1, 1, 3, 1},
-	experimentalGroupTitles = {"null", "null", "null", "exp_nutrition", "exp_flavor", "null", "exp_filling"},
-	experimentalSubGroupTitles = {"null", "null", "hitpoints", "nutrition", "flavor", "quantity", "filling"},
-	experimentalMin = {0, 0, 1000, 75, 60, 60, 80},
-	experimentalMax = {0, 0, 1000, 120, 120, 100, 120},
-	experimentalPrecision = {0, 0, 0, 10, 10, 0, 10},
-	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1},
+	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 1},
+	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "PE", "FL", "OQ", "DR", "PE", "DR", "OQ", "XX"},
+	experimentalWeights = {1, 1, 1, 1, 1, 2, 2, 1, 1, 3, 3, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null", "null", "exp_nutrition", "exp_flavor", "exp_quantity", "exp_filling", "null"},
+	experimentalSubGroupTitles = {"null", "null", "hitpoints", "quantity_bonus", "nutrition", "flavor", "quantity", "filling", "stomach"},
+	experimentalMin = {0, 0, 1000, 0, 75, 60, 60, 60, 1},
+	experimentalMax = {0, 0, 1000, 0, 120, 120, 100, 120, 1},
+	experimentalPrecision = {0, 0, 0, 0, 0, 0, 0, 10, 0},
+	experimentalCombineType = {0, 0, 4, 1, 1, 1, 1, 1, 1},
 }
 
 ObjectTemplates:addTemplate(object_tangible_food_crafted_dish_ormachek, "object/tangible/food/crafted/dish_ormachek.iff")

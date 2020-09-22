@@ -21,6 +21,12 @@ dantooine_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "dantooine_gualaar_lair_neutral_medium",
+			minDifficulty = 21,
+			maxDifficulty = 25,
+			size = 20,
+		},
+		{
 			lairTemplateName = "dantooine_dantari_raider_camp_neutral_large_theater",
 			minDifficulty = 23,
 			maxDifficulty = 27,
@@ -57,7 +63,25 @@ dantooine_destroy_missions = {
 			size = 35,
 		},
 		{
+			lairTemplateName = "dantooine_domestic_bol_lair_neutral_medium",
+			minDifficulty = 26,
+			maxDifficulty = 30,
+			size = 35,
+		},
+		{
 			lairTemplateName = "dantooine_graul_lair_neutral_medium",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 35,
+		},
+		{
+			lairTemplateName = "dantooine_walluga_lair_neutral_medium",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 35,
+		},
+		{
+			lairTemplateName = "dantooine_huurton_huntress_lair_neutral_medium_boss_01",
 			minDifficulty = 28,
 			maxDifficulty = 32,
 			size = 35,
@@ -72,6 +96,30 @@ dantooine_destroy_missions = {
 			lairTemplateName = "dantooine_piket_longhorn_lair_neutral_medium",
 			minDifficulty = 30,
 			maxDifficulty = 37,
+			size = 30,
+		},
+		{
+			lairTemplateName = "dantooine_piket_plains_walker_lair_neutral_large",
+			minDifficulty = 30,
+			maxDifficulty = 37,
+			size = 30,
+		},
+		{
+			lairTemplateName = "dantooine_piket_protector_herd_neutral_none_boss_01",
+			minDifficulty = 30,
+			maxDifficulty = 37,
+			size = 30,
+		},
+		{
+			lairTemplateName = "dantooine_hostile_thune_lair_neutral_large_boss_01",
+			minDifficulty = 30,
+			maxDifficulty = 37,
+			size = 30,
+		},
+		{
+			lairTemplateName = "dantooine_frenzied_walluga_lair_neutral_medium",
+			minDifficulty = 32,
+			maxDifficulty = 36,
 			size = 30,
 		},
 		{
@@ -94,6 +142,18 @@ dantooine_destroy_missions = {
 		},
 		{
 			lairTemplateName = "dantooine_quenker_ravager_lair_neutral_medium",
+			minDifficulty = 36,
+			maxDifficulty = 40,
+			size = 25,
+		},
+		{
+			lairTemplateName = "dantooine_elder_walluga_lair_neutral_large_boss_01",
+			minDifficulty = 36,
+			maxDifficulty = 40,
+			size = 25,
+		},
+		{
+			lairTemplateName = "dantooine_thune_grassland_guardian_lair_neutral_large",
 			minDifficulty = 36,
 			maxDifficulty = 40,
 			size = 25,
@@ -153,6 +213,12 @@ dantooine_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "dantooine_graul_ancient_lair_neutral_large",
+			minDifficulty = 48,
+			maxDifficulty = 52,
+			size = 25,
+		},
+		{
 			lairTemplateName = "dantooine_janta_scout_neutral_none",
 			minDifficulty = 49,
 			maxDifficulty = 53,
@@ -171,6 +237,12 @@ dantooine_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "dantooine_graul_frenzied_lair_neutral_large",
+			minDifficulty = 55,
+			maxDifficulty = 59,
+			size = 25,
+		},
+		{
 			lairTemplateName = "dantooine_janta_shaman_camp_neutral_medium_theater",
 			minDifficulty = 55,
 			maxDifficulty = 60,
@@ -182,6 +254,12 @@ dantooine_destroy_missions = {
 			maxDifficulty = 62,
 			size = 25,
 		},
+		{
+			lairTemplateName = "dantooine_mutant_bol_lair_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 yavin4_qurvel_lair_neutral_medium = Lair:new {
-	mobiles = {{"kai_tok_slayer",1},{"kai_tok_bloodreaver",1}},
+	mobiles = {{"kai_tok_slayer",1},{"kai_tok_bloodreaver",1},{"kai_tok_prowler",1},{"kai_tok_scavenger",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_nest_large_fog_gray.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_nest_large_fog_gray.iff"},

@@ -48,7 +48,8 @@ blood_razor_officer = Creature:new {
 				{group = "clothing_attachments", chance = 300000},
 				{group = "armor_attachments", chance = 300000},
 				{group = "bloodrazor_common", chance = 1500000},
-				{group = "wearables_uncommon", chance = 500000},
+				{group = "wearables_uncommon", chance = 300000},
+				{group = "razors_rare", chance = 200000}
 			}
 		}
 	},

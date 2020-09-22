@@ -33,7 +33,9 @@ gnarled_donkuwah_spiritmaster = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "donkuwah_common", chance = 10000000}
+				{group = "donkuwah_common", chance = 3600000},
+				{group = "wookiee_loot_common", chance = 4400000},
+				{group = "donkuwah_loot", chance = 2000000}
 			},
 			lootChance = 1700000
 		}

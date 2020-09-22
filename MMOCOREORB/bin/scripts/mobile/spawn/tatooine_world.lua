@@ -1315,6 +1315,33 @@ tatooine_world = {
 			weighting = 2,
 			size = 35
 		},
+		{
+			lairTemplateName = "tatooine_bantha_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "tatooine_rogue_bantha_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "tatooine_tusken_bantha_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
 	}
 }
 

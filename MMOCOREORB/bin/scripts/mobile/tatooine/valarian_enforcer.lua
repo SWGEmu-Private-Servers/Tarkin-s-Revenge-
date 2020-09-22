@@ -32,7 +32,7 @@ valarian_enforcer = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 2000000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "tailor_components", chance = 1000000},
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "printer_parts", chance = 1500000},

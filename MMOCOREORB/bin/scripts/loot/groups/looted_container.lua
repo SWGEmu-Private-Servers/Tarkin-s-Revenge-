@@ -45,8 +45,11 @@ looted_container = {
 		-- Armors (25% chance)
 		{groupTemplate = "armor_all", weight = 2500000},
 
-		-- Clothing (25% chance)
-		{groupTemplate = "wearables_all", weight = 2500000},
+		-- Windowed Houses (12.5% chance)
+		{groupTemplate = "window_houses", weight = 1250000},
+
+		-- Elite Backpacks (12.5% chance)
+		{groupTemplate = "elite_backpacks", weight = 1250000}
 	}
 }
 

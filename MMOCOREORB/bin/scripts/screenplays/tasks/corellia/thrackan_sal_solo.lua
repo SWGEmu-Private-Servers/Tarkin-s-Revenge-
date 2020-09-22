@@ -69,7 +69,7 @@ thrackan_sal_solo_missions =
 npcMapThrackanSalSolo =
 	{
 		{
-			spawnData = { npcTemplate = "thrackan_sal_solo", x = 0.4, z = 1.2, y = 0.8, direction = 0, cellID = 1855483, position = STAND },
+			spawnData = { npcTemplate = "thrackan_sal_solo", x = -303.103, z = 28, y = -4660.15, direction = 171, cellID = 0, position = STAND },
 			worldPosition = { x = -275, y = -4720 },
 			npcNumber = 1,
 			stfFile = "@static_npc/corellia/thrackan_sal_solo",

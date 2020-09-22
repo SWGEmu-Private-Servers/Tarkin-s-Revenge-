@@ -36,7 +36,7 @@ imperial_deserter = Creature:new {
 				{group = "melee_weapons", chance = 1500000},
 				{group = "clothing_attachments", chance = 250000},
 				{group = "armor_attachments", chance = 250000},
-				{group = "wearables_common", chance = 500000}
+				{group = "misc_decoloot_schemes", chance = 500000}
 			}
 		}
 	},

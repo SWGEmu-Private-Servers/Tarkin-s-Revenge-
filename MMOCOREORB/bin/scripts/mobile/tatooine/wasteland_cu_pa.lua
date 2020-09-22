@@ -26,7 +26,7 @@ wasteland_cu_pa = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/cu_pa_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	hues = { 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 44, 45, 46, 47, 51, 52, 53, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73 },
 	controlDeviceTemplate = "object/intangible/pet/cu_pa_hue.iff",
 	scale = 1.2,
 	lootGroups = {},

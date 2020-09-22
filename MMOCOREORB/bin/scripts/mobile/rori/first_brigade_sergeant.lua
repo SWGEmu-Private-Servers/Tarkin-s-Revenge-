@@ -34,7 +34,7 @@ first_brigade_sergeant = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 5000000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "color_crystals", chance = 500000},
 				{group = "rifles", chance = 1000000},
 				{group = "pistols", chance = 1000000},

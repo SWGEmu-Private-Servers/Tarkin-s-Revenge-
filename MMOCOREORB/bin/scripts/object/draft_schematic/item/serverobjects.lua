@@ -46,6 +46,7 @@
 includeFile("draft_schematic/item/component/serverobjects.lua")
 includeFile("draft_schematic/item/quest_item/serverobjects.lua")
 includeFile("draft_schematic/item/theme_park/serverobjects.lua")
+includeFile("draft_schematic/item/tarkin_custom/serverobjects.lua")
 
 -- Server Objects
 includeFile("draft_schematic/item/craftable_bug_habitat.lua")

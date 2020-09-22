@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("weapon/ranged/rifle/base/serverobjects.lua")
+includeFile("weapon/ranged/rifle/ep3/serverobjects.lua")
 
 -- Server Objects
 includeFile("weapon/ranged/rifle/rifle_acid_beam.lua")
@@ -66,3 +67,22 @@ includeFile("weapon/ranged/rifle/rifle_t21.lua")
 includeFile("weapon/ranged/rifle/rifle_tenloss_dxr6_disruptor_loot.lua")
 includeFile("weapon/ranged/rifle/rifle_tusken.lua")
 includeFile("weapon/ranged/rifle/rifle_victor_tusken.lua")
+
+--Post 14 Weapons
+includeFile("weapon/ranged/rifle/rifle_massassi_ink.lua")
+includeFile("weapon/ranged/rifle/rifle_tc22_blaster.lua")
+includeFile("weapon/ranged/rifle/som_rifle_mustafar_disruptor.lua")
+includeFile("weapon/ranged/rifle/rifle_proton.lua")
+includeFile("weapon/ranged/rifle/rifle_geo_drill.lua")
+includeFile("weapon/ranged/rifle/rifle_deathtroopers.lua")
+includeFile("weapon/ranged/rifle/rifle_a280.lua")
+includeFile("weapon/ranged/rifle/rifle_alliance_gauss_generic.lua")
+includeFile("weapon/ranged/rifle/rifle_ld1.lua")
+includeFile("weapon/ranged/rifle/rifle_rebel.lua")
+includeFile("weapon/ranged/rifle/rifle_pvp.lua")
+includeFile("weapon/ranged/rifle/som_rifle_dp23.lua")
+includeFile("weapon/ranged/rifle/rifle_westar_m5.lua")
+includeFile("weapon/ranged/rifle/rifle_eweb.lua")
+includeFile("weapon/ranged/rifle/jinkins_j1_rifle.lua")
+includeFile("weapon/ranged/rifle/rifle_mandalorian.lua")
+includeFile("weapon/ranged/rifle/rifle_adventurer.lua")

@@ -136,3 +136,7 @@ includeFile("lok/vesp_scavenger.lua")
 includeFile("lok/vixur_webb.lua")
 includeFile("lok/weak_mercenary.lua")
 includeFile("lok/young_spined_snake.lua")
+
+includeFile("lok/spiderclan_queen.lua")
+includeFile("lok/spiderclan_queen_mother.lua")
+includeFile("lok/mutant_snorbal.lua")

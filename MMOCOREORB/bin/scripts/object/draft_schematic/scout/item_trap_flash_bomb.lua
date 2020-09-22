@@ -66,7 +66,7 @@ object_draft_schematic_scout_item_trap_flash_bomb = object_draft_schematic_scout
    ingredientTitleNames = {"device_housing", "device_interior"},
    ingredientSlotType = {0, 0},
    resourceTypes = {"bone", "metal"},
-   resourceQuantities = {20, 15},
+   resourceQuantities = {200, 150},
    contribution = {100, 100},
 
 

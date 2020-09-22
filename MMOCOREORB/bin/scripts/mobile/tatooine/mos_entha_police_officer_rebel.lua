@@ -50,7 +50,7 @@ mos_entha_police_officer_rebel = Creature:new {
 				{group = "pistols", chance = 1000000},
 				{group = "melee_weapons", chance = 1000000},
 				{group = "carbines", chance = 1000000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "misc_decoloot_schemes", chance = 1000000}
 			}
 		}
 	},

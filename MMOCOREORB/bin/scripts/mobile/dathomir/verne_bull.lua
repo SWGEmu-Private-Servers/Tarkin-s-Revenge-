@@ -12,8 +12,8 @@ verne_bull = Creature:new {
 	armor = 0,
 	resists = {5,5,5,-1,-1,125,125,-1,-1},
 	meatType = "meat_wild",
-	meatAmount = 110,
-	hideType = "hide_leathery",
+	meatAmount = 150,
+	hideType = "hide_wooly",
 	hideAmount = 95,
 	boneType = "bone_mammal",
 	boneAmount = 85,
@@ -30,7 +30,14 @@ verne_bull = Creature:new {
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	controlDeviceTemplate = "object/intangible/pet/verne_hue.iff",
 	scale = 1.15,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "verne_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

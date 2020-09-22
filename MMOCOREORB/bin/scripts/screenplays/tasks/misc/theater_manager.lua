@@ -90,7 +90,7 @@ end
 
 function TheaterManagerScreenPlay:spawnMobiles()
 	if (isZoneEnabled("naboo")) then
-		spawnMobile("naboo", "theater_manager",0,21.6399,2.12801,63.523,0,5475487)
+		spawnMobile("naboo", "theater_manager",0,-5810.4,6,4140.18,100,0)
 	end
 end
 

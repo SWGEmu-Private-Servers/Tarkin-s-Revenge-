@@ -15,8 +15,8 @@ crazed_gurreck = Creature:new {
 	meatAmount = 55,
 	hideType = "hide_wooly",
 	hideAmount = 20,
-	boneType = "",
-	boneAmount = 0,
+	boneType = "bone_mammal",
+	boneAmount = 35,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -26,10 +26,17 @@ crazed_gurreck = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/gurreck_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	hues = { 0, 1, 2, 3, 7, 12, 17 },
 	controlDeviceTemplate = "object/intangible/pet/gurreck_hue.iff",
 	scale = 0.95,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "gurreck_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -98,12 +98,14 @@ object_tangible_wearables_armor_marine_armor_marine_backpack = object_tangible_w
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = ELECTRICITY + ACID + STUN + LIGHTSABER,
+	vulnerability = STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 1,
 	actionEncumbrance = 1,
 	mindEncumbrance = 1,
+
+	maxCondition = 45000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
@@ -116,7 +118,17 @@ object_tangible_wearables_armor_marine_armor_marine_backpack = object_tangible_w
 	heat = 15,
 	cold = 15,
 	acid = 15,
-	lightSaber = 0
+	lightSaber = 0,
+
+	numberExperimentalProperties = {1, 1, 1},
+	experimentalProperties = {"XX", "XX", "XX"},
+	experimentalWeights = {1, 1, 1},
+	experimentalGroupTitles = {"null", "null", "null"},
+	experimentalSubGroupTitles = {"null", "null", "null"},
+	experimentalMin = {0, 0, 0},
+	experimentalMax = {0, 0, 0},
+	experimentalPrecision = {0, 0, 0},
+	experimentalCombineType = {0, 0, 0}
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_marine_armor_marine_backpack, "object/tangible/wearables/armor/marine/armor_marine_backpack.iff")

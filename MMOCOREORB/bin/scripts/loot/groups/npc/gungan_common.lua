@@ -3,9 +3,10 @@ gungan_common = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	lootItems = {
-		{itemTemplate = "gungan_signet", weight = 3333333},
-		{itemTemplate = "gungan_lance", weight =  3333333},
-		{groupTemplate = "wearables_common", weight = 3333334},
+		{itemTemplate = "gungan_signet", weight = 1666667},
+		{itemTemplate = "gungan_lance", weight =  1666667},
+		{groupTemplate = "misc_decoloot_schemes", weight = 5000000},
+		{itemTemplate = "swamp_speeder_schematic", weight =  1666666}
 	}
 }
 

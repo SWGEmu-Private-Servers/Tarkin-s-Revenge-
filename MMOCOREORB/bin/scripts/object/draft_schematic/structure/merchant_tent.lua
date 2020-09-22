@@ -50,7 +50,7 @@ object_draft_schematic_structure_merchant_tent = object_draft_schematic_structur
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 13,
 	size = 10,
-	factoryCrateSize = 1,
+	factoryCrateSize = 10,
 
 	xpType = "crafting_structure_general",
 	xp = 2400,
@@ -72,6 +72,9 @@ object_draft_schematic_structure_merchant_tent = object_draft_schematic_structur
 
 	targetTemplate = "object/tangible/deed/player_house_deed/merchant_tent_style_01_deed.iff",
 
-	additionalTemplates = {}
+	additionalTemplates = {
+		"object/tangible/deed/player_house_deed/shared_merchant_tent_style_02_deed.iff",
+		"object/tangible/deed/player_house_deed/shared_merchant_tent_style_03_deed.iff"
+	}
 }
 ObjectTemplates:addTemplate(object_draft_schematic_structure_merchant_tent, "object/draft_schematic/structure/merchant_tent.iff")

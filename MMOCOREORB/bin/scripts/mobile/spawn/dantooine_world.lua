@@ -793,6 +793,87 @@ dantooine_world = {
 			weighting = 3,
 			size = 25
 		},
+		{
+			lairTemplateName = "dantooine_domestic_bol_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_hostile_thune_lair_neutral_large_boss_01",
+			spawnLimit = -1,
+			minDifficulty = 30,
+			maxDifficulty = 37,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_huurton_huntress_lair_neutral_medium_boss_01",
+			spawnLimit = -1,
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_piket_plains_walker_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 30,
+			maxDifficulty = 37,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_thune_grassland_guardian_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 36,
+			maxDifficulty = 40,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_gualaar_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 21,
+			maxDifficulty = 25,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_walluga_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_elder_walluga_lair_neutral_large_boss_01",
+			spawnLimit = -1,
+			minDifficulty = 36,
+			maxDifficulty = 40,
+			numberToSpawn = 0,
+			weighting = 3,
+			size = 25
+		},
+		{
+			lairTemplateName = "dantooine_frenzied_walluga_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			numberToSpawn = 0,
+			weighting = 3,
+			size = 25
+		},
 	}
 }
 

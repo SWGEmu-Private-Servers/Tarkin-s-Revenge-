@@ -10,7 +10,9 @@ generic_criminal_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/shisa_decorative_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "bandit", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -23,7 +25,9 @@ generic_criminal_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/holocron_splinters_sith_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "thug", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -36,7 +40,9 @@ generic_criminal_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/decryptor_broken_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "plasma_thief", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -49,7 +55,9 @@ generic_criminal_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/speaker_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "naboo_pirate", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -65,7 +73,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/shisa_decorative_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "bandit", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -81,7 +91,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/decryptor_broken_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "thug", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -97,7 +109,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/holocron_splinters_sith_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "plasma_thief", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -113,7 +127,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/speaker_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "pirate", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -129,7 +145,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/shisa_decorative_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "swoop", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -145,7 +163,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/decryptor_broken_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "pirate", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -161,7 +181,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/holocron_splinters_sith_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "naboo_pirate", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -177,7 +199,9 @@ generic_criminal_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/speaker_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "swoop", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 	}

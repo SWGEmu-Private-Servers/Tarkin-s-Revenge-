@@ -1,5 +1,5 @@
 yavin4_gackle_bat_lair_neutral_boss_01 = Lair:new {
-	mobiles = {{"gackle_bat",1}},
+	mobiles = {{"gackle_bat",1},{"ravaging_gackle_bat",1}},
 	bossMobiles = {{"vampiric_gackle_bat",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_bones_evil_fire_small.iff"},

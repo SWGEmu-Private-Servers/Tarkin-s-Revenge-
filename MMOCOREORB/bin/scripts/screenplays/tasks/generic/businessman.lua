@@ -23,7 +23,9 @@ generic_businessman_missions =
 			itemSpawns = {},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "fed_dub", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -35,11 +37,13 @@ generic_businessman_missions =
 			secondarySpawns = {},
 			itemSpawns =
 			{
-				{ itemTemplate = "object/tangible/loot/misc/briefcase_s01.iff", itemName = "A Locked Briefcase" }
+				{ itemTemplate = "object/tangible/tarkin_custom/decorative/unlocked_briefcase.iff", itemName = "Unlocked Briefcase" }
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/inkpen_engraved_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "trade_federation", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -55,7 +59,9 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "fed_dub", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -67,11 +73,13 @@ generic_businessman_missions =
 			secondarySpawns = {},
 			itemSpawns =
 			{
-				{ itemTemplate = "object/tangible/loot/misc/briefcase_s01.iff", itemName = "A Locked Briefcase" }
+				{ itemTemplate = "object/tangible/tarkin_custom/decorative/unlocked_briefcase.iff", itemName = "Unlocked Briefcase" }
 			},
 			rewards =
 			{
-				{ rewardType = "item", itemTemplate = "object/tangible/loot/misc/inkpen_engraved_s01.iff" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "trade_federation", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		},
 		{
@@ -87,7 +95,9 @@ generic_businessman_missions =
 			},
 			rewards =
 			{
-				{ rewardType = "loot", lootGroup = "generic_quests_businessman_expired_ticket" }
+				{ rewardType = "loot", lootGroup = "generic_quests" },
+				{ rewardType = "faction", faction = "fed_dub", amount =  getRandomNumber(125, 250) },
+				{ rewardType = "credits", amount = getRandomNumber(350, 500) }
 			}
 		}
 	}

@@ -12,11 +12,11 @@ frenzied_choku = Creature:new {
 	armor = 0,
 	resists = {10,10,10,10,10,10,10,-1,-1},
 	meatType = "meat_avian",
-	meatAmount = 10,
-	hideType = "",
-	hideAmount = 0,
+	meatAmount = 65,
+	hideType = "hide_bristley",
+	hideAmount = 35,
 	boneType = "bone_avian",
-	boneAmount = 8,
+	boneAmount = 30,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 0,
@@ -29,7 +29,14 @@ frenzied_choku = Creature:new {
 	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	controlDeviceTemplate = "object/intangible/pet/choku_hue.iff",
 	scale = 1.15,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "choku_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -6,7 +6,10 @@ skill_buff_thrown_speed = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 20
 }
 
 addLootItemTemplate("skill_buff_thrown_speed", skill_buff_thrown_speed)

@@ -35,10 +35,18 @@ competent_panshee_ritualist = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 10000000}
+				{group = "ewok", chance = 4400000},
+				{group = "wookiee_loot_common", chance = 3500000},
+				{group = "panshee_loot", chance = 2100000}
 			},
 			lootChance = 1440000
-		}
+		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

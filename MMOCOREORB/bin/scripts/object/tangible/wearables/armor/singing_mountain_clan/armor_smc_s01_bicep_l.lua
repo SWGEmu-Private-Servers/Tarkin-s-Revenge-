@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bicep_l = object_tangible_wearables_armor_singing_mountain_clan_shared_armor_smc_s01_bicep_l:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_female.iff",
 				"object/creature/player/human_female.iff",
 				"object/creature/player/moncal_female.iff",
@@ -64,25 +66,28 @@ object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bicep_l = ob
 				"object/mobile/vendor/zabrak_female.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = HEAT + ACID + STUN + LIGHTSABER,
+	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 1,
 	actionEncumbrance = 1,
 	mindEncumbrance = 1,
 
+	maxCondition = 1000,
+
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
+	kinetic = 0,
+	energy = 0,
+	electricity = 0,
+	stun = 0,
+	blast = 0,
+	heat = 0,
+	cold = 0,
+	acid = 0,
 	lightSaber = 0
+
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bicep_l, "object/tangible/wearables/armor/singing_mountain_clan/armor_smc_s01_bicep_l.iff")

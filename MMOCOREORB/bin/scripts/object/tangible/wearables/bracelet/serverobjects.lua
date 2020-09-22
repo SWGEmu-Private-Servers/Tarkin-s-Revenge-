@@ -57,3 +57,6 @@ includeFile("tangible/wearables/bracelet/bracelet_s05_l.lua")
 includeFile("tangible/wearables/bracelet/bracelet_s05_r.lua")
 includeFile("tangible/wearables/bracelet/bracelet_s06_l.lua")
 includeFile("tangible/wearables/bracelet/bracelet_s06_r.lua")
+
+includeFile("tangible/wearables/bracelet/primitive_bracelet.lua")
+includeFile("tangible/wearables/bracelet/bracelet_wod_crafting_l.lua")

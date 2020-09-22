@@ -34,9 +34,10 @@ kobola_guard = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 2400000},
-				{group = "tailor_components", chance = 2000000},
+				{group = "tailor_components", chance = 1800000},
 				{group = "loot_kit_parts", chance = 2000000},
-				{group = "kobola_common", chance = 3600000}
+				{group = "kobola_common", chance = 3600000},
+				{group = "kobola_rare", chance = 200000}
 			}
 		}
 	},

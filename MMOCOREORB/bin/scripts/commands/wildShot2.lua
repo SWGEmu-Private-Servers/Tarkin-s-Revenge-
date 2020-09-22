@@ -56,7 +56,7 @@ WildShot2Command = {
 
 	combatSpam = "widewildshot",
 	
-	coneAngle = 30,
+	coneAngle = 60,
 	coneAction = true,
 
 	stateEffects = {

@@ -66,7 +66,7 @@ object_draft_schematic_scout_item_trap_drowsy_dart = object_draft_schematic_scou
    ingredientTitleNames = {"dart_housing", "dart_tip"},
    ingredientSlotType = {0, 0},
    resourceTypes = {"hide", "bone"},
-   resourceQuantities = {3, 3},
+   resourceQuantities = {30, 30},
    contribution = {100, 100},
 
 

@@ -46,3 +46,4 @@
 
 -- Server Objects
 includeFile("tangible/travel/ticket_collector/ticket_collector.lua")
+includeFile("tangible/travel/ticket_collector/star_tours.lua")

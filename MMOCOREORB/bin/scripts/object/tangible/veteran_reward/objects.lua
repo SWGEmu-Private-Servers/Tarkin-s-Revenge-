@@ -1279,3 +1279,199 @@ object_tangible_veteran_reward_shared_resource = SharedTangibleObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_resource, "object/tangible/veteran_reward/shared_resource.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_april_07 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_april_07.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_april_07, "object/tangible/veteran_reward/shared_frn_vet_painting_april_07.iff")
+
+object_tangible_veteran_reward_shared_frn_vet_painting_community_summit_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_painting_community_summit_s02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_painting_community_summit_s02, "object/tangible/veteran_reward/shared_frn_vet_painting_community_summit_s02.iff")
+
+--Plush Tauntaun
+object_tangible_veteran_reward_shared_frn_plush_tauntaun = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_plush_tauntaun.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_plush_tauntaun, "object/tangible/veteran_reward/shared_frn_plush_tauntaun.iff")
+
+--Geonisian in Carbonite
+object_tangible_veteran_reward_shared_frn_vet_carbonite_geonosian = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_carbonite_geonosian.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_carbonite_geonosian, "object/tangible/veteran_reward/shared_frn_vet_carbonite_geonosian.iff")
+
+--Gungan in Carbonite
+object_tangible_veteran_reward_shared_frn_vet_carbonite_gungan = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_carbonite_gungan.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_carbonite_gungan, "object/tangible/veteran_reward/shared_frn_vet_carbonite_gungan.iff")
+
+--Ugnaught in Carbonite
+object_tangible_veteran_reward_shared_frn_vet_carbonite_ugnaught = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_carbonite_ugnaught.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_carbonite_ugnaught, "object/tangible/veteran_reward/shared_frn_vet_carbonite_ugnaught.iff")
+
+--Houseplant 1
+object_tangible_veteran_reward_shared_frn_vet_houseplant = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_houseplant.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_houseplant, "object/tangible/veteran_reward/shared_frn_vet_houseplant.iff")
+
+--Houseplant 2
+object_tangible_veteran_reward_shared_frn_vet_houseplant_02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_houseplant_02.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_houseplant_02, "object/tangible/veteran_reward/shared_frn_vet_houseplant_02.iff")
+
+--Display Stand
+object_tangible_veteran_reward_shared_frn_vet_display_stand = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_display_stand.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_display_stand, "object/tangible/veteran_reward/shared_frn_vet_display_stand.iff")
+
+--Emperor's Chair
+object_tangible_veteran_reward_shared_frn_vet_emp_chair = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_emp_chair.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_emp_chair, "object/tangible/veteran_reward/shared_frn_vet_emp_chair.iff")
+
+--Goggles
+object_tangible_veteran_reward_shared_emperors_day_goggles = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_emperors_day_goggles.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_emperors_day_goggles, "object/tangible/veteran_reward/shared_emperors_day_goggles.iff")
+
+--Imperial Rug
+object_tangible_veteran_reward_shared_frn_vet_rug_imperial = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_rug_imperial.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_rug_imperial, "object/tangible/veteran_reward/shared_frn_vet_rug_imperial.iff")
+
+--Rebel Rug
+object_tangible_veteran_reward_shared_frn_vet_rug_rebel = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_rug_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_rug_rebel, "object/tangible/veteran_reward/shared_frn_vet_rug_rebel.iff")
+
+--Darth Maul Statue
+object_tangible_veteran_reward_shared_darth_maul_statue = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_darth_maul_statue.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_darth_maul_statue, "object/tangible/veteran_reward/shared_darth_maul_statue.iff")
+
+--AT-AT Toy
+object_tangible_veteran_reward_shared_frn_vet_atat_toy = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_atat_toy.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_atat_toy, "object/tangible/veteran_reward/shared_frn_vet_atat_toy.iff")
+
+--Boba Fett Toy
+object_tangible_veteran_reward_shared_frn_vet_boba_toy = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_boba_toy.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_boba_toy, "object/tangible/veteran_reward/shared_frn_vet_boba_toy.iff")
+
+--Corvette Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_corvette = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_corvette.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_corvette, "object/tangible/veteran_reward/shared_frn_vet_holo_corvette.iff")
+
+--Darth Vader Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_darth_vader = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_darth_vader.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_darth_vader, "object/tangible/veteran_reward/shared_frn_vet_holo_darth_vader.iff")
+
+--Death Star Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_deathstar = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_deathstar.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_deathstar, "object/tangible/veteran_reward/shared_frn_vet_holo_deathstar.iff")
+
+--Imperial Guard Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_imperial_guard = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_imperial_guard.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_imperial_guard, "object/tangible/veteran_reward/shared_frn_vet_holo_imperial_guard.iff")
+
+--Jawa Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_jawa = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_jawa.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_jawa, "object/tangible/veteran_reward/shared_frn_vet_holo_jawa.iff")
+
+--Lambda Shuttle Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_lambda = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_lambda.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_lambda, "object/tangible/veteran_reward/shared_frn_vet_holo_lambda.iff")
+
+--Leia Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_leia = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_leia.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_leia, "object/tangible/veteran_reward/shared_frn_vet_holo_leia.iff")
+
+--Luke Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_luke_skywalker = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_luke_skywalker.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_luke_skywalker, "object/tangible/veteran_reward/shared_frn_vet_holo_luke_skywalker.iff")
+
+--Sandcraweler Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_sandcrawler = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_sandcrawler.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_sandcrawler, "object/tangible/veteran_reward/shared_frn_vet_holo_sandcrawler.iff")
+
+--Starfighter Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_starfighter = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_starfighter.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_starfighter, "object/tangible/veteran_reward/shared_frn_vet_holo_starfighter.iff")
+
+--Yoda Holo
+object_tangible_veteran_reward_shared_frn_vet_holo_yoda = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_holo_yoda.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_holo_yoda, "object/tangible/veteran_reward/shared_frn_vet_holo_yoda.iff")
+
+--Salacious Crumb Toy
+object_tangible_veteran_reward_shared_frn_vet_salacious_crumb_toy = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_salacious_crumb_toy.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_salacious_crumb_toy, "object/tangible/veteran_reward/shared_frn_vet_salacious_crumb_toy.iff")
+
+--Tusken Raider Toy
+object_tangible_veteran_reward_shared_frn_vet_tusken_raider_toy = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_tusken_raider_toy.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_tusken_raider_toy, "object/tangible/veteran_reward/shared_frn_vet_tusken_raider_toy.iff")
+
+--Mace Windu Statue
+object_tangible_veteran_reward_shared_mace_windu_statue = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_mace_windu_statue.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_mace_windu_statue, "object/tangible/veteran_reward/shared_mace_windu_statue.iff")
+
+--Jedi Temple Statuette
+object_tangible_veteran_reward_shared_frn_vet_jedi_temple = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_jedi_temple.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_jedi_temple, "object/tangible/veteran_reward/shared_frn_vet_jedi_temple.iff")
+
+--Jedi Temple Burning Statuette
+object_tangible_veteran_reward_shared_frn_vet_jedi_temple_burning = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_jedi_temple_burning.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_jedi_temple_burning, "object/tangible/veteran_reward/shared_frn_vet_jedi_temple_burning.iff")
+
+--Podracer Statue
+object_tangible_veteran_reward_shared_frn_vet_podracer_statue = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/veteran_reward/shared_frn_vet_podracer_statue.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_veteran_reward_shared_frn_vet_podracer_statue, "object/tangible/veteran_reward/shared_frn_vet_podracer_statue.iff")

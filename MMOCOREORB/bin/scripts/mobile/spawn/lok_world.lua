@@ -757,6 +757,51 @@ lok_world = {
 			weighting = 2,
 			size = 30
 		},
+		{
+			lairTemplateName = "lok_domesticated_gurnaset_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "lok_domesticated_snorbal_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "lok_elder_snorbal_lair_neutral_large",
+			spawnLimit = -1,
+			minDifficulty = 33,
+			maxDifficulty = 37,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "lok_langlatch_marauder_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
+		{
+			lairTemplateName = "lok_spiderclan_queen_lair_neutral_medium",
+			spawnLimit = -1,
+			minDifficulty = 25,
+			maxDifficulty = 29,
+			numberToSpawn = 0,
+			weighting = 15,
+			size = 25
+		},
 	}
 }
 

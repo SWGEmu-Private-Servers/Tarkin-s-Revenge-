@@ -46,7 +46,7 @@ object_tangible_scout_trap_trap_sonic_pulse = object_tangible_scout_trap_shared_
 	templateType = TRAP,
 	objectMenuComponent = "TrapMenuComponent",
 
-	useCount = 5,
+	useCount = 50,
 	skillRequired = 80,
 
 	skillMods = {},

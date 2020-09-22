@@ -34,7 +34,7 @@ fed_dub_supporter = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 3000000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 2000000},
 				{group = "rifles", chance = 2000000},
 				{group = "tailor_components", chance = 1500000},
 				{group = "loot_kit_parts", chance = 1500000}

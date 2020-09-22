@@ -5,7 +5,7 @@ pistols = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "pistol_cdef", weight = 1200000},
+		{itemTemplate = "pistol_cdef", weight = 1100000},
 		{itemTemplate = "pistol_d18", weight = 1000000},
 		{itemTemplate = "pistol_dh17", weight = 1000000},
 		{itemTemplate = "pistol_dl44", weight = 1000000},
@@ -20,6 +20,7 @@ pistols = {
 		{itemTemplate = "pistol_sr_combat", weight = 700000},
 		{itemTemplate = "pistol_striker", weight = 700000},
 		{itemTemplate = "pistol_tangle", weight = 500000},
+		{groupTemplate = "cu_nge_pistols", weight = 100000}
 	}
 }
 

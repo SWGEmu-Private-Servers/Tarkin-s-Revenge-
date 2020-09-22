@@ -3720,3 +3720,9 @@ object_tangible_loot_quest_shared_wind_crystal = SharedTangibleObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_quest_shared_wind_crystal, "object/tangible/loot/quest/shared_wind_crystal.iff")
+
+object_tangible_loot_quest_shared_naktra_crystal = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/quest/shared_naktra_crystal.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_quest_shared_naktra_crystal, "object/tangible/loot/quest/shared_naktra_crystal.iff")

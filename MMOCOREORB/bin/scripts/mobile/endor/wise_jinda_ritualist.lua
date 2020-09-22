@@ -42,6 +42,12 @@ wise_jinda_ritualist = Creature:new {
 			},
 			lootChance = 1700000
 		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

@@ -178,16 +178,16 @@ daclifMissions =
 npcMapDiktat = 
 { 
 	{ 
-		spawnData = { npcTemplate = "brantlee_spondoon", x = -24.7, z = 1.3, y = -0.5,
-			direction = 124, cellID = 1855463, position = STAND }, 
+		spawnData = { npcTemplate = "brantlee_spondoon", x = -229.688, z = 28, y = -4501.59,
+			direction = -65, cellID = 0, position = STAND }, 
 		worldPosition = { x = -234.0, y = -4570.0 },
 		npcNumber = 1,   
 		stfFile = "@static_npc/corellia/brantlee_spondoon", 
 		missions = brantleeMissions
 	},
 	{ 
-		spawnData = { npcTemplate = "daclif_gallamby", x = -35.6875, z = 1.29422,
-			y = -1.70805, direction = 88.4786, cellID = 1855467, position = STAND }, 
+		spawnData = { npcTemplate = "daclif_gallamby", x = -153.711, z = 28,
+			y = -4527.54, direction = -157, cellID = 0, position = STAND }, 
 		worldPosition = { x = -245.0, y = -4571.0 },
 		npcNumber = 2,   
 		stfFile = "@static_npc/corellia/daclif_gallamby", 

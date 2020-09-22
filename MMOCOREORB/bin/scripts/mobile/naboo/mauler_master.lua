@@ -36,7 +36,8 @@ mauler_master = Creature:new {
 				{group = "loot_kit_parts", chance = 2000000},
 				{group = "carbines", chance = 1000000},
 				{group = "mauler_common", chance = 2000000},
-				{group = "wearables_uncommon", chance = 1000000}
+				{group = "wearables_uncommon", chance = 800000},
+				{group = "mauler_rare", chance = 200000}
 			}
 		}
 	},

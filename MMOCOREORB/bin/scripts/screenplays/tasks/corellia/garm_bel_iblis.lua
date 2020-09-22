@@ -154,7 +154,7 @@ garm_bel_iblis_missions =
 npcMapGarmBelIblis =
 	{
 		{
-			spawnData = { npcTemplate = "garm_bel_iblis", x = -33.9, z = 1.3, y = -7.7, direction = 40.0, cellID = 1855467, position = STAND },
+			spawnData = { npcTemplate = "garm_bel_iblis", x = -175.685, z = 28, y = -4583.02, direction = 92, cellID = 0, position = STAND },
 			worldPosition = { x = -243.9, y = -4577.7 },
 			npcNumber = 2,
 			stfFile = "@static_npc/corellia/garm_bel_iblis",
@@ -162,7 +162,7 @@ npcMapGarmBelIblis =
 			missions = garm_bel_iblis_missions
 		},
 		{
-			spawnData = { npcTemplate = "irenez", x = -24.7, z = 1.3, y = -5.2, direction = 40.0, cellID = 1855463, position = STAND },
+			spawnData = { npcTemplate = "irenez", x = -176.799, z = 28, y = -4599.41, direction = 51, cellID = 0, position = STAND },
 			worldPosition = { x = -234.0, y = -4575.0 },
 			npcNumber = 1,
 			stfFile = "@static_npc/corellia/irenez",

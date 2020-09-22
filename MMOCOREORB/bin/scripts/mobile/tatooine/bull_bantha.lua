@@ -26,7 +26,7 @@ bull_bantha = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/bantha_hue.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	hues = { 0, 1, 2, 3, 7 },
 	controlDeviceTemplate = "object/intangible/pet/bantha_hue.iff",
 	scale = 1.2,
 	lootGroups = {},

@@ -50,7 +50,7 @@ object_draft_schematic_structure_generic_house_player_medium = object_draft_sche
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 25,
 	size = 12,
-	factoryCrateSize = 1,
+	factoryCrateSize = 10,
 
 	xpType = "crafting_structure_general",
 	xp = 8000,

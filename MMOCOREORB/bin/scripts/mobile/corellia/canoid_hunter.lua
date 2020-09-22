@@ -26,7 +26,7 @@ canoid_hunter = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/boar_wolf_hue.iff"},
-	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
+	hues = { 2, 3, 13 },
 	controlDeviceTemplate = "object/intangible/pet/boar_wolf_hue.iff",
 	scale = 1.1,
 	lootGroups = {},

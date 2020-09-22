@@ -36,7 +36,7 @@ canyon_corsair_weak_pirate = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 3980000},
-				{group = "tailor_components", chance = 1000000},
+				{group = "tailor_components", chance = 800000},
 				{group = "color_crystals", chance = 400000},
 				{group = "power_crystals", chance = 400000},
 				{group = "melee_two_handed", chance = 600000},
@@ -44,7 +44,8 @@ canyon_corsair_weak_pirate = Creature:new {
 				{group = "pistols", chance = 600000},
 				{group = "clothing_attachments", chance = 350000},
 				{group = "armor_attachments", chance = 350000},
-				{group = "canyon_corsair_common", chance = 1720000}
+				{group = "canyon_corsair_common", chance = 1720000},
+				{group = "corsairs_rare", chance = 200000}
 			}
 		}
 	},

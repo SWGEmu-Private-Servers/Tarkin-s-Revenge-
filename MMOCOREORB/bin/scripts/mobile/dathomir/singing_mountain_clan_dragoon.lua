@@ -29,22 +29,24 @@ singing_mountain_clan_dragoon = Creature:new {
 
 	templates = {"object/mobile/dressed_dathomir_sing_mt_clan_dragoon.iff"},
 	lootGroups = {
-		{
-			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "armor_attachments", chance = 400000},
-				{group = "clothing_attachments", chance = 400000},
-				{group = "melee_weapons", chance = 2700000},
-				{group = "rifles", chance = 1000000},
-				{group = "pistols", chance = 1000000},
-				{group = "carbines", chance = 1000000},
-				{group = "wearables_uncommon", chance = 500000},
-				{group = "tailor_components", chance = 500000}
-			}
-		}
-	},
+        	{
+                	groups = {
+                        	{group = "junk", chance = 1500000},
+                                {group = "power_crystals", chance = 500000},
+                                {group = "color_crystals", chance = 500000},
+                                {group = "armor_attachments", chance = 400000},
+                                {group = "clothing_attachments", chance = 400000},
+                                {group = "melee_weapons", chance = 900000},
+                                {group = "rifles", chance = 900000},
+                                {group = "pistols", chance = 900000},
+                                {group = "carbines", chance = 900000},
+                                {group = "smc_clothing", chance = 2435000},
+                                {group = "smc_armor", chance = 550000},
+                                {group = "smc_rare", chance = 90000},
+                                {group = "deed_voucher", chance = 25000}                                           
+                        }
+                 }
+        },
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,pikemanmaster,forcewielder)

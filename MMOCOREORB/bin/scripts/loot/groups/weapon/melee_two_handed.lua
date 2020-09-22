@@ -5,10 +5,11 @@ melee_two_handed = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "two_handed_sword_battleaxe", weight = 2500000},
-		{itemTemplate = "two_handed_sword_cleaver", weight = 2500000},
-		{itemTemplate = "two_handed_sword_katana", weight = 2500000},
-		{itemTemplate = "two_handed_sword_maul", weight = 2500000}
+		{itemTemplate = "two_handed_sword_battleaxe", weight = 2475000},
+		{itemTemplate = "two_handed_sword_cleaver", weight = 2475000},
+		{itemTemplate = "two_handed_sword_katana", weight = 2475000},
+		{itemTemplate = "two_handed_sword_maul", weight = 2475000},
+		{groupTemplate = "cu_nge_twohand", weight = 100000}
 	}
 }
 

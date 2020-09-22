@@ -45,6 +45,7 @@
 --Children folder includes
 includeFile("weapon/melee/polearm/base/serverobjects.lua")
 includeFile("weapon/melee/polearm/crafted_saber/serverobjects.lua")
+includeFile("weapon/melee/polearm/ep3/serverobjects.lua")
 
 -- Server Objects
 includeFile("weapon/melee/polearm/lance_controllerfp.lua")
@@ -59,3 +60,18 @@ includeFile("weapon/melee/polearm/lance_staff_wood_s1.lua")
 includeFile("weapon/melee/polearm/lance_staff_wood_s2.lua")
 includeFile("weapon/melee/polearm/lance_vibrolance.lua")
 includeFile("weapon/melee/polearm/polearm_vibro_axe.lua")
+
+--Post 14 Weapons
+includeFile("weapon/melee/polearm/ep3_loot_poisonspike.lua")
+includeFile("weapon/melee/polearm/lance_cryo.lua")
+includeFile("weapon/melee/polearm/lance_electric_polearm.lua")
+includeFile("weapon/melee/polearm/lance_gcw_gand_shockprod.lua")
+includeFile("weapon/melee/polearm/lance_kaminoan.lua")
+includeFile("weapon/melee/polearm/lance_kashyyk.lua")
+includeFile("weapon/melee/polearm/lance_shock.lua")
+includeFile("weapon/melee/polearm/lance_massassi.lua")
+includeFile("weapon/melee/polearm/polearm_heroic_sd.lua")
+includeFile("weapon/melee/polearm/lance_electric_polearm.lua")
+includeFile("weapon/melee/polearm/som_lance_obsidian.lua")
+includeFile("weapon/melee/polearm/som_lance_xandank.lua")
+includeFile("weapon/melee/polearm/lance_staff_magna_guard.lua")

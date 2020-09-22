@@ -166,3 +166,39 @@ object_weapon_melee_special_shared_vibroknuckler = SharedWeaponObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_vibroknuckler, "object/weapon/melee/special/shared_vibroknuckler.iff")
+
+--Blasterfist
+object_weapon_melee_special_shared_blasterfist = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_blasterfist.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_blasterfist, "object/weapon/melee/special/shared_blasterfist.iff")
+
+--Buzz-Knuck
+object_weapon_melee_special_shared_pvp_bf_knuckler = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_pvp_bf_knuckler.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_pvp_bf_knuckler, "object/weapon/melee/special/shared_pvp_bf_knuckler.iff")
+
+--Massassi Knuckler
+object_weapon_melee_special_shared_massassiknuckler = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_massassiknuckler.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_massassiknuckler, "object/weapon/melee/special/shared_massassiknuckler.iff")
+
+--Tenebrous Edge
+object_weapon_melee_special_shared_punch_dagger = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_punch_dagger.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_punch_dagger, "object/weapon/melee/special/shared_punch_dagger.iff")
+
+--Metal Combat Fan
+object_weapon_melee_special_shared_fan_metal = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_fan_metal.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_fan_metal, "object/weapon/melee/special/shared_fan_metal.iff")
+
+--Witches' War Fan
+object_weapon_melee_special_shared_wod_war_fan = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/melee/special/shared_wod_war_fan.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_melee_special_shared_wod_war_fan, "object/weapon/melee/special/shared_wod_war_fan.iff")

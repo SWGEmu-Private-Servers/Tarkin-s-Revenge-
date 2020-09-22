@@ -46,7 +46,7 @@ object_tangible_scout_trap_trap_enraging_spur = object_tangible_scout_trap_share
 	templateType = TRAP,
 	objectMenuComponent = "TrapMenuComponent",
 
-	useCount = 5,
+	useCount = 50,
 	skillRequired = 10,
 
 	skillMods = {},

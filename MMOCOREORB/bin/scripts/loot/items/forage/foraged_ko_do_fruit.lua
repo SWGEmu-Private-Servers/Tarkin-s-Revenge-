@@ -6,6 +6,7 @@ foraged_ko_do_fruit = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/food/foraged/foraged_fruit_s4.iff",
 	craftingValues = {
+		{"quantity",1,10},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

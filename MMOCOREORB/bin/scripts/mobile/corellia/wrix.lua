@@ -26,7 +26,7 @@ wrix = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/wrix.iff"},
-	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	hues = { 0, 1, 2, 3, 7, 12, 17 },
 	controlDeviceTemplate = "object/intangible/pet/gurreck_hue.iff",
 	lootGroups = {},
 	weapons = {},

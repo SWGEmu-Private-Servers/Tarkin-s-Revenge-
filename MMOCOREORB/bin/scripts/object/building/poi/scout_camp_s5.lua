@@ -40,7 +40,6 @@
 --gives permission to release a modified version without this exception;
 --this exception also makes it possible to release a modified version
 
-
 object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new {
 	templateType = CAMPSTRUCTURE,
 	lotSize = 0,
@@ -52,27 +51,110 @@ object_building_poi_scout_camp_s5 = object_building_poi_shared_scout_camp_s5:new
 		{"private_med_wound_health", 100},
 		{"private_med_wound_action", 100},
 		{"private_aggro_mod", 100},
-		{"private_buff_mind", 100}
+		{"private_buff_mind", 100},
+		{"private_spec_samplesize", 20},
+		{"private_spec_samplerate", 10}
 	},
 	aggroMod = 100,
 	duration = 3600,
 	radius = 20,
 	experience = 1250,
-	skillRequired = 85,
+	skillRequired = 0,
 
 	childObjects = {
-		{templateFile = "object/tangible/camp/camp_control_panel.iff", x = -4.83, z = 0, y = 12.17, ox = 0, oy = -0.998, oz = 0, ow = 0.061, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/crafting/station/public_food_station.iff", x = 6.59, z = 0, y = -3.11, ox = 0, oy = -0.501, oz = 0, ow = 0.865, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/crafting/station/public_weapon_station.iff", x = 3.66, z = 0, y = 14.53, ox = 0, oy = -0.659, oz = 0, ow = 0.752, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s2.iff", x = -1.7, z = 0, y = -7.06, ox = 0, oy = -0.898, oz = 0, ow = 0.440, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -1.88, z = 0, y = 4.27, ox = 0, oy = -0.891, oz = 0, ow = 0.454, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -5.04, z = 0, y = -1.1, ox = 0, oy = 0.286, oz = .0, ow = 0.958, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -4.21, z = 0, y = 2.84, ox = 0, oy = 0.531, oz = 0, ow = 0.847, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -7.67, z = 0, y = 1.62, ox = 0, oy = 0.025, oz = 0, ow = 1, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -7.58, z = 0, y = 3.85, ox = 0, oy = -1.000, oz = 0, ow = 0.004, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -2.22, z = 0, y = 2.33, ox = 0, oy = -0.315, oz = 0, ow = 0.949, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -5.13, z = 0, y = 1.07, ox = 0, oy = 0.936, oz = 0, ow = 0.352, cellid = -1, containmentType = -1},
-		{templateFile = "object/tangible/camp/camp_chair_s3.iff", x = -3.11, z = 0, y = -1.06, ox = 0, oy = -0.421, oz = 0, ow = 0.907, cellid = -1, containmentType = -1},
+		{templateFile = "object/tangible/camp/camp_control_panel.iff",
+			x = 7, z = 0, y = 11,
+			ox = 0, oy = 0.998538, oz = 0, ow = -0.289519, 
+			cellid = -1,
+			containmentType = -1},
+		
+		{templateFile = "object/tangible/crafting/station/public_food_station.iff",
+			x = 12.9988, z = 0, y = -4.87008,
+			ox = 0, oy = 0.383147, oz = 0, ow = -0.974234,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/public_clothing_station.iff",
+			x = -15.5352, z = 0, y = 4.45075,
+			ox = 0, oy = 1.04652, oz = 0, ow = 0.0268329,
+			cellid = -1,
+			containmentType = -1},
+		{templateFile = "object/tangible/crafting/station/public_space_station.iff",
+			x = -12.5974, z = 0, y = -2.53936,
+			ox = 0, oy = 0.375697, oz = 0, ow = 0.977131,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/public_structure_station.iff",
+			x = -4.87234, z = 0, y = -7.79973,
+			ox = 0, oy = -0.0644796, oz = 0, ow = -1.04488,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/crafting/station/public_weapon_station.iff",
+			x = 19.1861, z = 0, y = 4.05845,
+			ox = 0, oy = 0.789706, oz = 0, ow = -0.687238,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/beta/beta_terminal_wound.iff", 
+			x = 8.87127, z = 0, y = 10.3187, 
+			ox = 0, oy = 0.998538, oz = 0, ow = -0.289519, 
+			cellid = -1, 
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -2.0662, z = 0, y = 4.5670,
+			ox = 0, oy = 0.942641, oz = 0, ow = -.3338,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -2.0757, z = 0, y = 2.4670,
+			ox = 0, oy = 0.3664, oz = .0, ow = -0.9304,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -4.2253, z = 0, y = 2.7173,
+			ox = 0, oy = -0.4924, oz = 0, ow = -0.8702,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -2.5194, z = 0, y = -.7496,
+			ox = 0, oy = 0.5735, oz = 0, ow = -0.8191,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -4.5974, z = 0, y = -1.6490,
+			ox = 0, oy = -0.1736, oz = 0, ow = -0.9848,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -5.3197, z = 0, y = 0.6384,
+			ox = 0, oy = -0.8828, oz = 0, ow = -0.4693,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -7.7, z = 0, y = 1.7086,
+			ox = 0, oy = 0.0, oz = 0, ow = 1.0,
+			cellid = -1,
+			containmentType = -1},
+
+		{templateFile = "object/tangible/camp/camp_chair_s3.iff",
+			x = -7.7, z = 0, y = 3.8,
+			ox = 0, oy = 1, oz = 0, ow = 0,
+			cellid = -1,
+			containmentType = -1},
+		{templateFile = "object/tangible/travel/ticket_collector/star_tours.iff",
+			x = 4.68453, z = 0, y = 12.7435,
+			ox = 0, oy = 0.985105, oz = 0, ow = -0.171954,
+			cellid = -1,
+			containmentType = -1},
 	}
 }
 

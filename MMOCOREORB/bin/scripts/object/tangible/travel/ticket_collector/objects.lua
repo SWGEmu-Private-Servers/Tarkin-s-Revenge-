@@ -99,3 +99,11 @@ object_tangible_travel_ticket_collector_shared_ticket_collector = SharedTangible
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_travel_ticket_collector_shared_ticket_collector, "object/tangible/travel/ticket_collector/shared_ticket_collector.iff")
+
+
+
+object_tangible_travel_ticket_collector_shared_star_tours = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/travel/ticket_collector/shared_star_tours.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_travel_ticket_collector_shared_star_tours, "object/tangible/travel/ticket_collector/shared_star_tours.iff")

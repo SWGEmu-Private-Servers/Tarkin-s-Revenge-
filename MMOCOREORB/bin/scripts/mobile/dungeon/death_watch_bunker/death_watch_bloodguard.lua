@@ -12,7 +12,7 @@ death_watch_bloodguard = Creature:new {
 	baseHAM = 50000,
 	baseHAMmax = 50000,
 	armor = 2,
-	resists = {55,55,70,60,30,30,100,40,-1},
+	resists = {55,55,70,60,30,30,100,40,55},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,15 +32,27 @@ death_watch_bloodguard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_commoners", chance = 6000000},
-				{group = "death_watch_bunker_lieutenants", chance = 4000000}
+				{group = "clothing_attachments", chance = 5000000},
+				{group = "armor_attachments", chance = 5000000}
 			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 5000000},
+				{group = "death_watch_bunker_lieutenants", chance = 5000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "mandalorian_schemes", chance = 10000000}			},
 			lootChance = 1000000
-		}
+		},
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",
-	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,tkamaster)
+	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(death_watch_bloodguard, "death_watch_bloodguard")

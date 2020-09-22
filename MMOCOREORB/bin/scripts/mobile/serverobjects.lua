@@ -46,5 +46,8 @@ includeFile("lair/serverobjects.lua")
 -- Outfits
 includeFile("outfits/serverobjects.lua")
 
+-- Tarkin Custom
+includeFile("tarkin_custom/serverobjects.lua")
+
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/mobile/serverobjects.lua")

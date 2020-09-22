@@ -1161,3 +1161,8 @@ object_tangible_wearables_belt_shared_belt_s20 = SharedTangibleObjectTemplate:ne
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_wearables_belt_shared_belt_s20, "object/tangible/wearables/belt/shared_belt_s20.iff")
+
+object_tangible_wearables_belt_shared_belt_whip_s01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/wearables/belt/shared_belt_whip_s01.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_wearables_belt_shared_belt_whip_s01, "object/tangible/wearables/belt/shared_belt_whip_s01.iff")

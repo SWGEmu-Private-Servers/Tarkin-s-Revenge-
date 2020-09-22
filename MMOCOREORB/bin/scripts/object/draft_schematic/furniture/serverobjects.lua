@@ -45,6 +45,7 @@
 --Children folder includes
 includeFile("draft_schematic/furniture/bestine/serverobjects.lua")
 includeFile("draft_schematic/furniture/city/serverobjects.lua")
+includeFile("draft_schematic/furniture/tarkin_custom/serverobjects.lua")
 
 -- Server Objects
 includeFile("draft_schematic/furniture/furniture_armoire_cheap.lua")

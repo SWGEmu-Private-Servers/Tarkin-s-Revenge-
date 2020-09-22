@@ -42,7 +42,7 @@ flail_enforcer = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 3500000},
-				{group = "wearables_common", chance = 3000000},
+				{group = "misc_decoloot_schemes", chance = 3000000},
 				{group = "rifles", chance = 2000000},
 				{group = "color_crystals", chance = 1000000},
 				{group = "flail_common", chance = 500000}

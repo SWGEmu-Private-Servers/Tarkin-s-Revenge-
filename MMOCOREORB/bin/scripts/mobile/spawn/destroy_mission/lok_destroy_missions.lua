@@ -21,7 +21,19 @@ lok_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "lok_flit_lair2_neutral_medium",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 25,
+		},
+		{
 			lairTemplateName = "lok_perlek_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_domesticated_gurnaset_lair_neutral_medium",
 			minDifficulty = 12,
 			maxDifficulty = 16,
 			size = 25,
@@ -40,6 +52,12 @@ lok_destroy_missions = {
 		},
 		{
 			lairTemplateName = "lok_spinded_snake_lair2_neutral_medium",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_langlatch_marauder_lair_neutral_medium",
 			minDifficulty = 15,
 			maxDifficulty = 19,
 			size = 25,
@@ -75,6 +93,12 @@ lok_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "lok_kusak_lair2_neutral_medium",
+			minDifficulty = 21,
+			maxDifficulty = 25,
+			size = 25,
+		},
+		{
 			lairTemplateName = "lok_mynock_lair_neutral_medium",
 			minDifficulty = 23,
 			maxDifficulty = 27,
@@ -87,7 +111,19 @@ lok_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "lok_vesp_lair2_neutral_medium",
+			minDifficulty = 23,
+			maxDifficulty = 27,
+			size = 25,
+		},
+		{
 			lairTemplateName = "lok_nym_camp2_neutral_medium_theater",
+			minDifficulty = 25,
+			maxDifficulty = 29,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_spiderclan_queen_lair_neutral_medium",
 			minDifficulty = 25,
 			maxDifficulty = 29,
 			size = 25,
@@ -105,6 +141,24 @@ lok_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "lok_gurk_lair_neutral_small",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_snorbal_lair_neutral_medium_boss_01",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_domesticated_snorbal_lair_neutral_medium",
+			minDifficulty = 28,
+			maxDifficulty = 32,
+			size = 25,
+		},
+		{
 			lairTemplateName = "lok_nym_base_neutral_large_theater",
 			minDifficulty = 29,
 			maxDifficulty = 33,
@@ -112,6 +166,18 @@ lok_destroy_missions = {
 		},
 		{
 			lairTemplateName = "lok_mercenary_camp_neutral_medium_theater",
+			minDifficulty = 33,
+			maxDifficulty = 37,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_gurk_lair_neutral_medium",
+			minDifficulty = 33,
+			maxDifficulty = 37,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_elder_snorbal_lair_neutral_large",
 			minDifficulty = 33,
 			maxDifficulty = 37,
 			size = 25,
@@ -152,6 +218,24 @@ lok_destroy_missions = {
 			maxDifficulty = 50,
 			size = 25,
 		},
+		{
+			lairTemplateName = "lok_kimogilla_lair_neutral_medium",
+			minDifficulty = 63,
+			maxDifficulty = 67,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_kimogilla_dune_lair_neutral_medium",
+			minDifficulty = 63,
+			maxDifficulty = 67,
+			size = 25,
+		},
+		{
+			lairTemplateName = "lok_mutant_snorbal_lair_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

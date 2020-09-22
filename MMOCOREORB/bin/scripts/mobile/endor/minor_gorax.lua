@@ -1,7 +1,7 @@
 minor_gorax = Creature:new {
 	objectName = "@mob/creature_names:minor_gorax",
 	socialGroup = "gorax",
-	faction = "gorax",
+	faction = "",
 	level = 131,
 	chanceHit = 4,
 	damageMin = 745,
@@ -30,11 +30,11 @@ minor_gorax = Creature:new {
 	lootGroups = {
 	    {
 	        groups = {
-				{group = "minor_gorax", chance = 6000000},
-				{group = "armor_attachments", chance = 2000000},
-				{group = "clothing_attachments", chance = 2000000}
+				{group = "minor_gorax", chance = 5000000},
+				{group = "armor_attachments", chance = 2500000},
+				{group = "clothing_attachments", chance = 2500000}
 			},
-			lootChance = 3620000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

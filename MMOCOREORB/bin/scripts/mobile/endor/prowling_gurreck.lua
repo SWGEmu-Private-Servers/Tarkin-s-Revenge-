@@ -15,8 +15,8 @@ prowling_gurreck = Creature:new {
 	meatAmount = 75,
 	hideType = "hide_wooly",
 	hideAmount = 45,
-	boneType = "",
-	boneAmount = 0,
+	boneType = "bone_mammal",
+	boneAmount = 40,
 	milk = 0,
 	tamingChance = 0.05,
 	ferocity = 0,
@@ -28,7 +28,14 @@ prowling_gurreck = Creature:new {
 	templates = {"object/mobile/gurreck_hue.iff"},
 	controlDeviceTemplate = "object/intangible/pet/gurreck_hue.iff",
 	scale = 1.1,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "gurreck_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -50,7 +50,7 @@ object_draft_schematic_structure_installation_generator_fusion = object_draft_sc
 	craftingToolTab = 1024, -- (See DraftSchematicObjectTemplate.h)
 	complexity = 35,
 	size = 12,
-	factoryCrateSize = 1,
+	factoryCrateSize = 10,
 
 	xpType = "crafting_structure_general",
 	xp = 3900,

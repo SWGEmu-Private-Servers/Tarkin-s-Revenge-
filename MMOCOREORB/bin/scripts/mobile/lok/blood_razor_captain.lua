@@ -46,7 +46,8 @@ blood_razor_captain = Creature:new {
 				{group = "clothing_attachments", chance = 300000},
 				{group = "armor_attachments", chance = 300000},
 				{group = "bloodrazor_common", chance = 1500000},
-				{group = "wearables_all", chance = 500000},
+				{group = "wearables_all", chance = 300000},
+				{group = "razors_rare", chance = 200000}
 			}
 		}
 	},

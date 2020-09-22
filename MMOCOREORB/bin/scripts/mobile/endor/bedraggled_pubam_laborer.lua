@@ -33,7 +33,9 @@ bedraggled_pubam_laborer = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "ewok", chance = 9100000},
+				{group = "ewok", chance = 3276000},
+				{group = "wookiee_loot_common", chance = 4004000},
+				{group = "donkuwah_loot", chance = 1820000},
 				{group = "armor_attachments", chance = 450000},
 				{group = "clothing_attachments", chance = 450000}
 			},

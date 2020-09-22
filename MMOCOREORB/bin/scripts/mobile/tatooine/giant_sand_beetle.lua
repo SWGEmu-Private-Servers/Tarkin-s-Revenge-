@@ -26,6 +26,7 @@ giant_sand_beetle = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/giant_sand_beetle.iff"},
+	controlDeviceTemplate = "object/intangible/pet/rock_mite_hue.iff",
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 4,
 	lootGroups = {},

@@ -512,3 +512,66 @@ object_tangible_fishing_fish_shared_striped = SharedTangibleObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_striped, "object/tangible/fishing/fish/shared_striped.iff")
+
+--Burra
+object_tangible_fishing_fish_shared_burra = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_burra.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_burra, "object/tangible/fishing/fish/shared_burra.iff")
+
+--Buzzfish
+object_tangible_fishing_fish_shared_buzzfish = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_buzzfish.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_buzzfish, "object/tangible/fishing/fish/shared_buzzfish.iff")
+
+--Trout
+object_tangible_fishing_fish_shared_trout = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_trout.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_trout, "object/tangible/fishing/fish/shared_trout.iff")
+
+--Fatfish
+object_tangible_fishing_fish_shared_fatfish = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_fatfish.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_fatfish, "object/tangible/fishing/fish/shared_fatfish.iff")
+
+--Gooberfish
+object_tangible_fishing_fish_shared_gooberfish = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_gooberfish.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_gooberfish, "object/tangible/fishing/fish/shared_gooberfish.iff")
+
+--Gumfish
+object_tangible_fishing_fish_shared_gumfish = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_gumfish.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_gumfish, "object/tangible/fishing/fish/shared_gumfish.iff")
+
+--Mee
+object_tangible_fishing_fish_shared_mee = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_mee.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_mee, "object/tangible/fishing/fish/shared_mee.iff")
+
+--See
+object_tangible_fishing_fish_shared_see = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_see.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_see, "object/tangible/fishing/fish/shared_see.iff")
+
+--Crawlfish
+object_tangible_fishing_fish_shared_crawlfish = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/fishing/fish/shared_crawlfish.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_fishing_fish_shared_crawlfish, "object/tangible/fishing/fish/shared_crawlfish.iff")

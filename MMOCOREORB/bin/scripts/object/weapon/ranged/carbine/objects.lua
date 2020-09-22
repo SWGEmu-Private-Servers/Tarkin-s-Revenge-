@@ -859,3 +859,89 @@ object_weapon_ranged_carbine_shared_carbine_nym_slugthrower = SharedWeaponObject
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_nym_slugthrower, "object/weapon/ranged/carbine/shared_carbine_nym_slugthrower.iff")
+
+--Massassi Guardian Carbine
+object_weapon_ranged_carbine_shared_carbine_kun_massassi = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_kun_massassi.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_kun_massassi, "object/weapon/ranged/carbine/shared_carbine_kun_massassi.iff")
+
+--Coynite SFOR Republic Carbine
+object_weapon_ranged_carbine_shared_som_carbine_republic_sfor = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_som_carbine_republic_sfor.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_som_carbine_republic_sfor, "object/weapon/ranged/carbine/shared_som_carbine_republic_sfor.iff")
+
+--Alliance Needler Carbine
+object_weapon_ranged_carbine_shared_carbine_alliance_needler = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_alliance_needler.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_alliance_needler, "object/weapon/ranged/carbine/shared_carbine_alliance_needler.iff")
+
+--'Whistler' Modified Carbine
+object_weapon_ranged_carbine_shared_carbine_heroic_sd = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_heroic_sd.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_heroic_sd, "object/weapon/ranged/carbine/shared_carbine_heroic_sd.iff")
+
+--Charric Carbine
+object_weapon_ranged_carbine_shared_carbine_charric = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_charric.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_charric, "object/weapon/ranged/carbine/shared_carbine_charric.iff")
+
+--Bothan Bola Carbine
+object_weapon_ranged_carbine_shared_carbine_bothan_bola = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_bothan_bola.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_bothan_bola, "object/weapon/ranged/carbine/shared_carbine_bothan_bola.iff")
+
+--Czerka Dart Carbine
+object_weapon_ranged_carbine_shared_carbine_czerka_dart = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_czerka_dart.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_czerka_dart, "object/weapon/ranged/carbine/shared_carbine_czerka_dart.iff")
+
+--Proton Carbine
+object_weapon_ranged_carbine_shared_carbine_proton = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_proton.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_proton, "object/weapon/ranged/carbine/shared_carbine_proton.iff")
+
+--N'Gant-Zarvel 9118 Carbine
+object_weapon_ranged_carbine_shared_carbine_pvp_ngant = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_pvp_ngant.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_pvp_ngant, "object/weapon/ranged/carbine/shared_carbine_pvp_ngant.iff")
+
+--Hair-Trigger Carbine
+object_weapon_ranged_carbine_shared_event_carbine_hairtrigger = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_event_carbine_hairtrigger.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_event_carbine_hairtrigger, "object/weapon/ranged/carbine/shared_event_carbine_hairtrigger.iff")
+
+--Geonosian Carbine
+object_weapon_ranged_carbine_shared_carbine_geo = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_geo.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_geo, "object/weapon/ranged/carbine/shared_carbine_geo.iff")
+
+--Crusader M-XIII Carbine
+object_weapon_ranged_carbine_shared_carbine_mandalorian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_mandalorian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_mandalorian, "object/weapon/ranged/carbine/shared_carbine_mandalorian.iff")
+
+--E-5 Carbine
+object_weapon_ranged_carbine_shared_carbine_e5 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_e5.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_e5, "object/weapon/ranged/carbine/shared_carbine_e5.iff")
+
+
+--Underslung Carbine
+object_weapon_ranged_carbine_shared_carbine_underslung = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/carbine/shared_carbine_underslung.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_carbine_shared_carbine_underslung, "object/weapon/ranged/carbine/shared_carbine_underslung.iff")
+

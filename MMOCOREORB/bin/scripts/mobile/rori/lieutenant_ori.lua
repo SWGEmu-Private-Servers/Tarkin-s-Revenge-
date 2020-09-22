@@ -32,7 +32,7 @@ lieutenant_ori = Creature:new {
 				{group = "junk", chance = 5000000},
 				{group = "tailor_components", chance = 2000000},
 				{group = "loot_kit_parts", chance = 2000000},
-				{group = "wearables_common", chance = 1000000}
+				{group = "misc_decoloot_schemes", chance = 1000000}
 			}
 		}
 	},

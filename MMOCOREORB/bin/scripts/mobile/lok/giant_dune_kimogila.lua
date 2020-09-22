@@ -15,8 +15,8 @@ giant_dune_kimogila = Creature:new {
 	meatAmount = 1000,
 	hideType = "hide_leathery",
 	hideAmount = 1000,
-	boneType = "",
-	boneAmount = 0,
+	boneType = "bone_mammal",
+	boneAmount = 1000,
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
@@ -31,10 +31,10 @@ giant_dune_kimogila = Creature:new {
 	lootGroups = {
 	 {
 	        groups = {
-				{group = "giant_dune_kimo_common", chance = 3500000},
-				{group = "kimogila_common", chance = 6500000},
+				{group = "giant_dune_kimo_common", chance = 1600000},
+				{group = "kimogila_common", chance = 8400000},
 			},
-			lootChance = 4060000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

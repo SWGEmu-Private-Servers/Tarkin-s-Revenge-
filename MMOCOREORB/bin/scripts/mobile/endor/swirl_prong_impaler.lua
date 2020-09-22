@@ -28,7 +28,14 @@ swirl_prong_impaler = Creature:new {
 	templates = {"object/mobile/swirl_prong_hue.iff"},
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
 	scale = 1.15,
-	lootGroups = {},
+	lootGroups = {
+	 {
+	        groups = {
+				{group = "swirlprong_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		}
+	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {

@@ -6,7 +6,10 @@ skill_buff_rifle_accuracy = {
 	craftingValues = {
 	},
 	customizationStringNames = {},
-	customizationValues = {}
+	customizationValues = {},
+	junkDealerTypeNeeded = JUNKGENERIC,
+	junkMinValue = 20,
+	junkMaxValue = 20
 }
 
 addLootItemTemplate("skill_buff_rifle_accuracy", skill_buff_rifle_accuracy)

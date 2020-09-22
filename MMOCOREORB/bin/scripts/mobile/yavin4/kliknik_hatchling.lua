@@ -12,9 +12,9 @@ kliknik_hatchling = Creature:new {
 	armor = 0,
 	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 1,
+	meatAmount = 25,
 	hideType = "hide_scaley",
-	hideAmount = 4,
+	hideAmount = 45,
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
@@ -34,7 +34,13 @@ kliknik_hatchling = Creature:new {
 				{group = "kliknik_common", chance = 10000000}
 			},
 			lootChance = 1440000
-		}
+		},
+		{	
+			groups = {
+				{group = "kliknik_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -39,6 +39,12 @@ rori_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "rori_domesticated_ikopi_lair_neutral_medium",
+			minDifficulty = 5,
+			maxDifficulty = 9,
+			size = 25,
+		},
+		{
 			lairTemplateName = "rori_sickle_rasp_nest_neutral_medium",
 			minDifficulty = 6,
 			maxDifficulty = 10,
@@ -52,6 +58,12 @@ rori_destroy_missions = {
 		},
 		{
 			lairTemplateName = "rori_gundark_raider_camp_neutral_medium_theater",
+			minDifficulty = 7,
+			maxDifficulty = 11,
+			size = 20,
+		},
+		{
+			lairTemplateName = "rori_pudgy_nudfah_lair_neutral_medium",
 			minDifficulty = 7,
 			maxDifficulty = 11,
 			size = 20,
@@ -81,6 +93,12 @@ rori_destroy_missions = {
 			size = 20,
 		},
 		{
+			lairTemplateName = "rori_bearded_jax_lair_neutral_medium",
+			minDifficulty = 9,
+			maxDifficulty = 13,
+			size = 20,
+		},
+		{
 			lairTemplateName = "rori_borgle_lair_neutral_large",
 			minDifficulty = 10,
 			maxDifficulty = 14,
@@ -94,6 +112,12 @@ rori_destroy_missions = {
 		},
 		{
 			lairTemplateName = "rori_mauler_sect_neutral_medium_theater",
+			minDifficulty = 10,
+			maxDifficulty = 14,
+			size = 20,
+		},
+		{
+			lairTemplateName = "rori_vir_vur_lair_neutral_medium",
 			minDifficulty = 10,
 			maxDifficulty = 14,
 			size = 20,
@@ -117,6 +141,12 @@ rori_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "rori_kai_tok_lair_neutral_medium",
+			minDifficulty = 11,
+			maxDifficulty = 15,
+			size = 25,
+		},
+		{
 			lairTemplateName = "rori_forest_mite_neutral_boss_03",
 			minDifficulty = 12,
 			maxDifficulty = 16,
@@ -124,6 +154,30 @@ rori_destroy_missions = {
 		},
 		{
 			lairTemplateName = "rori_vrobal_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_juvenile_pygmy_torton_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_pugoriss_lair_neutral_medium",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_wood_mite_lair_neutral_boss_02",
+			minDifficulty = 12,
+			maxDifficulty = 16,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_wood_mite_lair_neutral_small_04",
 			minDifficulty = 12,
 			maxDifficulty = 16,
 			size = 25,
@@ -141,7 +195,25 @@ rori_destroy_missions = {
 			size = 25,
 		},
 		{
+			lairTemplateName = "rori_deranged_squall_warren_neutral_medium",
+			minDifficulty = 13,
+			maxDifficulty = 17,
+			size = 25,
+		},
+		{
 			lairTemplateName = "rori_brigade_camp_neutral_large_theater",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 20,
+		},
+		{
+			lairTemplateName = "rori_midnight_vir_vur_lair_neutral_medium",
+			minDifficulty = 14,
+			maxDifficulty = 18,
+			size = 20,
+		},
+		{
+			lairTemplateName = "rori_plains_tusk_cat_pride_neutral_medium",
 			minDifficulty = 14,
 			maxDifficulty = 18,
 			size = 20,
@@ -165,7 +237,19 @@ rori_destroy_missions = {
 			size = 30,
 		},
 		{
+			lairTemplateName = "rori_mountain_ikopi_lair_neutral_medium",
+			minDifficulty = 15,
+			maxDifficulty = 19,
+			size = 30,
+		},
+		{
 			lairTemplateName = "rori_rorgungan_warcamp_neutral_large_theater",
+			minDifficulty = 16,
+			maxDifficulty = 20,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_mammoth_jax_lair_neutral_large",
 			minDifficulty = 16,
 			maxDifficulty = 20,
 			size = 25,
@@ -177,7 +261,19 @@ rori_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "rori_kai_tok_lair_neutral_medium",
+			lairTemplateName = "rori_shallow_torton_lair_neutral_medium",
+			minDifficulty = 17,
+			maxDifficulty = 21,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_vrobal_bull_lair_neutral_medium",
+			minDifficulty = 17,
+			maxDifficulty = 21,
+			size = 25,
+		},
+		{
+			lairTemplateName = "rori_pygmy_torton_lair_neutral_medium",
 			minDifficulty = 19,
 			maxDifficulty = 23,
 			size = 25,
@@ -213,6 +309,12 @@ rori_destroy_missions = {
 			size = 30,
 		},
 		{
+			lairTemplateName = "rori_mutant_bark_mite_lair_neutral_medium",
+			minDifficulty = 22,
+			maxDifficulty = 26,
+			size = 30,
+		},
+		{
 			lairTemplateName = "rori_brigade_base_neutral_large_theater",
 			minDifficulty = 23,
 			maxDifficulty = 27,
@@ -230,6 +332,18 @@ rori_destroy_missions = {
 			maxDifficulty = 36,
 			size = 30,
 		},
+		{
+			lairTemplateName = "rori_mountain_torton_lair_neutral_large",
+			minDifficulty = 32,
+			maxDifficulty = 36,
+			size = 30,
+		},
+		{
+			lairTemplateName = "rori_mutant_pugoriss_lair_neutral_medium",
+			minDifficulty = 73,
+			maxDifficulty = 77,
+			size = 35,
+		}
 	}
 }
 

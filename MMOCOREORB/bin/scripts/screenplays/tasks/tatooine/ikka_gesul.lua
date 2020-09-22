@@ -41,7 +41,7 @@ ikka_gesul_missions =
 npcMapIkkaGesul =
 	{
 		{
-			spawnData = { npcTemplate = "ikka_gesul", x = 1499.45, z = 7, y = 3009.43, direction = 191.517, cellID = 0, position = STAND },
+			spawnData = { npcTemplate = "ikka_gesul", x = 1480.06, z = 7, y = 3104.34, direction = 191.517, cellID = 0, position = STAND },
 			worldPosition = { x = 1500, y = 3010 },
 			npcNumber = 1,
 			stfFile = "@static_npc/tatooine/ikka_gesul",

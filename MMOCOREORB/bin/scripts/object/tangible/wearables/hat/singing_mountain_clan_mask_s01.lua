@@ -42,6 +42,9 @@
 
 
 object_tangible_wearables_hat_singing_mountain_clan_mask_s01 = object_tangible_wearables_hat_shared_singing_mountain_clan_mask_s01:new {
+
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/human_female.iff",
 				"object/creature/player/twilek_female.iff",
 				"object/creature/player/zabrak_female.iff",

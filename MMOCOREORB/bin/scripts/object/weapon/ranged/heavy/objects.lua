@@ -355,3 +355,52 @@ object_weapon_ranged_heavy_shared_launcher = SharedWeaponObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_launcher, "object/weapon/ranged/heavy/shared_launcher.iff")
+
+
+--CC-V 'Legion' Cryo Projector
+object_weapon_ranged_heavy_shared_heavy_carbonite_rifle = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_carbonite_rifle.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_carbonite_rifle, "object/weapon/ranged/heavy/shared_heavy_carbonite_rifle.iff")
+
+--CR-1 Blast Cannon
+object_weapon_ranged_heavy_shared_heavy_cr1_blast_cannon = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_cr1_blast_cannon.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_cr1_blast_cannon, "object/weapon/ranged/heavy/shared_heavy_cr1_blast_cannon.iff")
+
+--Crusader M-XX Heavy Rifle
+object_weapon_ranged_heavy_shared_heavy_mandalorian = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_mandalorian.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_mandalorian, "object/weapon/ranged/heavy/shared_heavy_mandalorian.iff")
+
+--Pulse Cannon
+object_weapon_ranged_heavy_shared_heavy_pulse_cannon = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_pulse_cannon.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_pulse_cannon, "object/weapon/ranged/heavy/shared_heavy_pulse_cannon.iff")
+
+--The Legendary Reaper Cannon
+object_weapon_ranged_heavy_shared_heavy_pvp = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_pvp.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_pvp, "object/weapon/ranged/heavy/shared_heavy_pvp.iff")
+
+--C-M Frag Storm Heavy Shotgun
+object_weapon_ranged_heavy_shared_heavy_rebel = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_heavy_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_heavy_rebel, "object/weapon/ranged/heavy/shared_heavy_rebel.iff")
+
+--Lava Cannon
+object_weapon_ranged_heavy_shared_som_lava_cannon = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_som_lava_cannon.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_som_lava_cannon, "object/weapon/ranged/heavy/shared_som_lava_cannon.iff")
+
+--Heavy Republic Flame Thrower
+object_weapon_ranged_heavy_shared_som_republic_flamer = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/heavy/shared_som_republic_flamer.iff"
+}
+ObjectTemplates:addClientTemplate(object_weapon_ranged_heavy_shared_som_republic_flamer, "object/weapon/ranged/heavy/shared_som_republic_flamer.iff")

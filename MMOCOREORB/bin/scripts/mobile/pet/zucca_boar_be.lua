@@ -10,7 +10,7 @@ zucca_boar_be = Creature:new {
 	baseHAM = 45,
 	baseHAMmax = 55,
 	armor = 0,
-	resists = {0,0,0,0,0,0,0,0,0},
+	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -25,7 +25,7 @@ zucca_boar_be = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/zucca_boar.iff"},
+	templates = {"object/mobile/zucca_boar_hue.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",

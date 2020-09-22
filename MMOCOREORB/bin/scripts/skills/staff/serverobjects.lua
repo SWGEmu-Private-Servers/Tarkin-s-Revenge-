@@ -64,3 +64,10 @@ includeFile("staff/admin_server_admin_01.lua")
 includeFile("staff/admin_server_admin_02.lua")
 includeFile("staff/admin_spawn_management_01.lua")
 includeFile("staff/admin_spawn_management_02.lua")
+
+--Tarkin staff skills
+includeFile("staff/tarkin_custom/tarkin_intern_01.lua")
+includeFile("staff/tarkin_custom/tarkin_storyteller_01.lua")
+includeFile("staff/tarkin_custom/tarkin_csr_01.lua")
+includeFile("staff/tarkin_custom/tarkin_gm_01.lua")
+includeFile("staff/tarkin_custom/tarkin_admin_01.lua")

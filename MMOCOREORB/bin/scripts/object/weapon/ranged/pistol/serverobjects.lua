@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("weapon/ranged/pistol/base/serverobjects.lua")
+includeFile("weapon/ranged/pistol/ep3/serverobjects.lua")
 
 -- Server Objects
 includeFile("weapon/ranged/pistol/pistol_cdef.lua")
@@ -70,3 +71,21 @@ includeFile("weapon/ranged/pistol/pistol_srcombat.lua")
 includeFile("weapon/ranged/pistol/pistol_striker.lua")
 includeFile("weapon/ranged/pistol/pistol_striker_noob.lua")
 includeFile("weapon/ranged/pistol/pistol_tangle.lua")
+
+--Post 14 Pistols
+includeFile("weapon/ranged/pistol/pistol_intimidator.lua")
+includeFile("weapon/ranged/pistol/pistol_alliance_disruptor.lua")
+includeFile("weapon/ranged/pistol/pistol_dd6.lua")
+includeFile("weapon/ranged/pistol/pistol_heroic_sd.lua")
+includeFile("weapon/ranged/pistol/pistol_flare.lua")
+includeFile("weapon/ranged/pistol/pistol_renegade.lua")
+includeFile("weapon/ranged/pistol/som_disruptor_pistol.lua")
+includeFile("weapon/ranged/pistol/pistol_deathhammer.lua")
+includeFile("weapon/ranged/pistol/pistol_flechette.lua")
+includeFile("weapon/ranged/pistol/pistol_mandalorian.lua")
+includeFile("weapon/ranged/pistol/pistol_westar_34.lua")
+includeFile("weapon/ranged/pistol/som_ion_relic_pistol.lua")
+includeFile("weapon/ranged/pistol/pistol_jawa.lua")
+includeFile("weapon/ranged/pistol/pistol_rebel.lua")
+includeFile("weapon/ranged/pistol/pistol_pvp.lua")
+includeFile("weapon/ranged/pistol/pistol_dh18a_gcw.lua")

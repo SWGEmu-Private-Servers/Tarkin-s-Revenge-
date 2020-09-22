@@ -44,10 +44,12 @@
 
 --Children folder includes
 includeFile("intangible/base/serverobjects.lua")
+includeFile("intangible/beast/serverobjects.lua")
 includeFile("intangible/data_item/serverobjects.lua")
 includeFile("intangible/faction_perk/serverobjects.lua")
 includeFile("intangible/holocron/serverobjects.lua")
 includeFile("intangible/pet/serverobjects.lua")
+includeFile("intangible/pet/beast_master/serverobjects.lua")
 includeFile("intangible/ship/serverobjects.lua")
 includeFile("intangible/theater/serverobjects.lua")
 includeFile("intangible/vehicle/serverobjects.lua")

@@ -54,3 +54,5 @@ includeFile("tangible/veteran_reward/one_year_anniversary/painting_06.lua")
 includeFile("tangible/veteran_reward/one_year_anniversary/painting_07.lua")
 includeFile("tangible/veteran_reward/one_year_anniversary/painting_08.lua")
 includeFile("tangible/veteran_reward/one_year_anniversary/painting_09.lua")
+
+includeFile("tangible/veteran_reward/one_year_anniversary/painting_10.lua")

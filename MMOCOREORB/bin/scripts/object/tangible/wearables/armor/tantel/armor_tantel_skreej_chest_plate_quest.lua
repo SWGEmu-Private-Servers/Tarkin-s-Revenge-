@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_tantel_armor_tantel_skreej_chest_plate_quest = object_tangible_wearables_armor_tantel_shared_armor_tantel_skreej_chest_plate_quest:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -88,12 +90,14 @@ object_tangible_wearables_armor_tantel_armor_tantel_skreej_chest_plate_quest = o
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = LIGHTSABER,
+	vulnerability = STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 125,
+	actionEncumbrance = 65,
+	mindEncumbrance = 25,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
@@ -101,7 +105,7 @@ object_tangible_wearables_armor_tantel_armor_tantel_skreej_chest_plate_quest = o
 	kinetic = 15,
 	energy = 15,
 	electricity = 15,
-	stun = 15,
+	stun = 0,
 	blast = 15,
 	heat = 15,
 	cold = 15,

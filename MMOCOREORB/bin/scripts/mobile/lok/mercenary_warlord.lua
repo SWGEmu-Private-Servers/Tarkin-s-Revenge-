@@ -36,7 +36,7 @@ mercenary_warlord = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 2600000},
-				{group = "wearables_common", chance = 1500000},
+				{group = "misc_decoloot_schemes", chance = 1500000},
 				{group = "wearables_uncommon", chance = 500000},
 				{group = "tailor_components", chance = 1000000},
 				{group = "color_crystals", chance = 400000},

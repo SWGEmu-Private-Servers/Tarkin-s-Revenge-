@@ -40,7 +40,13 @@ jinda_loremaster = Creature:new {
 				{group = "clothing_attachments", chance = 450000}
 			},
 			lootChance = 1800000
-		}
+		},
+		{	
+			groups = {
+				{group = "ewok_trophy", chance = 10000000}
+			},
+			lootChance = 25000
+		},
 	},
 	weapons = {"ewok_weapons"},
 	conversationTemplate = "",

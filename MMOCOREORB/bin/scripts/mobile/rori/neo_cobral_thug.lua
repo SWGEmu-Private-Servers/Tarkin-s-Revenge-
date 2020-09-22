@@ -35,10 +35,11 @@ neo_cobral_thug = Creature:new {
 		{
 			groups = {
 				{group = "junk", chance = 2000000},
-				{group = "wearables_common", chance = 2000000},
+				{group = "misc_decoloot_schemes", chance = 1800000},
 				{group = "pistols", chance = 2000000},
 				{group = "tailor_components", chance = 2000000},
-				{group = "loot_kit_parts", chance = 2000000}
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "cobral_rare", chance = 200000}
 			}
 		}
 	},

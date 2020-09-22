@@ -953,3 +953,143 @@ object_mobile_vehicle_shared_vehicle_base = SharedCreatureObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_vehicle_base, "object/mobile/vehicle/shared_vehicle_base.iff")
+
+--BARC Speeder
+object_mobile_vehicle_shared_barc_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_barc_speeder.iff"
+}
+ ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_barc_speeder, "object/mobile/vehicle/shared_barc_speeder.iff")
+
+--A1 Deluxe Floater
+object_mobile_vehicle_shared_a1_deluxe_floater = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_a1_deluxe_floater.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_a1_deluxe_floater, "object/mobile/vehicle/shared_a1_deluxe_floater.iff")
+
+--AB-1 Landspeeder
+object_mobile_vehicle_shared_landspeeder_ab1 = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_ab1.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_ab1, "object/mobile/vehicle/shared_landspeeder_ab1.iff")
+
+--Air-2 Racing Swoop
+object_mobile_vehicle_shared_air2_swoop_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_air2_swoop_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_air2_swoop_speeder, "object/mobile/vehicle/shared_air2_swoop_speeder.iff")
+
+--Desert Skiff
+object_mobile_vehicle_shared_landspeeder_desert_skiff = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_desert_skiff.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_desert_skiff, "object/mobile/vehicle/shared_landspeeder_desert_skiff.iff")
+
+--Imperial Command BARC
+object_mobile_vehicle_shared_barc_speeder_imperial = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_barc_speeder_imperial.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_barc_speeder_imperial, "object/mobile/vehicle/shared_barc_speeder_imperial.iff")
+
+--Rebel Command BARC
+object_mobile_vehicle_shared_barc_speeder_rebel = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_barc_speeder_rebel.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_barc_speeder_rebel, "object/mobile/vehicle/shared_barc_speeder_rebel.iff")
+
+--Flare S Swoop
+object_mobile_vehicle_shared_flare_s_swoop = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_flare_s_swoop.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_flare_s_swoop, "object/mobile/vehicle/shared_flare_s_swoop.iff")
+
+--Geonosian Speeder
+object_mobile_vehicle_shared_geonosian_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_geonosian_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_geonosian_speeder, "object/mobile/vehicle/shared_geonosian_speeder.iff")
+
+--Hover Lifter Speeder
+object_mobile_vehicle_shared_hoverlifter_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_hoverlifter_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_hoverlifter_speeder, "object/mobile/vehicle/shared_hoverlifter_speeder.iff")
+
+--Koro-2 Exodrive Airspeeder
+object_mobile_vehicle_shared_koro2_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_koro2_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_koro2_speeder, "object/mobile/vehicle/shared_koro2_speeder.iff")
+
+--Lava Skiff Speeder
+object_mobile_vehicle_shared_landspeeder_lava_skiff = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_lava_skiff.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_lava_skiff, "object/mobile/vehicle/shared_landspeeder_lava_skiff.iff")
+
+--XJ-2 Airpeeder
+object_mobile_vehicle_shared_landspeeder_organa = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_organa.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_organa, "object/mobile/vehicle/shared_landspeeder_organa.iff")
+
+--Tantive IV Landspeeder
+object_mobile_vehicle_shared_landspeeder_tantive4 = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_tantive4.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_tantive4, "object/mobile/vehicle/shared_landspeeder_tantive4.iff")
+
+--USV-5 Landspeeder
+object_mobile_vehicle_shared_landspeeder_usv5 = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_usv5.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_usv5, "object/mobile/vehicle/shared_landspeeder_usv5.iff")
+
+--V35 Landspeeder
+object_mobile_vehicle_shared_landspeeder_v35 = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_landspeeder_v35.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_landspeeder_v35, "object/mobile/vehicle/shared_landspeeder_v35.iff")
+
+--Mechno Chair
+object_mobile_vehicle_shared_mechno_chair = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_mechno_chair.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_mechno_chair, "object/mobile/vehicle/shared_mechno_chair.iff")
+
+--Ric 920 Speeder
+object_mobile_vehicle_shared_ric_920_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_ric_920_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_ric_920_speeder, "object/mobile/vehicle/shared_ric_920_speeder.iff")
+
+--Sith Speeder
+object_mobile_vehicle_shared_sith_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_sith_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_sith_speeder, "object/mobile/vehicle/shared_sith_speeder.iff")
+
+--Advanced STAP-1
+object_mobile_vehicle_shared_stap_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_stap_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_stap_speeder, "object/mobile/vehicle/shared_stap_speeder.iff")
+
+--Swamp Speeder
+object_mobile_vehicle_shared_swamp_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_swamp_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_swamp_speeder, "object/mobile/vehicle/shared_swamp_speeder.iff")
+
+--XJ6 Air Speeder
+object_mobile_vehicle_shared_xj6_air_speeder = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_xj6_air_speeder.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_xj6_air_speeder, "object/mobile/vehicle/shared_xj6_air_speeder.iff")
+
+--Ghostly Flash Speeder
+object_mobile_vehicle_shared_ghost_speederbike_flash = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/vehicle/shared_ghost_speederbike_flash.iff"
+}
+ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_ghost_speederbike_flash, "object/mobile/vehicle/shared_ghost_speederbike_flash.iff")
+
+

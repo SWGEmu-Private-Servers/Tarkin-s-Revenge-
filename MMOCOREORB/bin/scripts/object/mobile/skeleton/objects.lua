@@ -4439,3 +4439,45 @@ object_mobile_skeleton_shared_wed_treadwell = SharedCreatureObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_wed_treadwell, "object/mobile/skeleton/shared_wed_treadwell.iff")
+
+object_mobile_skeleton_shared_tulrus = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_tulrus.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_tulrus, "object/mobile/skeleton/shared_tulrus.iff")
+
+object_mobile_skeleton_shared_varactyl = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_varactyl.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_varactyl, "object/mobile/skeleton/shared_varactyl.iff")
+
+object_mobile_skeleton_shared_blistmok = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_blistmok.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_blistmok, "object/mobile/skeleton/shared_blistmok.iff")
+
+object_mobile_skeleton_shared_tanray = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_tanray.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_tanray, "object/mobile/skeleton/shared_tanray.iff")
+
+object_mobile_skeleton_shared_killer_worm = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_killer_worm.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_killer_worm, "object/mobile/skeleton/shared_killer_worm.iff")
+
+object_mobile_skeleton_shared_hawk_bat = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_hawk_bat.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_hawk_bat, "object/mobile/skeleton/shared_hawk_bat.iff")
+
+object_mobile_skeleton_shared_undead_humanoid = SharedCreatureObjectTemplate:new {
+	clientTemplateFileName = "object/mobile/skeleton/shared_undead_humanoid.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_mobile_skeleton_shared_undead_humanoid, "object/mobile/skeleton/shared_undead_humanoid.iff")

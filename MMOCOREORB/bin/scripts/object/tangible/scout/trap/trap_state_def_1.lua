@@ -46,7 +46,7 @@ object_tangible_scout_trap_trap_state_def_1 = object_tangible_scout_trap_shared_
 	templateType = TRAP,
 	objectMenuComponent = "TrapMenuComponent",
 
-	useCount = 5,
+	useCount = 50,
 	skillRequired = 15,
 
 	skillMods = {{"blind_defense", -40},{"dizzy_defense", -40},{"intimidate_defense", -40},{"knockdown_defense", -40},{"stun_defense", -40}},

@@ -16,10 +16,10 @@ sharnaff = Creature:new {
 	hideType = "hide_scaley",
 	hideAmount = 300,
 	boneType = "bone_mammal",
-	boneAmount = 180,
+	boneAmount = 210,
 	milkType = "milk_wild",
-	milk = 220,
-	tamingChance = 0,
+	milk = 300,
+	tamingChance = 0.25,
 	ferocity = 2,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = NONE,
@@ -28,6 +28,7 @@ sharnaff = Creature:new {
 
 	templates = {"object/mobile/sharnaff_hue.iff"},
 	hues = { 8, 9, 10, 11, 12, 13, 14, 15 },
+	controlDeviceTemplate = "object/intangible/pet/sharnaff_hue.iff",
 	lootGroups = {
 		{
 			groups = {

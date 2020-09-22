@@ -46,3 +46,4 @@
 
 -- Server Objects
 includeFile("tangible/container/food/lunchbox_base.lua")
+includeFile("tangible/container/food/ice_cream_fryer.lua")

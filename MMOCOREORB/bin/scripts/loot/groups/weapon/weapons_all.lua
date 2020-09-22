@@ -25,7 +25,7 @@ weapons_all = {
 		{itemTemplate = "rifle_dlt20a", weight = 227271},
 		{itemTemplate = "pistol_scout_trooper", weight = 227271},
 		{itemTemplate = "grenade_fragmentation", weight = 227271},
-		{itemTemplate = "mine_drx55", weight = 227271},
+		{itemTemplate = "mine_drx55", weight = 177271},
 
 		-- Uncommon (1/3)
 		{itemTemplate = "one_handed_curved_sword", weight = 151516},
@@ -80,6 +80,9 @@ weapons_all = {
 		{itemTemplate = "heavy_rocket_launcher", weight = 59524},
 		{itemTemplate = "rifle_t21", weight = 59524},
 		{itemTemplate = "pistol_tangle", weight = 59524},
+
+		--Rarest
+		{groupTemplate = "cu_nge_weapons", weight = 50000}
 	}
 }
 

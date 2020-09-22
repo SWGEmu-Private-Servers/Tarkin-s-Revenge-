@@ -7061,3 +7061,183 @@ object_tangible_furniture_all_shared_frn_bench_generic = SharedTangibleObjectTem
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_bench_generic, "object/tangible/furniture/all/shared_frn_bench_generic.iff")
+
+object_tangible_furniture_all_shared_frn_all_death_troopers_painting = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_death_troopers_painting.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_death_troopers_painting, "object/tangible/furniture/all/frn_all_death_troopers_painting.iff")
+
+object_tangible_furniture_all_shared_gmf_painting_2010 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/gmf_painting_2010.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_gmf_painting_2010, "object/tangible/furniture/all/gmf_painting_2010.iff")
+
+--Meatlump Pallet
+object_tangible_furniture_all_shared_frn_all_meatlump_palette_empty = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_meatlump_palette_empty.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_meatlump_palette_empty, "object/tangible/furniture/all/frn_all_meatlump_palette_empty.iff")
+
+--Control Chair
+object_tangible_furniture_all_shared_frn_chair_control = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_chair_control.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_chair_control, "object/tangible/furniture/all/frn_chair_control.iff")
+
+--Meatlump Rock Chair
+object_tangible_furniture_all_shared_meatlump_reward_rock_chair_01 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/meatlump_reward_rock_chair_01.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_meatlump_reward_rock_chair_01, "object/tangible/furniture/all/meatlump_reward_rock_chair_01.iff")
+
+--Bantha Skin Rug
+object_tangible_furniture_all_shared_frn_all_rug_bantha_skin = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_rug_bantha_skin.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_rug_bantha_skin, "object/tangible/furniture/all/frn_all_rug_bantha_skin.iff")
+
+--Diner Bar
+object_tangible_furniture_all_shared_frn_diner_bar = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_bar.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_bar, "object/tangible/furniture/all/frn_diner_bar.iff")
+
+--Diner Booth
+object_tangible_furniture_all_shared_frn_diner_booth = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_booth.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_booth, "object/tangible/furniture/all/frn_diner_booth.iff")
+
+--Diner Center Counter
+object_tangible_furniture_all_shared_frn_diner_counter_center = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_counter_center.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_counter_center, "object/tangible/furniture/all/frn_diner_counter_center.iff")
+
+--Diner Corner Counter
+object_tangible_furniture_all_shared_frn_diner_counter_corner = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_counter_corner.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_counter_corner, "object/tangible/furniture/all/frn_diner_counter_corner.iff")
+
+--Diner Corner Counter 2
+object_tangible_furniture_all_shared_frn_diner_counter_corner_s02 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_counter_corner_s02.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_counter_corner_s02, "object/tangible/furniture/all/frn_diner_counter_corner_s02.iff")
+
+--Diner Stool
+object_tangible_furniture_all_shared_frn_diner_stool = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_stool.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_stool, "object/tangible/furniture/all/frn_diner_stool.iff")
+
+--Diner Table
+object_tangible_furniture_all_shared_frn_diner_table = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_diner_table.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_diner_table, "object/tangible/furniture/all/frn_diner_table.iff")
+
+--Lung Vat
+object_tangible_furniture_all_shared_outbreak_lung_vat = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/outbreak_lung_vat.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_outbreak_lung_vat, "object/tangible/furniture/all/outbreak_lung_vat.iff")
+
+--Table
+object_tangible_furniture_all_shared_outbreak_science_desk = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/outbreak_science_desk.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_outbreak_science_desk, "object/tangible/furniture/all/outbreak_science_desk.iff")
+
+--Escape Pod Statuette
+object_tangible_furniture_all_shared_frn_all_escape_pod_statuette = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_escape_pod_statuette.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_escape_pod_statuette, "object/tangible/furniture/all/frn_all_escape_pod_statuette.iff")
+
+--Naboo City Hall Statuette
+object_tangible_furniture_all_shared_frn_all_statuette_cityhall_naboo = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_statuette_cityhall_naboo.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_statuette_cityhall_naboo, "object/tangible/furniture/all/frn_all_statuette_cityhall_naboo.iff")
+
+--Jabba's Palace Statuette
+object_tangible_furniture_all_shared_frn_all_statuette_jabba_palace = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_statuette_jabba_palace.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_statuette_jabba_palace, "object/tangible/furniture/all/frn_all_statuette_jabba_palace.iff")
+
+--Kashyyyk Tree City Statuette
+object_tangible_furniture_all_shared_frn_all_statuette_kash_treecity = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_statuette_kash_treecity.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_statuette_kash_treecity, "object/tangible/furniture/all/frn_all_statuette_kash_treecity.iff")
+
+--Naboo Small House Statuette
+object_tangible_furniture_all_shared_frn_all_statuette_small_naboo_house = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/frn_all_statuette_small_naboo_house.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_frn_all_statuette_small_naboo_house, "object/tangible/furniture/all/frn_all_statuette_small_naboo_house.iff")
+
+--Deathtrooper Pile
+object_tangible_furniture_all_shared_outbreak_deathtrooper_pile = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_outbreak_deathtrooper_pile.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_outbreak_deathtrooper_pile, "object/tangible/furniture/all/shared_outbreak_deathtrooper_pile.iff")
+
+--Zombie Arm
+object_tangible_furniture_all_shared_undead_arm = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_undead_arm.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_undead_arm, "object/tangible/furniture/all/shared_undead_arm.iff")
+
+--Zombie Foot
+object_tangible_furniture_all_shared_undead_foot = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_undead_foot.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_undead_foot, "object/tangible/furniture/all/shared_undead_foot.iff")
+
+--Zombie Hand
+object_tangible_furniture_all_shared_undead_hand = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_undead_hand.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_undead_hand, "object/tangible/furniture/all/shared_undead_hand.iff")
+
+--Zombie Head
+object_tangible_furniture_all_shared_undead_head = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_undead_head.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_undead_head, "object/tangible/furniture/all/shared_undead_head.iff")
+
+--Zombie Leg
+object_tangible_furniture_all_shared_undead_leg = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/furniture/all/shared_undead_leg.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_furniture_all_shared_undead_leg, "object/tangible/furniture/all/shared_undead_leg.iff")

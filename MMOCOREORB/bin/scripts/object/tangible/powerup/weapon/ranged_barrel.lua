@@ -50,16 +50,20 @@ object_tangible_powerup_weapon_ranged_barrel = object_tangible_powerup_weapon_sh
 	baseName = "Barrel",
 
 	primary = {
-		{"healthAttackCost", "Ported", "cat_pup.pup_wpn_attack_cost_health"}, 
-		{"pointBlankAccuracy", "Smoothed", "cat_pup.pup_wpn_range_attack_mod_zero"}, 
-  		{"woundsRatio", "Taper-Bored", "cat_pup.pup_wpn_wound_chance"}
+		{"maxDamage", "Hot-Wired", "cat_pup.pup_wpn_damage_max"}, 
+		{"attackSpeed", "Hair-Trigger", "cat_pup.pup_wpn_attack_speed"}, 
 	},
 
 	secondary = {
-		{"idealAccuracy", "Alignment", "cat_pup.pup_wpn_range_attack_mod_mid"}, 
-		{"maxDamage", "Concentration", "cat_pup.pup_wpn_damage_max"}, 
-		{"mindAttackCost", "Dampening", "cat_pup.pup_wpn_attack_cost_mind"}, 
-		{"idealRange", "Condensing", "cat_pup.pup_wpn_range_mid"}
+		{"minDamage", "Sighting", "cat_pup.pup_wpn_damage_min"},
+		{"healthAttackCost", "Recoil-Deadening", "cat_pup.pup_wpn_attack_cost_health"},
+   		{"actionAttackCost", "Cushioning", "cat_pup.pup_wpn_attack_cost_action"},
+		{"mindAttackCost", "Compensation", "cat_pup.pup_wpn_attack_cost_mind"}, 
+		{"idealAccuracy", "Accuracy", "cat_pup.pup_wpn_range_attack_mod_mid"},
+		{"maxRangeAccuracy", "Steadying", "cat_pup.pup_wpn_range_attack_mod_max"}, 
+  		{"woundsRatio", "Reckoning", "cat_pup.pup_wpn_wound_chance"},
+		{"pointBlankAccuracy", "Searing", "cat_pup.pup_wpn_range_attack_mod_zero"}, 
+		{"idealRange", "Overpowering", "cat_pup.pup_wpn_range_mid"},
 	},
 
 	numberExperimentalProperties = {1, 1, 1, 1},

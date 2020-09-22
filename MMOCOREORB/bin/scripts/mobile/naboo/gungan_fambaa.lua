@@ -11,7 +11,7 @@ gungan_fambaa = Creature:new {
 	baseHAMmax = 11300,
 	armor = 0,
 	resists = {140,140,30,30,180,180,-1,30,-1},
-	meatType = "meat_reptilian",
+	meatType = "meat_domesticated",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
 	hideAmount = 750,
@@ -27,7 +27,7 @@ gungan_fambaa = Creature:new {
 	diet = CARNIVORE,
 
 	templates = {"object/mobile/fambaa_hue.iff"},
-	hues = { 16, 17, 18, 19, 20, 21, 22, 23 },
+	hues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 },
 	scale = 1.2,
 	lootGroups = {
 	 {

@@ -57,10 +57,10 @@ object_tangible_food_foraged_foraged_vegetable_s5 = object_tangible_food_foraged
 	flavorMax = 0,
 	nutritionMin = 0,
 	nutritionMax = 0,
-	quantityMin = 0,
-	quantityMax = 0,
+	quantityMin = 1,
+	quantityMax = 10,
 	
-	modifiers = { "health", 120, "mind", 50 },
+	modifiers = { "health", 240, "mind", 100 },
 
 	buffName = "sosi_hodor",
 	buffCRC = 0,

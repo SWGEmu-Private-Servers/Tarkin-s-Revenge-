@@ -22,3 +22,7 @@ includeFile("dungeon/geonosian_bio_lab/herald_biogenic_harmon.lua")
 includeFile("dungeon/geonosian_bio_lab/herald_biogenic_teraeza.lua")
 includeFile("dungeon/geonosian_bio_lab/imperial_observer.lua")
 includeFile("dungeon/geonosian_bio_lab/mercenary_sentry.lua")
+
+--Tarkin specific
+includeFile("dungeon/geonosian_bio_lab/acklay_elder.lua")
+includeFile("dungeon/geonosian_bio_lab/acklay_youngling.lua")

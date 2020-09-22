@@ -5,8 +5,9 @@ melee_baton = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "baton_stun", weight = 5000000},
-		{itemTemplate = "baton_gaderiffi", weight = 5000000}
+		{itemTemplate = "baton_stun", weight = 4900000},
+		{itemTemplate = "baton_gaderiffi", weight = 5000000},
+		{groupTemplate = "cu_nge_onehand", weight = 100000},	
 	}
 }
 

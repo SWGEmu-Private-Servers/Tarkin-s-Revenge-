@@ -1,5 +1,5 @@
 endor_mantigrue_night_stalker_lair_neutral_small = Lair:new {
-	mobiles = {{"mantigrue_night_stalker",1}},
+	mobiles = {{"mantigrue_night_stalker",1},{"mantigrue_hunter",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_nest_large.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_nest_large.iff"},
