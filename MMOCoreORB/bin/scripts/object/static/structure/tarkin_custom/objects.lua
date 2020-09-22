@@ -1,0 +1,14 @@
+object_static_structure_tarkin_custom_shared_tarkins_revenge_arena = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/structure/tarkin_custom/shared_tarkins_revenge_arena.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_tarkin_custom_shared_tarkins_revenge_arena, "object/static/structure/tarkin_custom/shared_tarkins_revenge_arena.iff")
+
+object_static_structure_tarkin_custom_shared_tarkins_revenge_arena_light = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/structure/tarkin_custom/shared_tarkins_revenge_arena_light.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_tarkin_custom_shared_tarkins_revenge_arena_light, "object/static/structure/tarkin_custom/shared_tarkins_revenge_arena_light.iff")
+
+object_static_structure_tarkin_custom_shared_echo_base_door_lg_static_collide = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/static/structure/tarkin_custom/shared_echo_base_door_lg_static_collide.iff"
+}
+ObjectTemplates:addClientTemplate(object_static_structure_tarkin_custom_shared_echo_base_door_lg_static_collide, "object/static/structure/tarkin_custom/shared_echo_base_door_lg_static_collide.iff")

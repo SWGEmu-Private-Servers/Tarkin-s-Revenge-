@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_acid_fan_blade= object_tangible_loot_dungeon_tarkin_custom_shared_acid_fan_blade:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_acid_fan_blade, "object/tangible/loot/dungeon/tarkin_custom/acid_fan_blade.iff")

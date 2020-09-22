@@ -1,0 +1,4 @@
+object_tangible_tarkin_custom_decorative_corv_whitewall_base = object_tangible_tarkin_custom_decorative_shared_corv_whitewall_base:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_corv_whitewall_base, "object/tangible/tarkin_custom/decorative/corv_whitewall_base.iff")

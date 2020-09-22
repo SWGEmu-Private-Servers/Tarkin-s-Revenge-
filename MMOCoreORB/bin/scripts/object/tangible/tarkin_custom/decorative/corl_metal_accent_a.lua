@@ -1,0 +1,4 @@
+object_tangible_tarkin_custom_decorative_corl_metal_accent_a = object_tangible_tarkin_custom_decorative_shared_corl_metal_accent_a:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_corl_metal_accent_a, "object/tangible/tarkin_custom/decorative/corl_metal_accent_a.iff")

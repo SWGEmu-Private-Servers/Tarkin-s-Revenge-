@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_ply_yt1300_door = object_tangible_tarkin_custom_decorative_shared_ply_yt1300_door:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_ply_yt1300_door, "object/tangible/tarkin_custom/decorative/ply_yt1300_door.iff")

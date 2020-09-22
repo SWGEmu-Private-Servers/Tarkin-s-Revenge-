@@ -1,0 +1,390 @@
+StarToursTable = {
+	{catName = "Starports & Shuttleports",
+		subCategory = {
+			"Corellia", "port_corellia",
+			"Dantooine", "port_dantooine",
+			"Dathomir", "port_dathomir",
+			"Endor", "port_endor",
+			"Lok", "port_lok",
+			"Naboo", "port_naboo",
+			"Rori", "port_rori",
+			"Talus", "port_talus",
+			"Tatooine", "port_tatooine",
+			"Yavin IV", "port_yavin",
+		}
+	},
+	{catName = "POIs, Dungeons, & Caves",
+		subCategory = {
+			"Corellia POIs", "poi_corellia",
+			"Dantooine POIs", "poi_dantooine",
+			"Dathomir POIs", "poi_dathomir",
+			"Endor POIs", "poi_endor",
+			"Lok POIs", "poi_lok",
+			"Naboo POIs", "poi_naboo",
+			"Rori POIs", "poi_rori",
+			"Talus POIs", "poi_talus",
+			"Tatooine POIs", "poi_tatooine",
+			"Yavin IV POIs", "poi_yavin",
+		}
+	},
+	{catName = "Racetracks",
+		subCategory = {
+			"All Racetracks", "racetracks_all",
+		}
+	},
+	{catName = "Sightseeing",
+		subCategory = {
+			"Corellia Sights", "sights_corellia",
+			"Dantooine Sights", "sights_dantooine",
+			"Dathomir Sights", "sights_dathomir",
+			"Endor Sights", "sights_endor",
+			"Lok Sights", "sights_lok",
+			"Naboo Sights", "sights_naboo",
+			"Rori Sights", "sights_rori",
+			"Talus Sights", "sights_talus",
+			"Tatooine Sights", "sights_tatooine",
+			"Yavin IV Sights", "sights_yavin",
+		}
+	}
+}
+
+StarToursDestinationTable = {
+	{subCatName = "port_corellia", 
+		 destinations = {
+			"Coronet (Starport)", "corellia", -157.288, 28.0006, -4938.26, 0,
+			--"Coronet (Shuttleport A)", "corellia", -27.7774, 28.0, -4411.92, 0,
+			--"Coronet (Shuttleport B)", "corellia", -325.767, 28.0, -4644.23, 0,
+			"Tyrena (Starport)", "corellia", -4976.86, 21.0, -2212.79, 0,
+			"Tyrena (Shuttleport A)", "corellia", -5007.25, 21.0, -2384.66, 0,
+			"Tyrena (Shuttleport B)", "corellia", -5603.01, 21.0, -2790.27, 0,
+			"Kor Vella (Starport)", "corellia", -3148.55, 31.0, 2906.02, 0,
+			"Kor Vella (Shuttleport)", "corellia", -3771.33, 86.0, 3235.01, 0,
+			"Doaba Guerfel (Starport)", "corellia", 3371.2, 308.0, 5621.8, 0,
+			"Doaba Guerfel (Shuttleport)", "corellia", 3080.52, 280.601, 4992.53, 0,
+			"Bela Vistal (Shuttleport A)", "corellia", 6647.93, 330.0, -5919.12, 0,
+			"Bela Vistal (Shuttleport B)", "corellia", 6932.02, 330.0, -5532.15, 0,
+			"Vreni Island (Shuttleport)", "corellia", -5551.4, 15.9856, -6057.02, 0,
+		}
+	},
+	{subCatName = "port_dantooine",
+		 destinations = {
+			"Dantooine Mining Outpost (Starport)", "dantooine", -638.115, 3.0, 2487.62, 0,
+			"Dantooine Agro Outpost (Starport)", "dantooine", 1588.8, 4.0, -6403.58, 0,
+		}
+	},
+	{subCatName = "port_dathomir",
+		 destinations = {
+			"Dathomir Trade Outpost (Starport)", "dathomir", 600.161, 6.0, 3087.24, 0,
+			"Dathomir Science Outpost (Starport)", "dathomir", -64.3517, 18.0, -1589.0, 0,
+		}
+	},
+	{subCatName = "port_endor",
+		 destinations = {
+			"Endor Smuggler Outpost (Starport)", "endor", -971.751, 73.0, 1557.36, 0,
+			"Endor Research Outpost (Starport)", "endor", 3219.24, 24.0, -3487.26, 0,
+		}
+	},
+	{subCatName = "port_lok",
+		 destinations = {
+			"Nym's Stronghold (Starport)", "lok", 459.649, 8.76811, 5501.64, 0,
+		}
+	},
+	{subCatName = "port_naboo",
+		 destinations = {
+			"Theed (Starport)", "naboo", -4861.33, 6.0, 4164.66, 0,
+			--"Theed (Shuttleport A)", "naboo", -5851.46, 6.0, 4170.31, 0,
+			--"Theed (Shuttleport B)", "naboo", -5007.69, 6.0, 4074.96, 0,
+			--"Theed (Shuttleport C)", "naboo", -5406.31, 6.0, 4324.02, 0,
+			"Kaadara (Starport)", "naboo", 5308.92, -192.0, 6676.14, 0,
+			"Kaadara (Shuttleport)", "naboo", 5128.35, -191.699, 6615.43, 0,
+			"Keren (Starport)", "naboo", 1341.51, 13.0, 2755.2, 0,
+			"Keren (Shuttleport)", "naboo", 2023.14, 19.0, 2527.78, 0,
+			"Keren (Shuttleport South)", "naboo", 1569.21, 25.0, 2834.25, 0,
+			"Moenia (Starport)", "naboo", 4710.59, 4.17, -4653.92, 0,
+			"Moenia (Shuttleport)", "naboo", 4965.67, 4.0498, -4896.03, 0,
+			"Dee'ja Peak (Shuttleport)", "naboo", 5329.15, 326.743, -1575.4, 0,
+			"The Lake Retreat (Shuttleport)", "naboo", -5494.77, -150, -24.8175, 0,
+		}
+	},
+	{subCatName = "port_rori",
+		 destinations = {
+			"Narmle (Starport)", "rori", -5389.02, 80.0, -2162.49, 0,
+			"Narmle (Shuttleport)", "rori", -5253.72, 80.6553, -2165.25, 0,
+			"Restuss (Starport)", "rori", 5350.52, 80.0, 5763.05, 0,
+			"Restuss (Shuttleport)", "rori", 5210.12, 80.2998, 5794.9, 0,
+		}
+	},
+	{subCatName = "port_talus",
+		 destinations = {
+			"Dearic (Starport)", "talus", 233.147, 6.0, -2944.94, 0,
+			"Dearic (Shuttleport)", "talus", 696.789, 6.0, -3043.4, 0,
+			"Nashal (Starport)", "talus", 4471.4, 2.0, 5379.62, 0,
+			"Nashal (Shuttleport)", "talus", 4337.48, 9.9, 5431.81, 0,
+		}
+	},
+	{subCatName = "port_tatooine",
+		 destinations = {
+			"Bestine (Starport)", "tatooine", -1389.22, 12.0, -3589.25, 0,
+			"Bestine (Shuttleport)", "tatooine", -1093.66, 12.6006, -3564.85, 0,
+			"Mos Entha (Starport)", "tatooine", 1050.18, 6.59466, 2986.16, 0,
+			--"Mos Entha (Shuttleport A)", "tatooine", 1732.41, 7.0, 3187.19, 0,
+			--"Mos Entha (Shuttleport B)", "tatooine", 1390.68, 7.0, 3468.53, 0,
+			"Mos Espa (Starport)", "tatooine", -2811.36, 5.0, 2085.76, 0,
+			"Mos Espa (Shuttleport East)", "tatooine", -2800.69, 5.0, 2181.93, 0,
+			"Mos Espa (Shuttleport South)", "tatooine", -2898.4, 5.0, 1937.19, 0,
+			"Mos Espa (Shuttleport West)", "tatooine", -3115.42, 5.2998, 2173.2, 0,
+			"Mos Eisley (Starport)", "tatooine", 3630.45, 5.0, -4788.07, 0,
+			"Mos Eisley (Shuttleport)", "tatooine", 3414.35, 5.0, -4644.9, 0,
+			"Anchorhead (Shuttleport)", "tatooine", 45.9294, 52.2998, -5334.18, 0,
+			"Mos Taike (City, No Shuttle)", "tatooine", 3867.74, 12.4583, 2433.5, 0,
+			"Wayfar (City, No Shuttle)", "tatooine", -5027.17, 80.3934, -6541.52, 0,
+		}
+	},
+	{subCatName = "port_yavin",
+		 destinations = {
+			"Yavin IV Mining Outpost (Starport)", "yavin4", -282.45, 35.0, 4883.43, 0,
+			"Yavin IV Labor Outpost (Starport)", "yavin4", -6933.75, 73.0, -5714.74, 0,
+		}
+	},
+	{subCatName = "poi_corellia",
+		destinations = {
+			"Rogue Corsec Base", "corellia", 5325.3, 0.040539, 1528.03, 0,
+			"Lord Nyax Cult Bunker", "corellia", 1357.94, 31.5583, -424.707, 0,
+			"Drall Patriot's Cave", "corellia", 1051.46, 29.7308, 4201.22, 0,
+			"Afarathu Cave", "corellia", -2485.14, 20.0067, 2907.71, 0,
+			"Rebels vs Imperials", "corellia", 4199.11, 23.4088, -1273.5, 0,
+		}
+	},
+	{subCatName = "poi_dantooine",
+		destinations = {
+			"Dantari Village (South)", "dantooine", -3954.8, 10.804, -5641.83, 0,
+			"Dantari Village (West)", "dantooine", -7130.61, 5.39297, -1015.74, 0,
+			"Dantari Village (East)", "dantooine", 5569.71, 9.54087, -543.619, 0,
+			"Force Crystal Hunter's Cave", "dantooine", -6224.12, 42.876, 7264.38, 0,
+			"Janta Stronghold", "dantooine", 7028.35, 47.7802, -4101.83, 0,
+			"Mokk Stronghold", "dantooine", -7178.52, 9.74209, -3314.4, 0,
+			"Kunga Stronghold", "dantooine", -159.468, -499.164, -499.164, 0,
+			"The Warren", "dantooine", -565.925, 0.205186, -3723.46, 0,
+			"Lizard Cave", "dantooine", 4180.33, 5.5, 5139.36, 0,
+		}
+	},
+	{subCatName = "poi_dathomir",
+		destinations = {
+			"Dathomir Sarlacc & Mutant Rancors", "dathomir", -2131.54, 9.10324, 2918.15, 0,			
+			"Nightsister Stronghold", "dathomir", -3880.85, 129.254, -57.6637, 0,
+			"Singing Mountain Clan Stronghold", "dathomir", 655.805, 216.461, 4163.02, 0,
+			"Nightsister vs Singing Mountain Clan Battle", "dathomir", -2513.37, 128.665, 1418.28, 0,			
+			"Spiderclan Cave", "dathomir", -1211.05, 120.275, 6260.79, 0,
+			"Nightsister Forced Labor Camp", "dathomir", 2416.26, 130.86, -1701.84, 0,
+			"Rancor Cave", "dathomir", -4161.66, 20.8428, -2177.72, 0,
+			"Nightsister Guard Camp", "dathomir", -4138.66, 119.727, -878.268, 0,
+			"Purbole Lair", "dathomir", 5581.41, 147.607, 1958.67, 0,
+			"Singing Mountain Clan Bridge", "dathomir", -909.772, 129.44, 4205.42, 0,
+			"Singing Mountain Clan Village", "dathomir", -7022.02, 442.982, 5918.03, 0,
+			"Spiderclan Floating Rocks", "dathomir", -7188.59, 410.951, 2946.06, 0,
+			"Singing Mountain Clan Floating Rocks", "dathomir", 5261.37, 488.024, -6873.91, 0,
+			"More Singing Mountain Clan Floating Rocks", "dathomir", -6651.72, 369.472, -827.955, 0,
+			"Nightsister Ceremonial Site", "dathomir", 974.739, 83.0921, -4497.23, 0,
+			"Singing Mountain Clan Lookout Station", "dathomir", -4687.88, 85.4267, -6577.87, 0,
+			"Rancor-Filled Destroyed Rebel Base", "dathomir", -4855.41, 97.1861, -4743.88, 0,
+		}
+	},
+	{subCatName = "poi_endor",
+		destinations = {
+			"Death Watch Bunker", "endor", -4692.14, 13.9241, 4332.01, 0,
+			"Marauder Stronghold", "endor", -4809.65, 92.2812, -2339.99, 0,
+			"Ewok Tree Village 1 (Panshee)", "endor", -7.21772, 18.1013, 86.4294, 0,
+			"Ewok Tree Village 2 (Panshee)", "endor", 4639.02, 32.926, -2339.11, 0,
+			"Ewok Lake Village 1 (Gondula)", "endor", 1546.66, 5.0, -3256.46, 0,
+			"Ewok Lake Village 2 (Gondula)", "endor", -599.96, 2.0, -4923.21, 0,
+			"Dulok Village North (Donkuwah)", "endor", -1277.67, 11.7798, 2837.29, 0,
+			"Dulok Village South (Donkuwah)", "endor", 5857.91, 217.644, -2521.56, 0,
+			"Korga Cave", "endor", 2272.02, 23.8042, 3499.51, 0,
+			"Jinda Ritualist's Cave", "endor", -1796.25, 17.2887, -75.2039, 0,
+			"Orphaned Marauder's Cave", "endor", -6802.74, 16.0083, 685.114, 0,
+			"Village Overtaken By Merek Harvesters", "endor", 3975.45, 226.667, 5831.62, 0,
+		}
+	},
+	{subCatName = "poi_lok",
+		destinations = {
+			"Kimogila Town", "lok", -75.1211, 12.0, 2701.22, 0,
+			"Canyon Corsair's Stronghold", "lok", -3712.83, 62.0175, -3843.93, 0,
+			"Downed Blood Razor's Transport", "lok", 3607.85, 33.5512, 2404.81, 0,
+			"Droid Engineer's Cave", "lok", 3324.39, 98.1028, -4933.38, 0,
+			"Nym's Pirate Cave", "lok", -3032.95, 12.1857, -674.788, 0,
+			"Imperial Gas Mines", "lok", 6391.09, 87.0887, 3876.72, 0,
+			"Imperial Research Facility", "lok", 934.411, 18.246, -4130.83, 0,
+			"Reclusive Gurk King Platform", "lok", 747.993, 27.7812, -3304.31, 0,
+			"Reclusive Gurk King Camp", "lok", -3686.92, 63.1775, -3509.34, 0,
+			"Kimogila Cave", "lok", 4770.95, 15.4173, 975.835, 0,
+		}
+	},
+	{subCatName = "poi_naboo",
+		destinations = {
+			"Gungan Sacred Place", "naboo", -2147.05, 5.72905, -5411.86, 0,
+			"Imperial vs Gungan Battle", "naboo", 4885.48, 8.03999, -3772.84, 0,
+			"Weapons Development Facility", "naboo", -6468.56, 38.1662, -3163.12, 0,
+			"Narglatch Cave", "naboo", 5864.6, 36.0, -4661.37, 0,
+			"Mauler Stronghold", "naboo", 2875.15, 59.5108, 1248.18, 0,
+			"Pirate Bunker", "naboo", -1603.29, 328.859, -1728.07, 0,
+			"Veermok Cave", "naboo", 5690.64, 328.146, -1479.96, 0,
+		}
+	},
+	{subCatName = "poi_rori",
+		destinations = {
+			"Kobola Bunker", "rori", 7271.44, 82.6067, 115.105, 0,
+			"Hyperdrive Research Facility", "rori", -1048.07, 94.5438, 4464.87, 0,
+			"Garyn Raider's Bunker", "rori", -6044.73, 180.648, -1888.06, 0,
+			"Borgle Bat Cave", "rori", 887.42, 83.1419, -4915.55, 0,
+			"Cobral Hideout", "rori", 5476.94, 78.4363, 5111.65, 0,
+			"Pygmy Torton Cave", "rori", -1788.25, 89.9378, -4531.85, 0,
+			"Poacher vs Creature Battle", "rori", 872.998, 90.0, -2100.17, 0,
+			"Giant Bark Mite Cave", "rori", 3552.18, 106.408, 5416.74, 0,
+			"Rori Gungan's Swamp Town", "rori", -1968.68, 76.0383, 3264.58, 0,
+			"Black Sun Outpost Bunker", "rori", 4798.27, 76.9057, -1161.49, 0,
+			"Crashed Corellian Corvette", "rori", -126.976, 77.9764, 1987.84, 0,
+		}
+	},
+	{subCatName = "poi_talus",
+		destinations = {
+			"Chunker Bunker", "talus", 1355.47, 29.0, 1371.22, 0,
+			"Aa'kuan Champion's Cave", "talus", 5965.4, 61.5677, 4578.43, 0,
+			"Binyare Pirate Bunker", "talus", 5482.62, 102.737, -4074.46, 0,
+			"Aa'kuans at Flaming Rocks", "talus", -1810.09, 18.4969, 1345.01, 0,
+			"Giant Decay Mite Ruins", "talus", -5168.15, 2.50919, 3129.06, 0,
+			"Lost Village of Durbin", "talus", 4195.29, 6.0, 1109.94, 0,
+			"Rebel vs Imperial Battle", "talus", -2629.23, 53.6751, 3714.01, 0,
+			"Lost Aqualish War Party's Cave", "talus", -4257.12, 35.043, -1448.87, 0,
+			"Weapons Depot", "talus", -4791.01, 50.483, -3143.92, 0,
+			"Detainment Center", "talus", 5062.68, 482.88, -5938.4, 0,
+			"Corsec vs Flail Battle", "talus", 2985.87, 61.4222, 6147.86, 0,
+			"Giant Fynock Cave", "talus", 1489.73, 37.3551, -865.313, 0,
+			"Erran Sif Bunker", "talus", 2132.78, 121.71, -5526.46, 0,
+			"Kahmurra Biogenetic Research Station", "talus", -4696.9, 15.453, -4728.23, 0,
+			"Giant Decay Mite Cave", "talus", -5523.15, 37.899, -4704.76, 0,
+			"Selonian Camp", "talus", 105.182, 35.5396, -5649.41, 0,
+		}
+	},
+	{subCatName = "poi_tatooine",
+		destinations = {
+			"Jawa Traders", "tatooine", -6119.56, 7.86514, 1720.1, 0,
+			"Fort Tusken", "tatooine", -3999.8, 13.882, 6380.91, 0,	
+			"Tusken Bunker", "tatooine", -1521.18, 32.9854, -263.847, 0,
+			"Jawa-Tusken Battle", "tatooine", 5702.63, 53.3463, 3919.94, 0,	
+			"Krayt Dragon Graveyard", "tatooine", 6573.4, 25.5857, 4249.45, 0,
+			"Ancient Krayt Dragon Skeleton", "tatooine", -4610.21, 34.5775, -4299.19, 0,
+			"Jabba's Palace", "tatooine", -5847.69, 90.0, -6189.53, 0,	
+			"Sennex Cave", "tatooine", 6538.04, 91.6342, -1343.12, 0,
+			"Squill Cave", "tatooine", 60.1015, 152.486, -79.0339, 0,
+			"Village Ruins", "tatooine", 5591.12, 45.5801, 1779.2, 0,
+			"Hutt Hideout", "tatooine", 5132.04, 26.2354, 616.175, 0,
+			"Tusken King Encampment", "tatooine", -5210.1, 53.2687, -4430.86, 0,
+			"Alkhara Camp", "tatooine", -4939.04, 137.241, 2989.78, 0,
+			"Another Alkhara Camp", "tatooine", -1251.24, 10.2865, 5383.3, 0,
+			"Tusken Sacrifice", "tatooine", -4898.55, 36.3643, 6502.18, 0,
+			"Desert Demon Encampment", "tatooine", 3055.99, 53.8122, 6501.8, 0,
+		}
+	},
+	{subCatName = "poi_yavin",
+		destinations = {
+			"Woolamander Palace", "yavin4", 448.156, 81.0, -682.541, 0,
+			"The Temple of the Blueleaf", "yavin4", -958.796, 82.7754, -2011.85, 0,
+			"The Temple of Exar K'un", "yavin4", 5091.76, 73.5, 5543.97, 0,
+			"Geonosian Bio Lab", "yavin4", -6513.26, 85.5624, -430.12, 0,
+		}
+	},
+	{subCatName = "racetracks_all",
+		destinations = {
+			"Agrilat Swamp Circuit - Corellia", "corellia", 1681.08, 20.3366, 4702.1, 0,
+			"Keren Street Race - Naboo", "naboo", 1397.8, 13.0, 2686.83, 0,
+			"Lok Marathon - Lok", "lok", 631.597, 12.136, 5056.04, 0,
+			"Narmle Memorial Rally - Rori", "rori", -4973.38, 79.5282, -2224.68, 0,
+			"Nashal River Race- Talus", "talus", 4200.48, 2.0, 5287.57, -0,
+			"Old Mos Espa Arena Track - Tatooine", "tatooine", 2400.99, 2.0, 5001.95, 0,
+		}
+	},
+	{subCatName = "sights_corellia",
+		destinations = {
+			"Agrilat Swamp", "corellia", 1405.85, 29.0777, 3804.15, 0,
+			"Grand Theater of Vreni Island", "corellia", -5420.96, 24.2718, -6213.01, 0,
+			"Crystal Fountain in Bela Vistal", "corellia", 6758.28, 315.0, -5618.53, 0,
+		}
+	},
+	{subCatName = "sights_dantooine",
+		destinations = {
+			"Jedi Temple Ruins", "dantooine", 4274.15, 8.00772, 5357.6, 0,
+			"Fishing Pond", "dantooine", -234.279, 0.902017, 5934.03, 0,
+		}
+	},
+	{subCatName = "sights_dathomir",
+		destinations = {
+			"Abandoned Escape Pod", "dathomir", -4466.2, 74.7629, 633.364, 0,
+			"Misty Falls", "dathomir", 3575.72, 16.4784, 1529.26, 0,
+			"Dathomir Tar Pits", "dathomir", 676.333, 76.8592, -4893.28, 0,
+		}
+	},
+	{subCatName = "sights_endor",
+		destinations = {
+			"Ewok Outcast Tree", "endor", -4870.23, 18.5757, 1139.65, 0,
+			"Hot Springs", "endor", 2377.97, 26.1391, 2174.46, 0,
+		}
+	},
+	{subCatName = "sights_lok",
+		destinations = {
+			"Mount Chaolt", "lok", 3079.76, 353.26, -4643.49, 0,
+			"Great Kimogila's Skeleton", "lok", 4544.69, 12.92, -1136.23, 0,
+			"The Great Maze of Lok", "lok", 3801.67, 62.8923, -495.862, 0,
+			"Rare Lokian Fountain", "lok", 6479.45, 104.508, 5045.76, 0,
+			"Tribal Stone Claws Site", "lok", -5999.38, 92.1287, 6494.36, 0,
+		}
+	},
+	{subCatName = "sights_naboo",
+		destinations = {
+			"Theed Waterfall", "naboo", -4631.76, 6.0, 4217.82, 0,
+			"Dee'ja Peak Waterfall", "naboo", 5156.28, 355.733, -1583.88, 0,
+			"Amidala's Beach", "naboo", -5833.72, -159.054, -103.601, 0,
+			"Fishing Pond", "naboo", -6319.35, 5.51418, -5090.99, 0,
+		}
+	},
+	{subCatName = "sights_rori",
+		destinations = {
+			"Rorgungan Monument", "rori", 52.584, 76.819, 5221.77, 0,
+			"Large Rorgungan Monument", "rori", -5745.98, 77.1448, 5843.33, 0,
+			"Rancher & Pets", "rori", -465.319, 75.6929, -5424.29, 0,
+			"Graveyard", "rori", -1720.62, 75.862, 6150.29, 0,
+			"Narmle Militia Commander's Estate", "rori", 5291.31, 77.2915, 986.062, 0,
+		}
+	},
+	{subCatName = "sights_talus",
+		destinations = {
+			"Geyser", "talus", -4613.25, 29.2745, 5668.26, 0,
+			"Flaming Pillars", "talus", 4321.85, 50.8429, 2496.27, 0,
+			"Downed AT-AT", "talus", -2355.34, 37.4003, -2227.3, 0,
+			"Arch with Torches", "talus", 1470.68, 24.6214, -2685.82, 0,
+		}
+	},
+	{subCatName = "sights_tatooine",
+		destinations = {
+			"Darklighter Estate", "tatooine", -759.628, 8.12887, -6657.03, 0,
+			"Lars Homestead", "tatooine", -2580.4, 0, -5472.61, 0,
+			"Ben Kenobi's House", "tatooine", -4493.01, 34.0059, -2287.05, 0,
+			"Great Pit of Carkoon", "tatooine", -6214.38, 27.5335, -3406.64, 0,
+			"Escape Pod used by C-3PO and R2-D2", "tatooine", -3911.7, 36.942, -4421.27, 0,
+			"Abandoned Oasis", "tatooine", 6205.79, 3.25612, -353.797, 0,
+			"Oasis South", "tatooine", 1793.55, 0.666172, -6033.93, 0,
+			"Oasis Northeast", "tatooine", 6645.23, 1.5485, 5453.12, 0,
+			"The Ranch", "tatooine", 4985.21, 180, -4666.15, 0,
+			"Hedge Maze", "tatooine", -3039.74, 0, -5102.66, 0,
+			"Destroyed Rebel Fort", "tatooine", -794.398, 7.50632, -4517.69, 0,
+			"Hill Fort", "tatooine", 535.486, 180.0, 324.955, 0,
+			"Crashed Escape Pod with Gravestones & Sad Bounty Hunter", "tatooine", -6170.68, 28.7924, 5875.64, 0,
+		}
+	},
+	{subCatName = "sights_yavin",
+		destinations = {
+			"The Great Massassi Temple", "yavin4", -3157.02, 71.999, -3044.14, 0,
+			"Massassi Sacrificial Stone", "yavin4", -7551.23, 150.975, -445.594, 0,
+		}
+	},
+}
+

@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_storage_unit = object_tangible_tarkin_custom_decorative_shared_storage_unit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_storage_unit, "object/tangible/tarkin_custom/decorative/storage_unit.iff")
+

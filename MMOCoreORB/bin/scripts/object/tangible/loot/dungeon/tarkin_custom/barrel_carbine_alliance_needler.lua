@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_barrel_carbine_alliance_needler = object_tangible_loot_dungeon_tarkin_custom_shared_barrel_carbine_alliance_needler:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_barrel_carbine_alliance_needler, "object/tangible/loot/dungeon/tarkin_custom/barrel_carbine_alliance_needler.iff")

@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_statted_cortosis_weave_sword_core = object_tangible_tarkin_custom_statted_shared_cortosis_weave_sword_core:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_statted_cortosis_weave_sword_core, "object/tangible/tarkin_custom/statted/cortosis_weave_sword_core.iff")

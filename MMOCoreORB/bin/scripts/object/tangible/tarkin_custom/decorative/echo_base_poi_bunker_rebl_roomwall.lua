@@ -1,0 +1,4 @@
+object_tangible_tarkin_custom_decorative_echo_base_poi_bunker_rebl_roomwall = object_tangible_tarkin_custom_decorative_shared_echo_base_poi_bunker_rebl_roomwall:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_echo_base_poi_bunker_rebl_roomwall, "object/tangible/tarkin_custom/decorative/echo_base_poi_bunker_rebl_roomwall.iff")

@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_door_corl_metal_s01 = object_tangible_tarkin_custom_decorative_shared_door_corl_metal_s01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_door_corl_metal_s01, "object/tangible/tarkin_custom/decorative/door_corl_metal_s01.iff")

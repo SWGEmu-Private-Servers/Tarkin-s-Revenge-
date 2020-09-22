@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_djt_floorstone_dirt_e = object_tangible_tarkin_custom_decorative_shared_djt_floorstone_dirt_e:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_djt_floorstone_dirt_e, "object/tangible/tarkin_custom/decorative/djt_floorstone_dirt_e.iff")

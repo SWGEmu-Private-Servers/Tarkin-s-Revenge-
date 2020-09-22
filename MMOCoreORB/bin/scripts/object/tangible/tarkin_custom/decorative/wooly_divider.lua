@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_wooly_divider = object_tangible_tarkin_custom_decorative_shared_wooly_divider:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_wooly_divider, "object/tangible/tarkin_custom/decorative/wooly_divider.iff")

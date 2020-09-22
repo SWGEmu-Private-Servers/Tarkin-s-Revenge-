@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_thm_spc_nebula_orion_door = object_tangible_tarkin_custom_decorative_shared_thm_spc_nebula_orion_door:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_thm_spc_nebula_orion_door, "object/tangible/tarkin_custom/decorative/thm_spc_nebula_orion_door.iff")

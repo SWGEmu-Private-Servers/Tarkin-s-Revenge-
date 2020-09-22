@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_frn_kash_table_operating = object_tangible_tarkin_custom_decorative_shared_frn_kash_table_operating:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_frn_kash_table_operating, "object/tangible/tarkin_custom/decorative/frn_kash_table_operating.iff")

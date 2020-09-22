@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_barrel_carbine_czerka = object_tangible_loot_dungeon_tarkin_custom_shared_barrel_carbine_czerka:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_barrel_carbine_czerka, "object/tangible/loot/dungeon/tarkin_custom/barrel_carbine_czerka.iff")

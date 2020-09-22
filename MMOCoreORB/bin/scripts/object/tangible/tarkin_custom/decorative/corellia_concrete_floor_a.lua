@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_corellia_concrete_floor_a = object_tangible_tarkin_custom_decorative_shared_corellia_concrete_floor_a:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_corellia_concrete_floor_a, "object/tangible/tarkin_custom/decorative/corellia_concrete_floor_a.iff")

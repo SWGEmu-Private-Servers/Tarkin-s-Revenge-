@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_exar_door_s03 = object_tangible_tarkin_custom_decorative_shared_exar_door_s03:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_exar_door_s03, "object/tangible/tarkin_custom/decorative/exar_door_s03.iff")

@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_barrel_heavy_frag_storm= object_tangible_loot_dungeon_tarkin_custom_shared_barrel_heavy_frag_storm:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_barrel_heavy_frag_storm, "object/tangible/loot/dungeon/tarkin_custom/barrel_heavy_frag_storm.iff")

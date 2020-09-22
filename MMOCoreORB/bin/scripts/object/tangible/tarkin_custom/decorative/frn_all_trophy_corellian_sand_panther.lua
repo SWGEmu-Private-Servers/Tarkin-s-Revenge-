@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_frn_all_trophy_corellian_sand_panther = object_tangible_tarkin_custom_decorative_shared_frn_all_trophy_corellian_sand_panther:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_frn_all_trophy_corellian_sand_panther, "object/tangible/tarkin_custom/decorative/frn_all_trophy_corellian_sand_panther.iff")

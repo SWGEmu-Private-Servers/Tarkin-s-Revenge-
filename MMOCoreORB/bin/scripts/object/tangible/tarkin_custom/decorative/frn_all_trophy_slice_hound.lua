@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_frn_all_trophy_slice_hound = object_tangible_tarkin_custom_decorative_shared_frn_all_trophy_slice_hound:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_frn_all_trophy_slice_hound, "object/tangible/tarkin_custom/decorative/frn_all_trophy_slice_hound.iff")

@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_coil_carbine_underslung = object_tangible_loot_dungeon_tarkin_custom_shared_coil_carbine_underslung:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_coil_carbine_underslung, "object/tangible/loot/dungeon/tarkin_custom/coil_carbine_underslung.iff")

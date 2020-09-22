@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_muzzle_rifle_geo = object_tangible_loot_dungeon_tarkin_custom_shared_muzzle_rifle_geo:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_muzzle_rifle_geo, "object/tangible/loot/dungeon/tarkin_custom/muzzle_rifle_geo.iff")

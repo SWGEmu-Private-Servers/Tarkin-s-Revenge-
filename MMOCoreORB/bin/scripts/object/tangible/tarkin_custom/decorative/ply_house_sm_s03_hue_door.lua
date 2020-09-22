@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_ply_house_sm_s03_hue_door = object_tangible_tarkin_custom_decorative_shared_ply_house_sm_s03_hue_door:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_ply_house_sm_s03_hue_door, "object/tangible/tarkin_custom/decorative/ply_house_sm_s03_hue_door.iff")

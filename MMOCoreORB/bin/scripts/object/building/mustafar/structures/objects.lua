@@ -1,0 +1,5 @@
+object_building_mustafar_structures_shared_must_smuggler_bunker = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/mustafar/structures/shared_must_smuggler_bunker.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_mustafar_structures_shared_must_smuggler_bunker, "object/building/mustafar/structures/shared_must_smuggler_bunker.iff")

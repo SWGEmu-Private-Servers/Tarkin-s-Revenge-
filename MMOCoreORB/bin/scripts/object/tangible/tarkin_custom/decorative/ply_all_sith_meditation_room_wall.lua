@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_ply_all_sith_meditation_room_wall = object_tangible_tarkin_custom_decorative_shared_ply_all_sith_meditation_room_wall:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_ply_all_sith_meditation_room_wall, "object/tangible/tarkin_custom/decorative/ply_all_sith_meditation_room_wall.iff")

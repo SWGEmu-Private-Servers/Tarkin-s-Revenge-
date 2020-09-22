@@ -1,0 +1,5 @@
+object_static_structure_corellia_wall_corellia_street_large_style_8000 = object_static_structure_corellia_shared_wall_corellia_street_large_style_8000:new {
+
+}
+
+ObjectTemplates:addTemplate(object_static_structure_corellia_wall_corellia_street_large_style_8000, "object/static/structure/corellia/wall_corellia_street_large_style_8000.iff")

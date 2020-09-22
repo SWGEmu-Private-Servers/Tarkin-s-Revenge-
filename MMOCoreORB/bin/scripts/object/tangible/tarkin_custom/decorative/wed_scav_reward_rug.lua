@@ -1,0 +1,3 @@
+object_tangible_tarkin_custom_decorative_wed_scav_reward_rug = object_tangible_tarkin_custom_decorative_shared_wed_scav_reward_rug:new {
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_wed_scav_reward_rug, "object/tangible/tarkin_custom/decorative/wed_scav_reward_rug.iff")

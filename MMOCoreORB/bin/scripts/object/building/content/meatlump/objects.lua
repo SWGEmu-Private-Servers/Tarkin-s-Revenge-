@@ -1,0 +1,11 @@
+object_building_content_meatlump_shared_meatlump_hideout_main = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/content/meatlump/shared_meatlump_hideout_main.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_content_meatlump_shared_meatlump_hideout_main, "object/building/content/meatlump/meatlump_hideout_main.iff")
+
+object_building_content_meatlump_shared_meatlump_hideout_entrance = SharedStaticObjectTemplate:new {
+	clientTemplateFileName = "object/building/content/meatlump/shared_meatlump_hideout_entrance.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_building_content_meatlump_shared_meatlump_hideout_entrance, "object/building/content/meatlump/meatlump_hideout_entrance.iff")

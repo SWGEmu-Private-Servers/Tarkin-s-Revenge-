@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_blacksun_transport_player_floor = object_tangible_tarkin_custom_decorative_shared_blacksun_transport_player_floor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_blacksun_transport_player_floor, "object/tangible/tarkin_custom/decorative/blacksun_transport_player_floor.iff")

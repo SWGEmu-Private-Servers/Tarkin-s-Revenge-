@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_barrel_heavy_reaper_cannon= object_tangible_loot_dungeon_tarkin_custom_shared_barrel_heavy_reaper_cannon:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_barrel_heavy_reaper_cannon, "object/tangible/loot/dungeon/tarkin_custom/barrel_heavy_reaper_cannon.iff")

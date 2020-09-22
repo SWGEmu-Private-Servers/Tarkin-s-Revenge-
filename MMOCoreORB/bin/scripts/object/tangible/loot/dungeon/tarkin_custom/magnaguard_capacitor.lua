@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_magnaguard_capacitor= object_tangible_loot_dungeon_tarkin_custom_shared_magnaguard_capacitor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_magnaguard_capacitor, "object/tangible/loot/dungeon/tarkin_custom/magnaguard_capacitor.iff")

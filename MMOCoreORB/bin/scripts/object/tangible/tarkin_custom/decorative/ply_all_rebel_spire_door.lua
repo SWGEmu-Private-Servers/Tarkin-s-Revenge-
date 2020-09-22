@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_ply_all_rebel_spire_door = object_tangible_tarkin_custom_decorative_shared_ply_all_rebel_spire_door:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_ply_all_rebel_spire_door, "object/tangible/tarkin_custom/decorative/ply_all_rebel_spire_door.iff")

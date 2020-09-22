@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_pistol_intimidator_barrel = object_tangible_loot_dungeon_tarkin_custom_shared_pistol_intimidator_barrel:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_pistol_intimidator_barrel, "object/tangible/loot/dungeon/tarkin_custom/pistol_intimidator_barrel.iff")

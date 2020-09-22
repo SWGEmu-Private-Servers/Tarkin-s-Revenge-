@@ -1,0 +1,5 @@
+object_static_structure_tarkin_custom_tarkins_revenge_arena_light = object_static_structure_tarkin_custom_shared_tarkins_revenge_arena_light:new {
+
+}
+
+ObjectTemplates:addTemplate(object_static_structure_tarkin_custom_tarkins_revenge_arena_light, "object/static/structure/tarkin_custom/tarkins_revenge_arena_light.iff")

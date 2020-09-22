@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_wall_modular_restraining_wall_door = object_tangible_tarkin_custom_decorative_shared_wall_modular_restraining_wall_door:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_wall_modular_restraining_wall_door, "object/tangible/tarkin_custom/decorative/wall_modular_restraining_wall_door.iff")

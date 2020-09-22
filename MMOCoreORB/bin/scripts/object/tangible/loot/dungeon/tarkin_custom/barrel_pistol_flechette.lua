@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_barrel_pistol_flechette = object_tangible_loot_dungeon_tarkin_custom_shared_barrel_pistol_flechette:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_barrel_pistol_flechette, "object/tangible/loot/dungeon/tarkin_custom/barrel_pistol_flechette.iff")

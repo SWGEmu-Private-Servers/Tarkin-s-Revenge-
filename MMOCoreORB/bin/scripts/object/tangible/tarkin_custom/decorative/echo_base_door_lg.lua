@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_echo_base_door_lg = object_tangible_tarkin_custom_decorative_shared_echo_base_door_lg:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_echo_base_door_lg, "object/tangible/tarkin_custom/decorative/echo_base_door_lg.iff")

@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_painting_tarkin_palette_cat_predatory = object_tangible_tarkin_custom_decorative_shared_painting_tarkin_palette_cat_predatory:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_painting_tarkin_palette_cat_predatory, "object/tangible/tarkin_custom/decorative/painting_tarkin_palette_cat_predatory.iff")

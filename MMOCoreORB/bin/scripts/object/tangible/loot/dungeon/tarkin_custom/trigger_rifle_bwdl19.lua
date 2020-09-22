@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_trigger_rifle_bwdl19 = object_tangible_loot_dungeon_tarkin_custom_shared_trigger_rifle_bwdl19:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_trigger_rifle_bwdl19, "object/tangible/loot/dungeon/tarkin_custom/trigger_rifle_bwdl19.iff")

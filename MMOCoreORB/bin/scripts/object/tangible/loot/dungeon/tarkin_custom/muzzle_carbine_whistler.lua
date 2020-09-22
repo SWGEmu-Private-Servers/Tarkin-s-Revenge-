@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_muzzle_carbine_whistler = object_tangible_loot_dungeon_tarkin_custom_shared_muzzle_carbine_whistler:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_muzzle_carbine_whistler, "object/tangible/loot/dungeon/tarkin_custom/muzzle_carbine_whistler.iff")

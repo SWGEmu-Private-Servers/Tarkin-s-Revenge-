@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_powerpack_rifle_jinkins = object_tangible_loot_dungeon_tarkin_custom_shared_powerpack_rifle_jinkins:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_powerpack_rifle_jinkins, "object/tangible/loot/dungeon/tarkin_custom/powerpack_rifle_jinkins.iff")

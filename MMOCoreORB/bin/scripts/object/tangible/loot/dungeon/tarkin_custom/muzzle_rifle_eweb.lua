@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_muzzle_rifle_eweb = object_tangible_loot_dungeon_tarkin_custom_shared_muzzle_rifle_eweb:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_muzzle_rifle_eweb, "object/tangible/loot/dungeon/tarkin_custom/muzzle_rifle_eweb.iff")

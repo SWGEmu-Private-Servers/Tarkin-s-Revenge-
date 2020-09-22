@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_coil_pistol_ion_relic = object_tangible_loot_dungeon_tarkin_custom_shared_coil_pistol_ion_relic:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_coil_pistol_ion_relic, "object/tangible/loot/dungeon/tarkin_custom/coil_pistol_ion_relic.iff")

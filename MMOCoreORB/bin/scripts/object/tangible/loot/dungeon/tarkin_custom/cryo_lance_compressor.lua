@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_cryo_lance_compressor= object_tangible_loot_dungeon_tarkin_custom_shared_cryo_lance_compressor:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_cryo_lance_compressor, "object/tangible/loot/dungeon/tarkin_custom/cryo_lance_compressor.iff")

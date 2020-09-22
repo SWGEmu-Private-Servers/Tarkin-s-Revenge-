@@ -1,0 +1,3 @@
+object_tangible_tarkin_custom_decorative_frn_kash_restraining_chair = object_tangible_tarkin_custom_decorative_shared_frn_kash_restraining_chair:new {
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_frn_kash_restraining_chair, "object/tangible/tarkin_custom/decorative/frn_kash_restraining_chair.iff")

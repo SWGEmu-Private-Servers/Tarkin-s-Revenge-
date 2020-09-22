@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_leather_divider = object_tangible_tarkin_custom_decorative_shared_leather_divider:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_leather_divider, "object/tangible/tarkin_custom/decorative/leather_divider.iff")
+

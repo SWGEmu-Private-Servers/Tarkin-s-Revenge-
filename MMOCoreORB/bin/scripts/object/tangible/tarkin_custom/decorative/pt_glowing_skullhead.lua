@@ -1,0 +1,3 @@
+object_tangible_tarkin_custom_decorative_pt_glowing_skullhead = object_tangible_tarkin_custom_decorative_shared_pt_glowing_skullhead:new {
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_pt_glowing_skullhead, "object/tangible/tarkin_custom/decorative/pt_glowing_skullhead.iff")

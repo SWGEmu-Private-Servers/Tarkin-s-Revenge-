@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_carbine_massassi_barrel = object_tangible_loot_dungeon_tarkin_custom_shared_carbine_massassi_barrel:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_carbine_massassi_barrel, "object/tangible/loot/dungeon/tarkin_custom/carbine_massassi_barrel.iff")

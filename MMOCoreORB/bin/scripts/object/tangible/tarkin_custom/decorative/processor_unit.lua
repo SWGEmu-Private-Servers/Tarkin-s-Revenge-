@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_processor_unit = object_tangible_tarkin_custom_decorative_shared_processor_unit:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_processor_unit, "object/tangible/tarkin_custom/decorative/processor_unit.iff")
+

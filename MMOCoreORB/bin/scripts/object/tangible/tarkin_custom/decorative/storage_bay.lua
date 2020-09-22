@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_storage_bay = object_tangible_tarkin_custom_decorative_shared_storage_bay:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_storage_bay, "object/tangible/tarkin_custom/decorative/storage_bay.iff")
+

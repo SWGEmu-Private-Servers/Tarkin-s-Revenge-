@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_crusader_blade= object_tangible_loot_dungeon_tarkin_custom_shared_crusader_blade:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_crusader_blade, "object/tangible/loot/dungeon/tarkin_custom/crusader_blade.iff")

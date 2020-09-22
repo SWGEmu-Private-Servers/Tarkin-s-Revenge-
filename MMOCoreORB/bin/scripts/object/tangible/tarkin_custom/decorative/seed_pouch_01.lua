@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_seed_pouch_01 = object_tangible_tarkin_custom_decorative_shared_seed_pouch_01:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_seed_pouch_01, "object/tangible/tarkin_custom/decorative/seed_pouch_01.iff")
+

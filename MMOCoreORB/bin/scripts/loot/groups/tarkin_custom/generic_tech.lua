@@ -1,0 +1,40 @@
+generic_tech = {
+	description = "",
+	minimumLevel = 0,
+	maximumLevel = 0,	
+	lootItems = {
+		{itemTemplate = "treasure_chest_reward", weight = 322581},
+		{itemTemplate = "com_link_03", weight = 322581},
+		{itemTemplate = "circuit_board_generic", weight = 322581},
+		{itemTemplate = "clipon_id_badge_generic", weight = 322581},
+		{itemTemplate = "datapad_flashy_generic", weight = 322581},
+		{itemTemplate = "datapad_trakball_generic", weight = 322581},
+		{itemTemplate = "answering_machine_generic", weight = 322581},
+		{itemTemplate = "disguise_makeup_kit_generic", weight = 322581},
+		{itemTemplate = "magseal_detector_generic", weight = 322581},
+		{itemTemplate = "datapad_01", weight = 322581},
+		{itemTemplate = "datapad_02", weight = 322581},
+		{itemTemplate = "datapad_03", weight = 322581},
+		{itemTemplate = "datapad_04", weight = 322581},
+		{itemTemplate = "datapad_05", weight = 322581},
+		{itemTemplate = "spray_bottle_generic", weight = 322581},
+		{itemTemplate = "meatlump_bomb_01_01", weight = 322581},
+		{itemTemplate = "npe_droid_production", weight = 322581},
+		{itemTemplate = "house_capacity_organizational_datapad", weight = 322581},
+		{itemTemplate = "old_republic_tech_analyzer", weight = 322581},
+		{itemTemplate = "house_container_lock", weight = 322581},
+		{itemTemplate = "deathtrooper_delta_ammo_canister_01", weight = 322581},
+		{itemTemplate = "deathtrooper_epsilon_locator_beacon_01", weight = 322581},
+		{itemTemplate = "deathtrooper_gamma_energy_cartridge_01", weight = 322581},
+		{itemTemplate = "heroic_echo_at_at_junk_04", weight = 322581},
+		{itemTemplate = "environmental_controller", weight = 322581},
+		{itemTemplate = "security_scanner", weight = 322581},
+		{itemTemplate = "system_controller", weight = 322581},
+		{itemTemplate = "workstation", weight = 322581},
+		{itemTemplate = "nym_themepark_surveillance_device", weight = 322570},
+		{itemTemplate = "eow_defective_holoshroud", weight = 322581},
+		{itemTemplate = "heroic_sd_pressure_pump", weight = 322581}
+	}
+}
+
+addLootGroupTemplate("generic_tech", generic_tech)

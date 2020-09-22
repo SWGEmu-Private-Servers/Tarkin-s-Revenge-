@@ -1,0 +1,6 @@
+object_tangible_tarkin_custom_decorative_scaly_divider = object_tangible_tarkin_custom_decorative_shared_scaly_divider:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_scaly_divider, "object/tangible/tarkin_custom/decorative/scaly_divider.iff")
+

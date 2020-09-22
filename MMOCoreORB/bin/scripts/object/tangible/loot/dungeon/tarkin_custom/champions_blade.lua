@@ -1,0 +1,5 @@
+object_tangible_loot_dungeon_tarkin_custom_champions_blade= object_tangible_loot_dungeon_tarkin_custom_shared_champions_blade:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_loot_dungeon_tarkin_custom_champions_blade, "object/tangible/loot/dungeon/tarkin_custom/champions_blade.iff")

@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_painting_tarkin_palette_creature_white = object_tangible_tarkin_custom_decorative_shared_painting_tarkin_palette_creature_white:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_painting_tarkin_palette_creature_white, "object/tangible/tarkin_custom/decorative/painting_tarkin_palette_creature_white.iff")

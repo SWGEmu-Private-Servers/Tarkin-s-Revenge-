@@ -1,0 +1,5 @@
+object_draft_schematic_chemistry_tarkin_custom_shared_medicine_bag = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/chemistry/tarkin_custom/shared_medicine_bag.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_chemistry_tarkin_custom_shared_medicine_bag, "object/draft_schematic/chemistry/tarkin_custom/shared_medicine_bag.iff")

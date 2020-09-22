@@ -1,0 +1,4 @@
+object_tangible_tarkin_custom_decorative_intr_medicalwall_fallback_b = object_tangible_tarkin_custom_decorative_shared_intr_medicalwall_fallback_b:new {
+
+}
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_intr_medicalwall_fallback_b, "object/tangible/tarkin_custom/decorative/intr_medicalwall_fallback_b.iff")

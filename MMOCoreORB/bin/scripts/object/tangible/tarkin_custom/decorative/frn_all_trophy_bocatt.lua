@@ -1,0 +1,5 @@
+object_tangible_tarkin_custom_decorative_frn_all_trophy_bocatt = object_tangible_tarkin_custom_decorative_shared_frn_all_trophy_bocatt:new {
+
+}
+
+ObjectTemplates:addTemplate(object_tangible_tarkin_custom_decorative_frn_all_trophy_bocatt, "object/tangible/tarkin_custom/decorative/frn_all_trophy_bocatt.iff")
