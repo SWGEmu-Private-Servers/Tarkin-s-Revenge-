@@ -150,6 +150,19 @@
 #include "server/zone/objects/tangible/components/droid/DroidTrapModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidHarvestModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidPersonalityModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/impTravelTerminalMenuComponent.h"
+#include "server/zone/objects/tangible/components/rebTravelTerminalMenuComponent.h"
+#include "server/zone/objects/tangible/components/DnaExtractorMenuComponent.h"
+#include "server/zone/objects/tangible/components/EnzymeExtractorMenuComponent.h"
+#include "server/zone/objects/tangible/components/CentrifugeUnitMenuComponent.h"
+#include "server/zone/objects/tangible/components/CentrifugeTrayMenuComponent.h"
+#include "server/zone/objects/tangible/components/CombinerUnitMenuComponent.h"
+#include "server/zone/objects/tangible/components/PetGroomingKitObjectMenuComponent.h"
+#include "server/zone/objects/tangible/components/ReverseEngineeringMenuComponent.h"
+#include "server/zone/objects/tangible/components/SeaRecyclerMenuComponent.h"
+#include "server/zone/objects/tangible/components/generic/TarkinGrantMenuComponent.h"
+#include "server/zone/objects/tangible/components/generic/TarkinGrantAttributeListComponent.h"
+
 
 ComponentManager::ComponentManager() {
 	components.put("ContainerComponent", new ContainerComponent());
@@ -184,6 +197,9 @@ ComponentManager::ComponentManager() {
 	components.put("InsuranceTerminalMenuComponent", new InsuranceTerminalMenuComponent());
 	components.put("BankTerminalMenuComponent", new BankTerminalMenuComponent());
 	components.put("CloningTerminalMenuComponent", new CloningTerminalMenuComponent());
+
+	components.put("impTravelTerminalMenuComponent", new impTravelTerminalMenuComponent());
+	components.put("rebTravelTerminalMenuComponent", new rebTravelTerminalMenuComponent());
 
 	components.put("ArtCrateMenuComponent", new ArtCrateMenuComponent());
 
@@ -343,4 +359,18 @@ ComponentManager::ComponentManager() {
 	dataObjectFactory.registerObject<DroidTrapModuleDataComponent>("DroidTrapModuleDataComponent");
 	dataObjectFactory.registerObject<DroidHarvestModuleDataComponent>("DroidHarvestModuleDataComponent");
 	dataObjectFactory.registerObject<DroidPersonalityModuleDataComponent>("DroidPersonalityModuleDataComponent");
+
+	// Legend of Hondo
+	components.put("DnaExtractorMenuComponent", new DnaExtractorMenuComponent());
+
+	// Tarkin's Revenge
+	components.put("EnzymeExtractorMenuComponent", new EnzymeExtractorMenuComponent());
+	components.put("CentrifugeUnitMenuComponent", new CentrifugeUnitMenuComponent());
+	components.put("CentrifugeTrayMenuComponent", new CentrifugeTrayMenuComponent());
+	components.put("CombinerUnitMenuComponent", new CombinerUnitMenuComponent());
+	components.put("PetGroomingKitObjectMenuComponent", new PetGroomingKitObjectMenuComponent());
+	components.put("TarkinGrantAttributeListComponent", new TarkinGrantAttributeListComponent());
+	components.put("TarkinGrantMenuComponent", new TarkinGrantMenuComponent());
+	components.put("SeaRecyclerMenuComponent", new SeaRecyclerMenuComponent());
+	components.put("ReverseEngineeringMenuComponent", new ReverseEngineeringMenuComponent());
 }

@@ -13,17 +13,20 @@ class PlayerBounty extends ManagedObject {
 	protected int reward;
 
 	protected boolean online;
-
+	
 	protected unsigned long lastBountyKill;
 
 	protected unsigned long lastBountyDebuff;
 
+	protected int bountyType;
+
 	@dereferenced
 	protected SortedVector<unsigned long> bountyHunterIDs;
 
-	public PlayerBounty(unsigned long targetID, int payout) {
+	public PlayerBounty(unsigned long targetID, int payout, int type) {
 		targetPlayerID = targetID;
 		reward = payout;
+		bountyType = type;		
 		online = true;
 		bountyHunterIDs.setNoDuplicateInsertPlan();
 		lastBountyKill = 0;
@@ -32,6 +35,10 @@ class PlayerBounty extends ManagedObject {
 
 	public void setReward(int amount) {
 		reward = amount;
+	}
+
+	public void setBountyType(int type) {
+		bountyType = type;
 	}
 
 	public void setOnline(boolean state) {
@@ -46,6 +53,11 @@ class PlayerBounty extends ManagedObject {
 	@read
 	public int getReward() {
 		return reward;
+	}
+
+	@read
+	public int getType() {
+		return bountyType;
 	}
 
 	@read
@@ -66,22 +78,21 @@ class PlayerBounty extends ManagedObject {
 		bountyHunterIDs.drop(id);
 	}
 
-	@read
+	@dirty
 	public boolean hasBountyHunter(unsigned long id) {
 		return bountyHunterIDs.contains(id);
 	}
 
 	@local
-	@read
-	public final SortedVector<unsigned long> getBountyHunters() {
+	public SortedVector<unsigned long> getBountyHunters() {
 		return bountyHunterIDs;
 	}
-
+	
 	@read
 	public unsigned long getLastBountyKill() {
 		return lastBountyKill;
 	}
-
+	
 	public void setLastBountyKill(unsigned long newTime) {
 		lastBountyKill = newTime;
 	}

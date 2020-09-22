@@ -26,12 +26,8 @@ class SpiceDownerBuff extends Buff {
 		if (super.creature.hasBuff(BuffCRC.FOOD_REDUCE_SPICE_DOWNTIME)) {
 			Buff buff = super.creature.getBuff(BuffCRC.FOOD_REDUCE_SPICE_DOWNTIME);
 
-			if (buff) {
-				float reductionMod = buff.getSkillModifierValue("reduce_spice_downtime");
-				float reduction = 1.f - (reductionMod / 100);
-
-				if (reduction > 0)
-					super.buffDuration = super.buffDuration * reduction;
+			if (buff != null) {
+				super.buffDuration = super.buffDuration * (100.0 - buff.getSkillModifierValue("reduce_spice_downtime")) / 100.0;
 			}
 		}
 

@@ -33,7 +33,7 @@ QueueCommand::QueueCommand(const String& skillname, ZoneProcessServer* serv) : L
 	cooldown = 0;
 	defaultPriority = NORMAL;
 
-	setLogging(false);
+	setLogging(true);
 	setGlobalLogging(true);
 	setLoggingName("QueueCommand " + skillname);
 }
@@ -122,7 +122,7 @@ void QueueCommand::onFail(uint32 actioncntr, CreatureObject* creature, uint32 er
 		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 		int attackType = -1;
 
-		if (weapon != nullptr) {
+		if (weapon != NULL) {
 			attackType = weapon->getAttackType();
 		}
 
@@ -254,24 +254,24 @@ void QueueCommand::checkForTef(CreatureObject* creature, CreatureObject* target)
 		return;
 
 	PlayerObject* ghost = creature->getPlayerObject().get();
-	if (ghost == nullptr)
+	if (ghost == NULL)
 		return;
 
 	if (target->isPlayerCreature()) {
 		PlayerObject* targetGhost = target->getPlayerObject().get();
 
 		if (!CombatManager::instance()->areInDuel(creature, target)
-				&& targetGhost != nullptr && target->getFactionStatus() == FactionStatus::OVERT && targetGhost->hasPvpTef()) {
+				&& targetGhost != NULL && target->getFactionStatus() == FactionStatus::OVERT && targetGhost->hasPvpTef()) {
 			ghost->updateLastGcwPvpCombatActionTimestamp();
 		}
 	} else if (target->isPet()) {
 		ManagedReference<CreatureObject*> owner = target->getLinkedCreature().get();
 
-		if (owner != nullptr && owner->isPlayerCreature()) {
+		if (owner != NULL && owner->isPlayerCreature()) {
 			PlayerObject* ownerGhost = owner->getPlayerObject().get();
 
 			if (!CombatManager::instance()->areInDuel(creature, owner)
-					&& ownerGhost != nullptr && owner->getFactionStatus() == FactionStatus::OVERT && ownerGhost->hasPvpTef()) {
+					&& ownerGhost != NULL && owner->getFactionStatus() == FactionStatus::OVERT && ownerGhost->hasPvpTef()) {
 				ghost->updateLastGcwPvpCombatActionTimestamp();
 			}
 		}

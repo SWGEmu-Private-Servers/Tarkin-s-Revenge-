@@ -47,7 +47,7 @@ public:
 		ManagedReference<Facade*> facade = creature->getActiveSession(SessionFacadeType::MIGRATESTATS);
 		ManagedReference<MigrateStatsSession*> session = dynamic_cast<MigrateStatsSession*>(facade.get());
 
-		if (session == nullptr) {
+		if (session == NULL) {
 			return GENERALERROR;
 		}
 
@@ -85,7 +85,8 @@ public:
 		//Player is in the tutorial zone and is allowed to migrate stats.
 		Zone* zone = creature->getZone();
 
-		if (zone != nullptr && zone->getZoneName() == "tutorial")
+		//Tarkin mod to allow stat migration in any loaded zone, rather than limit to just the tutorial zone. All we do now is simply do the NULL check and proceed to stat migration.
+		if (zone != NULL) // && zone->getZoneName() == "tutorial")
 			session->migrateStats();
 
 

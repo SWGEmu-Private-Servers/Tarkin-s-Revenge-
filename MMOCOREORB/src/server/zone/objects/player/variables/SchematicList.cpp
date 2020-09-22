@@ -33,13 +33,13 @@ void SchematicList::addRewardedSchematics(SceneObject* player) {
 	if (player->isPlayerObject()) {
 		PlayerObject* ghost = cast<PlayerObject*>(player);
 
-		if (ghost != nullptr) {
+		if (ghost != NULL) {
 			Vector<ManagedReference<DraftSchematic* > > schematics;
 
 			for (int i = rewardedSchematics.size() - 1; i >= 0; --i) {
 				DraftSchematic* schem = rewardedSchematics.elementAt(i).getKey();
 
-				if (schem->getDraftSchematicTemplate() != nullptr) {
+				if (schem->getDraftSchematicTemplate() != NULL) {
 					schematics.add(schem);
 				} else {
 					rewardedSchematics.drop(schem);
@@ -93,9 +93,10 @@ bool SchematicList::decreaseSchematicUseCount(DraftSchematic* schematic) {
 }
 
 bool SchematicList::add(DraftSchematic* schematic, DeltaMessage* message, int updates) {
+
 	bool val = vector.add(schematic);
 
-	if (val && message != nullptr) {
+	if (val && message != NULL) {
 		if (updates != 0)
 			message->startList(updates, updateCounter += updates);
 
@@ -109,11 +110,13 @@ bool SchematicList::add(DraftSchematic* schematic, DeltaMessage* message, int up
 	return val;
 }
 
-bool SchematicList::contains(DraftSchematic* schematic) const {
+bool SchematicList::contains(DraftSchematic* schematic) {
+
 	for(int i = 0; i < size(); ++i) {
+
 		DraftSchematic* existingSchematic = get(i);
 
-		if(existingSchematic == nullptr)
+		if(existingSchematic == NULL)
 			continue;
 
 		if((existingSchematic->getClientObjectCRC() == schematic->getClientObjectCRC()) &&
@@ -125,11 +128,13 @@ bool SchematicList::contains(DraftSchematic* schematic) const {
 	return false;
 }
 
-bool SchematicList::contains(const Vector<ManagedReference<DraftSchematic*>>& filteredschematics, DraftSchematic* schematic) const {
+bool SchematicList::contains(Vector<ManagedReference<DraftSchematic* > > filteredschematics, DraftSchematic* schematic) {
+
 	for(int i = 0; i < filteredschematics.size(); ++i) {
+
 		DraftSchematic* existingSchematic = filteredschematics.get(i);
 
-		if(existingSchematic == nullptr)
+		if(existingSchematic == NULL)
 			continue;
 
 		if((existingSchematic->getClientObjectCRC() == schematic->getClientObjectCRC()) &&
@@ -152,11 +157,12 @@ bool SchematicList::contains(const Vector<ManagedReference<DraftSchematic*>>& fi
  */
 
 Vector<ManagedReference<DraftSchematic* > > SchematicList::filterSchematicList(
-		CreatureObject* player, const Vector<uint32>* enabledTabs, int complexityLevel) const {
+		CreatureObject* player, Vector<uint32>* enabledTabs, int complexityLevel) {
+
 	Vector<ManagedReference<DraftSchematic* > > filteredschematics;
 
 	for (int i = 0; i < size(); ++i) {
-		const ManagedReference<DraftSchematic*>& schematic = get(i);
+		ManagedReference<DraftSchematic*> schematic = get(i);
 
 		for(int j = 0; j < enabledTabs->size(); ++j) {
 			if(enabledTabs->get(j) == schematic->getToolTab() &&
@@ -171,12 +177,13 @@ Vector<ManagedReference<DraftSchematic* > > SchematicList::filterSchematicList(
 	return filteredschematics;
 }
 
-void SchematicList::insertToMessage(BaseMessage* msg) const {
+void SchematicList::insertToMessage(BaseMessage* msg) {
+
 	msg->insertInt(size());
 	msg->insertInt(updateCounter);
 
 	for (int i = 0; i < size(); ++i) {
-		const DraftSchematic* schematic = get(i);
+		DraftSchematic* schematic = get(i);
 
 		msg->insertInt(schematic->getClientObjectCRC());
 		msg->insertInt(schematic->getClientObjectCRC());  /// Must be client CRC

@@ -7,6 +7,7 @@
 
 #include "server/login/account/AccountManager.h"
 #include "server/zone/objects/player/sessions/sui/PlayerManagementSessionSuiCallback.h"
+#include "engine/service/proto/BaseClientProxy.h"
 
 class GetAccountInfoCommand : public QueueCommand {
 public:
@@ -93,17 +94,6 @@ public:
 
 					}
 				}
-			} else if(type.toLowerCase() == "-i") {
-				try {
-					SortedVector<uint32> loggedInAccounts = server->getZoneServer()->getPlayerManager()->getOnlineZoneClientMap()->getAccountsLoggedIn(name);
-
-					if (loggedInAccounts.size() > 0)
-						account = AccountManager::getAccount(loggedInAccounts.get(0));
-					else
-						creature->sendSystemMessage("Did not find any online accounts with ip [" + name + "]");
-				} catch(Exception& e) {
-					// Do nothing
-				}
 			} else {
 				sendUsage(creature);
 				return GENERALERROR;
@@ -162,54 +152,14 @@ public:
 		box->setUsingObject(creature);
 		admin->addSuiBox(box);
 
-		// Get first logged in ip on this galaxy
-		String loggedInIp;
-
-		for(int i = 0; i < characterList->size(); ++i) {
-			auto entry = &characterList->get(i);
-
-			if(entry->getGalaxyID() == server->getZoneServer()->getGalaxyID()) {
-				targetCreature = playerManager->getPlayer(entry->getFirstName());
-
-				if(targetCreature != nullptr && targetCreature->isPlayerCreature()) {
-					auto ghost = targetCreature->getPlayerObject();
-
-					if (ghost != nullptr) {
-						auto charClient = targetCreature->getClient();
-
-						if (charClient != nullptr)
-							loggedInIp = charClient->getIPAddress();
-					}
-				}
-			}
-		}
-
-		if (!loggedInIp.isEmpty()) {
-			header << endl;
-			header << "logged from ip: " << loggedInIp << endl;
-
-			box->addMenuItem("Accounts logged in from this ip: " + loggedInIp, 0);
-
-			SortedVector<uint32> loggedInAccounts = server->getZoneServer()->getPlayerManager()->getOnlineZoneClientMap()->getAccountsLoggedIn(loggedInIp);
-
-			for (int i = 0; i < loggedInAccounts.size(); ++i) {
-				uint32 otherAccountID = loggedInAccounts.get(i);
-				Reference<Account*> otherAccount = AccountManager::getAccount(otherAccountID);
-
-				if (otherAccount != nullptr) {
-					StringBuffer line;
-					line << "\t\t\t" << otherAccount->getUsername() << ": " << otherAccountID;
-					box->addMenuItem(line.toString(), otherAccountID);
-				}
-			}
-		}
-
 		String username = account->getUsername();
 		if(account->isBanned())
 			username += " \\#FF0000(BANNED)\\#FFFFFF ";
-		box->addMenuItem("Account: " + username, 0);
+		box->addMenuItem(username, 0);
 
 		VectorMap<String, Vector<String> > characters;
+
+		String loggedInIp;
 
 		for(int i = 0; i < characterList->size(); ++i) {
 			CharacterListEntry* entry = &characterList->get(i);
@@ -228,6 +178,14 @@ public:
 				}
 			}
 
+			if (charClient != nullptr) {
+				BaseClientProxy* session = charClient->getSession();
+
+				if (session != nullptr) {
+					loggedInIp = session->getIPAddress();
+				}
+			}
+
 			StringBuffer gname;
 			gname << entry->getGalaxyID() << " : " << entry->getGalaxyName();
 
@@ -241,22 +199,17 @@ public:
 
 			if(ghost != nullptr) {
 				if(ghost->isOnline())
-					line << " \\#00FF00(ONLINE";
+					line << " \\#00FF00(ONLINE)\\#FFFFFF ";
 				else {
-					line << " \\#AAAAAA(Last On: " << ghost->getLastLogout()->getFormattedTime();
+					line << " \\#AAAAAA(Last On: " << ghost->getLastLogout()->getFormattedTime() << ")\\#FFFFFF ";
 				}
 			} else {
-				line << " \\#EE7600(n/a";
+				line << " \\#EE7600(n/a)\\#FFFFFF ";
 			}
 
 			if(entry->isBanned()) {
-				line << " \\#FF0000(BANNED: " << entry->getBanReason();
+				line << " \\#FF0000(BANNED)\\#FFFFFF " << entry->getBanReason();
 			}
-
-			if (charClient != nullptr)
-				line << "\\#00FF00; ip " << charClient->getIPAddress();
-
-			line << ")\\#FFFFFF";
 
 			galaxy->add(line.toString());
 		}
@@ -270,7 +223,7 @@ public:
 
 			uint32 galaxyID = tokenizer.getIntToken();
 
-			const GalaxyBanEntry* galaxyBan = account->getGalaxyBan(galaxyID);
+			GalaxyBanEntry* galaxyBan = account->getGalaxyBan(galaxyID);
 			if(galaxyBan != nullptr)
 				galaxyName += " \\#FF0000(BANNED)\\#FFFFFF" + galaxyBan->getBanReason();
 
@@ -278,6 +231,20 @@ public:
 
 			for(int j = 0; j < galaxy->size(); ++j) {
 				box->addMenuItem(galaxy->get(j), 0);
+			}
+		}
+
+		if (!loggedInIp.isEmpty()) {
+			header << endl;
+			header << "Accounts logged in from this ip: " << loggedInIp << endl;
+			SortedVector<uint32> loggedInAccounts = server->getZoneServer()->getPlayerManager()->getOnlineZoneClientMap()->getAccountsLoggedIn(loggedInIp);
+
+			for (int i = 0; i < loggedInAccounts.size(); ++i){
+				Reference<Account*> otherAccount = AccountManager::getAccount(loggedInAccounts.get(i));
+
+				if (otherAccount != nullptr) {
+					header << "\t" << otherAccount->getUsername() << "|" << loggedInAccounts.get(i) << endl;
+				}
 			}
 		}
 
@@ -289,10 +256,9 @@ public:
 	}
 
 	void sendUsage(CreatureObject* creature) const {
-		creature->sendSystemMessage("Usage /getAccountInfo [-a|-c|-i] [args]");
-		creature->sendSystemMessage("Example: /getAccountInfo -a <accountname>");
-		creature->sendSystemMessage("Example: /getAccountInfo -c <character first name>");
-		creature->sendSystemMessage("Example: /getAccountInfo -i <ip address>");
+		creature->sendSystemMessage("Usage /getAccountInfo [-a|-b|-c] [args]");
+		creature->sendSystemMessage("	ex: /getAccountInfo -a <accountname>");
+		creature->sendSystemMessage("	ex: /getAccountInfo -c <character first name>");
 	}
 };
 

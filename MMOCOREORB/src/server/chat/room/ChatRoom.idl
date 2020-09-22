@@ -427,12 +427,12 @@ class ChatRoom extends ManagedObject {
 		disabled = value;
 	}
 
-	@read
+	@dirty
 	public boolean isDisabled() {
 		return disabled == true;
 	}
 
-	@read
+	@dirty
 	public boolean isPersistent() {
 		return roomType == CUSTOM;
 	}

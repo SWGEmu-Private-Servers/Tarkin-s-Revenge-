@@ -12,6 +12,7 @@
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/zone/Zone.h"
 #include "server/zone/managers/director/ScreenPlayTask.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaSceneObject::className[] = "LuaSceneObject";
 
@@ -67,6 +68,7 @@ Luna<LuaSceneObject>::RegType LuaSceneObject::Register[] = {
 		{ "getTemplateObjectPath", &LuaSceneObject::getTemplateObjectPath },
 		{ "teleport", &LuaSceneObject::teleport },
 		{ "setObjectMenuComponent", &LuaSceneObject::setObjectMenuComponent },
+		{ "setAttributeListComponent", &LuaSceneObject::setAttributeListComponent },
 		{ "setContainerComponent", &LuaSceneObject::setContainerComponent },
 		{ "switchZone", &LuaSceneObject::switchZone },
 		{ "setContainerInheritPermissionsFromParent", &LuaSceneObject::setContainerInheritPermissionsFromParent },
@@ -88,6 +90,10 @@ Luna<LuaSceneObject>::RegType LuaSceneObject::Register[] = {
 		{ "info", &LuaSceneObject::info },
 		{ "getPlayersInRange", &LuaSceneObject::getPlayersInRange },
 		{ "isInNavMesh", &LuaSceneObject::isInNavMesh },
+
+		// Tarkin's Revenge
+		{ "broadcastGalaxy", &LuaSceneObject::broadcastGalaxy },
+		{ "getQuaternionElement", &LuaSceneObject::getQuaternionElement },
 		{ 0, 0 }
 
 };
@@ -100,7 +106,7 @@ LuaSceneObject::~LuaSceneObject(){
 }
 
 int LuaSceneObject::_getObject(lua_State* L) {
-	if (realObject == nullptr)
+	if (realObject == NULL)
 		lua_pushnil(L);
 	else
 		lua_pushlightuserdata(L, realObject.get());
@@ -123,6 +129,14 @@ int LuaSceneObject::setObjectMenuComponent(lua_State* L) {
 	realObject->setObjectMenuComponent(value);
 
 	return 0;
+}
+
+int LuaSceneObject::setAttributeListComponent(lua_State* L) {
+    String value = lua_tostring(L, -1);
+
+    realObject->setAttributeListComponent(value);
+
+    return 0;
 }
 
 int LuaSceneObject::setContainerComponent(lua_State* L) {
@@ -167,7 +181,7 @@ int LuaSceneObject::switchZone(lua_State* L) {
 }
 
 int LuaSceneObject::getTemplateObjectPath(lua_State* L) {
-	if (realObject != nullptr) {
+	if (realObject != NULL) {
 		String tempPath = realObject->getObjectTemplate()->getFullTemplateString();
 
 		lua_pushstring(L, tempPath.toCharArray());
@@ -194,7 +208,7 @@ int LuaSceneObject::getZoneName(lua_State* L) {
 
 	String name = "";
 
-	if (zone != nullptr) {
+	if (zone != NULL) {
 		name = zone->getZoneName();
 	}
 
@@ -323,7 +337,7 @@ int LuaSceneObject::faceObject(lua_State* L) {
 int LuaSceneObject::isFacingObject(lua_State* L) {
 	SceneObject* obj = (SceneObject*)lua_touserdata(L, -1);
 
-	if (obj == nullptr) {
+	if (obj == NULL) {
 		lua_pushboolean(L, false);
 
 		return 1;
@@ -361,7 +375,7 @@ int LuaSceneObject::isInRangeWithObject3d(lua_State* L) {
 int LuaSceneObject::getParent(lua_State* L) {
 	SceneObject* obj = realObject->getParent().get().get();
 
-	if (obj == nullptr) {
+	if (obj == NULL) {
 		lua_pushnil(L);
 	} else {
 		obj->_setUpdated(true);
@@ -376,7 +390,7 @@ int LuaSceneObject::getContainerObject(lua_State* L) {
 
 	SceneObject* obj = realObject->getContainerObject(idx);
 
-	if (obj == nullptr) {
+	if (obj == NULL) {
 		lua_pushnil(L);
 	} else {
 		obj->_setUpdated(true);
@@ -391,7 +405,7 @@ int LuaSceneObject::getContainerObjectById(lua_State* L) {
 
 	SceneObject* obj = realObject->getContainerObject(objectID);
 
-	if (obj != nullptr) {
+	if (obj != NULL) {
 		obj->_setUpdated(true);
 		lua_pushlightuserdata(L, obj);
 	} else {
@@ -445,7 +459,7 @@ int LuaSceneObject::getSlottedObject(lua_State* L) {
 	String slot = lua_tostring(L, -1);
 
 	SceneObject* obj = realObject->getSlottedObject(slot);
-	if (obj == nullptr) {
+	if (obj == NULL) {
 		lua_pushnil(L);
 	} else {
 		obj->_setUpdated(true);
@@ -767,7 +781,7 @@ int LuaSceneObject::cancelPendingTask(lua_State* L) {
 	if (realObject->containsPendingTask(name)) {
 		Reference<ScreenPlayTask*> task = realObject->getPendingTask(name).castTo<ScreenPlayTask*>();
 
-		if (task != nullptr && task->isScheduled()) {
+		if (task != NULL && task->isScheduled()) {
 			task->cancel();
 		}
 
@@ -782,7 +796,7 @@ int LuaSceneObject::getChildObject(lua_State* L) {
 
 	SceneObject* obj = realObject->getChildObjects()->get(index);
 
-	if (obj == nullptr) {
+	if (obj == NULL) {
 		lua_pushnil(L);
 	} else {
 		obj->_setUpdated(true);
@@ -812,19 +826,27 @@ int LuaSceneObject::getPlayersInRange(lua_State *L) {
 
 	Zone* thisZone = realObject->getZone();
 
-	if (thisZone == nullptr) {
+	if (thisZone == NULL) {
 		lua_pushnil(L);
 		return 1;
 	}
 
 	lua_newtable(L);
 
-	Reference<SortedVector<ManagedReference<QuadTreeEntry*> >*> playerObjects = new SortedVector<ManagedReference<QuadTreeEntry*> >();
-	thisZone->getInRangePlayers(realObject->getWorldPositionX(), realObject->getWorldPositionY(), range, playerObjects);
+	Reference<SortedVector<ManagedReference<QuadTreeEntry*> >*> closeObjects = new SortedVector<ManagedReference<QuadTreeEntry*> >();
+	thisZone->getInRangeObjects(realObject->getWorldPositionX(), realObject->getWorldPositionY(), range, closeObjects, true);
 	int numPlayers = 0;
 
-	for (int i = 0; i < playerObjects->size(); ++i) {
-		SceneObject* object = cast<SceneObject*>(playerObjects->get(i).get());
+	for (int i = 0; i < closeObjects->size(); ++i) {
+		SceneObject* object = cast<SceneObject*>(closeObjects->get(i).get());
+
+		if (object == NULL || !object->isPlayerCreature())
+			continue;
+
+		CreatureObject* player = object->asCreatureObject();
+
+		if (player == NULL || player->isInvisible())
+			continue;
 
 		numPlayers++;
 		lua_pushlightuserdata(L, object);
@@ -840,4 +862,47 @@ int LuaSceneObject::isInNavMesh(lua_State* L) {
 	lua_pushboolean(L, val);
 
 	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Broadcast a message to the galaxy where the scene object resides
+* lua: SceneObject(pObject):broadcastGalaxy(messageString)
+*/
+
+int LuaSceneObject::broadcastGalaxy(lua_State* L) {
+	String messageString = lua_tostring(L, -1);
+	
+	if (messageString != "") {
+		realObject->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, messageString);
+	}
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Return a quaternion element (ow, ox, oy, or oz)
+* lua: SceneObject(pObject):getQuaternionElement("ow")
+*/
+
+int LuaSceneObject::getQuaternionElement(lua_State* L) {
+	String element = lua_tostring(L, -1);
+
+	float posX = realObject->getPositionX(), posZ = realObject->getPositionZ(), posY = realObject->getPositionY();
+	Quaternion* direction = realObject->getDirection();
+		
+	if (element == "ow") {
+		lua_pushnumber(L, direction->getW());
+	} else if (element == "ox") {
+		lua_pushnumber(L, direction->getX());		
+	} else if (element == "oy") {
+		lua_pushnumber(L, direction->getY());		
+	} else if (element == "oz") {
+		lua_pushnumber(L, direction->getZ());		
+	} else {
+		lua_pushnil(L);
+		return 0;	
+	}
+	
+	return 1;		
 }

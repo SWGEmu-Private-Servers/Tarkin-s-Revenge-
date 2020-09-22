@@ -37,10 +37,6 @@ protected:
 	ManagedWeakReference<StructureObject*> structureObject;
 
 public:
-	inline const AtomicTime& getNextExecutionTime() const {
-		return Task::getNextExecutionTime();
-	}
-
 	StructureMaintenanceTask(StructureObject* structure) : Task(), Logger("StructureMaintenanceTask") {
 		structureObject = structure;
 

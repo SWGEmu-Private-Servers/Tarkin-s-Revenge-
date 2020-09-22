@@ -93,7 +93,7 @@ public:
 			b->classType = behavior.getIntAt(4);
 
 			tree.add(b);
-			if (b == nullptr) {
+			if (b == NULL) {
 				System::out << behavior.getStringAt(1) << " " << behavior.getStringAt(2) << " " << behavior.getStringAt(3) << " " << behavior.getStringAt(4) << " ";
 			}
 

@@ -1,0 +1,178 @@
+/* Tarkin's Revenge
+ * May 2017 
+ */
+
+package server.zone.objects.tangible.component.incubation;
+
+import server.zone.objects.tangible.component.Component;
+include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
+import server.zone.packets.scene.AttributeListMessage;
+import server.zone.objects.creature.CreatureObject;
+import server.zone.objects.tangible.TangibleObject;
+
+@json
+class IncubationComponent extends Component {
+	protected int p1Purity;
+	protected int p1Mutagen;
+	protected int p1Reference;
+	protected int p1Baseline;
+	protected int p2Purity;
+	protected int p2Mutagen;
+	protected int p2Reference;
+	protected int p2Baseline;
+	protected int p3Purity;
+	protected int p3Mutagen;
+	protected int p3Reference;
+	protected int p3Baseline;
+
+	public IncubationComponent() {
+		Logger.setLoggingName("IncubationComponent");
+		p1Purity = 0;
+		p1Mutagen = 0;
+		p1Reference = 0;
+		p1Baseline = 0;
+		p2Purity = 0;
+		p2Mutagen = 0;
+		p2Reference = 0;
+		p2Baseline = 0;
+		p3Purity = 0;
+		p3Mutagen = 0;
+		p3Reference = 0;
+		p3Baseline = 0;
+	}
+
+	// Is this even necessary?
+	/*public void setStats(int p1Pur, int p1Mut, int p1Ref, int p1Base, int p2Pur, int p2Mut, int p2Ref, int p2Base, int p3Pur, int p3Mut, int p3Ref, int p3Base){
+
+		p1Purity = p1Pur;
+		p1Mutagen = p1Mut;
+		p1Reference = p1Ref;
+		p1Baseline = p1Base;
+		p2Purity = p2Pur;
+		p2Mutagen = p2Mut;
+		p2Reference = p2Ref;
+		p2Baseline = p2Base;
+		p3Purity = p3Pur;
+		p3Mutagen = p3Mut;
+		p3Reference = p3Ref;
+		p3Baseline = p3Base;
+	}*/
+
+	@dirty
+	public int getPhaseOnePurity() {
+		return p1Purity;
+	}
+
+	@dirty
+	public int getPhaseOneMutagen() {
+		return p1Mutagen;
+	}
+
+	@dirty
+	public int getPhaseOneReference() {
+		return p1Reference;
+	}
+
+	@dirty
+	public int getPhaseOneBaseline() {
+		return p1Baseline;
+	}
+
+	@dirty
+	public int getPhaseTwoPurity() {
+		return p2Purity;
+	}
+
+	@dirty
+	public int getPhaseTwoMutagen() {
+		return p2Mutagen;
+	}
+
+	@dirty
+	public int getPhaseTwoReference() {
+		return p2Reference;
+	}
+
+	@dirty
+	public int getPhaseTwoBaseline() {
+		return p2Baseline;
+	}
+
+	@dirty
+	public int getPhaseThreePurity() {
+		return p3Purity;
+	}
+
+	@dirty
+	public int getPhaseThreeMutagen() {
+		return p3Mutagen;
+	}
+
+	@dirty
+	public int getPhaseThreeReference() {
+		return p3Reference;
+	}
+
+	@dirty
+	public int getPhaseThreeBaseline() {
+		return p3Baseline;
+	}
+
+	public void setPhaseOnePurity(int value) {
+		p1Purity = value;
+	}
+
+	public void setPhaseOneMutagen(int value) {
+		p1Mutagen = value;
+	}
+
+	public void setPhaseOneReference(int value) {
+		p1Reference = value;
+	}
+
+	public void setPhaseOneBaseline(int value) {
+		p1Baseline = value;
+	}
+
+	public void setPhaseTwoPurity(int value) {
+		p2Purity = value;
+	}
+
+	public void setPhaseTwoMutagen(int value) {
+		p2Mutagen = value;
+	}
+
+	public void setPhaseTwoReference(int value) {
+		p2Reference = value;
+	}
+
+	public void setPhaseTwoBaseline(int value) {
+		p2Baseline = value;
+	}
+
+	public void setPhaseThreePurity(int value) {
+		p3Purity = value;
+	}
+
+	public void setPhaseThreeMutagen(int value) {
+		p3Mutagen = value;
+	}
+
+	public void setPhaseThreeReference(int value) {
+		p3Reference = value;
+	}
+
+	public void setPhaseThreeBaseline(int value) {
+		p3Baseline = value;
+	}
+
+
+	public native void initializeTransientMembers();
+
+	@local
+	public native void updateCraftingValues(CraftingValues values, boolean firstUpdate);
+
+	@local
+	public native void fillAttributeList(AttributeListMessage msg, CreatureObject object);
+
+}

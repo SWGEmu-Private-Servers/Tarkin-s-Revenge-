@@ -48,11 +48,9 @@ class WaypointObject extends IntangibleObject {
 	}
 
 	@local
-	@dirty
 	public native void loadTemplateData(SharedObjectTemplate templateData);
 
 	@local
-	@dirty
 	public native void insertToMessage(BaseMessage msg);
 
 	@local
@@ -69,7 +67,7 @@ class WaypointObject extends IntangibleObject {
 		planetCRC = crc;
 	}
 
-	@read
+	@dirty
 	public unsigned int getPlanetCRC() {
 		return planetCRC;
 	}
@@ -94,7 +92,7 @@ class WaypointObject extends IntangibleObject {
 		specialTypeID = id;
 	}
 
-	@read
+	@dirty
 	public int getSpecialTypeID() {
 		return specialTypeID;
 	}
@@ -104,17 +102,17 @@ class WaypointObject extends IntangibleObject {
 		active = !active;
 	}
 
-	@read
+	@dirty
 	public boolean isActive() {
 		return active;
 	}
 
-	@read
+	@dirty
 	public byte getColor() {
 		return color;
 	}
 
-	@read
+	@dirty
 	public native string getDetailedDescription();
 
 	@preLocked

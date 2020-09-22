@@ -8,25 +8,26 @@
 #include "server/zone/objects/mission/CraftingMissionObjective.h"
 #include "server/zone/managers/crafting/schematicmap/SchematicMap.h"
 #include "server/zone/objects/mission/MissionObject.h"
+#include "server/zone/managers/statistics/StatisticsManager.h"
 
 void CraftingMissionObjectiveImplementation::updateMissionStatus(CreatureObject* player) {
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
-	if(mission == nullptr)
+	if(mission == NULL)
 		return;
 	ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
-	if (inventory == nullptr) {
+	if (inventory == NULL) {
 		return;
 	}
 
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-	if (ghost == nullptr) {
+	if (ghost == NULL) {
 		return;
 	}
 
 	DraftSchematic* schematic = SchematicMap::instance()->get(mission->getTemplateString1().hashCode());
-	if (schematic == nullptr) {
+	if (schematic == NULL) {
 		return;
 	}
 
@@ -40,7 +41,7 @@ void CraftingMissionObjectiveImplementation::updateMissionStatus(CreatureObject*
 		//Create components for schematic and give them to the player.
 		for (int i = 0; i < schematic->getDraftSlotCount(); i++) {
 			ManagedReference<TangibleObject*> item = ( player->getZoneServer()->createObject(schematic->getDraftSlot(i)->getResourceType().replaceFirst("/shared_", "/").hashCode(), 2)).castTo<TangibleObject*>();
-			if (item != nullptr) {
+			if (item != NULL) {
 				Locker locker(item);
 
 				if (inventory->transferObject(item, -1, true)) {
@@ -64,10 +65,12 @@ void CraftingMissionObjectiveImplementation::updateMissionStatus(CreatureObject*
 
 			Locker locker(item);
 
-			if (item != nullptr && item->getObjectTemplate()->getFullTemplateString() == mission->getTemplateString2()) {
+			if (item != NULL && item->getObjectTemplate()->getFullTemplateString() == mission->getTemplateString2()) {
 				//Delete the item.
 				item->destroyObjectFromWorld(true);
 				item->destroyObjectFromDatabase(true);
+				
+				StatisticsManager::instance()->lumberjack(player, nullptr, mission->getRewardCredits(), MissionTypes::CRAFTING);
 
 				complete();
 
@@ -85,13 +88,13 @@ void CraftingMissionObjectiveImplementation::abort() {
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> player = getPlayerOwner();
 
-	if (player != nullptr && mission != nullptr) {
+	if (player != NULL && mission != NULL) {
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
-		if (ghost != nullptr) {
+		if (ghost != NULL) {
 			DraftSchematic* schematic = SchematicMap::instance()->get(mission->getTemplateString1().hashCode());
 
-			if (schematic != nullptr) {
+			if (schematic != NULL) {
 				ghost->removeRewardedSchematic(schematic, true);
 			}
 		}

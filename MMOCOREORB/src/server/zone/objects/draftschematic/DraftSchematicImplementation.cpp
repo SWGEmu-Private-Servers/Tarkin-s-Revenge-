@@ -38,6 +38,7 @@ void DraftSchematicImplementation::sendBaselinesTo(SceneObject* player) {
 }
 
 void DraftSchematicImplementation::sendDraftSlotsTo(CreatureObject* player) {
+
 	CreatureObject* playerCreature = cast<CreatureObject*>( player);
 
 	ObjectControllerMessage* msg = new ObjectControllerMessage(player->getObjectID(), 0x0B, 0x01BF);
@@ -56,7 +57,8 @@ void DraftSchematicImplementation::sendDraftSlotsTo(CreatureObject* player) {
 }
 
 void DraftSchematicImplementation::insertIngredients(ObjectControllerMessage* msg) {
-	const Vector<Reference<DraftSlot* > >* draftSlots = schematicTemplate->getDraftSlots();
+
+	Vector<Reference<DraftSlot* > >* draftSlots = schematicTemplate->getDraftSlots();
 
 	msg->insertInt(draftSlots->size());
 
@@ -68,7 +70,17 @@ void DraftSchematicImplementation::insertIngredients(ObjectControllerMessage* ms
 }
 
 void DraftSchematicImplementation::sendResourceWeightsTo(CreatureObject* player) {
-	const Vector<Reference<ResourceWeight* > >* resourceWeights = schematicTemplate->getResourceWeights();
+
+	Vector<Reference<ResourceWeight* > >* resourceWeights = schematicTemplate->getResourceWeights();
+	
+	if (resourceWeights == NULL){
+		Logger::console.error("resourceWeights null for draft schematic template: " + schematicTemplate->getTemplateFileName() + " This is likely due to a typo in the lua template file.");		
+		player->sendSystemMessage("There was an error on server that prevented this crafting action from completing. The error has been logged. Please contact support for further assistance.");
+		
+		// Note: The broken draft schematic will be added to the player's crafting tool, but the tool will not let them use it.
+
+		return;
+	}
 
 	ObjectControllerMessage* msg = new ObjectControllerMessage(player->getObjectID(), 0x0B, 0x0207);
 
@@ -91,12 +103,13 @@ void DraftSchematicImplementation::sendResourceWeightsTo(CreatureObject* player)
 }
 
 Reference<SceneObject*> DraftSchematicImplementation::createManufactureSchematic(SceneObject* craftingTool) {
+
 	Reference<ManufactureSchematic*> manuSchematic =
 			 (getZoneServer()->createObject(0xF75E04C2, 0)).castTo<ManufactureSchematic* >();
 
-	if(manuSchematic == nullptr) {
+	if(manuSchematic == NULL) {
 		error("Could not create ManufactureSchematic for " + getObjectNameStringIdName());
-		return nullptr;
+		return NULL;
 	}
 
 	Locker locker(manuSchematic);

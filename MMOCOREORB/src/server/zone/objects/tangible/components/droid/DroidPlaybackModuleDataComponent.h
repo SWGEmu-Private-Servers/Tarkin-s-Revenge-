@@ -39,14 +39,14 @@ protected:
 public:
 	DroidPlaybackModuleDataComponent();
 	~DroidPlaybackModuleDataComponent();
-	String getModuleName() const;
+	String getModuleName();
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 	void fillObjectMenuResponse(SceneObject* droidObject, ObjectMenuResponse* menuResponse, CreatureObject* player);
 	int handleObjectMenuSelect(CreatureObject* player, byte selectedID, PetControlDevice* controller);
 	int getBatteryDrain();
 	void deactivate();
-	String toString() const;
+	String toString();
 	void onCall();
 	void onStore();
 	bool isActive();

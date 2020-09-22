@@ -82,6 +82,10 @@ Luna<LuaPlayerObject>::RegType LuaPlayerObject::Register[] = {
 		{ "startSlicingSession", &LuaPlayerObject::startSlicingSession },
 		{ "setVisibility", &LuaPlayerObject::setVisibility },
 		{ "getPlayedTimeString", &LuaPlayerObject::getPlayedTimeString },
+
+		//Tarkin's Revenge
+		{ "getAccountID", &LuaPlayerObject::getAccountID },
+		{ "getInfamy", &LuaPlayerObject::getInfamy },
 		{ 0, 0 }
 };
 
@@ -90,7 +94,7 @@ LuaPlayerObject::LuaPlayerObject(lua_State *L) : LuaIntangibleObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<PlayerObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = reinterpret_cast<PlayerObject*>(lua_touserdata(L, 1));
 #endif
@@ -105,7 +109,7 @@ int LuaPlayerObject::_setObject(lua_State* L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<PlayerObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = (PlayerObject*)lua_touserdata(L, -1);
 #endif
@@ -339,7 +343,7 @@ int LuaPlayerObject::addHologrindProfession(lua_State* L){
 }
 
 int LuaPlayerObject::getHologrindProfessions(lua_State* L) {
-	const Vector<byte>* professions = realObject->getHologrindProfessions();
+	Vector<byte>* professions = realObject->getHologrindProfessions();
 
 	lua_newtable(L);
 
@@ -585,7 +589,7 @@ int LuaPlayerObject::closeSuiWindowType(lua_State* L) {
 }
 
 int LuaPlayerObject::getExperienceList(lua_State* L) {
-	const DeltaVectorMap<String, int>* expList = realObject->getExperienceList();
+	DeltaVectorMap<String, int>* expList = realObject->getExperienceList();
 
 	lua_newtable(L);
 
@@ -747,6 +751,32 @@ int LuaPlayerObject::getPlayedTimeString(lua_State* L) {
 	Locker locker(realObject);
 
 	lua_pushstring(L, realObject->getPlayedTimeString(verbose).toCharArray());
+
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Get the account ID of a player
+* lua: PlayerObject(pGhost):getAccountID()
+*/
+
+int LuaPlayerObject::getAccountID(lua_State* L) {
+	lua_pushinteger(L, realObject->getAccountID());
+
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Get the infamy value of a player
+* lua: PlayerObject(pGhost):getInfamy()
+*/
+
+int LuaPlayerObject::getInfamy(lua_State* L) {
+	float infamy = realObject->getInfamy();
+
+	lua_pushnumber(L, infamy);
 
 	return 1;
 }

@@ -15,6 +15,12 @@
 #include "server/zone/objects/creature/buffs/DelayedBuff.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 
+// Hondo For countdown on crafting tool
+#include "server/zone/managers/crafting/CraftingManager.h"
+#include "server/zone/objects/tangible/tool/CraftingTool.h"
+#include "server/zone/objects/player/sessions/crafting/events/CreateObjectTask.h"
+#include "server/zone/objects/player/sessions/crafting/events/UpdateToolCountdownTask.h"
+
 class HealStateCommand : public QueueCommand {
 	float mindCost;
 	float range;
@@ -31,6 +37,74 @@ public:
 		healableStates.add(CreatureState::BLINDED);
 		healableStates.add(CreatureState::INTIMIDATED);
 	}
+	
+	void displayCoolDown(CreatureObject* creature, int timer, String targetItem) const {
+		SceneObject* inventory = creature->getSlottedObject("inventory");
+
+		if (inventory == nullptr)
+			return;
+			
+		ManagedReference<SceneObject*> obj = nullptr;
+		bool toolFound = false;
+		
+		// Find a food/chem crafting tool
+		for (int i = 0; i < inventory->getContainerObjectsSize(); ++i) {
+			obj = inventory->getContainerObject(i);
+			
+			// Check if it's in the medical bag
+			if (obj->isContainerObject() && obj->getObjectName()->getFullPath().contains("medbag")) {
+				for (int j = 0; j < obj->getContainerObjectsSize(); j++) {
+					SceneObject* bagItem = obj->getContainerObject(j);
+					
+					if (bagItem != nullptr && bagItem->getObjectName()->getFullPath().contains(targetItem)) {
+						obj = bagItem;
+						toolFound = true;
+						break;
+					}
+				}	
+			}
+			
+			if (obj != nullptr && obj->getObjectName()->getFullPath().contains(targetItem)) {
+				toolFound = true;
+				break;
+			}
+		}
+		
+		if (!toolFound)
+			return;
+
+		ManagedReference<ZoneServer*> server = creature->getZoneServer();
+
+		if (server == nullptr)
+			return; 
+			
+		ManagedReference<CraftingTool*> craftingTool = obj.castTo<CraftingTool*>();	
+			
+		Locker locker(craftingTool);
+		craftingTool->setBusy();
+
+		int timer2 = 1;
+
+		Reference<UpdateToolCountdownTask*> updateToolCountdownTask = nullptr;
+		Reference<CreateObjectTask*> createObjectTask = new CreateObjectTask(creature, craftingTool, true); // practice
+
+		while (timer > 0) {
+			updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+			updateToolCountdownTask->schedule(timer2);
+			timer -= 1;
+			timer2 += 1000;
+		}
+
+		if (timer < 0) {
+			timer2 += (timer * 1000);
+			timer = 0;
+		}
+
+		updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+		updateToolCountdownTask->schedule(timer2);
+		createObjectTask->schedule(timer2);
+
+	}
 
 	void deactivateStateTreatment(CreatureObject* creature) const {
 		float modSkill = (float)creature->getSkillMod("healing_injury_speed");
@@ -39,7 +113,7 @@ public:
 		if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 			DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));
 
-			if (buff != nullptr) {
+			if (buff != NULL) {
 				float percent = buff->getSkillModifierValue("heal_recovery");
 
 				delay = round(delay * (100.0f - percent) / 100.0f);
@@ -52,6 +126,13 @@ public:
 		StringIdChatParameter message("healing_response", "healing_response_58"); //You are now ready to heal more damage.
 		Reference<InjuryTreatmentTask*> task = new InjuryTreatmentTask(creature, message, "stateTreatment");
 		creature->addPendingTask("stateTreatment", task, delay * 1000);
+		
+		// LoH Show cooldown icon (tooltip timer is accurate, but there is ~5s delay before the icon disappears after the timer runs out)
+		AddBuffMessage* abm = new AddBuffMessage(creature, BuffCRC::TEST_FIRST, delay);
+		creature->sendMessage(abm);
+		
+		// LoH Start countdown timer on first food/chem crafting tool in inventory or med bag (this displays accurately when on the toolbar)
+		displayCoolDown(creature, delay, "food_tool");
 	}
 
 	void awardXp(CreatureObject* creature, String type, int power) const {
@@ -108,7 +189,7 @@ public:
 			return false;
 		}
 
-		if (statePack == nullptr) {
+		if (statePack == NULL) {
 			creature->sendSystemMessage("@healing_response:healing_response_60"); //No valid medicine found.
 			return false;
 		}
@@ -136,9 +217,28 @@ public:
 
 		int medicineUse = creature->getSkillMod("healing_ability");
 
-		if (inventory != nullptr) {
+		if (inventory != NULL) {
 			for (int i = 0; i < inventory->getContainerObjectsSize(); i++) {
 				SceneObject* object = inventory->getContainerObject(i);
+				
+				// LoH Find first usable State Pack in Medical Bag
+				if (object->isContainerObject() && object->getObjectName()->getFullPath().contains("medbag")) {
+					
+					for (int j = 0; j < object->getContainerObjectsSize(); j++) {
+						SceneObject* bagItem = object->getContainerObject(j);
+						
+						if (bagItem->isPharmaceuticalObject()){
+							PharmaceuticalObject* rightItem = cast<PharmaceuticalObject*>(bagItem);
+
+							if (rightItem->isStatePack()){
+								StatePack* stpck = cast<StatePack*>(rightItem);
+								
+								if (stpck->getMedicineUseRequired() <= medicineUse && stpck->getState() == state)
+									return stpck;
+							}
+						}
+					}
+				}
 
 				if (!object->isPharmaceuticalObject())
 					continue;
@@ -154,7 +254,7 @@ public:
 			}
 		}
 
-		return nullptr;
+		return NULL;
 	}
 
 	void parseModifier(const String& modifier, uint64& state, uint64& objectId) const {
@@ -185,11 +285,11 @@ public:
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		if (object != nullptr) {
+		if (object != NULL) {
 			if (!object->isCreatureObject()) {
 				TangibleObject* tangibleObject = dynamic_cast<TangibleObject*>(object.get());
 
-				if (tangibleObject != nullptr && tangibleObject->isAttackableBy(creature)) {
+				if (tangibleObject != NULL && tangibleObject->isAttackableBy(creature)) {
 					object = creature;
 				} else {
 					creature->sendSystemMessage("@healing_response:healing_response_73"); //Target must be a player or a creature pet in order to heal a state.
@@ -214,14 +314,26 @@ public:
 
 		SceneObject* inventory = creature->getSlottedObject("inventory");
 
-		ManagedReference<StatePack*> statePack = nullptr;
+		ManagedReference<StatePack*> statePack = NULL;
 
 		if(state != CreatureState::INVALID || objectId != 0) {
-			if (inventory != nullptr) {
+			if (inventory != NULL) {
 				statePack = inventory->getContainerObject(objectId).castTo<StatePack*>();
 			}
+			
+			// Check if it's in the medical bag
+			if (statePack == NULL) {
+				SceneObject* usedItem = creature->getZoneServer()->getObject(objectId);
+				
+				if (usedItem != nullptr){
+					ManagedReference<SceneObject*> myParent = usedItem->getParent().get();
 
-			if (statePack == nullptr)
+					if (myParent != nullptr && myParent->getObjectName()->getFullPath().contains("medbag") && usedItem->isPharmaceuticalObject())
+						statePack = cast<StatePack*>(usedItem);
+				}
+			}
+
+			if (statePack == NULL)
 				statePack = findStatePack(creature, state);
 		}else {
 			uint64 targetStateBitmask = creatureTarget->getStateBitmask();
@@ -236,13 +348,13 @@ public:
 				state = healableState;
 				statePack = findStatePack(creature, healableState);
 
-				if(statePack != nullptr) {
+				if(statePack != NULL) {
 					break;
 				}
 			}
 
 			//if state is INVALID they had no healable states
-			//if it is valid but statePack is nullptr they had no valid medicine for *any* state and will error in canPerformSkill
+			//if it is valid but statePack is NULL they had no valid medicine for *any* state and will error in canPerformSkill
 			if(state == CreatureState::INVALID) {
 				StringIdChatParameter stringId("healing", "no_state_to_heal"); // %TT has no state that you can heal.
 				stringId.setTT(creatureTarget->getDisplayedName());
@@ -271,7 +383,7 @@ public:
 
 			if (targetCell != nullptr) {
 				if (!creatureTarget->isPlayerCreature()) {
-					auto perms = targetCell->getContainerPermissions();
+					ContainerPermissions* perms = targetCell->getContainerPermissions();
 
 					if (!perms->hasInheritPermissionsFromParent()) {
 						if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
@@ -319,7 +431,7 @@ public:
 
 		deactivateStateTreatment(creature);
 
-		if (statePack != nullptr) {
+		if (statePack != NULL) {
 			Locker locker(statePack);
 			statePack->decreaseUseCount();
 		}

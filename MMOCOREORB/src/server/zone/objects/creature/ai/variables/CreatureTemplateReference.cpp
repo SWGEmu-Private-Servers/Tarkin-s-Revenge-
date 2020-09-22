@@ -14,7 +14,7 @@ bool CreatureTemplateReference::toBinaryStream(ObjectOutputStream* stream) {
 #else
 	CreatureTemplate* obj = get();
 
-	if (obj != nullptr) {
+	if (obj != NULL) {
 		obj->getTemplateName().toBinaryStream(stream);
 	} else
 		stream->writeShort(0);
@@ -34,7 +34,7 @@ bool CreatureTemplateReference::parseFromBinaryStream(ObjectInputStream* stream)
 
 	CreatureTemplate* obj = CreatureTemplateManager::instance()->getTemplate(templateName);
 
-	if (obj != nullptr) {
+	if (obj != NULL) {
 		updateObject(obj);
 
 		return true;
@@ -58,7 +58,7 @@ void to_json(nlohmann::json& j, const CreatureTemplateReference& r) {
 #else
 	CreatureTemplate* obj = r.get();
 
-	if (obj != nullptr) {
+	if (obj != NULL) {
 		j = obj->getTemplateName();
 	} else
 		j = "";

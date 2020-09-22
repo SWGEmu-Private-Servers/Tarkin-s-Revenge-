@@ -99,7 +99,7 @@ void ZoneImplementation::stopManagers() {
 	}
 
 	if (planetManager != nullptr) {
-		//planetManager->finalize();
+		planetManager->finalize();
 		planetManager = nullptr;
 	}
 
@@ -119,11 +119,11 @@ void ZoneImplementation::clearZone() {
 	creatureManager->unloadSpawnAreas();
 
 	HashTable<uint64, ManagedReference<SceneObject*> > tbl;
-	tbl.copyFrom(*objectMap->getMap());
+	tbl.copyFrom(objectMap->getMap());
 
 	zonelocker.release();
 
-	auto iterator = tbl.iterator();
+	HashTableIterator<uint64, ManagedReference<SceneObject*> > iterator = tbl.iterator();
 
 	while (iterator.hasNext()) {
 		ManagedReference<SceneObject*> sceno = iterator.getNextValue();
@@ -353,28 +353,6 @@ int ZoneImplementation::getInRangeObjects(float x, float y, float range, InRange
 	}
 
 	return objects->size();
-}
-
-int ZoneImplementation::getInRangePlayers(float x, float y, float range, SortedVector<ManagedReference<QuadTreeEntry*> >* players) {
-	Reference<SortedVector<ManagedReference<QuadTreeEntry*> >*> closeObjects = new SortedVector<ManagedReference<QuadTreeEntry*> >();
-
-	getInRangeObjects(x, y, range, closeObjects, true);
-
-	for (int i = 0; i < closeObjects->size(); ++i) {
-		SceneObject* object = cast<SceneObject*>(closeObjects->get(i).get());
-
-		if (object == nullptr || !object->isPlayerCreature())
-			continue;
-
-		CreatureObject* player = object->asCreatureObject();
-
-		if (player == nullptr || player->isInvisible())
-			continue;
-
-		players->emplace(object);
-	}
-
-	return players->size();
 }
 
 int ZoneImplementation::getInRangeActiveAreas(float x, float y, SortedVector<ManagedReference<ActiveArea*> >* objects, bool readLockZone) {
@@ -741,7 +719,7 @@ bool ZoneImplementation::objectIsValidPlanetaryMapPerformanceLocation(SceneObjec
 
 	bool hasPerformanceLocationCategory = false;
 
-	const PlanetMapCategory* planetMapCategory = object->getPlanetMapCategory();
+	PlanetMapCategory* planetMapCategory = object->getPlanetMapCategory();
 	if (planetMapCategory != nullptr) {
 		String category = planetMapCategory->getName();
 		if (category == "cantina" || category == "hotel") {
@@ -804,7 +782,7 @@ Reference<SceneObject*> ZoneImplementation::getNearestPlanetaryObject(SceneObjec
 	ReadLocker rlocker(mapLocations);
 #endif
 
-	const SortedVector<MapLocationEntry>& sortedVector = mapLocations->getLocation(mapObjectLocationType);
+	SortedVector<MapLocationEntry>& sortedVector = mapLocations->getLocation(mapObjectLocationType);
 
 	float distance = 16000.f;
 
@@ -830,7 +808,7 @@ SortedVector<ManagedReference<SceneObject*> > ZoneImplementation::getPlanetaryOb
 	ReadLocker rlocker(mapLocations);
 #endif
 
-	const SortedVector<MapLocationEntry>& entryVector = mapLocations->getLocation(mapObjectLocationType);
+	SortedVector<MapLocationEntry>& entryVector = mapLocations->getLocation(mapObjectLocationType);
 
 	for (int i = 0; i < entryVector.size(); ++i) {
 		const MapLocationEntry& entry = entryVector.getUnsafe(i);

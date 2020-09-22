@@ -14,17 +14,18 @@
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "terrain/manager/TerrainManager.h"
 #include "server/zone/objects/mission/MissionObject.h"
+#include "server/zone/managers/statistics/StatisticsManager.h"
 
 void ReconMissionObjectiveImplementation::activate() {
 	MissionObjectiveImplementation::activate();
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
-	if (mission == nullptr)
+	if (mission == NULL)
 		return;
 
 	ManagedReference<ZoneServer*> zoneServer = Core::lookupObject<ZoneServer>("ZoneServer");
 
-	if (locationActiveArea == nullptr) {
+	if (locationActiveArea == NULL) {
 		locationActiveArea = ( zoneServer->createObject(STRING_HASHCODE("object/mission_recon_area.iff"), 1)).castTo<MissionReconActiveArea*>();
 		Locker locker(locationActiveArea);
 		locationActiveArea->setMissionObjective(_this.getReferenceUnsafeStaticCast());
@@ -44,7 +45,7 @@ void ReconMissionObjectiveImplementation::activate() {
 				area->initializePosition(mission->getStartPositionX(), 0, mission->getStartPositionY());
 				area->setRadius(32.f);
 
-				if (zone != nullptr) {
+				if (zone != NULL) {
 					zone->transferObject(area, -1, true);
 				} else {
 					error("Failed to insert recon location to zone.");
@@ -69,7 +70,7 @@ void ReconMissionObjectiveImplementation::activate() {
 void ReconMissionObjectiveImplementation::abort() {
 	MissionObjectiveImplementation::abort();
 
-	if (locationActiveArea != nullptr) {
+	if (locationActiveArea != NULL) {
 		Reference<MissionReconActiveArea* > area = locationActiveArea;
 
 		Core::getTaskManager()->executeTask([=] () {
@@ -91,6 +92,10 @@ void ReconMissionObjectiveImplementation::complete() {
 		area->destroyObjectFromDatabase(true);
 	}, "DestroyReconMissionAreaLambda2");
 
+	ManagedReference<MissionObject* > mission = this->mission.get();
+	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	StatisticsManager::instance()->lumberjack(owner, nullptr, mission->getRewardCredits(), MissionTypes::RECON);
+	
 	MissionObjectiveImplementation::complete();
 }
 
@@ -98,7 +103,7 @@ Vector3 ReconMissionObjectiveImplementation::getEndPosition() {
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
 	Vector3 missionEndPoint;
-	if(mission == nullptr)
+	if(mission == NULL)
 		return missionEndPoint;
 
 	missionEndPoint.setX(mission->getStartPositionX());
@@ -106,7 +111,7 @@ Vector3 ReconMissionObjectiveImplementation::getEndPosition() {
 
 	Zone* zone =  getPlayerOwner()->getZone();
 
-	if (zone != nullptr) {
+	if (zone != NULL) {
 		TerrainManager* terrain = zone->getPlanetManager()->getTerrainManager();
 		missionEndPoint.setZ(terrain->getHeight(missionEndPoint.getX(), missionEndPoint.getY()));
 	}

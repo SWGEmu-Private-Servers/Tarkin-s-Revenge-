@@ -33,12 +33,12 @@ public:
 	void run() {
 		ManagedReference<CreatureObject*> player = client->getPlayer();
 
-		if (player == nullptr)
+		if (player == NULL)
 			return;
 
 		ManagedReference<PlayerObject*> playerObject = player->getPlayerObject();
 
-		if (playerObject == nullptr)
+		if (playerObject == NULL)
 			return;
 
 		bool godMode = false;
@@ -48,7 +48,7 @@ public:
 
 		ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(targetToTrade);
 
-		if (targetObject == nullptr || !targetObject->isPlayerCreature() || targetObject == player) {
+		if (targetObject == NULL || !targetObject->isPlayerCreature() || targetObject == player) {
 			//player->error("invalid target to trade " + String::valueOf(targetToTrade));
 			return;
 		}
@@ -60,10 +60,25 @@ public:
 
 		ManagedReference<TradeSession*> playerTradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-		if (player->isInCombat() || (playerTradeContainer != nullptr && playerTradeContainer->getTradeTargetPlayer() == targetToTrade))
+		if (player->isInCombat() || (playerTradeContainer != NULL && playerTradeContainer->getTradeTargetPlayer() == targetToTrade))
 			return;
 
-		if (playerTradeContainer == nullptr) {
+
+		// Tarkin's Revenge Arena System
+		if (playerObject->getScreenPlayData("ToTheDeathScreenplay", "Fighter:") != "") {
+			player->sendSystemMessage("You cannot trade while fighting in an arena.");
+			return;
+		}
+
+		ManagedReference<PlayerObject*> targetGhost = targetPlayer->getPlayerObject();
+
+		if (targetGhost->getScreenPlayData("ToTheDeathScreenplay", "Fighter:") != "") {
+			player->sendSystemMessage("You cannot trade with a player who is fighting in an arena.");
+			return;
+		}
+
+
+		if (playerTradeContainer == NULL) {
 			playerTradeContainer = new TradeSession();
 			player->addActiveSession(SessionFacadeType::TRADE, playerTradeContainer);
 		}
@@ -74,7 +89,7 @@ public:
 
 		ManagedReference<TradeSession*> targetTradeContainer = targetPlayer->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-		if (targetTradeContainer != nullptr && targetTradeContainer->getTradeTargetPlayer() == player->getObjectID()) {
+		if (targetTradeContainer != NULL && targetTradeContainer->getTradeTargetPlayer() == player->getObjectID()) {
 			BeginTradeMessage* msg = new BeginTradeMessage(targetPlayer->getObjectID());
 			player->sendMessage(msg);
 

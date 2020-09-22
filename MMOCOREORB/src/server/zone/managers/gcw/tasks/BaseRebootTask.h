@@ -16,7 +16,7 @@ public:
 	}
 
 	void run() {
-		if (gcwManager == nullptr || buildingObject == nullptr || baseData == nullptr)
+		if (gcwManager == NULL || buildingObject == NULL || baseData == NULL)
 			return;
 
 		Locker block(buildingObject);

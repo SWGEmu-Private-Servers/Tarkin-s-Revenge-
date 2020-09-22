@@ -111,7 +111,7 @@ class FrsManager extends ManagedService implements Logger {
 
 	public FrsManager(ZoneServer zserv) {
 		Logger.setLoggingName("FrsManager");
-		Logger.setLogging(false);
+		Logger.setLogging(true);
 
 		zoneServer = zserv;
 		rankMaintenanceTask = null;
@@ -381,6 +381,4 @@ class FrsManager extends ManagedService implements Logger {
 
 	@local
 	public native void handleSuddenDeathLoss(CreatureObject player, ThreatMap threatMap);
-
-	public native void cancelTasks();
 }

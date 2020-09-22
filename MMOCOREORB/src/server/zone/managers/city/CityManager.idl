@@ -12,9 +12,9 @@ import server.zone.objects.creature.CreatureObject;
 import system.util.VectorMap;
 import system.util.Vector;
 import server.zone.objects.scene.SceneObject;
+import server.zone.objects.region.CityRegion;
 import server.zone.objects.waypoint.WaypointObject;
 import server.zone.objects.structure.StructureObject;
-include server.zone.objects.region.CityRegion;
 include server.chat.StringIdChatParameter;
 include server.zone.managers.city.CitiesAllowed;
 include server.zone.managers.city.CitySpecialization;
@@ -52,6 +52,7 @@ class CityManager extends ManagedService implements Logger {
 	public transient static int decorationsPerRank;
 	public transient static int trainersPerRank;
 	public transient static int missionTerminalsPerRank;
+	public transient static int billboardsPerRank;
 	public transient static float maintenanceDiscount;
 
 	@dereferenced
@@ -248,6 +249,8 @@ class CityManager extends ManagedService implements Logger {
 	public native boolean canSupportMoreDecorations(CityRegion city);
 	public native boolean canSupportMoreTrainers(CityRegion city);
 	public native boolean canSupportMoreMissionTerminals(CityRegion city);
+	public native boolean canSupportMoreBillboards(CityRegion city);
+
 
 	@local
 	public native final CitySpecialization getCitySpecialization(final string cityspec);

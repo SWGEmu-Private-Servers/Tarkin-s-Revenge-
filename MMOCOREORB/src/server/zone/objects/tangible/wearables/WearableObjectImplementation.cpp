@@ -12,11 +12,12 @@
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 #include "server/zone/objects/tangible/attachment/Attachment.h"
 #include "server/zone/managers/skill/SkillModManager.h"
+#include "server/zone/managers/stringid/StringIdManager.h"
 
 /**
  * Rename for clarity/convenience
  */
-using Mod = VectorMapEntry<String,int>;
+typedef VectorMapEntry<String,int> Mod;
 
 /**
  * @inf
@@ -32,7 +33,7 @@ using Mod = VectorMapEntry<String,int>;
 class ModSortingHelper : public Mod {
 public:
 	ModSortingHelper(): Mod( "", 0) {}
-	ModSortingHelper(String name, int value) : Mod(name, value) {}
+	ModSortingHelper( String name, int value ) : Mod( name, value ) {}
 
 	/**
 	 * @inf
@@ -78,7 +79,7 @@ void WearableObjectImplementation::fillAttributeList(AttributeListMessage* alm,
 	}
 
 	//Anti Decay Kit
-	if (hasAntiDecayKit() && !isArmorObject()){
+	if(hasAntiDecayKit() && !isArmorObject()){
 		alm->insertAttribute("@veteran_new:antidecay_examine_title", "@veteran_new:antidecay_examine_text");
 	}
 
@@ -90,13 +91,14 @@ void WearableObjectImplementation::updateCraftingValues(CraftingValues* values, 
 	 * sockets				0-0(novice artisan) (Don't use)
 	 * hitpoints			1000-1000 (Don't Use)
 	 */
-	if (initialUpdate) {
+	if(initialUpdate) {
 		if(values->hasProperty("sockets") && values->getCurrentValue("sockets") >= 0)
 			generateSockets(values);
 	}
 }
 
 void WearableObjectImplementation::generateSockets(CraftingValues* craftingValues) {
+
 	if (socketsGenerated) {
 		return;
 	}
@@ -104,24 +106,24 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 	int skill = 0;
 	int luck = 0;
 
-	if (craftingValues != nullptr) {
+	if (craftingValues != NULL) {
 		ManagedReference<ManufactureSchematic*> manuSchematic = craftingValues->getManufactureSchematic();
-		if(manuSchematic != nullptr) {
+		if(manuSchematic != NULL) {
 			ManagedReference<DraftSchematic*> draftSchematic = manuSchematic->getDraftSchematic();
 			ManagedReference<CreatureObject*> player = manuSchematic->getCrafter().get();
 
-			if (player != nullptr && draftSchematic != nullptr) {
+			if (player != NULL && draftSchematic != NULL) {
 				String assemblySkill = draftSchematic->getAssemblySkill();
-				skill = player->getSkillMod(assemblySkill) * 2.5; // 0 to 250 max
+				skill = player->getSkillMod(assemblySkill) * 3.2; // 0 to 400 max
 				luck = System::random(player->getSkillMod("luck")
 						+ player->getSkillMod("force_luck"));
 			}
 		}
 	}
 
-	int random = (System::random(750)) - 250; // -250 to 500
+	int random = (System::random(600)) - 200; // -200 to 400
 
-	float roll = System::random(skill + luck + random);
+	float roll = skill + luck + random;
 
 	int generatedCount = int(float(MAXSOCKETS * roll) / float(MAXSOCKETS * 100));
 
@@ -139,7 +141,7 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 	socketsGenerated = true;
 }
 
-int WearableObjectImplementation::socketsUsed() const {
+int WearableObjectImplementation::socketsUsed() {
 	// TODO: remove this backwards compatibility fix at next wipe. Only usedSocketCount variable should be used.
 	if (objectCreatedPreUsedSocketCountFix) {
 		return wearableSkillMods.size() - modsNotInSockets;
@@ -150,10 +152,12 @@ int WearableObjectImplementation::socketsUsed() const {
 
 void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 		Attachment* attachment) {
+
 	if (!isASubChildOf(player))
 		return;
 
 	if (socketsLeft() > 0) {
+
 		Locker locker(player);
 
 		if (isEquipped()) {
@@ -163,7 +167,7 @@ void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 		if (wearableSkillMods.size() < 6) {
 			HashTable<String, int>* mods = attachment->getSkillMods();
 			HashTableIterator<String, int> iterator = mods->iterator();
-
+			
 			String statName;
 			int newValue;
 
@@ -172,23 +176,29 @@ void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 				iterator.getNextKeyAndValue(statName, newValue);
 				sortedMods.put( ModSortingHelper( statName, newValue));
 			}
-
-			// Select the next mod in the SEA, sorted high-to-low. If that skill mod is already on the
-			// wearable, with higher or equal value, don't apply and continue. Break once one mod
-			// is applied.
-			for( int i = 0; i < sortedMods.size(); i++ ) {
-				String modName = sortedMods.elementAt(i).getKey();
-				int modValue = sortedMods.elementAt(i).getValue();
-
-				int existingValue = -26;
-				if(wearableSkillMods.contains(modName))
-					existingValue = wearableSkillMods.get(modName);
-
-				if( modValue > existingValue) {
-					wearableSkillMods.put( modName, modValue );
-					break;
+			
+			/* Tarkin's Revenge
+			 * Our SEAs only have 1 stat
+			 * - Reject new SEA if the item already has that mod and the new SEA's value would not be an improvement.
+			 * - Upgrade exiting value if it is the same, at the cost of a socket (normal SWG).
+			 */ 
+			String modName = sortedMods.elementAt(0).getKey();
+			int modValue = sortedMods.elementAt(0).getValue();
+			
+			if(wearableSkillMods.contains(modName)){
+				StringIdManager* stringIdManager = StringIdManager::instance();
+				UnicodeString hrName = stringIdManager->getStringId("@stat_n:" + modName);
+				
+				if(modValue <= wearableSkillMods.get(modName)){
+					player->sendSystemMessage("Item already contains " + hrName + " greater than or equal to " + String::valueOf(modValue));
+					return;
+				} else {
+					player->sendSystemMessage("The item's " + hrName + " skill has been upgraded from " + String::valueOf(wearableSkillMods.get(modName)) + " to " + String::valueOf(modValue) + " at the cost of 1 socket.");
 				}
 			}
+			
+			// Apply the upgrade
+			wearableSkillMods.put( modName, modValue );
 		}
 
 		usedSocketCount++;
@@ -203,8 +213,8 @@ void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 	}
 }
 
-void WearableObjectImplementation::applySkillModsTo(CreatureObject* creature) const {
-	if (creature == nullptr) {
+void WearableObjectImplementation::applySkillModsTo(CreatureObject* creature) {
+	if (creature == NULL) {
 		return;
 	}
 
@@ -213,17 +223,14 @@ void WearableObjectImplementation::applySkillModsTo(CreatureObject* creature) co
 		int value = wearableSkillMods.get(name);
 
 		if (!SkillModManager::instance()->isWearableModDisabled(name))
-		{
 			creature->addSkillMod(SkillModManager::WEARABLE, name, value, true);
-			creature->updateTerrainNegotiation();
-		}
 	}
 
 	SkillModManager::instance()->verifyWearableSkillMods(creature);
 }
 
 void WearableObjectImplementation::removeSkillModsFrom(CreatureObject* creature) {
-	if (creature == nullptr) {
+	if (creature == NULL) {
 		return;
 	}
 
@@ -232,10 +239,7 @@ void WearableObjectImplementation::removeSkillModsFrom(CreatureObject* creature)
 		int value = wearableSkillMods.get(name);
 
 		if (!SkillModManager::instance()->isWearableModDisabled(name))
-		{
 			creature->removeSkillMod(SkillModManager::WEARABLE, name, value, true);
-			creature->updateTerrainNegotiation();
-		}
 	}
 
 	SkillModManager::instance()->verifyWearableSkillMods(creature);
@@ -243,13 +247,14 @@ void WearableObjectImplementation::removeSkillModsFrom(CreatureObject* creature)
 
 bool WearableObjectImplementation::isEquipped() {
 	ManagedReference<SceneObject*> parent = getParent().get();
-	if (parent != nullptr && parent->isPlayerCreature())
+	if (parent != NULL && parent->isPlayerCreature())
 		return true;
 
 	return false;
 }
 
 String WearableObjectImplementation::repairAttempt(int repairChance) {
+
 	String message = "@error_message:";
 
 	if(repairChance < 25) {

@@ -11,8 +11,8 @@
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
-float PowerupObjectImplementation::MAXPRIMARY = 33.16f;
-float PowerupObjectImplementation::MAXSECONDARY = 16.33f;
+float PowerupObjectImplementation::MAXPRIMARY = 33.16;
+float PowerupObjectImplementation::MAXSECONDARY = 16.33;
 
 void PowerupObjectImplementation::fillAttributeList(AttributeListMessage* alm, CreatureObject* object) {
 
@@ -51,7 +51,7 @@ void PowerupObjectImplementation::fillWeaponAttributeList(AttributeListMessage* 
 	}
 }
 
-float PowerupObjectImplementation::getWeaponStat(const String& attrib, WeaponObject* weapon, bool withPup) const {
+float PowerupObjectImplementation::getWeaponStat(const String& attrib, WeaponObject* weapon, bool withPup) {
 	if (attrib == "pointBlankAccuracy")
 		return weapon->getPointBlankAccuracy(withPup);
 	else if (attrib == "idealRange")
@@ -88,7 +88,7 @@ void PowerupObjectImplementation::updateCraftingValues(CraftingValues* values, b
 	/// effect 1-100
 
 	Reference<PowerupTemplate*> pup = cast<PowerupTemplate*>(templateObject.get());
-	if(pup == nullptr) {
+	if(pup == NULL) {
 		return;
 	}
 
@@ -108,7 +108,7 @@ void PowerupObjectImplementation::updateCraftingValues(CraftingValues* values, b
 		}
 
 		type = pup->getType().toLowerCase();
-		uses = 100; // Powerups are always 100 uses
+		uses = 1000; // Powerups are always 1000 uses
 
 	} else {
 
@@ -125,6 +125,20 @@ void PowerupObjectImplementation::updateCraftingValues(CraftingValues* values, b
 
 				if(modifiers.size() == 1) {
 					StringBuffer name;
+
+					//If first secondary stat is not one of the preferred stats, reroll one time for a second chance at a preferred stat
+					if(type == "ranged") {
+						if(stat.getAttributeToModify() != "minDamage" && stat.getAttributeToModify() != "healthAttackCost" &&  stat.getAttributeToModify() != "actionAttackCost" && stat.getAttributeToModify() != "mindAttackCost") {
+						stat = pup->getRandomSecondaryAttribute();
+						}
+					}
+
+					if(type == "melee") {
+						if(stat.getAttributeToModify() != "minDamage" && stat.getAttributeToModify() != "maxDamage" &&  stat.getAttributeToModify() != "attackSpeed") {
+						stat = pup->getRandomSecondaryAttribute();
+						}
+					}
+
 					name << getCustomObjectName().toString() << " of " << stat.getName();
 
 					setCustomObjectName(name.toString(), true);
@@ -150,17 +164,17 @@ void PowerupObjectImplementation::updateCraftingValues(CraftingValues* values, b
 		if(i == 1) {
 
 			/// If there is only 1 secondary stat, it increases as expected
-			if(modifiers.size() == 2) {
+			//if(modifiers.size() == 2) {
 
 				stat->setValue((val / values->getMaxValue("effect")) * MAXSECONDARY);
 				continue;
 
 			/// If there are more than 1 secondary stat, and the values
 			/// is less than 10, the first secondary stat doesn't increase
-			} else if(modifiers.size() >= 2 && stat->getValue() < 10) {
+			//} else if(modifiers.size() >= 2 && stat->getValue() < 10) {
 
-				continue;
-			}
+			//	continue;
+			//}
 		}
 
 		/// It seems like we divide the change in values between the
@@ -174,10 +188,10 @@ void PowerupObjectImplementation::updateCraftingValues(CraftingValues* values, b
 	}
 }
 
-float PowerupObjectImplementation::getPowerupStat(const String& attribName) const {
+float PowerupObjectImplementation::getPowerupStat(const String& attribName) {
 
 	for(int i = 0; i < modifiers.size(); ++i) {
-		const PowerupStat* stat = &modifiers.get(i);
+		PowerupStat* stat = &modifiers.get(i);
 
 		if(attribName.toLowerCase() ==
 				stat->getAttributeToModify().toLowerCase()) {

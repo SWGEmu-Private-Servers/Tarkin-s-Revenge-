@@ -15,13 +15,14 @@
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "templates/tangible/ConsumableTemplate.h"
 #include "server/zone/managers/player/PlayerManager.h"
+#include "server/zone/objects/player/FactionStatus.h"
 
 void ConsumableImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	TangibleObjectImplementation::loadTemplateData(templateData);
 
 	ConsumableTemplate* consumable = dynamic_cast<ConsumableTemplate*>(templateData);
 
-	if (consumable == nullptr)
+	if (consumable == NULL)
 		return;
 
 	duration = consumable->getDuration();
@@ -50,6 +51,8 @@ void ConsumableImplementation::loadTemplateData(SharedObjectTemplate* templateDa
 	foragedFood = consumable->getForagedFood();
 
 	speciesRestriction = consumable->getSpeciesRestriction();
+
+	factionRestriction = consumable->getFactionRestriction();
 }
 
 void ConsumableImplementation::updateCraftingValues(CraftingValues* values, bool firstUpdate) {
@@ -122,6 +125,11 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 
 	PlayerObject* ghost = player->getPlayerObject();
 
+	if ((factionRestriction == "Imperial" && (player->getFactionStatus() == FactionStatus::ONLEAVE || !player->isImperial())) || (factionRestriction == "Rebel" && (player->getFactionStatus() == FactionStatus::ONLEAVE || !player->isRebel()))) {
+		player->sendSystemMessage("You do not meet the faction requirements to use this item.");
+		return 0;	
+	}
+
 	String raceName = player->getSpeciesName();
 
 	if ((speciesRestriction == "2" && raceName != "trandoshan") || (speciesRestriction == "4" && raceName != "wookiee")) {
@@ -144,7 +152,7 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 
 	int availfill = 0;
 
-	if (ghost == nullptr)
+	if (ghost == NULL)
 		return 1;
 
 	if (isFood())
@@ -164,7 +172,7 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 	}
 
 
-	ManagedReference<Buff*> buff = nullptr;
+	ManagedReference<Buff*> buff = NULL;
 
 	switch (effectType) {
 	case EFFECT_ATTRIBUTE: {
@@ -297,13 +305,7 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 
 			if (!playerManager->doBurstRun(player, hamModifier, cooldownModifier))
 				return 0;
-		} else if (effect == "wookiee_roar") {
-			uint64 target = player->getTargetID();
-			player->enqueueCommand(STRING_HASHCODE("wookieeroar"), 0, target, "", 1);
-		} else if (effect == "enhanced_regen") {
-			uint64 target = player->getObjectID();
-			player->addSkillMod(SkillModManager::TEMPORARYMOD,"enhanced_regen",nutrition,true);
-			player->enqueueCommand(STRING_HASHCODE("regeneration"), 0, target, "", 1);
+
 		} else if (effect == "food_reduce") {
 			//Tilla till reduces food stomach filling by a percentage
 			int currentfilling = ghost->getFoodFilling();
@@ -322,7 +324,7 @@ int ConsumableImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 		break;
 	}
 
-	if (buff != nullptr) {
+	if (buff != NULL) {
 		Locker locker(buff);
 
 		player->addBuff(buff);
@@ -621,4 +623,12 @@ void ConsumableImplementation::fillAttributeList(AttributeListMessage* alm, Crea
 		else
 			alm->insertAttribute("race_restriction", "@obj_attr_n:species" + speciesRestriction);
 	}
+
+	if (!factionRestriction.isEmpty()) {
+		if (factionRestriction == "Rebel")
+			alm->insertAttribute("faction_restriction", "@obj_attr_n:rebel");
+		else if (factionRestriction == "Imperial")
+			alm->insertAttribute("faction_restriction", "@obj_attr_n:imperial");
+	}
 }
+

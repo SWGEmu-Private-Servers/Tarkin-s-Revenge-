@@ -14,6 +14,12 @@
 #include "server/zone/objects/creature/buffs/DelayedBuff.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 
+// Hondo For countdown on crafting tool
+#include "server/zone/managers/crafting/CraftingManager.h"
+#include "server/zone/objects/tangible/tool/CraftingTool.h"
+#include "server/zone/objects/player/sessions/crafting/events/CreateObjectTask.h"
+#include "server/zone/objects/player/sessions/crafting/events/UpdateToolCountdownTask.h"
+
 class HealWoundCommand : public QueueCommand {
 	int mindCost;
 	float range;
@@ -25,6 +31,74 @@ public:
 		mindCost = 50;
 		range = 6;
 	}
+	
+	void displayCoolDown(CreatureObject* creature, int timer, String targetItem) const {
+		SceneObject* inventory = creature->getSlottedObject("inventory");
+
+		if (inventory == nullptr)
+			return;
+			
+		ManagedReference<SceneObject*> obj = nullptr;
+		bool toolFound = false;
+		
+		// Find a food/chem crafting tool
+		for (int i = 0; i < inventory->getContainerObjectsSize(); ++i) {
+			obj = inventory->getContainerObject(i);
+			
+			// Check if it's in the medical bag
+			if (obj->isContainerObject() && obj->getObjectName()->getFullPath().contains("medbag")) {
+				for (int j = 0; j < obj->getContainerObjectsSize(); j++) {
+					SceneObject* bagItem = obj->getContainerObject(j);
+					
+					if (bagItem != nullptr && bagItem->getObjectName()->getFullPath().contains(targetItem)) {
+						obj = bagItem;
+						toolFound = true;
+						break;
+					}
+				}	
+			}
+			
+			if (obj != nullptr && obj->getObjectName()->getFullPath().contains(targetItem)) {
+				toolFound = true;
+				break;
+			}
+		}
+		
+		if (!toolFound)
+			return;
+
+		ManagedReference<ZoneServer*> server = creature->getZoneServer();
+
+		if (server == nullptr)
+			return; 
+			
+		ManagedReference<CraftingTool*> craftingTool = obj.castTo<CraftingTool*>();	
+			
+		Locker locker(craftingTool);
+		craftingTool->setBusy();
+
+		int timer2 = 1;
+
+		Reference<UpdateToolCountdownTask*> updateToolCountdownTask = nullptr;
+		Reference<CreateObjectTask*> createObjectTask = new CreateObjectTask(creature, craftingTool, true); // practice
+
+		while (timer > 0) {
+			updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+			updateToolCountdownTask->schedule(timer2);
+			timer -= 1;
+			timer2 += 1000;
+		}
+
+		if (timer < 0) {
+			timer2 += (timer * 1000);
+			timer = 0;
+		}
+
+		updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+		updateToolCountdownTask->schedule(timer2);
+		createObjectTask->schedule(timer2);
+
+	}
 
 	void deactivateWoundTreatment(CreatureObject* creature) const {
 		float modSkill = (float)creature->getSkillMod("healing_wound_speed");
@@ -34,7 +108,7 @@ public:
 		if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 			DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));
 
-			if (buff != nullptr) {
+			if (buff != NULL) {
 				float percent = buff->getSkillModifierValue("heal_recovery");
 
 				delay = round(delay * (100.0f - percent) / 100.0f);
@@ -47,6 +121,13 @@ public:
 		StringIdChatParameter message("healing_response", "healing_response_59");
 		Reference<InjuryTreatmentTask*> task = new InjuryTreatmentTask(creature, message, "woundTreatment");
 		creature->addPendingTask("woundTreatment", task, delay * 1000);
+		
+		// LoH Show cooldown icon (tooltip timer is accurate, but there is ~5s delay before the icon disappears after the timer runs out)
+		AddBuffMessage* abm = new AddBuffMessage(creature, BuffCRC::TEST_FIRST, delay);
+		creature->sendMessage(abm);
+		
+		// LoH Start countdown timer on first food/chem crafting tool in inventory or med bag (this displays accurately when on the toolbar)
+		displayCoolDown(creature, delay, "food_tool");
 	}
 
 	void doAnimations(CreatureObject* creature, CreatureObject* creatureTarget) const {
@@ -107,7 +188,7 @@ public:
 			return false;
 		}
 
-		if (woundPack == nullptr) {
+		if (woundPack == NULL) {
 			creature->sendSystemMessage("@healing_response:healing_response_60"); //No valid medicine found.
 			return false;
 		}
@@ -119,7 +200,7 @@ public:
 		} else {
 			// are we in a cantina? we have a private medical rating so either thats form a droid or camp or hospital
 			ManagedReference<SceneObject*> root = creature->getRootParent();
-			if (root != nullptr && root->isClientObject()) {
+			if (root != NULL && root->isClientObject()) {
 				uint32 gameObjectType = root->getGameObjectType();
 				switch (gameObjectType) {
 						case SceneObjectType::RECREATIONBUILDING:
@@ -200,10 +281,29 @@ public:
 
 		int medicineUse = creature->getSkillMod("healing_ability");
 
-		if (inventory != nullptr) {
+		if (inventory != NULL) {
 			for (int i = 0; i < inventory->getContainerObjectsSize(); i++) {
 				SceneObject* object = inventory->getContainerObject(i);
+				
+				// LoH Find first usable Wound Pack in Medical Bag
+				if (object->isContainerObject() && object->getObjectName()->getFullPath().contains("medbag")) {
+					
+					for (int j = 0; j < object->getContainerObjectsSize(); j++) {
+						SceneObject* bagItem = object->getContainerObject(j);
+						
+						if (bagItem->isPharmaceuticalObject()){
+							PharmaceuticalObject* rightItem = cast<PharmaceuticalObject*>(bagItem);
 
+							if (rightItem->isWoundPack()){
+								WoundPack* wnd = cast<WoundPack*>(rightItem);
+								
+								if (wnd->getMedicineUseRequired() <= medicineUse && wnd->getAttribute() == attribute)
+									return wnd;
+							}
+						}
+					}
+				}
+				
 				if (!object->isPharmaceuticalObject())
 					continue;
 
@@ -218,7 +318,7 @@ public:
 			}
 		}
 
-		return nullptr;
+		return NULL;
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
@@ -230,11 +330,11 @@ public:
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		if (object != nullptr) {
+		if (object != NULL) {
 			if (!object->isCreatureObject()) {
 				TangibleObject* tangibleObject = dynamic_cast<TangibleObject*>(object.get());
 
-				if (tangibleObject != nullptr && tangibleObject->isAttackableBy(creature)) {
+				if (tangibleObject != NULL && tangibleObject->isAttackableBy(creature)) {
 					object = creature;
 				} else {
 					creature->sendSystemMessage("Target must be a player or a creature pet in order to heal wound.");
@@ -260,7 +360,7 @@ public:
 
 				if (targetCell != nullptr) {
 					if (!creatureTarget->isPlayerCreature()) {
-						auto perms = targetCell->getContainerPermissions();
+						ContainerPermissions* perms = targetCell->getContainerPermissions();
 
 						if (!perms->hasInheritPermissionsFromParent()) {
 							if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
@@ -288,16 +388,28 @@ public:
 
 		parseModifier(arguments.toString(), attribute, objectId);
 
-		ManagedReference<WoundPack*> woundPack = nullptr;
+		ManagedReference<WoundPack*> woundPack = NULL;
 
 		if (objectId != 0) {
 			SceneObject* inventory = creature->getSlottedObject("inventory");
 
-			if (inventory != nullptr) {
+			if (inventory != NULL) {
 				woundPack = inventory->getContainerObject(objectId).castTo<WoundPack*>();
 			}
+			
+			// Check if it's in the medical bag
+			if (woundPack == NULL) {
+				SceneObject* usedItem = creature->getZoneServer()->getObject(objectId);
+				
+				if (usedItem != nullptr){
+					ManagedReference<SceneObject*> myParent = usedItem->getParent().get();
 
-			if (woundPack == nullptr) {
+					if (myParent != nullptr && myParent->getObjectName()->getFullPath().contains("medbag") && usedItem->isPharmaceuticalObject())
+						woundPack = cast<WoundPack*>(usedItem);
+				}
+			}
+
+			if (woundPack == NULL) {
 				creature->sendSystemMessage("@healing_response:healing_response_66"); // That item does not heal wounds.
 				return false;
 			}
@@ -315,7 +427,7 @@ public:
 		} else {
 			int searchAttribute = -1;
 
-			while (woundPack == nullptr) {
+			while (woundPack == NULL) {
 				searchAttribute += 1;
 				searchAttribute = findAttribute(creatureTarget, searchAttribute);
 

@@ -8,8 +8,6 @@
 #ifndef SHAREDOBJECTTEMPLATE_H_
 #define SHAREDOBJECTTEMPLATE_H_
 
-#include "engine/lua/Lua.h"
-
 #include "templates/LuaTemplate.h"
 #include "templates/IffTemplate.h"
 #include "templates/ChildObject.h"
@@ -25,7 +23,7 @@
 class PortalLayout;
 class AppearanceTemplate;
 
-class SharedObjectTemplate : public LuaTemplate, public IffTemplate, public Logger {
+class SharedObjectTemplate : public LuaTemplate, public IffTemplate {
 protected:
 	StringIdParam objectName;
 	StringIdParam detailedDescription;
@@ -65,8 +63,8 @@ protected:
 	//uint32 clientObjectCRC;
 	String clientTemplateFileName;
 
-	Reference<const PlanetMapCategory*> planetMapCategory;
-	Reference<const PlanetMapCategory*> planetMapSubCategory;
+	Reference<PlanetMapCategory*> planetMapCategory;
+	Reference<PlanetMapCategory*> planetMapSubCategory;
 	bool autoRegisterWithPlanetMap;
 
 	String fullTemplateString;
@@ -197,6 +195,10 @@ public:
 	const static int DROIDMODULEPERSONALITY = 0x4000057;
 	const static int VEHICLE = 0x4000058;
 	const static int XPPURCHASE = 0x4000059;
+	const static int PETCUSTOMKIT = 0x400005A;
+	const static int TARKINGRANT = 0x400005B;
+	const static int RETOOL = 0x400005C;
+
 public:
 	SharedObjectTemplate();
 
@@ -213,20 +215,20 @@ public:
 	void loadDerv(IffStream* iffStream);
 	void parseFileData(IffStream* iffStream);
 
-	bool isDerivedFrom(const String& iffPath, bool includeSelf = true) const;
+	bool isDerivedFrom(const String& iffPath, bool includeSelf = true);
 
 	static String getType(int type);
 
-	inline const String& getAppearanceFilename() const {
-		return appearanceFilename.get();
+	inline String getAppearanceFilename() const {
+		return appearanceFilename;
 	}
 
 	inline float getClearFloraRadius() const {
 		return clearFloraRadius;
 	}
 
-	inline const String& getClientDataFile() const {
-		return clientDataFile.get();
+	inline String getClientDataFile() const {
+		return clientDataFile;
 	}
 
 	inline int getCollisionActionBlockFlags() const {
@@ -261,7 +263,7 @@ public:
 		return containerVolumeLimit;
 	}
 
-	inline String getDetailedDescription() const {
+	inline String getDetailedDescription() {
 		return detailedDescription.getFullString();
 	}
 
@@ -297,19 +299,19 @@ public:
 		return onlyVisibleInTools;
 	}
 
-	inline const String& getPortalLayoutFilename() const {
-		return portalLayoutFilename.get();
+	inline String getPortalLayoutFilename() const {
+		return portalLayoutFilename;
 	}
 
-	const PortalLayout* getPortalLayout();
+	PortalLayout* getPortalLayout();
 	AppearanceTemplate* getAppearanceTemplate();
 
-	const Vector <Vector<String>>& getArrangementDescriptors() const {
-		if (arrangementDescriptors == nullptr) {
+	const Vector < Vector<String> >* getArrangementDescriptors() const {
+		if (arrangementDescriptors == NULL) {
 			const static Vector < Vector<String> > EMPTY_DESCRIPTORS;
-			return EMPTY_DESCRIPTORS;
+			return &EMPTY_DESCRIPTORS;
 		} else
-			return arrangementDescriptors->getArrangementSlots();
+			return &arrangementDescriptors->getArrangementSlots();
 	}
 
 	/*inline Vector<float>* getScale() {
@@ -320,15 +322,15 @@ public:
 		loadedDerivedFiles.put(name);
 	}
 
-	inline float getMinScale() const {
+	inline float getMinScale() {
 		return scale.getMin();
 	}
 
-	inline float getMaxScale() const {
+	inline float getMaxScale() {
 		return scale.getMax();
 	}
 
-	inline bool isNoTrade() const {
+	inline bool isNoTrade() {
 		return noTrade;
 	}
 
@@ -340,9 +342,9 @@ public:
 		return sendToClient;
 	}
 
-	inline const Vector<String>* getSlotDescriptors() const {
-		if (slotDescriptors == nullptr)
-			return nullptr;
+	inline Vector<String>* getSlotDescriptors() {
+		if (slotDescriptors == NULL)
+			return NULL;
 		else
 			return slotDescriptors->getSlots();
 	}
@@ -355,8 +357,8 @@ public:
 		return surfaceType;
 	}
 
-	inline const String& getTintPallete() const {
-		return tintPallete.get();
+	inline String getTintPallete() const {
+		return tintPallete;
 	}
 
 	inline int getTotalCellNumber() const {
@@ -367,47 +369,47 @@ public:
 		return clientTemplateFileName.hashCode();
 	}
 
-	inline const String& getClientTemplateFileName() const {
+	inline const String& getClientTemplateFileName() {
 		return clientTemplateFileName;
 	}
 
-	inline uint32 getServerObjectCRC() const {
+	inline uint32 getServerObjectCRC() {
 		return fullTemplateString.hashCode();
 	}
 
-	inline const String& getFullTemplateString() const {
+	inline const String& getFullTemplateString() {
 		return fullTemplateString;
 	}
 
-	inline const String& getDataObjectComponent() const {
+	inline const String& getDataObjectComponent() {
 		return dataObjectComponent;
 	}
 
-	inline const String& getTemplateFileName() const {
+	inline const String& getTemplateFileName() {
 		return templateFileName;
 	}
 
-	inline const String& getContainerComponent() const {
+	inline const String& getContainerComponent() {
 		return containerComponent;
 	}
 
-	inline const String& getZoneComponent() const {
+	inline const String& getZoneComponent() {
 		return zoneComponent;
 	}
 
-	inline const String& getObjectMenuComponent() const {
+	inline const String& getObjectMenuComponent() {
 		return objectMenuComponent;
 	}
 
-	inline const String& getAttributeListComponent() const {
+	inline const String& getAttributeListComponent() {
 		return attributeListComponent;
 	}
 
-	inline const PlanetMapCategory* getPlanetMapCategory() const {
+	inline PlanetMapCategory* getPlanetMapCategory() const {
 		return planetMapCategory;
 	}
 
-	inline const PlanetMapCategory* getPlanetMapSubCategory() const {
+	inline PlanetMapCategory* getPlanetMapSubCategory() const {
 		return planetMapSubCategory;
 	}
 
@@ -419,7 +421,7 @@ public:
 		return childObjects.size();
 	}
 
-	inline const ChildObject* getChildObject(int idx) const {
+	inline ChildObject* getChildObject(int idx) const {
 		return &childObjects.get(idx);
 	}
 
@@ -427,22 +429,22 @@ public:
 		return inheritPermissionsFromParent;
 	}
 
-	const HashTable<uint32, uint32>* getGroupPermissions() const {
+	HashTable<uint32, uint32>* getGroupPermissions() {
 		return &groupPermissions;
 	}
 
 	bool hasArrangementDescriptor(const String& s) const {
-		const auto& hAD = getArrangementDescriptors();
+		bool foundIt = false;
 
-		for (int i = 0; i < hAD.size(); ++i) {
-			const auto& slotItems = hAD.get(i);
+		const Vector < Vector <String> >* hAD = getArrangementDescriptors();
 
-			if (slotItems.contains(s)) {
-				return true;
-			}
+		for (int i = 0; i < hAD->size() && !foundIt; ++i) {
+			Vector <String>& slotItems = hAD->get(i);
+
+			foundIt = slotItems.contains(s);
 		}
 
-		return false;
+		return foundIt;
 	}
 
 	bool getDelayedContainerLoad() const {
@@ -450,7 +452,7 @@ public:
 	}
 
 public:
-	void setAppearanceFilename(const String& appearanceFilename) {
+	void setAppearanceFilename(String appearanceFilename) {
 		this->appearanceFilename = appearanceFilename;
 	}
 
@@ -458,7 +460,7 @@ public:
 		this->clearFloraRadius = clearFloraRadius;
 	}
 
-	void setClientDataFile(const String& clientDataFile) {
+	void setClientDataFile(String clientDataFile) {
 		this->clientDataFile = clientDataFile;
 	}
 
@@ -506,7 +508,7 @@ public:
 		this->locationReservationRadius = locationReservationRadius;
 	}
 
-	void setLookAtText(const String& lookAtText) {
+	void setLookAtText(String lookAtText) {
 		this->lookAtText = lookAtText;
 	}
 
@@ -514,7 +516,7 @@ public:
 		this->noBuildRadius = noBuildRadius;
 	}
 
-	void setObjectName(const String& objectName) {
+	void setObjectName(String objectName) {
 		this->objectName = objectName;
 	}
 
@@ -522,7 +524,7 @@ public:
 		this->onlyVisibleInTools = onlyVisibleInTools;
 	}
 
-	void setPortalLayoutFilename(const String& portalLayoutFilename) {
+	void setPortalLayoutFilename(String portalLayoutFilename) {
 		this->portalLayoutFilename = portalLayoutFilename;
 	}
 
@@ -554,7 +556,7 @@ public:
 		this->surfaceType = surfaceType;
 	}
 
-	void setTintPallete(const String& tintPallete) {
+	void setTintPallete(String tintPallete) {
 		this->tintPallete = tintPallete;
 	}
 
@@ -568,8 +570,6 @@ public:
 
 	void setTemplateFileName(const String& str) {
 		templateFileName = str;
-
-		Logger::setLoggingName("SharedObjectTemplate " + templateFileName);
 	}
 
 public:
@@ -577,7 +577,7 @@ public:
 		return false;
 	}
 
-	virtual bool isSharedTangibleObjectTemplate() const {
+	virtual bool isSharedTangibleObjectTemplate() {
 		return false;
 	}
 
@@ -661,7 +661,7 @@ public:
 		return false;
 	}
 
-	virtual bool isInstrumentObjectTemplate() const {
+	virtual bool isInstrumentObjectTemplate() {
 		return false;
 	}
 
@@ -685,11 +685,15 @@ public:
 		return false;
 	}
 
-	virtual bool isCreatureHabitatTemplate() const {
+	virtual bool isCreatureHabitatTemplate() {
 		return false;
 	}
 
-	virtual bool isRepairToolTemplate() const {
+	virtual bool isRepairToolTemplate() {
+		return false;
+	}
+
+	virtual bool isReverseEngineeringToolTemplate() {
 		return false;
 	}
 
@@ -701,7 +705,7 @@ public:
 		return false;
 	}
 
-	virtual bool isRecycleToolTemplate() const {
+	virtual bool isRecycleToolTemplate() {
 	    	return false;
 	}
 
@@ -737,11 +741,11 @@ public:
 		return false;
 	}
 
-	virtual bool isPlayerCreatureTemplate() const {
+	virtual bool isPlayerCreatureTemplate() {
 		return false;
 	}
 
-	virtual bool isCraftingStationTemplate() const {
+	virtual bool isCraftingStationTemplate() {
 		return false;
 	}
 
@@ -751,6 +755,10 @@ public:
 
 	virtual bool isNavUpdatesEnabled() {
 		return updatesNavMesh;
+	}
+
+	virtual bool isPetCustomKitTemplate() {
+	    	return false;
 	}
 };
 

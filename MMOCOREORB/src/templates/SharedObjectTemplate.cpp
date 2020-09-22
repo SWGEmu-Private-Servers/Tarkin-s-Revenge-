@@ -10,9 +10,9 @@
 #include "templates/slots/SlotDescriptor.h"
 #include "templates/slots/ArrangementDescriptor.h"
 
-SharedObjectTemplate::SharedObjectTemplate() : Logger("SharedObjectTemplate") {
-	portalLayout = nullptr;
-	appearanceTemplate = nullptr;
+SharedObjectTemplate::SharedObjectTemplate() {
+	portalLayout = NULL;
+	appearanceTemplate = NULL;
 	loadedPortalLayout = false, loadedAppearanceTemplate = false;
 
 	updatesNavMesh = true;
@@ -78,10 +78,10 @@ void SharedObjectTemplate::parseVariableData(const String& varName, LuaObject* t
 		arrangementDescriptors = templateManager->getArrangementDescriptor(arrangementDescriptorFilename);
 	} else if (varName == "appearanceFilename") {
 		appearanceFilename = Lua::getStringParameter(state);
-		appearanceTemplate = nullptr;
+		appearanceTemplate = NULL;
 	} else if (varName == "portalLayoutFilename") {
 		portalLayoutFilename = Lua::getStringParameter(state);
-		portalLayout = nullptr;
+		portalLayout = NULL;
 	} else if (varName == "clientDataFile") {
 		clientDataFile = Lua::getStringParameter(state);
 	} else if (varName == "collisionMaterialFlags") {
@@ -185,7 +185,7 @@ void SharedObjectTemplate::parseVariableData(const String& varName, LuaObject* t
 		LuaObject obj(state);
 
 		if (obj.isValidTable()) {
-			for (int i = 1; i <= obj.getTableSize(); ++i) {
+			for (int i = 1; i <= obj.getTableSize(); +i) {
 				LuaObject group = obj.getObjectAt(i);
 
 				groupPermissions.put(group.getStringAt(1).hashCode(), group.getIntAt(2));
@@ -283,7 +283,7 @@ void SharedObjectTemplate::parseFileData(IffStream* iffStream) {
 	//while (iffStream->getRemainingSubChunksNumber() > 0) {
 		Chunk* chunk = iffStream->openChunk('XXXX');
 
-		if (chunk == nullptr)
+		if (chunk == NULL)
 			continue;
 
 		String varName;
@@ -300,8 +300,6 @@ void SharedObjectTemplate::loadDerv(IffStream* stream) {
 	stream->openForm('DERV');
 
 	Chunk* chunk = stream->openChunk('XXXX');
-
-	E3_ASSERT(chunk);
 
 	String file;
 	chunk->readString(file);
@@ -320,12 +318,12 @@ void SharedObjectTemplate::loadDerv(IffStream* stream) {
 
 	IffStream* dervStream = TemplateManager::instance()->openIffFile(file);
 
-	if (dervStream != nullptr) {
+	if (dervStream != NULL) {
 		readObject(dervStream);
 
 		delete dervStream;
 	} else {
-		warning() << "could not open derv: " << file;
+		Logger::console.warning("could not open derv: " + file);
 	}
 
 	// now server lua
@@ -334,7 +332,7 @@ void SharedObjectTemplate::loadDerv(IffStream* stream) {
 
 	LuaObject* luaObject = TemplateManager::instance()->getLuaObject(serverTemplate);
 
-	if (luaObject != nullptr) {
+	if (luaObject != NULL) {
 		//Logger::console.info("loading derv from " + serverTemplate, true);
 
 		readObject(luaObject);
@@ -343,7 +341,7 @@ void SharedObjectTemplate::loadDerv(IffStream* stream) {
 
 		delete luaObject;
 	} else {
-		warning() << "could not open lua derv: " << serverTemplate;
+		Logger::console.warning("could not open lua derv: " + serverTemplate);
 	}
 
 	stream->closeChunk();
@@ -358,14 +356,14 @@ String SharedObjectTemplate::getType(int type) {
 	memcpy(chars, &reversed, 4);
 	chars[4] = 0;
 
-	return String(chars, 4);
+	return String(chars);
 }
 
 void SharedObjectTemplate::readObject(IffStream* iffStream) {
 	uint32 nextType = iffStream->getNextFormType();
 
 	if (nextType != 'SHOT') {
-		warning() << "expecting SHOT got " << getType(nextType) << " in " << iffStream->getFileName();
+		Logger::console.warning("expecting SHOT got " + getType(nextType) + " in file: " + iffStream->getFileName());
 
 		iffStream->openForm(nextType);
 		iffStream->closeForm(nextType);
@@ -391,7 +389,7 @@ void SharedObjectTemplate::readObject(IffStream* iffStream) {
 		msg += "exception caught parsing file data ->";
 		msg += e.getMessage();
 
-		error(msg);
+		Logger::console.error(msg);
 	}
 
 	iffStream->closeForm(derv);
@@ -439,8 +437,8 @@ void SharedObjectTemplate::readObject(LuaObject* templateData) {
 	return;
 }
 
-const PortalLayout* SharedObjectTemplate::getPortalLayout() {
-	if (portalLayout != nullptr)
+PortalLayout* SharedObjectTemplate::getPortalLayout() {
+	if (portalLayout != NULL)
 		return portalLayout;
 	else if (!loadedPortalLayout) {
 		loadedPortalLayout = true;
@@ -458,7 +456,7 @@ const PortalLayout* SharedObjectTemplate::getPortalLayout() {
 }
 
 AppearanceTemplate* SharedObjectTemplate::getAppearanceTemplate() {
-	if (appearanceTemplate != nullptr)
+	if (appearanceTemplate != NULL)
 		return appearanceTemplate;
 	else if (!loadedAppearanceTemplate) {
 		loadedAppearanceTemplate = true;
@@ -475,7 +473,8 @@ AppearanceTemplate* SharedObjectTemplate::getAppearanceTemplate() {
 	return appearanceTemplate;
 }
 
-bool SharedObjectTemplate::isDerivedFrom(const String& iffPath, bool includeSelf) const {
+bool SharedObjectTemplate::isDerivedFrom(const String& iffPath, bool includeSelf) {
+
 	if(includeSelf && iffPath == fullTemplateString) {
 		return true;
 	}
@@ -486,4 +485,3 @@ bool SharedObjectTemplate::isDerivedFrom(const String& iffPath, bool includeSelf
 
 	return false;
 }
-

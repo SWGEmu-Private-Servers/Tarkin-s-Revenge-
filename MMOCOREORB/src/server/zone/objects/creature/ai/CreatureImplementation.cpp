@@ -19,6 +19,7 @@
 void CreatureImplementation::initializeTransientMembers() {
 	milkState = CreatureManager::NOTMILKED;
 	dnaState = CreatureManager::HASDNA;
+
 	dnaSampleCount = 0;
 	AiAgentImplementation::initializeTransientMembers();
 }
@@ -52,7 +53,7 @@ void CreatureImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResp
 int CreatureImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	auto zone = getZone();
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return 0;
 
 	if (!(_this.getReferenceUnsafeStaticCast()->isDead())) {
@@ -138,9 +139,9 @@ void CreatureImplementation::fillAttributeList(AttributeListMessage* alm, Creatu
 		alm->insertAttribute("challenge_level", getAdultLevel());
 
 	//int skillNum = skillCommands.size();
-	const CreatureAttackMap* attackMap = getAttackMap();
+	CreatureAttackMap* attackMap = getAttackMap();
 	int skillNum = 0;
-	if (attackMap != nullptr)
+	if (attackMap != NULL)
 		skillNum = attackMap->size();
 	if (creaKnowledge >= 70) {
 		String skillname = "";
@@ -185,7 +186,7 @@ void CreatureImplementation::fillAttributeList(AttributeListMessage* alm, Creatu
 }
 
 void CreatureImplementation::scheduleDespawn() {
-	if (getPendingTask("despawn") != nullptr)
+	if (getPendingTask("despawn") != NULL)
 		return;
 
 	Reference<DespawnCreatureTask*> despawn = new DespawnCreatureTask(_this.getReferenceUnsafeStaticCast());
@@ -230,18 +231,22 @@ void CreatureImplementation::setMilkState(short milk) {
 void CreatureImplementation::setDnaState(short dna){
 	dnaState = dna;
 }
+void CreatureImplementation::setEnzymeState(short enzyme){
+	enzymeState = enzyme;
+}
 void CreatureImplementation::notifyDespawn(Zone* zone) {
 	alreadyHarvested.removeAll();
 	dnaState = CreatureManager::HASDNA;
 	dnaSampleCount = 0;
 	milkState = CreatureManager::NOTMILKED;
+	enzymeState = CreatureManager::HASENZYME;
 	baby = false;
 	AiAgentImplementation::notifyDespawn(zone);
 }
 
 bool CreatureImplementation::canHarvestMe(CreatureObject* player) {
 
-	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 10.0f) || player->isInCombat() || !player->hasSkill("outdoors_scout_novice")
+	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 14.0f) || player->isInCombat() || !player->hasSkill("outdoors_scout_novice")
 			|| player->isDead() || player->isIncapacitated() || isPet())
 		return false;
 
@@ -256,7 +261,7 @@ bool CreatureImplementation::canHarvestMe(CreatureObject* player) {
 
 	SceneObject* creatureInventory = getSlottedObject("inventory");
 
-	if (creatureInventory == nullptr)
+	if (creatureInventory == NULL)
 		return false;
 
 	uint64 lootOwnerID = creatureInventory->getContainerPermissions()->getOwnerID();
@@ -269,7 +274,7 @@ bool CreatureImplementation::canHarvestMe(CreatureObject* player) {
 bool CreatureImplementation::canDroidHarvestMe(CreatureObject* player,CreatureObject* droid) {
 
 	// droid should be able to harvest if in range, with current AI
-	if(!droid->isInRange(_this.getReferenceUnsafeStaticCast(), (10.0f + droid->getTemplateRadius() + getTemplateRadius())) || droid->isInCombat() || !player->hasSkill("outdoors_scout_novice")
+	if(!droid->isInRange(_this.getReferenceUnsafeStaticCast(), (14.0f + droid->getTemplateRadius() + getTemplateRadius())) || droid->isInCombat() || !player->hasSkill("outdoors_scout_novice")
 			|| droid->isDead() || droid->isIncapacitated() || isPet()) {
 		return false;
 	}
@@ -288,7 +293,7 @@ bool CreatureImplementation::canDroidHarvestMe(CreatureObject* player,CreatureOb
 
 	SceneObject* creatureInventory = getSlottedObject("inventory");
 
-	if (creatureInventory == nullptr) {
+	if (creatureInventory == NULL) {
 		return false;
 	}
 
@@ -391,7 +396,7 @@ bool CreatureImplementation::canCollectDna(CreatureObject* player) {
 	if (_this.getReferenceUnsafeStaticCast()->isNonPlayerCreatureObject()) {
 		return false;
 	}
-	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 16.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
+	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 25.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
 		return false;
 	}
 
@@ -426,7 +431,7 @@ void CreatureImplementation::setPetLevel(int newLevel) {
 
 	CreatureObjectImplementation::setLevel(newLevel);
 
-	if (getCreatureTemplate() == nullptr) {
+	if (getCreatureTemplate() == NULL) {
 		return;
 	}
 
@@ -443,14 +448,14 @@ void CreatureImplementation::setPetLevel(int newLevel) {
 	minDmg *= ratio;
 	maxDmg *= ratio;
 
-	if (readyWeapon != nullptr) {
+	if (readyWeapon != NULL) {
 		float mod = 1.f - 0.1f*float(readyWeapon->getArmorPiercing());
 
 		readyWeapon->setMinDamage(minDmg * mod);
 		readyWeapon->setMaxDamage(maxDmg * mod);
 	}
 
-	if (defaultWeapon != nullptr) {
+	if (defaultWeapon != NULL) {
 		defaultWeapon->setMinDamage(minDmg);
 		defaultWeapon->setMaxDamage(maxDmg);
 	}
@@ -479,7 +484,7 @@ bool CreatureImplementation::isMount() {
 		return false;
 
 	ManagedReference<PetControlDevice*> pcd = getControlDevice().get().castTo<PetControlDevice*>();
-	if (pcd == nullptr)
+	if (pcd == NULL)
 		return false;
 
 	if (pcd->isTrainedAsMount())
@@ -499,7 +504,7 @@ void CreatureImplementation::sendMessage(BasePacket* msg) {
 
 	ManagedReference<CreatureObject* > linkedCreature = this->linkedCreature.get();
 
-	if (linkedCreature != nullptr && linkedCreature->getParent().get() == _this.getReferenceUnsafeStaticCast())
+	if (linkedCreature != NULL && linkedCreature->getParent().get() == _this.getReferenceUnsafeStaticCast())
 		linkedCreature->sendMessage(msg);
 	else {
 #ifdef LOCKFREE_BCLIENT_BUFFERS

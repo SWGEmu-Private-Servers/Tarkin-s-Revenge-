@@ -18,6 +18,7 @@
 #include "server/chat/StringIdChatParameter.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/managers/creature/PetManager.h"
+#include "server/zone/managers/director/DirectorManager.h"
 
 void StructureTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* creature) const {
 
@@ -28,16 +29,16 @@ void StructureTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneOb
 		return;
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-	if( ghost == nullptr )
+	if( ghost == NULL )
 		return;
 
 	ManagedReference<Terminal*> terminal = cast<Terminal*>(sceneObject);
-	if(terminal == nullptr)
+	if(terminal == NULL)
 		return;
 
 	ManagedReference<StructureObject*> structureObject = cast<StructureObject*>(terminal->getControlledObject());
 
-	if (structureObject == nullptr)
+	if (structureObject == NULL)
 		return;
 
 	if (structureObject->isCivicStructure()) {
@@ -53,13 +54,17 @@ void StructureTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneOb
 
 				// Not all civic buildings have signs.  Check to see if build already has one before allowing a change
 				BuildingObject* building = cast<BuildingObject*>(structureObject.get());
-				if( building != nullptr && building->getSignObject() != nullptr )
+				if( building != NULL && building->getSignObject() != NULL )
 					menuResponse->addRadialMenuItemToRadialID(118, 69, 3, "@player_structure:management_change_sign"); //Change Sign
 			}
 		}
 
 		return;
 	}
+	
+	// Buy structure (Tarkin's Revenge)
+	String adminNames = ConfigManager::instance()->getAdminOwnerNames();
+	String ownerName = structureObject->getOwnerCreatureObject()->getFirstName();
 
 	if (structureObject->isOnAdminList(creature)) {
 		menuResponse->addRadialMenuItem(118, 3, "@player_structure:management"); //Structure Management
@@ -74,11 +79,11 @@ void StructureTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneOb
 		menuResponse->addRadialMenuItemToRadialID(118, 50, 3, "@player_structure:management_name_structure"); //Name Structure
 
 		ManagedReference<SceneObject*> datapad = creature->getSlottedObject("datapad");
-		if(datapad != nullptr) {
+		if(datapad != NULL) {
 			for (int i = 0; i < datapad->getContainerObjectsSize(); ++i) {
 				ManagedReference<SceneObject*> object = datapad->getContainerObject(i);
 
-				if (object != nullptr && object->isPetControlDevice()) {
+				if (object != NULL && object->isPetControlDevice()) {
 					PetControlDevice* device = cast<PetControlDevice*>( object.get());
 
 					if (device->getPetType() == PetManager::DROIDPET) {
@@ -124,29 +129,32 @@ void StructureTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneOb
 			menuResponse->addRadialMenuItem(118, 3, "@player_structure:management"); //Structure Management
 			menuResponse->addRadialMenuItemToRadialID(118, 130, 3, "@player_structure:create_vendor"); //Create Vendor
 		}
+	} else if(adminNames.contains(ownerName)) {
+		// If owner is special admin character, grant option to buy structure
+		menuResponse->addRadialMenuItem(135, 3, "Buy Structure"); 
 	}
 }
 
 int StructureTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	ManagedReference<Terminal*> terminal = cast<Terminal*>(sceneObject);
-	if(terminal == nullptr)
+	if(terminal == NULL)
 		return 1;
 
 	if(!creature->isPlayerCreature())
 		return 1;
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-	if( ghost == nullptr )
+	if( ghost == NULL )
 		return 1;
 
 	ManagedReference<StructureObject*> structureObject = cast<StructureObject*>(terminal->getControlledObject());
 
-	if (structureObject == nullptr)
+	if (structureObject == NULL)
 		return 1;
 
 	ManagedReference<Zone*> zone = structureObject->getZone();
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return 1;
 
 	if (structureObject->isCivicStructure()) {
@@ -166,7 +174,7 @@ int StructureTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObj
 				creature->executeObjectControllerAction(0x18FC1726, structureObject->getObjectID(), ""); //destroyStructure
 				break;
 			case 50:
-				structureManager->promptNameStructure(creature, structureObject, nullptr);
+				structureManager->promptNameStructure(creature, structureObject, NULL);
 				break;
 			case 124:
 				creature->executeObjectControllerAction(0x13F7E585, structureObject->getObjectID(), ""); //structureStatus
@@ -247,7 +255,7 @@ int StructureTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObj
 			}
 			break;
 		case 50:
-			structureManager->promptNameStructure(creature, structureObject, nullptr);
+			structureManager->promptNameStructure(creature, structureObject, NULL);
 			//creature->executeObjectControllerAction(0xC367B461, structureObject->getObjectID(), ""); //nameStructure
 			break;
 		case 69:
@@ -265,7 +273,21 @@ int StructureTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObj
 			creature->executeObjectControllerAction(STRING_HASHCODE("createvendor")); // Create Vendor
 		}
 	}
+	
+	// Double check buy conditions
+	String adminNames = ConfigManager::instance()->getAdminOwnerNames();
+	String ownerName = structureObject->getOwnerCreatureObject()->getFirstName();
+	
+	if(selectedID == 135 && adminNames.contains(ownerName)) {
+		Lua* lua = DirectorManager::instance()->getLuaInstance();
 
+		Reference<LuaFunction*> buyStructure = lua->createFunction("TarkinHousingSystem", "openWindow", 0);
+		*buyStructure << creature;
+		*buyStructure << structureObject;
+		*buyStructure << structureObject->getObjectID();
+
+		buyStructure->callFunction();
+	}
 
 	return 0;
 }

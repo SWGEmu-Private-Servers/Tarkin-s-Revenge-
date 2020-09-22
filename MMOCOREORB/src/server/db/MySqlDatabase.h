@@ -21,7 +21,7 @@ namespace server {
   namespace db {
     namespace mysql {
 
-    class MySqlDatabase : public Database, public Mutex, public Logger {
+    class MySqlDatabase : public Database, public Mutex,  public Logger {
 		MYSQL mysql;
 		String host;
 
@@ -53,7 +53,7 @@ namespace server {
 
 #ifdef CXX11_COMPILER
 		//async
-		void executeQuery(const char* query, Function<void(engine::db::ResultSet*)>&& callback);
+		void executeQuery(const char* query, std::function<void(engine::db::ResultSet*)>&& callback);
 #endif
 
 		void commit();

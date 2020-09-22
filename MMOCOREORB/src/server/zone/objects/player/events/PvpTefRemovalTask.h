@@ -22,27 +22,23 @@ public:
 	void run() {
 		ManagedReference<CreatureObject*> player = creature.get();
 
-		if (player == nullptr)
+		if (player == NULL)
 			return;
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject().get();
 
-		if (ghost == nullptr) {
+		if (ghost == NULL) {
 			return;
 		}
 
 		Locker locker(player);
 
-		if (ghost->hasTef()) {
-			auto gcwCrackdownTefMs = ghost->getLastGcwCrackdownCombatActionTimestamp().miliDifference();
+		if (ghost->hasPvpTef()) {
 			auto gcwTefMs = ghost->getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = ghost->getLastBhPvpCombatActionTimestamp().miliDifference();
-			auto rescheduleTime = gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs;
-			rescheduleTime = gcwCrackdownTefMs < rescheduleTime ? gcwCrackdownTefMs : rescheduleTime;
-			this->reschedule(llabs(rescheduleTime));
+			this->reschedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
 		} else {
 			ghost->updateInRangeBuildingPermissions();
-			ghost->setCrackdownTefTowards(0, false);
 			player->clearPvpStatusBit(CreatureFlag::TEF);
 		}
 

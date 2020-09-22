@@ -36,7 +36,7 @@ public:
 				return;
 
 			Zone* zone = player->getZone();
-			if (zone == nullptr)
+			if (zone == NULL)
 				return;
 
 			if (player->getDistanceTo(&initialPosition) > 1) {
@@ -81,7 +81,7 @@ public:
 				}
 
 				CreatureObject* creature = cast<CreatureObject*>(object);
-				if(creature == nullptr || creature->isInvisible())
+				if(creature == NULL || creature->isInvisible())
 					continue;
 
 				if(type == 0) {

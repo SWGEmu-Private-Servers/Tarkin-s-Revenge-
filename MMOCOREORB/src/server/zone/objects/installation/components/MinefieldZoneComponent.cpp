@@ -19,19 +19,19 @@ void MinefieldZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, Quad
 
 	ManagedReference<SceneObject*> target = cast<SceneObject*>(entry);
 
-	if(!sceneObject->isMinefield() || target == nullptr){
+	if(!sceneObject->isMinefield() || target == NULL){
 		return;
 	}
 
 	DataObjectComponentReference* ref = sceneObject->getDataObjectComponent();
-	if(ref == nullptr){
+	if(ref == NULL){
 		info("dataobjectcomponent is null",true);
 		return;
 	}
 
 	MinefieldDataComponent* mineData = cast<MinefieldDataComponent*>(ref->get());
 
-	if (mineData == nullptr)
+	if (mineData == NULL)
 		return;
 
 	try {
@@ -39,14 +39,14 @@ void MinefieldZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, Quad
 
 			ManagedReference<CreatureObject*> player = cast<CreatureObject*>(entry);
 
-			if(player == nullptr)
+			if(player == NULL)
 				return;
 
 			uint64 playerObjID = player->getObjectID();
 
 			ManagedReference<TangibleObject*> tano = cast<TangibleObject*>(sceneObject);
 
-			if(tano == nullptr)
+			if(tano == NULL)
 				return;
 
 			if(!player->isAttackableBy(tano) && !mineData->hasNotifiedPlayer(playerObjID))
@@ -78,11 +78,11 @@ void MinefieldZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, Quad
 }
 
 void MinefieldZoneComponent::notifyInsertToZone(SceneObject* sceneObject, Zone* zne) const {
-	if(zne == nullptr)
+	if(zne == NULL)
 		return;
 
 	ManagedReference<InstallationObject*> installation = cast<InstallationObject*>(sceneObject);
-	if(installation == nullptr)
+	if(installation == NULL)
 		return;
 
 	ManagedReference<TurretObserver*> observer = new TurretObserver();
@@ -92,9 +92,9 @@ void MinefieldZoneComponent::notifyInsertToZone(SceneObject* sceneObject, Zone* 
 	uint64 oid = installation->getOwnerObjectID();
 	if(oid != 0) {
 		ManagedReference<SceneObject*> sceno = zne->getZoneServer()->getObject(oid);
-		if(sceno != nullptr && sceno->isGCWBase()) {
+		if(sceno != NULL && sceno->isGCWBase()) {
 			ManagedReference<BuildingObject*> building = cast<BuildingObject*>(sceno.get());
-			if(building != nullptr){
+			if(building != NULL){
 
 				installation->setPvpStatusBitmask(building->getPvpStatusBitmask() | 1);
 			}
@@ -106,12 +106,12 @@ void MinefieldZoneComponent::notifyDissapear(SceneObject* sceneObject, QuadTreeE
 
 	ManagedReference<CreatureObject*> player = cast<CreatureObject*>(entry);
 
-	if (player == nullptr || !player->isPlayerCreature())
+	if (player == NULL || !player->isPlayerCreature())
 		return;
 
 	MinefieldDataComponent* data = cast<MinefieldDataComponent*>(sceneObject->getDataObjectComponent()->get());
 
-	if (data == nullptr)
+	if (data == NULL)
 		return;
 
 	if (data->hasNotifiedPlayer(player->getObjectID())) {

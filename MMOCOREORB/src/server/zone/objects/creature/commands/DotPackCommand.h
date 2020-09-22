@@ -15,11 +15,18 @@
 #include "server/zone/Zone.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/collision/CollisionManager.h"
+#include "server/zone/packets/object/Buffs.h"
 #include "server/zone/objects/creature/buffs/DelayedBuff.h"
 #include "server/zone/packets/object/CombatAction.h"
 #include "QueueCommand.h"
 #include "server/zone/managers/combat/CombatManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
+
+// Hondo For countdown on crafting tool
+#include "server/zone/managers/crafting/CraftingManager.h"
+#include "server/zone/objects/tangible/tool/CraftingTool.h"
+#include "server/zone/objects/player/sessions/crafting/events/CreateObjectTask.h"
+#include "server/zone/objects/player/sessions/crafting/events/UpdateToolCountdownTask.h"
 
 class DotPackCommand : public QueueCommand {
 protected:
@@ -30,6 +37,74 @@ public:
 		: QueueCommand(name, server) {
 		effectName = "clienteffect/healing_healenhance.cef";
 		//defaultTime = 0;
+	}
+	
+	void displayCoolDown(CreatureObject* creature, int timer, String targetItem) const {
+		SceneObject* inventory = creature->getSlottedObject("inventory");
+
+		if (inventory == nullptr)
+			return;
+			
+		ManagedReference<SceneObject*> obj = nullptr;
+		bool toolFound = false;
+		
+		// Find a food/chem crafting tool
+		for (int i = 0; i < inventory->getContainerObjectsSize(); ++i) {
+			obj = inventory->getContainerObject(i);
+			
+			// Check if it's in the medical bag
+			if (obj->isContainerObject() && obj->getObjectName()->getFullPath().contains("medbag")) {
+				for (int j = 0; j < obj->getContainerObjectsSize(); j++) {
+					SceneObject* bagItem = obj->getContainerObject(j);
+					
+					if (bagItem != nullptr && bagItem->getObjectName()->getFullPath().contains(targetItem)) {
+						obj = bagItem;
+						toolFound = true;
+						break;
+					}
+				}	
+			}
+			
+			if (obj != nullptr && obj->getObjectName()->getFullPath().contains(targetItem)) {
+				toolFound = true;
+				break;
+			}
+		}
+		
+		if (!toolFound)
+			return;
+
+		ManagedReference<ZoneServer*> server = creature->getZoneServer();
+
+		if (server == nullptr)
+			return; 
+			
+		ManagedReference<CraftingTool*> craftingTool = obj.castTo<CraftingTool*>();	
+			
+		Locker locker(craftingTool);
+		craftingTool->setBusy();
+
+		int timer2 = 1;
+
+		Reference<UpdateToolCountdownTask*> updateToolCountdownTask = nullptr;
+		Reference<CreateObjectTask*> createObjectTask = new CreateObjectTask(creature, craftingTool, true); // practice
+
+		while (timer > 0) {
+			updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+			updateToolCountdownTask->schedule(timer2);
+			timer -= 1;
+			timer2 += 1000;
+		}
+
+		if (timer < 0) {
+			timer2 += (timer * 1000);
+			timer = 0;
+		}
+
+		updateToolCountdownTask = new UpdateToolCountdownTask(creature, craftingTool, timer);
+		updateToolCountdownTask->schedule(timer2);
+		createObjectTask->schedule(timer2);
+
 	}
 
 	void doAnimationsRange(CreatureObject* creature, CreatureObject* creatureTarget, uint64 oid, float range, bool area) const {
@@ -99,7 +174,7 @@ public:
 
 		Zone* zone = creature->getZone();
 
-		if (zone == nullptr)
+		if (zone == NULL)
 			return;
 
 
@@ -126,7 +201,7 @@ public:
 
 					if (targetCell != nullptr) {
 						if (object->isPlayerCreature()) {
-							auto perms = targetCell->getContainerPermissions();
+							ContainerPermissions* perms = targetCell->getContainerPermissions();
 
 							if (!perms->hasInheritPermissionsFromParent()) {
 								if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN))
@@ -250,22 +325,38 @@ public:
 			return INSUFFICIENTHAM;
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
-		if (object == nullptr || !object->isCreatureObject() || creature == object)
+		if (object == NULL || !object->isCreatureObject() || creature == object)
 			return INVALIDTARGET;
 
 		uint64 objectId = 0;
 
 		parseModifier(arguments.toString(), objectId);
-		ManagedReference<DotPack*> dotPack = nullptr;
+		ManagedReference<DotPack*> dotPack = NULL;
 
 		SceneObject* inventory = creature->getSlottedObject("inventory");
 
-		if (inventory != nullptr) {
+		if (inventory != NULL) {
 			dotPack = inventory->getContainerObject(objectId).castTo<DotPack*>();
 		}
+		
+		// Check if it's in the medical bag
+		if (dotPack == NULL) {
+			SceneObject* usedItem = creature->getZoneServer()->getObject(objectId);
+			
+			if (usedItem != nullptr){
+				ManagedReference<SceneObject*> myParent = usedItem->getParent().get();
 
-		if (dotPack == nullptr)
+				if (myParent != nullptr && myParent->getObjectName()->getFullPath().contains("medbag") && usedItem->isPharmaceuticalObject())
+					dotPack = cast<DotPack*>(usedItem);
+			}
+		}
+
+		if (dotPack == NULL){
+			if (objectId == 0)
+				creature->sendSystemMessage("The /applyDisease and /applyPoison commands are not yet implemented. Please use the dot packs directly."); // SWGEmu Mantis Bug Tracker 5475 as of 2019.05.18
+				
 			return GENERALERROR;
+		}
 
 		PlayerManager* playerManager = server->getPlayerManager();
 		CombatManager* combatManager = CombatManager::instance();
@@ -284,7 +375,7 @@ public:
 
 			if (targetCell != nullptr) {
 				if (!targetObject->isPlayerCreature()) {
-					auto perms = targetCell->getContainerPermissions();
+					ContainerPermissions* perms = targetCell->getContainerPermissions();
 
 					if (!perms->hasInheritPermissionsFromParent()) {
 						if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
@@ -323,7 +414,7 @@ public:
 			if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 				DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));
 
-				if (buff != nullptr) {
+				if (buff != NULL) {
 					float percent = buff->getSkillModifierValue("heal_recovery");
 
 					delay = round(delay * (100.0f - percent) / 100.0f);
@@ -334,6 +425,13 @@ public:
 			delay = (delay < 4) ? 4 : delay;
 
 			creature->addCooldown(skillName, delay * 1000);
+			
+			// LoH Show cooldown icon (tooltip timer is accurate, but there is ~5s delay before the icon disappears after the timer runs out)
+			AddBuffMessage* abm = new AddBuffMessage(creature, BuffCRC::TEST_FIRST, delay);
+			creature->sendMessage(abm);
+			
+			// LoH Start countdown timer on first food/chem crafting tool in inventory or med bag (this displays accurately when on the toolbar)
+			displayCoolDown(creature, delay, "food_tool");
 		}
 
 		Locker clocker(creatureTarget, creature);
@@ -400,7 +498,7 @@ public:
 			handleArea(creature, creatureTarget, dotPack, dotPack->getArea());
 		}
 
-		if (dotPack != nullptr) {
+		if (dotPack != NULL) {
 			if (creatureTarget != creature)
 				clocker.release();
 

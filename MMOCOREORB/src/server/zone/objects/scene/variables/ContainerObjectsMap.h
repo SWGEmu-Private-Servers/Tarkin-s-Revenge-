@@ -28,7 +28,7 @@ namespace server {
 
    		ManagedWeakReference<SceneObject*> container;
 
-   		mutable ReadWriteLock* containerLock;
+   		ReadWriteLock* containerLock;
 
    		Reference<UnloadContainerTask*> unloadTask;
 
@@ -59,7 +59,7 @@ namespace server {
    		void removeAll();
    		void removeElementAt(int index);
 
-   		bool contains(uint64 oid) const;
+   		bool contains(uint64 oid);
    		int size();
 
    		ManagedReference<SceneObject*> get(int index);
@@ -78,25 +78,25 @@ namespace server {
    			operationMode = NORMAL_LOAD;
    		}
 
-   		bool hasDelayedLoadOperationMode() const {
+   		bool hasDelayedLoadOperationMode() {
    			return operationMode == DELAYED_LOAD;
    		}
 
-   		bool isLoaded(bool readLock = true) const {
+   		bool isLoaded(bool readLock = true) {
    			if (readLock) {
    				ReadLocker locker(containerLock);
 
-   				return operationMode == NORMAL_LOAD || oids == nullptr;
+   				return operationMode == NORMAL_LOAD || oids == NULL;
    			} else {
-   				return operationMode == NORMAL_LOAD || oids == nullptr;
+   				return operationMode == NORMAL_LOAD || oids == NULL;
    			}
    		}
 
-   		const AtomicTime* getLastAccess() const {
+   		AtomicTime* getLastAccess() {
    			return &lastAccess;
    		}
 
-   		ManagedWeakReference<SceneObject*> getContainer() const {
+   		ManagedWeakReference<SceneObject*> getContainer() {
    			return container;
    		}
 

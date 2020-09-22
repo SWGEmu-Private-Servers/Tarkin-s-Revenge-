@@ -29,12 +29,12 @@ public:
 			return INVALIDLOCOMOTION;
 
 		ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-		if (ghost == nullptr)
+		if (ghost == NULL)
 			return GENERALERROR;
 
 		//Check if player is in a group.
 		ManagedReference<GroupObject*> group = creature->getGroup();
-		if (group == nullptr) {
+		if (group == NULL) {
 			StringIdChatParameter groupOnly("group", "group_only"); //"You can only set or check group looting options if you are in a group."
 			creature->sendSystemMessage(groupOnly);
 			return GENERALERROR;

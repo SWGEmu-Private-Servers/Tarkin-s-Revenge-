@@ -40,8 +40,8 @@ public:
 
 	void TearDown() {
 		// Perform clean up of common constructs here.
-		rectangularAreaShape = nullptr;
-		intersectsWith = nullptr;
+		rectangularAreaShape = NULL;
+		intersectsWith = NULL;
 	}
 };
 
@@ -56,19 +56,17 @@ TEST_F(RectangularAreaShapeTest, RectangularAreaShapeHasRadiusEqualToZeroAfterCr
 }
 
 TEST_F(RectangularAreaShapeTest, RectangularAreaShapeShouldCallContainsPointOnTheAreaToCheckIntersectionWith) {
-	//EXPECT_CALL(*intersectsWith, containsPoint(_)).Times(1); TODO: fix idlc MOCK const methods
+	EXPECT_CALL(*intersectsWith, containsPoint(_)).Times(1);
 
 	EXPECT_FALSE(rectangularAreaShape->intersectsWith(intersectsWith));
 }
 
-// TODO: fix idlc MOCK @read methods
-/*
 TEST_F(RectangularAreaShapeTest, IntersectsWithShouldReturnTrueIfContainsPointReturnsTrueFromTheAreaShape) {
-	//EXPECT_CALL(*intersectsWith, containsPoint(_)).WillOnce(Return(true));
+	EXPECT_CALL(*intersectsWith, containsPoint(_)).WillOnce(Return(true));
 
 	EXPECT_TRUE(rectangularAreaShape->intersectsWith(intersectsWith));
 }
-*/
+
 }
 }
 }

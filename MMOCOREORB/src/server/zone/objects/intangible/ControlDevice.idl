@@ -22,9 +22,9 @@ class ControlDevice extends IntangibleObject {
 		Logger.setLogging(false);
 		Logger.setGlobalLogging(true);
 
-		ContainerPermissions permissions = super.getContainerPermissionsForUpdate();
+		super.getContainerPermissions().setInheritPermissionsFromParent(true);
 
-		permissions.setInheritPermissionsFromParent(true);
+		ContainerPermissions permissions = super.getContainerPermissions();
 		permissions.clearDefaultDenyPermission(ContainerPermissions.MOVECONTAINER);
 		permissions.clearDenyPermission("owner", ContainerPermissions.MOVECONTAINER);
 	}
@@ -38,7 +38,7 @@ class ControlDevice extends IntangibleObject {
 	public void updateToDatabaseAllObjects(boolean startTask) {
 		TangibleObject obj = controlledObject;
 
-		if (obj) {
+		if (obj != null) {
 			obj.updateToDatabaseWithoutChildren();
 
 			super.updateToDatabaseAllObjects(startTask);

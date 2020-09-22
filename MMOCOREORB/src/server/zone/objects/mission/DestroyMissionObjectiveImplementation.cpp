@@ -20,6 +20,7 @@
 #include "templates/mobile/LairTemplate.h"
 #include "server/zone/managers/creature/CreatureTemplateManager.h"
 #include "server/zone/managers/mission/DestroyMissionLairObserver.h"
+#include "server/zone/managers/statistics/StatisticsManager.h"
 
 void DestroyMissionObjectiveImplementation::setLairTemplateToSpawn(const String& sp) {
 	lairTemplate = sp;
@@ -30,13 +31,13 @@ void DestroyMissionObjectiveImplementation::destroyObjectFromDatabase() {
 
 	ManagedReference<MissionSpawnActiveArea* > spawnActiveArea = this->spawnActiveArea;
 
-	if (spawnActiveArea != nullptr) {
+	if (spawnActiveArea != NULL) {
 		Locker locker(spawnActiveArea);
 
 		spawnActiveArea->destroyObjectFromWorld(true);
 		spawnActiveArea->destroyObjectFromDatabase(true);
 
-		this->spawnActiveArea = nullptr;
+		this->spawnActiveArea = NULL;
 	}
 }
 
@@ -44,22 +45,22 @@ void DestroyMissionObjectiveImplementation::activate() {
 	MissionObjectiveImplementation::activate();
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
-	if ((hasObservers() && lairObject != nullptr) || mission == nullptr) {
+	if ((hasObservers() && lairObject != NULL) || mission == NULL) {
 		return;
 	}
 
-	if (spawnActiveArea == nullptr) {
+	if (spawnActiveArea == NULL) {
 		spawnActiveArea = ( Core::lookupObject<ZoneServer>("ZoneServer")->createObject(STRING_HASHCODE("object/mission_spawn_area.iff"), 1)).castTo<MissionSpawnActiveArea*>();
 		Locker alocker(spawnActiveArea);
 		spawnActiveArea->setMissionObjective(_this.getReferenceUnsafeStaticCast());
 	}
 
-	if (spawnActiveArea->getZone() == nullptr) {
+	if (spawnActiveArea->getZone() == NULL) {
 		String planetName = mission->getStartPlanet();
 
 		Zone* zone = Core::lookupObject<ZoneServer>("ZoneServer")->getZone(planetName);
 
-		if (zone == nullptr) {
+		if (zone == NULL) {
 			abort();
 			return;
 		}
@@ -87,10 +88,10 @@ Vector3 DestroyMissionObjectiveImplementation::findValidSpawnPosition(Zone* zone
 	Vector3 position;
 	ManagedReference<MissionObject*> mission = this->mission.get();
 
-	if(mission == nullptr)
+	if(mission == NULL)
 		return position;
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return position;
 
 	float newX = spawnActiveArea->getPositionX() + (256.0f - (float) System::random(512));
@@ -141,15 +142,15 @@ void DestroyMissionObjectiveImplementation::spawnLair() {
 
 	ManagedReference<MissionSpawnActiveArea* > spawnActiveArea = this->spawnActiveArea;
 
-	if (spawnActiveArea == nullptr || mission == nullptr)
+	if (spawnActiveArea == NULL || mission == NULL)
 		return;
 
-	if (lairObject != nullptr && lairObject->getZone() != nullptr)
+	if (lairObject != NULL && lairObject->getZone() != NULL)
 		return;
 
 	Zone* zone = spawnActiveArea->getZone();
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return;
 
 	Locker locker(spawnActiveArea);
@@ -178,20 +179,20 @@ void DestroyMissionObjectiveImplementation::spawnLair() {
 
 	ManagedReference<CreatureObject*> player = getPlayerOwner();
 
-	if (player != nullptr) {
+	if (player != NULL) {
 		//TODO: find correct string id
 		player->sendSystemMessage("Transmission Received: Mission Target has been located.  Mission waypoint has been updated to exact location");
 	}
 
 	LairTemplate* lair = CreatureTemplateManager::instance()->getLairTemplate(lairTemplate.hashCode());
 
-	if (lair == nullptr) {
+	if (lair == NULL) {
 		error("incorrect lair template in destroy mission objective " + lairTemplate);
 		abort();
 		return;
 	}
 
-	if (lairObject == nullptr) {
+	if (lairObject == NULL) {
 		String buildingToSpawn = lair->getMissionBuilding(difficulty);
 
 	 	if (buildingToSpawn.isEmpty()) {
@@ -202,7 +203,7 @@ void DestroyMissionObjectiveImplementation::spawnLair() {
 
 		lairObject = zone->getZoneServer()->createObject(buildingToSpawn.hashCode(), 0).castTo<LairObject*>();
 
-	 	if (lairObject == nullptr) {
+	 	if (lairObject == NULL) {
 	 		error("error spawning " + buildingToSpawn);
 	 		abort();
 	 		return;
@@ -237,10 +238,10 @@ void DestroyMissionObjectiveImplementation::spawnLair() {
 
 		zone->transferObject(lairObject, -1, true);
 
-		lairObserver->checkForNewSpawns(lairObject, nullptr, true);
+		lairObserver->checkForNewSpawns(lairObject, NULL, true);
 	}
 
-	if (lairObject != nullptr && lairObject->getZone() == nullptr) {
+	if (lairObject != NULL && lairObject->getZone() == NULL) {
 		Locker llocker(lairObject);
 
 		zone->transferObject(lairObject, -1, true);
@@ -257,13 +258,13 @@ void DestroyMissionObjectiveImplementation::abort() {
 
 		ManagedReference<LairObject*> lair = lairObject;
 
-		if (lair != nullptr) {
+		if (lair != NULL) {
 			Locker locker(lair);
 
 			lair->dropObserver(ObserverEventType::OBJECTDESTRUCTION, observer);
 			lair->destroyObjectFromWorld(true);
 
-			lair = nullptr;
+			lair = NULL;
 
 			dropObserver(observer, true);
 		}
@@ -272,7 +273,7 @@ void DestroyMissionObjectiveImplementation::abort() {
 
 	ManagedReference<MissionSpawnActiveArea* > spawnActiveArea = this->spawnActiveArea;
 
-	if (spawnActiveArea != nullptr) {
+	if (spawnActiveArea != NULL) {
 		Locker locker(spawnActiveArea);
 
 		spawnActiveArea->destroyObjectFromWorld(true);
@@ -280,6 +281,9 @@ void DestroyMissionObjectiveImplementation::abort() {
 }
 
 void DestroyMissionObjectiveImplementation::complete() {
+	ManagedReference<MissionObject* > mission = this->mission.get();
+	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	StatisticsManager::instance()->lumberjack(owner, nullptr, mission->getRewardCredits(), MissionTypes::DESTROY);
 
 	MissionObjectiveImplementation::complete();
 }
@@ -300,7 +304,7 @@ Vector3 DestroyMissionObjectiveImplementation::getEndPosition() {
 
 	Vector3 missionEndPoint;
 
-	if(mission == nullptr)
+	if(mission == NULL)
 		return missionEndPoint;
 
 	missionEndPoint.setX(mission->getStartPositionX());
@@ -308,7 +312,7 @@ Vector3 DestroyMissionObjectiveImplementation::getEndPosition() {
 
 	Zone* zone = getPlayerOwner()->getZone();
 
-	if (zone != nullptr) {
+	if (zone != NULL) {
 		missionEndPoint.setZ(zone->getHeight(missionEndPoint.getX(), missionEndPoint.getY()));
 	}
 

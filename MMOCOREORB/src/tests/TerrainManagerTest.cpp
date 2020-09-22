@@ -20,7 +20,7 @@ class TerrainManagerTest : public ::testing::Test, public Logger {
 public:
 	MockTerrainManager* terrainManager;
 
-	TerrainManagerTest() : Logger("TerrainManagerTest"), terrainManager(nullptr) {
+	TerrainManagerTest() : Logger("TerrainManagerTest"), terrainManager(NULL) {
 		// Perform creation setup here.
 	}
 

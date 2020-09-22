@@ -35,6 +35,7 @@ StringIdChatParameter::StringIdChatParameter(const String& fil, const String& st
 }
 
 StringIdChatParameter::StringIdChatParameter(const StringIdChatParameter& custom) : Object(), ChatParameter(), StringId(custom) {
+
 	TT = custom.TT;
 	TU = custom.TU;
 	TO = custom.TO;
@@ -45,7 +46,7 @@ StringIdChatParameter::StringIdChatParameter(const StringIdChatParameter& custom
 	unknownByte = custom.unknownByte;
 }
 
-void StringIdChatParameter::addToPacketStream(Message* packet) const {
+void StringIdChatParameter::addToPacketStream(Message* packet) {
 	packet->insertAscii(file);
 	packet->insertInt(0);
 	packet->insertAscii(stringID);
@@ -78,6 +79,7 @@ void StringIdChatParameter::parse(Message* message) {
 }
 
 bool StringIdChatParameter::toBinaryStream(ObjectOutputStream* stream) {
+
 	StringId::toBinaryStream(stream);
 
 	return TT.toBinaryStream(stream) &&
@@ -112,6 +114,8 @@ namespace server {
 			j["DI"] = p.DI;
 			j["DF"] = p.DF;
 		}
+
+
 	}
 }
 

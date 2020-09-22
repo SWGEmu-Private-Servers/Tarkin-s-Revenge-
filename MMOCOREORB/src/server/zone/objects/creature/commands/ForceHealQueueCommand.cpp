@@ -48,7 +48,7 @@ ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServ
 int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* targetCreature) const {
 	ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 
-	if (playerObject == nullptr)
+	if (playerObject == NULL)
 		return GENERALERROR;
 
 	int currentForce = playerObject->getForcePower();
@@ -270,7 +270,7 @@ int ForceHealQueueCommand::runCommand(CreatureObject* creature, CreatureObject* 
 }
 
 void ForceHealQueueCommand::sendHealMessage(CreatureObject* creature, CreatureObject* target, int healType, int healSpec, int amount) const {
-	if (creature == nullptr || target == nullptr || amount < 0)
+	if (creature == NULL || target == NULL || amount < 0)
 		return;
 
 	uint64 playerID = creature->getObjectID();
@@ -358,7 +358,7 @@ void ForceHealQueueCommand::sendHealMessage(CreatureObject* creature, CreatureOb
 }
 
 int ForceHealQueueCommand::runCommandWithTarget(CreatureObject* creature, CreatureObject* targetCreature) const {
-	if (creature == nullptr || targetCreature == nullptr)
+	if (creature == NULL || targetCreature == NULL)
 		return GENERALERROR;
 
 	if (creature->getObjectID() == targetCreature->getObjectID()) // no self healing
@@ -398,7 +398,7 @@ int ForceHealQueueCommand::runCommandWithTarget(CreatureObject* creature, Creatu
 
 		if (targetCell != nullptr) {
 			if (!targetCreature->isPlayerCreature()) {
-				auto perms = targetCell->getContainerPermissions();
+				ContainerPermissions* perms = targetCell->getContainerPermissions();
 
 				if (!perms->hasInheritPermissionsFromParent()) {
 					if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
@@ -425,7 +425,7 @@ int ForceHealQueueCommand::runCommandWithTarget(CreatureObject* creature, Creatu
 }
 
 int ForceHealQueueCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-	if (creature == nullptr || !creature->isPlayerCreature())
+	if (creature == NULL || !creature->isPlayerCreature())
 		return GENERALERROR;
 
 	if (!checkInvalidLocomotions(creature))
@@ -436,24 +436,24 @@ int ForceHealQueueCommand::doQueueCommand(CreatureObject* creature, const uint64
 	if (comResult != SUCCESS)
 		return comResult;
 
-	ManagedReference<CreatureObject*> targetCreature = nullptr;
+	ManagedReference<CreatureObject*> targetCreature = NULL;
 	bool isRemoteHeal = range > 0 && ((allowedTarget == TARGET_AUTO) || (allowedTarget & TARGET_OTHER));
 
 	if (isRemoteHeal && target != 0 && target != creature->getObjectID()) {
 		ManagedReference<SceneObject*> sceno = server->getZoneServer()->getObject(target);
 
-		if (sceno != nullptr && sceno->isCreatureObject()) {
+		if (sceno != NULL && sceno->isCreatureObject()) {
 			targetCreature = sceno.castTo<CreatureObject*>();
 		}
 	}
 
 	const bool selfHealingAllowed = (allowedTarget & TARGET_SELF) || !isRemoteHeal;
-	if (!isRemoteHeal || (targetCreature == nullptr && selfHealingAllowed) || (targetCreature != nullptr && (!targetCreature->isHealableBy(creature)) && selfHealingAllowed)) {
+	if (!isRemoteHeal || (targetCreature == NULL && selfHealingAllowed) || (targetCreature != NULL && (!targetCreature->isHealableBy(creature)) && selfHealingAllowed)) {
 		isRemoteHeal = false;
 		targetCreature = creature;
 	}
 
-	if (targetCreature == nullptr)
+	if (targetCreature == NULL)
 		return GENERALERROR;
 
 	int retval = GENERALERROR;

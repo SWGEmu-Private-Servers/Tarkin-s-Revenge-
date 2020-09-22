@@ -25,7 +25,7 @@ public:
 		// Perform creation setup here.
 		ConfigManager::instance()->loadConfigData();
 		DataArchiveStore::instance()->loadTres(ConfigManager::instance()->getTrePath(), ConfigManager::instance()->getTreFiles());
-		man = new CommandConfigManager(nullptr);
+		man = new CommandConfigManager(NULL);
 		list = new CommandList();
 	}
 
@@ -108,11 +108,11 @@ void CommandLuaTest::loadAnimList() {
 
 	IffStream *stream = DataArchiveStore::instance()->openIffFile("combat/combat_manager.iff");
 
-	ASSERT_TRUE(stream != nullptr);
+	ASSERT_TRUE(stream != NULL);
 
 	stream->openForm('CBTM');
 	stream->openForm('0002');
-	Chunk *form = nullptr;
+	Chunk *form = NULL;
 	try {
 		while((form = stream->openForm('ENTR'))) {
 			String str;

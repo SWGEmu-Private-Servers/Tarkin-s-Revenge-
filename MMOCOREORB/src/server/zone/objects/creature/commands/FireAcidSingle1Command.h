@@ -24,7 +24,7 @@ public:
 
 		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 
-		if (!weapon->isHeavyAcidRifle())
+		if (!weapon->isHeavyAcidRifle() && !weapon->isBlastCannon() && !weapon->isCrusaderCannon() && !weapon->isFragShotgun() && !weapon->isPulseCannon())
 			return INVALIDWEAPON;
 
 		return doCombatAction(creature, target);

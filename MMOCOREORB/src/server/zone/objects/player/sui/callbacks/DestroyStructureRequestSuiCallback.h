@@ -21,15 +21,19 @@ public:
 
 		ManagedReference<DestroyStructureSession*> session = player->getActiveSession(SessionFacadeType::DESTROYSTRUCTURE).castTo<DestroyStructureSession*>();
 
-		if (session == nullptr)
+		if (session == NULL)
 			return;
 
-		if (cancelPressed) {
-			session->cancelSession();
-			return;
+		// Tarkin's Revenge	
+		if (!player->getPlayerObject()->isStaff()) {
+			if (cancelPressed) {
+				session->cancelSession();
+				return;
+			}
 		}
 
 		session->sendDestroyCode();
+
 	}
 };
 

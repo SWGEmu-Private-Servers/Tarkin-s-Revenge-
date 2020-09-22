@@ -28,7 +28,7 @@
 #include "server/zone/managers/frs/FrsManager.h"
 
 void PetControlDeviceImplementation::callObject(CreatureObject* player) {
-	if (player->isInCombat() || player->isDead() || player->isIncapacitated() || player->getPendingTask("tame_pet") != nullptr) {
+	if (player->isInCombat() || player->isDead() || player->isIncapacitated() || player->getPendingTask("tame_pet") != NULL) {
 		player->sendSystemMessage("@pet/pet_menu:cant_call"); // You cannot call this pet right now.
 		return;
 	}
@@ -38,15 +38,22 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		return;
 	}
 
-	if (player->getParent() != nullptr) {
+	if (player->getParent() != NULL) {
 		ManagedReference<SceneObject*> strongRef = player->getRootParent();
-		ManagedReference<BuildingObject*> building = nullptr;
+		ManagedReference<BuildingObject*> building = NULL;
 
-		if (strongRef != nullptr)
+		if (strongRef != NULL)
 			building = strongRef.castTo<BuildingObject*>();
 
-		if (building == nullptr || building->isPrivateStructure()) {
+		if (building == NULL || building->isPrivateStructure()) {
 			player->sendSystemMessage("@pet/pet_menu:private_house"); // You cannot call pets in a private building.
+			return;
+		}
+
+		// Tarkin's Revenge Arena System	
+		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
+		if (ghost->getScreenPlayData("ToTheDeathScreenplay", "Fighter:") != "" || ghost->getScreenPlayData("ToTheDeathScreenplay", "Spectator:") != "") {
+			player->sendSystemMessage("You cannot call pets inside an arena.");
 			return;
 		}
 	}
@@ -56,7 +63,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr || !controlledObject->isAiAgent())
+	if (controlledObject == NULL || !controlledObject->isAiAgent())
 		return;
 
 	ManagedReference<AiAgent*> pet = cast<AiAgent*>(controlledObject.get());
@@ -84,8 +91,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 			player->sendSystemMessage("@pet/pet_menu:cant_call"); // cant call pet right now
 		return;
 	}
-
-	E3_ASSERT(pet->isLockedByCurrentThread());
+	assert(pet->isLockedByCurrentThread());
 
 	unsigned int petFaction = pet->getFaction();
 
@@ -106,7 +112,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		}
 	}
 
-	if (player->getPendingTask("call_pet") != nullptr) {
+	if(player->getPendingTask("call_pet") != NULL) {
 		StringIdChatParameter waitTime("pet/pet_menu", "call_delay_finish_pet"); // Already calling a Pet: Call will be finished in %DI seconds.
 		AtomicTime nextExecution;
 		Core::getTaskManager()->getNextExecutionTime(player->getPendingTask("call_pet"), nextExecution);
@@ -140,14 +146,14 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 	int maxLevelofPets = 10;
 	int level = pet->getLevel();
 
-	if (pet->getCreatureTemplate() == nullptr) {
+	if (pet->getCreatureTemplate() == NULL) {
 		player->sendSystemMessage("Invalid creature to spawn!"); // Old npc without a npc template?
 		return;
 	}
 
 	if (petType == PetManager::CREATUREPET) {
 		ManagedReference<Creature*> creaturePet = cast<Creature*>(pet.get());
-		if (creaturePet == nullptr)
+		if (creaturePet == NULL)
 			return;
 
 		bool ch = player->hasSkill("outdoors_creaturehandler_novice");
@@ -174,11 +180,11 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 	for (int i = 0; i < ghost->getActivePetsSize(); ++i) {
 		ManagedReference<AiAgent*> object = ghost->getActivePet(i);
 
-		if (object != nullptr) {
+		if (object != NULL) {
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
-				const CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
+				CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
 
-				if (activePetTemplate == nullptr || activePetTemplate->getTemplateName() == "at_st")
+				if (activePetTemplate == NULL || activePetTemplate->getTemplateName() == "at_st")
 					continue;
 
 				if (++currentlySpawned >= maxPets) {
@@ -198,10 +204,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 					return;
 				}
 			} else if (object->isCreature() && petType == PetManager::FACTIONPET) {
-				const CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
-				const CreatureTemplate* callingPetTemplate = pet->getCreatureTemplate();
+				CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
+				CreatureTemplate* callingPetTemplate = pet->getCreatureTemplate();
 
-				if (activePetTemplate == nullptr || callingPetTemplate == nullptr || activePetTemplate->getTemplateName() != "at_st")
+				if (activePetTemplate == NULL || callingPetTemplate == NULL || activePetTemplate->getTemplateName() != "at_st")
 					continue;
 
 				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
@@ -220,21 +226,21 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 	ManagedReference<TradeSession*> tradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-	if (tradeContainer != nullptr) {
+	if (tradeContainer != NULL) {
 		server->getZoneServer()->getPlayerManager()->handleAbortTradeMessage(player);
 	}
 
-	if (player->getCurrentCamp() == nullptr && player->getCityRegion() == nullptr) {
+	if (player->getCurrentCamp() == NULL && player->getCityRegion() == NULL) {
 
 		Reference<CallPetTask*> callPet = new CallPetTask(_this.getReferenceUnsafeStaticCast(), player, "call_pet");
 
 		StringIdChatParameter message("pet/pet_menu", "call_pet_delay"); // Calling pet in %DI seconds. Combat will terminate pet call.
-		message.setDI(15);
+		message.setDI(5);
 		player->sendSystemMessage(message);
 
-		player->addPendingTask("call_pet", callPet, 15 * 1000);
+		player->addPendingTask("call_pet", callPet, 5 * 1000);
 
-		if (petControlObserver == nullptr) {
+		if (petControlObserver == NULL) {
 			petControlObserver = new PetControlObserver(_this.getReferenceUnsafeStaticCast());
 			petControlObserver->deploy();
 		}
@@ -243,7 +249,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 
 	} else { // Player is in a city or camp, spawn pet immediately
 
-		if( player->getCooldownTimerMap() == nullptr )
+		if( player->getCooldownTimerMap() == NULL )
 			return;
 
 		// Check cooldown
@@ -267,7 +273,7 @@ int PetControlDeviceImplementation::handleObjectMenuSelect(CreatureObject* playe
 
 	Reference<TangibleObject*> strongRef = controlledObject.get();
 
-	if (strongRef == nullptr)
+	if (strongRef == NULL)
 		return 1;
 
 	AiAgent* pet = cast<AiAgent*>(strongRef.get());
@@ -275,7 +281,7 @@ int PetControlDeviceImplementation::handleObjectMenuSelect(CreatureObject* playe
 	Reference<PlayerObject*> ghost = player->getPlayerObject();
 
 	if (selectedID == 44) {
-		if (pet == nullptr) {
+		if (pet == NULL) {
 			error("null controlled object in pet control device");
 			return 1;
 		} else {
@@ -294,7 +300,7 @@ int PetControlDeviceImplementation::handleObjectMenuSelect(CreatureObject* playe
 			}, "ControlDeviceCallLambda");
 		}
 	} else if (selectedID == 59) {
-		if (pet == nullptr) {
+		if (pet == NULL) {
 			error("null controlled object in pet control device");
 			return 1;
 		} else {
@@ -338,7 +344,7 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr)
+	if (controlledObject == NULL)
 		return;
 
 	assert(controlledObject->isLockedByCurrentThread());
@@ -348,12 +354,12 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	ManagedReference<TradeSession*> tradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-	if (tradeContainer != nullptr) {
+	if (tradeContainer != NULL) {
 		server->getZoneServer()->getPlayerManager()->handleAbortTradeMessage(player);
 	}
 
 	controlledObject->initializePosition(player->getPositionX(), player->getPositionZ(), player->getPositionY());
-	ManagedReference<CreatureObject*> creature = nullptr;
+	ManagedReference<CreatureObject*> creature = NULL;
 
 	if (controlledObject->isCreatureObject()) {
 		creature = cast<CreatureObject*>(controlledObject.get());
@@ -362,13 +368,28 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 		creature->setFaction(player->getFaction());
 		creature->setObjectMenuComponent("PetMenuComponent");
 
-		if (creature->getHueValue() >= 0)
+		if (!creature->isDyed() && creature->getHueValue() >= 0)
 			creature->setHue(creature->getHueValue());
 
 		if (player->getPvpStatusBitmask() & CreatureFlag::PLAYER)
 			creature->setPvpStatusBitmask(player->getPvpStatusBitmask() - CreatureFlag::PLAYER, true);
 		else
 			creature->setPvpStatusBitmask(player->getPvpStatusBitmask(), true);
+
+
+		// Holdover from an improper optionBit being set before a creature was tamed
+		if (creature->isCreature()) {
+			AiAgent* agent = cast<AiAgent*>(creature.get());
+			ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
+			Reference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
+
+			if(creatureTemplate->getTemplateName() == "shyyyo_bird") {
+ 				creature->setOptionsBitmask(OptionBitmask::AIENABLED, true);
+				pet->setPvpStatusBitmask(player->getPvpStatusBitmask());
+				agent->setCreatureBitmask(CreatureFlag::PET);
+			}
+		}
+
 
 		if (trainedAsMount && (creature->getOptionsBitmask() ^ 0x1000)) {
 			creature->setOptionBit(0x1000);
@@ -377,24 +398,24 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	Zone* zone = player->getZone();
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return;
 
 	ManagedReference<CellObject*> parent = player->getParent().get().castTo<CellObject*>();
 
-	if (parent != nullptr)
+	if (parent != NULL)
 		parent->transferObject(controlledObject, -1, true);
 	else
 		zone->transferObject(controlledObject, -1, true);
 
 	updateStatus(1);
 
-	if (petControlObserver != nullptr)
+	if (petControlObserver != NULL)
 		player->dropObserver(ObserverEventType::STARTCOMBAT, petControlObserver);
 
 	AiAgent* pet = cast<AiAgent*>(creature.get());
 
-	if (pet == nullptr)
+	if (pet == NULL)
 		return;
 
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
@@ -404,7 +425,7 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	if (pet->isDroidObject()) {
 		DroidObject* droid = cast<DroidObject*>(pet);
 		isDroid = true;
-		if( droid == nullptr )
+		if( droid == NULL )
 			return;
 
 		// Sanity check that there aren't outstanding power/skill mod tasks
@@ -447,19 +468,19 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 void PetControlDeviceImplementation::cancelSpawnObject(CreatureObject* player) {
 	Reference<Task*> petTask = player->getPendingTask("call_pet");
 
-	if(petTask != nullptr) {
+	if(petTask != NULL) {
 		petTask->cancel();
 		player->removePendingTask("call_pet");
 	}
 
-	if (petControlObserver != nullptr)
+	if (petControlObserver != NULL)
 		player->dropObserver(ObserverEventType::STARTCOMBAT, petControlObserver);
 }
 
 void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool force) {
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr || !controlledObject->isAiAgent())
+	if (controlledObject == NULL || !controlledObject->isAiAgent())
 		return;
 
 	ManagedReference<AiAgent*> pet = cast<AiAgent*>(controlledObject.get());
@@ -480,7 +501,7 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 			return;
 	}
 
-	if (player->getCooldownTimerMap() == nullptr)
+	if (player->getCooldownTimerMap() == NULL)
 		return;
 
 	// Check cooldown
@@ -497,14 +518,14 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 
 	Reference<StorePetTask*> task = new StorePetTask(player, pet);
 
-	// Store non-faction pets immediately.  Store faction pets after 60sec delay.
+	// Store non-faction pets immediately.  Store faction pets after 5 sec delay.
 	if (petType != PetManager::FACTIONPET || force || player->getPlayerObject()->isPrivileged()) {
 		task->execute();
 	}
 	else {
-		if (pet->getPendingTask("store_pet") == nullptr) {
-			player->sendSystemMessage( "Storing pet in 60 seconds");
-			pet->addPendingTask("store_pet", task, 60 * 1000);
+		if (pet->getPendingTask("store_pet") == NULL) {
+			player->sendSystemMessage( "Storing pet in 5 seconds");
+			pet->addPendingTask("store_pet", task, 5 * 1000);
 		}
 		else {
 			AtomicTime nextExecution;
@@ -529,22 +550,22 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr || !controlledObject->isCreature())
+	if (controlledObject == NULL || !controlledObject->isCreature())
 		return true;
 	ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
 
-	Reference<const CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
+	Reference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
 
-	if (creatureTemplate == nullptr)
+	if (creatureTemplate == NULL)
 		return true;
 
 	PetManager* petManager = pet->getZoneServer()->getPetManager();
-	if (petManager == nullptr)
+	if (petManager == NULL)
 		return true;
 
 	Time currentTime;
 	uint32 timeDelta = currentTime.getTime() - lastGrowth.getTime();
-	int stagesToGrow = timeDelta / 43200; // 12 hour
+	int stagesToGrow = timeDelta / 3600; // 1 hour
 
 	if (adult)
 		stagesToGrow = 10;
@@ -575,7 +596,7 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 
 		PlayerObject* ghost = player->getPlayerObject();
 
-		if (ghost == nullptr){
+		if (ghost == NULL){
 			return true;
 		}
 
@@ -593,12 +614,26 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 		return false;
 	}
 
-	if (adult)
+	if (adult) {
 		pet->setHeight(newHeight, true);
-	else
+
+	} else
 		pet->setHeight(newHeight, false);
 
 	pet->setPetLevel(newLevel);
+
+	// Remove (baby) from pet name once they reach adult level
+	if (newLevel == pet->getAdultLevel()) {
+		String petName = pet->getCustomObjectName().toString();
+		if (petName.contains(" (baby)")) {
+			int nameLength = petName.length();
+			UnicodeString newName = petName.subString(0, (nameLength - 7));
+			ManagedReference<AiAgent*> petAI = cast<AiAgent*>(controlledObject.get()); 
+
+			this->setCustomObjectName(newName, true);
+			petAI->setCustomObjectName(newName, true);
+		}	
+	}
 
 	growthStage = newStage;
 	lastGrowth.updateToCurrentTime();
@@ -617,18 +652,18 @@ void PetControlDeviceImplementation::arrestGrowth() {
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr || !controlledObject->isCreature())
+	if (controlledObject == NULL || !controlledObject->isCreature())
 		return;
 
 	ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
 
-	Reference<const CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
+	Reference<CreatureTemplate*> creatureTemplate = pet->getCreatureTemplate();
 
-	if (creatureTemplate == nullptr)
+	if (creatureTemplate == NULL)
 		return;
 
 	PetManager* petManager = pet->getZoneServer()->getPetManager();
-	if (petManager == nullptr)
+	if (petManager == NULL)
 		return;
 
 	int newStage = growthStage;
@@ -664,24 +699,24 @@ void PetControlDeviceImplementation::arrestGrowth() {
 void PetControlDeviceImplementation::destroyObjectFromDatabase(bool destroyContainedObjects) {
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject != nullptr) {
+	if (controlledObject != NULL) {
 		Locker locker(controlledObject);
 
 		ManagedReference<CreatureObject*> object = controlledObject->getSlottedObject("rider").castTo<CreatureObject*>();
 
-		if (object != nullptr) {
+		if (object != NULL) {
 			Locker clocker(object, controlledObject);
 
 			object->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 			object = controlledObject->getSlottedObject("rider").castTo<CreatureObject*>();
 
-			if (object != nullptr) {
-				controlledObject->removeObject(object, nullptr, true);
+			if (object != NULL) {
+				controlledObject->removeObject(object, NULL, true);
 
 				Zone* zone = getZone();
 
-				if (zone != nullptr)
+				if (zone != NULL)
 					zone->transferObject(object, -1, false);
 			}
 		}
@@ -696,7 +731,7 @@ void PetControlDeviceImplementation::destroyObjectFromWorld(bool sendSelfDestroy
 	if (petType == PetManager::CREATUREPET) {
 		ManagedReference<CreatureObject*> player = getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
 
-		if (player != nullptr) {
+		if (player != NULL) {
 			player->sendSystemMessage("@pet/pet_menu:pet_released"); // You release your pet back into the wild
 		}
 	}
@@ -707,7 +742,7 @@ void PetControlDeviceImplementation::destroyObjectFromWorld(bool sendSelfDestroy
 int PetControlDeviceImplementation::canBeDestroyed(CreatureObject* player) {
 	ManagedReference<AiAgent*> controlledObject = cast<AiAgent*>(this->controlledObject.get().get());
 
-	if (controlledObject != nullptr) {
+	if (controlledObject != NULL) {
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 		if (ghost->hasActivePet(controlledObject))
 			return 1;
@@ -719,7 +754,7 @@ int PetControlDeviceImplementation::canBeDestroyed(CreatureObject* player) {
 bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, CreatureObject* receiver, int numberInTrade) {
 	ManagedReference<SceneObject*> datapad = receiver->getSlottedObject("datapad");
 
-	if (datapad == nullptr)
+	if (datapad == NULL)
 		return false;
 
 	if (petType == PetManager::FACTIONPET) {
@@ -734,9 +769,9 @@ bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, Creat
 		for (int i = 0; i < datapad->getContainerObjectsSize(); i++) {
 			Reference<SceneObject*> obj =  datapad->getContainerObject(i).castTo<SceneObject*>();
 
-			if (obj != nullptr && obj->isPetControlDevice() ){
+			if (obj != NULL && obj->isPetControlDevice() ){
 				Reference<PetControlDevice*> petDevice = cast<PetControlDevice*>(obj.get());
-				if( petDevice != nullptr && petDevice->getPetType() == PetManager::DROIDPET){
+				if( petDevice != NULL && petDevice->getPetType() == PetManager::DROIDPET){
 					droidsInDatapad++;
 				}
 			}
@@ -752,7 +787,7 @@ bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, Creat
 	} else if (petType == PetManager::CREATUREPET) {
 		ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-		if (controlledObject == nullptr || !controlledObject->isCreature())
+		if (controlledObject == NULL || !controlledObject->isCreature())
 			return false;
 
 		ManagedReference<Creature*> pet = cast<Creature*>(controlledObject.get());
@@ -791,7 +826,7 @@ bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, Creat
 		for (int i = 0; i < datapad->getContainerObjectsSize(); ++i) {
 			ManagedReference<SceneObject*> object = datapad->getContainerObject(i);
 
-			if (object != nullptr && object->isPetControlDevice()) {
+			if (object != NULL && object->isPetControlDevice()) {
 				PetControlDevice* device = cast<PetControlDevice*>( object.get());
 
 				if (device->getPetType() == PetManager::CREATUREPET) {
@@ -819,7 +854,7 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 
 		ManagedReference<DroidObject*> droid = this->controlledObject.get().castTo<DroidObject*>();
 
-		if (droid != nullptr) {
+		if (droid != NULL) {
 			alm->insertAttribute("challenge_level", droid->getLevel());
 			alm->insertAttribute("creature_health", droid->getBaseHAM(0));
 			alm->insertAttribute("creature_action", droid->getBaseHAM(3));
@@ -830,7 +865,8 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 	} else {
 		ManagedReference<AiAgent*> pet = cast<AiAgent*>(this->controlledObject.get().get());
 
-		if (pet != nullptr) {
+		if (pet != NULL) {
+			alm->insertAttribute("original_name_creature", pet->getObjectName()->getFullPath());
 			alm->insertAttribute("challenge_level", pet->getLevel());
 
 			if (petType == PetManager::CREATUREPET)
@@ -896,7 +932,7 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 				alm->insertAttribute("dna_comp_armor_saber", pet->getLightSaber());
 
 			ManagedReference<WeaponObject*> weapon = pet->getWeapon();
-			if (weapon != nullptr){
+			if (weapon != NULL){
 				StringBuffer displayValue;
 				displayValue << Math::getPrecision(weapon->getAttackSpeed(), 2);
 				alm->insertAttribute("creature_attack", displayValue);
@@ -908,9 +944,9 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 			alm->insertAttribute("creature_damage", String::valueOf(pet->getDamageMin()) + " - " + String::valueOf(pet->getDamageMax()));
 
 			if (petType == PetManager::CREATUREPET) {
-				const CreatureAttackMap* attMap = pet->getAttackMap();
+				CreatureAttackMap* attMap = pet->getAttackMap();
 
-				if (attMap != nullptr && attMap->size() > 0) {
+				if (attMap != NULL && attMap->size() > 0) {
 					String cmd = attMap->getCommand(0);
 					if (cmd.isEmpty()) {
 						alm->insertAttribute("spec_atk_1", " ---");
@@ -922,7 +958,7 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 					alm->insertAttribute("spec_atk_1", " ---");
 				}
 
-				if (attMap != nullptr && attMap->size() > 1) {
+				if (attMap != NULL && attMap->size() > 1) {
 					String cmd = attMap->getCommand(1);
 					if (cmd.isEmpty()) {
 						alm->insertAttribute("spec_atk_1", " ---");
@@ -1045,7 +1081,7 @@ void PetControlDeviceImplementation::setDefaultCommands() {
 	trainedCommands.put(PetManager::STORE, "store");
 
 	ManagedReference<DroidObject*> droid = this->controlledObject.get().castTo<DroidObject*>();
-	if (droid != nullptr) {
+	if (droid != NULL) {
 		if (droid->isCombatDroid()) {
 			trainedCommands.put(PetManager::ATTACK, "attack");
 			trainedCommands.put(PetManager::GUARD, "guard");
@@ -1063,7 +1099,7 @@ void PetControlDeviceImplementation::setDefaultCommands() {
 	trainedCommands.put(PetManager::FORMATION1, "formation1");
 	trainedCommands.put(PetManager::FORMATION2, "formation2");
 
-	if (droid != nullptr) {
+	if (droid != NULL) {
 		int species = droid->getSpecies();
 
 		if (droid->isCombatDroid() && (species == DroidObject::PROBOT || species == DroidObject::DZ70))
@@ -1084,20 +1120,20 @@ void PetControlDeviceImplementation::setTrainingCommand(unsigned int commandID) 
 	}
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
-	if (controlledObject == nullptr || !controlledObject->isAiAgent())
+	if (controlledObject == NULL || !controlledObject->isAiAgent())
 		return;
 
 	AiAgent* pet = cast<AiAgent*>(controlledObject.get());
-	if (pet == nullptr)
+	if (pet == NULL)
 		return;
 
 	ManagedReference<CreatureObject*> owner = pet->getLinkedCreature().get();
-	if (owner == nullptr || !owner->isPlayerCreature())
+	if (owner == NULL || !owner->isPlayerCreature())
 		return;
 
 	if (petType == PetManager::DROIDPET) {
 		ManagedReference<DroidObject*> droid = this->controlledObject.get().castTo<DroidObject*>();
-		if (droid == nullptr)
+		if (droid == NULL)
 			return;
 
 		// Check power on droids
@@ -1165,18 +1201,18 @@ void PetControlDeviceImplementation::trainAsMount(CreatureObject* player) {
 		return;
 
 	PetManager* petManager = player->getZoneServer()->getPetManager();
-	if (petManager == nullptr)
+	if (petManager == NULL)
 		return;
 
 	if (petManager->checkMountEligibility(_this.getReferenceUnsafeStaticCast()) != PetManager::CANBEMOUNTTRAINED)
 		return;
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
-	if (controlledObject == nullptr || !controlledObject->isAiAgent())
+	if (controlledObject == NULL || !controlledObject->isAiAgent())
 		return;
 
 	AiAgent* pet = cast<AiAgent*>(controlledObject.get());
-	if (pet == nullptr)
+	if (pet == NULL)
 		return;
 
 	assert(pet->isLockedByCurrentThread());
@@ -1203,7 +1239,7 @@ PatrolPoint PetControlDeviceImplementation::getPatrolPoint(int idx) {
 bool PetControlDeviceImplementation::isValidPet(AiAgent* pet) {
 	PetDeed* deed = pet->getPetDeed();
 
-	if (deed != nullptr) {
+	if (deed != NULL) {
 		// time to calculate!
 		int calculatedLevel =  deed->calculatePetLevel();
 
@@ -1222,7 +1258,7 @@ void PetControlDeviceImplementation::setVitality(int vit) {
 
 	if (petType == PetManager::CREATUREPET || petType == PetManager::DROIDPET) {
 		ManagedReference<CreatureObject*> pet = this->controlledObject.get().castTo<CreatureObject*>();
-		if (controlledObject == nullptr)
+		if (controlledObject == NULL)
 			return;
 
 		float hamPenaltyModifier = 0;

@@ -88,27 +88,27 @@ public:
 		heading = head;
 	}
 
-	inline const Vector3& getPosition() const {
+	inline Vector3& getPosition() {
 		return position;
 	}
 
-	inline int getCellId() const {
+	inline int getCellId() {
 		return cellid;
 	}
 
-	inline int getContainmentType() const {
+	inline int getContainmentType() {
 		return containmentType;
 	}
 
-	inline const String& getMobile() const {
+	inline String getMobile(){
 		return mobileName;
 	}
 
-	inline float getHeading() const {
+	inline float getHeading(){
 		return heading;
 	}
 
-	inline int getRespawnTimer() const {
+	inline int getRespawnTimer(){
 		return respawnTime;
 	}
 };

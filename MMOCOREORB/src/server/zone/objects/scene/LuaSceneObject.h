@@ -83,6 +83,7 @@ namespace scene {
 		int teleport(lua_State* L);
 		int switchZone(lua_State* L);
 		int setObjectMenuComponent(lua_State* L);
+		int setAttributeListComponent(lua_State* L);
 		int setContainerComponent(lua_State* L);
 		int setContainerInheritPermissionsFromParent(lua_State* L);
 		int setContainerAllowPermission(lua_State* L);
@@ -103,6 +104,10 @@ namespace scene {
 		int info(lua_State* L);
 		int getPlayersInRange(lua_State* L);
 		int isInNavMesh(lua_State* L);
+
+		// Tarkin's Revenge
+		int broadcastGalaxy(lua_State* L);
+		int getQuaternionElement(lua_State* L);
 
 	protected:
 		SceneObject* _getRealSceneObject() {

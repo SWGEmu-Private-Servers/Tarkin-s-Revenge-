@@ -43,6 +43,7 @@ class Consumable extends TangibleObject {
 	protected int foragedFood;
 
 	protected string speciesRestriction;
+	protected string factionRestriction;
 
 	public static final int EFFECT_INSTANT = 0x00;
 	public static final int EFFECT_ATTRIBUTE = 0x01;
@@ -126,22 +127,22 @@ class Consumable extends TangibleObject {
 		return (effectType == EFFECT_ATTRIBUTE);
 	}
 
-	@read
+	@dirty
 	public boolean isDrink() {
 		return (consumableType == DRINK);
 	}
 
-	@read
+	@dirty
 	public boolean isFood() {
 		return (consumableType == FOOD);
 	}
 
-	@read
+	@dirty
 	public boolean isForagedFood() {
 		return (foragedFood == 1);
 	}
 
-	@read
+	@dirty
 	public boolean isSpice() {
 		return (isSpiceEffect() && isFood());
 	}
@@ -151,14 +152,18 @@ class Consumable extends TangibleObject {
 		return true;
 	}
 
-	@read
-	public int getDuration() {
+	@dirty
+	public int getDuration(){
 		return duration;
 	}
 
-	@read
-	public string getSpeciesRestriction() {
+	@dirty
+	public string getSpeciesRestriction(){
 		return speciesRestriction;
 	}
 
+	@dirty
+	public string getFactionRestriction(){
+		return factionRestriction;
+	}
 }

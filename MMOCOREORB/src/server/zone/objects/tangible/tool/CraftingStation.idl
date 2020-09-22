@@ -63,6 +63,8 @@ class CraftingStation extends ToolTangibleObject {
 	@local
 	public native void updateCraftingValues(CraftingValues values, boolean firstUpdate);
 
+	public native void incubatePetDeed(CreatureObject player);
+
 	@dirty
 	public boolean isCraftingStation() {
 		return true;

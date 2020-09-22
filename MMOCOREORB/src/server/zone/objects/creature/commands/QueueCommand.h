@@ -272,23 +272,23 @@ public:
 		return addToQueue;
 	}
 
-	virtual bool isCombatCommand() const {
+	virtual bool isCombatCommand() {
 		return false;
 	}
 
-	virtual bool isForceHealCommand() const {
+	virtual bool isForceHealCommand() {
 		return false;
 	}
 
-	virtual bool isJediQueueCommand() const {
+	virtual bool isJediQueueCommand() {
 		return false;
 	}
 
-	virtual bool isJediCombatCommand() const {
+	virtual bool isJediCombatCommand() {
 		return false;
 	}
 
-	bool isJediCommand() const {
+	bool isJediCommand() {
 		return (isForceHealCommand() || isJediQueueCommand() || isJediCombatCommand());
 	}
 
@@ -296,9 +296,9 @@ public:
 		return skillMods.size();
 	}
 
-	inline int getSkillMod(int index, String& skillMod) const {
+	inline int getSkillMod(int index, String& skillMod) {
 		skillMod = skillMods.elementAt(index).getKey();
-		return skillMods.elementAt(index).getValue();
+		return skillMods.get(skillMod);
 	}
 
 	inline int getCommandGroup() const {
@@ -308,18 +308,18 @@ public:
 	void addSkillMod(const String& skillMod, const int value) {
 		skillMods.put(skillMod, value);
 	}
-
+	
 	bool isWearingArmor(CreatureObject* creo) const {
 		for (int i = 0; i < creo->getSlottedObjectsSize(); ++i) {
 			SceneObject* item = creo->getSlottedObject(i);
-			if (item != nullptr && item->isArmorObject())
+			if (item != NULL && item->isArmorObject())
 				return true;
 		}
 
 		return false;
 	}
 
-	virtual void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const {
+	virtual void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) {
 	}
 
 	int doCommonMedicalCommandChecks(CreatureObject* creature) const;

@@ -5,7 +5,6 @@
  *      Author: Kyle
  */
 
-#include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/player/sessions/crafting/CraftingSession.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -28,7 +27,6 @@
 
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 
 int CraftingSessionImplementation::initializeSession(CraftingTool* tool, CraftingStation* station) {
@@ -155,11 +153,6 @@ int CraftingSessionImplementation::cancelSession() {
 	return clearSession();
 }
 
-int CraftingSessionImplementation::cancelSessionCommand() {
-	closeCraftingWindow(0, false);
-	return cancelSession();
-}
-
 int CraftingSessionImplementation::clearSession() {
 	Locker slocker(_this.getReferenceUnsafeStaticCast());
 
@@ -220,30 +213,25 @@ int CraftingSessionImplementation::clearSession() {
 	return 0;
 }
 
-void CraftingSessionImplementation::closeCraftingWindow(int clientCounter, bool wasCraftSuccess) {
+void CraftingSessionImplementation::closeCraftingWindow(int clientCounter) {
 	ManagedReference<CreatureObject*> crafter = this->crafter.get();
 	ManagedReference<PlayerObject*> crafterGhost = this->crafterGhost.get();
-	ObjectControllerMessage* objMsg = nullptr;
 
-	//These two packets deal with the hopper
-	if(wasCraftSuccess) {
-			objMsg = new ObjectControllerMessage(
-					crafter->getObjectID(), 0x1B, 0x010C);
-			objMsg->insertInt(0x10A);
-			objMsg->insertInt(1);
-			objMsg->insertByte(clientCounter);
+	ObjectControllerMessage* objMsg = new ObjectControllerMessage(
+			crafter->getObjectID(), 0x1B, 0x010C);
+	objMsg->insertInt(0x10A);
+	objMsg->insertInt(1);
+	objMsg->insertByte(clientCounter);
 
-			crafter->sendMessage(objMsg);
+	crafter->sendMessage(objMsg);
 
-			objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x010C);
-			objMsg->insertInt(0x10A);
-			objMsg->insertInt(0);
-			objMsg->insertByte(clientCounter);
+	objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x010C);
+	objMsg->insertInt(0x10A);
+	objMsg->insertInt(0);
+	objMsg->insertByte(clientCounter);
 
-			crafter->sendMessage(objMsg);
-	}
+	crafter->sendMessage(objMsg);
 
-	//The actual window close command
 	objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x01C2);
 	objMsg->insertByte(clientCounter);
 
@@ -276,7 +264,7 @@ void CraftingSessionImplementation::selectDraftSchematic(int index) {
 
 	if (index >= currentSchematicList.size()) {
 		crafter->sendSystemMessage("Invalid Schematic Index");
-		closeCraftingWindow(0, false);
+		closeCraftingWindow(1);
 		cancelSession();
 		return;
 	}
@@ -285,7 +273,7 @@ void CraftingSessionImplementation::selectDraftSchematic(int index) {
 
 	if (draftschematic == nullptr) {
 		crafter->sendSystemMessage("@ui_craft:err_no_draft_schematic");
-		closeCraftingWindow(0, false);
+		closeCraftingWindow(1);
 		cancelSession();
 		return;
 	}
@@ -305,7 +293,7 @@ void CraftingSessionImplementation::selectDraftSchematic(int index) {
 
 			if (prototype == nullptr) {
 				crafter->sendSystemMessage("@ui_craft:err_no_prototype");
-				closeCraftingWindow(0, false);
+				closeCraftingWindow(1);
 				cancelSession();
 				return;
 			}
@@ -326,7 +314,7 @@ void CraftingSessionImplementation::selectDraftSchematic(int index) {
 		}
 	} else {
 		crafter->sendSystemMessage("@ui_craft:err_no_crafting_tool");
-		closeCraftingWindow(0, false);
+		closeCraftingWindow(1);
 		cancelSession();
 	}
 }
@@ -347,17 +335,14 @@ bool CraftingSessionImplementation::createManufactureSchematic(DraftSchematic* d
 	manufactureSchematic =
 			 (draftschematic->createManufactureSchematic(craftingTool)).castTo<ManufactureSchematic*>();
 
-	auto schematic = manufactureSchematic.get();
-
-	if (schematic == nullptr) {
+	if (manufactureSchematic.get() == nullptr) {
 		crafter->sendSystemMessage("@ui_craft:err_no_manf_schematic");
-		closeCraftingWindow(0, false);
+		closeCraftingWindow(1);
 		cancelSession();
 		return false;
 	}
 
-	TransactionLog trx(crafter, craftingTool, schematic, TrxCode::CRAFTINGSESSION);
-	craftingTool->transferObject(schematic, 0x4, true);
+	craftingTool->transferObject(manufactureSchematic.get(), 0x4, true);
 	//manufactureSchematic->sendTo(crafter, true);
 
 	if (crafterGhost != nullptr && crafterGhost->getDebug()) {
@@ -384,7 +369,7 @@ bool CraftingSessionImplementation::createPrototypeObject(DraftSchematic* drafts
 
 	if (strongPrototype == nullptr) {
 		crafter->sendSystemMessage("@ui_craft:err_no_prototype");
-		closeCraftingWindow(0, false);
+		closeCraftingWindow(1);
 		cancelSession();
 		return false;
 	}
@@ -393,7 +378,6 @@ bool CraftingSessionImplementation::createPrototypeObject(DraftSchematic* drafts
 
 	strongPrototype->createChildObjects();
 
-	TransactionLog trx(crafter, craftingTool, strongPrototype, TrxCode::CRAFTINGSESSION);
 	craftingTool->transferObject(strongPrototype, -1, false);
 	strongPrototype->sendTo(crafter, true);
 
@@ -485,11 +469,6 @@ void CraftingSessionImplementation::addIngredient(TangibleObject* tano, int slot
 	}
 
 	Locker locker(tano);
-
-	if (tano->getRootParent() == NULL) {
-		sendSlotMessage(clientCounter, IngredientSlot::INVALIDINGREDIENT);
-		return;
-	}
 
 	/// Check if item is on the player, but not in a crafting tool
 	/// Or if the item is in a crafting station to prevent some duping
@@ -1064,8 +1043,8 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 		}
 	}
 
-	if (schematicCount < 0 || schematicCount > 1000)
-		schematicCount = 1000;
+	if(schematicCount == 1000)
+		schematicCount = 10000;
 
 	manufactureSchematic->setManufactureLimit(schematicCount);
 
@@ -1075,8 +1054,10 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	//Database::escapeString(name);
 
+	UnicodeString customName(name);
+
 	//Remove color codes
-	String newName = name;
+/*	String newName = name;
 	while (newName.contains("\\#")) {
 		int index = newName.indexOf("\\#");
 		String sub = "\\" + newName.subString(index, index + 2);
@@ -1084,17 +1065,16 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	}
 
 	UnicodeString customName(newName);
+*/
 	prototype->setCustomObjectName(customName, false);
 
-	auto newObjectName = server::zone::objects::scene::variables::StringId(
+	/// Set Name
+	manufactureSchematic->getObjectName()->setStringId(
 			prototype->getObjectNameStringIdFile(),
 			prototype->getObjectNameStringIdName());
 
-	/// Set Name
-	manufactureSchematic->setObjectName(newObjectName, false);
-
 	/// Set Manufacture Schematic Custom name
-	if (!newName.isEmpty())
+	if (!name.isEmpty())
 		manufactureSchematic->setCustomObjectName(customName, false);
 
 	while (tokenizer.hasMoreTokens()) {
@@ -1111,7 +1091,7 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 
 	TangibleObjectDeltaMessage3* dtano3 =
 			new TangibleObjectDeltaMessage3(prototype);
-	dtano3->updateCustomName(newName);
+	dtano3->updateCustomName(name);
 	dtano3->updateCustomizationString();
 	dtano3->close();
 
@@ -1120,8 +1100,8 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	ManufactureSchematicObjectDeltaMessage3 * dMsco3 =
 			new ManufactureSchematicObjectDeltaMessage3(
 					manufactureSchematic);
-	dMsco3->updateName(newName);
-	dMsco3->updateCondition(schematicCount);
+	dMsco3->updateName(name);
+	//dMsco3->updateCondition(schematicCount);
 	dMsco3->close();
 
 	crafter->sendMessage(dMsco3);
@@ -1201,19 +1181,19 @@ void CraftingSessionImplementation::createPrototype(int clientCounter, bool crea
 	if (manufactureSchematic->isAssembled()
 			&& !manufactureSchematic->isCompleted()) {
 
-		closeCraftingWindow(clientCounter, true);
+		closeCraftingWindow(clientCounter);
 
 		String xpType = manufactureSchematic->getDraftSchematic()->getXpType();
 		int xp = manufactureSchematic->getDraftSchematic()->getXpAmount();
 
 		if (createItem) {
 
-			startCreationTasks(manufactureSchematic->getComplexity() * 2, false);
+			startCreationTasks(1, false);
 
 		} else {
 
 			// This is for practicing
-			startCreationTasks(manufactureSchematic->getComplexity() * 2, true);
+			startCreationTasks(1, true);
 			xp = round(xp * 1.05f);
 		}
 
@@ -1224,7 +1204,7 @@ void CraftingSessionImplementation::createPrototype(int clientCounter, bool crea
 
 	} else {
 
-		closeCraftingWindow(clientCounter, false);
+		closeCraftingWindow(clientCounter);
 
 		sendSlotMessage(clientCounter, IngredientSlot::WEIRDFAILEDMESSAGE);
 	}
@@ -1309,13 +1289,12 @@ void CraftingSessionImplementation::createManufactureSchematic(int clientCounter
 		manufactureSchematic->setPersistent(2);
 		prototype->setPersistent(2);
 
-		TransactionLog trx(crafter, datapad, manufactureSchematic, TrxCode::CRAFTINGSESSION);
 		datapad->transferObject(manufactureSchematic, -1, true);
 		manufactureSchematic->setPrototype(prototype);
 
 	} else {
 
-		closeCraftingWindow(clientCounter, false);
+		closeCraftingWindow(clientCounter);
 
 		sendSlotMessage(clientCounter, IngredientSlot::WEIRDFAILEDMESSAGE);
 	}
@@ -1329,10 +1308,10 @@ void CraftingSessionImplementation::addSkillMods() {
 
 	ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
 
-	const VectorMap<String, int>* skillMods = draftSchematic->getDraftSchematicTemplate()->getSkillMods();
+	VectorMap<String, int>* skillMods = draftSchematic->getDraftSchematicTemplate()->getSkillMods();
 
 	for (int i = 0; i < skillMods->size(); i++) {
-		const auto& mod = skillMods->elementAt(i);
+		VectorMapEntry<String, int> mod = skillMods->elementAt(i);
 
 		if (prototype->isWearableObject()) {
 			WearableObject* wearable = prototype.castTo<WearableObject*>();
@@ -1365,13 +1344,13 @@ void CraftingSessionImplementation::addWeaponDots() {
 	ManagedReference<ManufactureSchematic*> manufactureSchematic = this->manufactureSchematic.get();
 	ManagedReference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
 
-	const Vector<VectorMap<String, int> >* weaponDots = draftSchematic->getDraftSchematicTemplate()->getWeaponDots();
+	Vector<VectorMap<String, int> >* weaponDots = draftSchematic->getDraftSchematicTemplate()->getWeaponDots();
 
 	for (int i = 0; i < weaponDots->size(); i++) {
-		const auto& dot = weaponDots->elementAt(i);
+		VectorMap<String, int> dot = weaponDots->elementAt(i);
 
 		for (int j = 0; j < dot.size(); j++) {
-			const String& property = dot.elementAt(j).getKey();
+			String property = dot.elementAt(j).getKey();
 			int value = dot.elementAt(j).getValue();
 
 			if (property == "type")
@@ -1405,11 +1384,6 @@ bool CraftingSessionImplementation::checkPrototype() {
 
 		if (weapon->hasPowerup())
 			return false;
-	}
-
-	if (prototype->getContainerObjectsSize() > 0) {
-		error() << "checkPrototype(): prototype->getContainerObjectsSize() > 0, prototype: " << *prototype;
-		return false;
 	}
 
 	return true;

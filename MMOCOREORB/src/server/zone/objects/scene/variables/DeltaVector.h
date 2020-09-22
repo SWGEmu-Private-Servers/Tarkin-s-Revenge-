@@ -175,7 +175,7 @@ public:
 		return vector.get(index);
 	}
 
-	E getSafe(int index) const {
+	E getSafe(int index) {
 		ReadLocker locker(getLock());
 
 		E obj = vector.get(index);
@@ -183,7 +183,7 @@ public:
 		return obj;
 	}
 
-	virtual E remove(int index, DeltaMessage* message = nullptr, int updates = 1) {
+	E remove(int index, DeltaMessage* message = nullptr, int updates = 1) {
 		Locker locker(getLock());
 
 		E object = vector.remove(index);
@@ -210,7 +210,7 @@ public:
 		}
 	}
 
-	virtual void insertToMessage(BaseMessage* msg) const {
+	virtual void insertToMessage(BaseMessage* msg) {
 		ReadLocker locker(getLock());
 
 		msg->insertInt(size());
@@ -222,15 +222,15 @@ public:
 		}
 	}
 
-	virtual void insertItemToMessage(E* item, BaseMessage* msg) const {
+	virtual void insertItemToMessage(E* item, BaseMessage* msg) {
 		TypeInfo<E>::toBinaryStream(item, msg);
 	}
 
-	virtual bool contains(const E& element) const {
+	virtual bool contains(const E& element) {
 		return find(element) != -1;
 	}
 
-	int find(const E& element) const {
+	int find(const E& element) {
 		for (int i = 0; i < size(); ++i) {
 			if (element == get(i))
 				return i;
@@ -239,7 +239,7 @@ public:
 		return -1;
 	}
 
-	inline uint32 getUpdateCounter() const {
+	inline uint32 getUpdateCounter() {
 		return updateCounter;
 	}
 
@@ -259,7 +259,7 @@ public:
 		return vector.size();
 	}
 
-	inline ReadWriteLock* getLock() const {
+	inline ReadWriteLock* getLock() {
 		if (mutex == nullptr) {
 			mutex = new ReadWriteLock();
 		}

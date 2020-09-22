@@ -17,18 +17,18 @@ class SkillList : public DeltaVector<Reference<Skill*> > {
 	Vector<String> skills;
 #endif
 public:
-	bool add(Skill* skill, DeltaMessage* message = nullptr);
-	void remove(Skill* skill, DeltaMessage* message = nullptr);
+	bool add(Skill* skill, DeltaMessage* message = NULL);
+	void remove(Skill* skill, DeltaMessage* message = NULL);
 
-	bool containsSkill(const String& skill) const;
+	bool containsSkill(const String& skill);
 
-	bool toBinaryStream(ObjectOutputStream* stream) override;
-	bool parseFromBinaryStream(ObjectInputStream* stream) override;
+	bool toBinaryStream(ObjectOutputStream* stream);
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
 	void getStringList(Vector<String>& skills) const;
 	void loadFromNames(Vector<String>& skills);
 
-	void insertToMessage(BaseMessage* msg) const override;
+	void insertToMessage(BaseMessage* msg);
 
 	friend void to_json(nlohmann::json& j, const SkillList& s);
 };

@@ -57,7 +57,7 @@ class PersistentMessage extends ManagedObject {
 	@dirty
 	public native int getMailID();
 
-	@read
+	@dirty
 	public native unsigned long getObjectID();
 
 	@read

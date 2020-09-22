@@ -38,14 +38,12 @@ class WearableContainerObject extends Container {
 		wearableSkillMods.put(skillMod, value);
 	}
 
-	@read
 	public abstract native void applySkillModsTo(CreatureObject creature);
 
 	public abstract native void removeSkillModsFrom(CreatureObject creature);
 
 	@local
-	@read
-	public final VectorMap<string, int> getWearableSkillMods() {
+	public VectorMap<string, int> getWearableSkillMods() {
 		return wearableSkillMods;
 	}
 

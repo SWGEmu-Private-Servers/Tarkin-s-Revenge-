@@ -17,7 +17,7 @@ class TreeArchive : public Logger {
 public:
 	TreeArchive() {
 		setLoggingName("TreeArchive");
-		setLogging(false);
+		setLogging(true);
 
 		nodeMap.setNullValue(nullptr);
 
@@ -49,12 +49,12 @@ public:
 
 				nodeMap.put(std::move(dir), std::move(records));
 			}
-		} catch (const Exception& e) {
+		} catch (Exception& e) {
 			error("Invalid path: " + path);
 		}
 	}
 
-	const TreeDirectory* getTreeDirectory(const String& path) const {
+	TreeDirectory* getTreeDirectory(const String& path) {
 		return nodeMap.get(path);
 	}
 
@@ -62,7 +62,7 @@ public:
 	 * Gets a byte buffer from the specified path.
 	 * Don't forget to delete the pointer when finished.
 	 */
-	byte* getBytes(const String& recordPath, int& size) const {
+	byte* getBytes(const String& recordPath, int& size) {
 		int pos = recordPath.lastIndexOf("/");
 
 		//Only folders are allowed at the root level of TRE directories.
@@ -72,7 +72,7 @@ public:
 		String dir = recordPath.subString(0, pos);
 		String fileName = recordPath.subString(pos + 1, recordPath.length());
 
-		const TreeDirectory* treeDir = nodeMap.get(dir).get();
+		TreeDirectory* treeDir = nodeMap.get(dir).get();
 
 		size = 0;
 
@@ -82,7 +82,7 @@ public:
 		int idx = treeDir->find(fileName);
 
 		if (idx == -1) {
-			warning() << recordPath << " not found.";
+			error("Did not find fileName: " + fileName);
 			return nullptr;
 		}
 
@@ -92,28 +92,28 @@ public:
 		return record->getBytes();
 	}
 
-	const TreeDirectory* getDirectory(const String& path) const {
+	TreeDirectory* getDirectory(const String& path) {
 		return nodeMap.get(path);
 	}
 
-	Vector<String>* getFilesAndSubDirectoryFiles(const String& directory) const {
+	Vector<String>* getFilesAndSubDirectoryFiles(const String& directory) {
 		HashTableIterator<String, Reference<TreeDirectory*> > iterator = nodeMap.iterator();
 		Vector<String>* files = nullptr;
 
 		while (iterator.hasNext()) {
 			//String directoryName = iterator.getNextKey();
-			String* directoryName;
-			Reference<TreeDirectory*>* directoryEntry;
+			String directoryName;
+			Reference<TreeDirectory*> directoryEntry;
 			iterator.getNextKeyAndValue(directoryName, directoryEntry);
 
-			if (directoryName->contains(directory)) {
+			if (directoryName.contains(directory)) {
 				if (files == nullptr)
 					files = new Vector<String>();
 
-				for (int i = 0; i < directoryEntry->get()->size(); ++i) {
-					const TreeFileRecord* fileRecord = directoryEntry->get()->get(i);
+				for (int i = 0; i < directoryEntry->size(); ++i) {
+					TreeFileRecord* fileRecord = directoryEntry->get(i);
 
-					files->add(*directoryName + "/" + fileRecord->getRecordName());
+					files->add(directoryName + "/" + fileRecord->getRecordName());
 				}
 			}
 		}

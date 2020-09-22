@@ -31,7 +31,7 @@ public:
 		uint64 targetid = creature->getTargetID();
 		ManagedReference<SceneObject*> obj = playerManager->getInRangeStructureWithAdminRights(creature, targetid);
 
-		if (obj == nullptr || !obj->isStructureObject()) {
+		if (obj == NULL || !obj->isStructureObject()) {
 			creature->sendSystemMessage("@player_structure:command_no_building"); //You must be in a building or near an installation to use that command.
 			return INVALIDTARGET;
 		}
@@ -59,14 +59,14 @@ public:
 
 		String name = arguments.toString();
 
-		if (name.isEmpty() || nameManager->isProfane(name) || name.length() > 128) {
+		if (name.isEmpty() || nameManager->isProfane(name) || name.length() > 256) {
 			creature->sendSystemMessage("@player_structure:obscene"); //That name was rejected by the name filter. Try a different name.
 			return INVALIDPARAMETERS;
 		}
 
 		structure->setCustomObjectName(name, true);
 
-		if (structure->isBuildingObject() && (cast<BuildingObject*>(structure))->getSignObject() != nullptr) {
+		if (structure->isBuildingObject() && (cast<BuildingObject*>(structure))->getSignObject() != NULL) {
 			StringIdChatParameter params("@player_structure:prose_sign_name_updated"); //Sign name successfully updated to '%TO'.
 			params.setTO(name);
 			creature->sendSystemMessage(params);

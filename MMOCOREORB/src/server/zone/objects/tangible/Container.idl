@@ -9,6 +9,8 @@ import server.zone.objects.scene.SceneObject;
 include templates.SharedObjectTemplate;
 import server.zone.objects.creature.CreatureObject;
 import server.zone.packets.object.ObjectMenuResponse;
+import server.zone.packets.scene.AttributeListMessage;
+include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
 
 @json
 class Container extends TangibleObject {
@@ -20,7 +22,6 @@ class Container extends TangibleObject {
 		Logger.setLoggingName("Container");
 
 		locked = false;
-		relocking = false;
 	}
 
 	@local
@@ -74,12 +75,12 @@ class Container extends TangibleObject {
 		locked = lock;
 	}
 
-	@read
+	@dirty
 	public int getLockChance() {
 		return 15;
 	}
 
-	@read
+	@dirty
 	public long getLockTime() {
 		return 60*30*1000;
 	}
@@ -92,5 +93,4 @@ class Container extends TangibleObject {
 	public boolean setRelockingStatus(boolean relock) {
 		return relocking = relock;
 	}
-
 }

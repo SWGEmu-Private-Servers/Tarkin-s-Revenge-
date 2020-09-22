@@ -53,12 +53,12 @@ protected:
 		addSerializableVariable("active", &active);
 	}
 
-	void insertHeaderToMessage(Message* message) const override {
+	void insertHeaderToMessage(Message* message) {
 		message->insertByte(TYPE_WAYPOINT);
 		message->insertInt(WAYPOINT);
 	}
 
-	void addToPacketStream(Message* packet) const override;
+	void addToPacketStream(Message* packet);
 
 public:
 	WaypointChatParameter();
@@ -96,48 +96,48 @@ public:
 		return *this;
 	}
 
-	void parse(Message* message) override;
+	void parse(Message* message);
 
 	void set(WaypointObject* waypoint);
 	void set(const UnicodeString& name, float x, float z, float y, uint32 planetcrc, uint64 pointer = 0, uint64 cellid = 0, byte clr = 1, bool actv = false);
 
-	inline const UnicodeString& getWaypointName() const {
+	inline UnicodeString& getWaypointName() {
 		return waypointName;
 	}
 
-	inline uint64 getPointerParameter() const {
+	inline uint64 getPointerParameter() {
 		return pointerParameter;
 	}
 
-	inline uint64 getCellID() const {
+	inline uint64 getCellID() {
 		return cellID;
 	}
 
-	inline uint32 getPlanetCRC() const {
+	inline uint32 getPlanetCRC() {
 		return planetCRC;
 	}
 
-	inline uint32 getUnknownInt() const {
+	inline uint32 getUnknownInt() {
 		return unknownInt;
 	}
 
-	inline float getPositionX() const {
+	inline float getPositionX() {
 		return positionX;
 	}
 
-	inline float getPositionY() const {
+	inline float getPositionY() {
 		return positionY;
 	}
 
-	inline float getPositionZ() const {
+	inline float getPositionZ() {
 		return positionZ;
 	}
 
-	inline byte getColor() const {
+	inline byte getColor() {
 		return color;
 	}
 
-	inline bool isActive() const {
+	inline bool isActive() {
 		return active;
 	}
 };

@@ -10,6 +10,7 @@
 #include "server/zone/managers/crafting/schematicmap/SchematicMap.h"
 
 void XpPurchaseMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
+
 	if (!sceneObject->isTangibleObject())
 		return;
 
@@ -17,7 +18,7 @@ void XpPurchaseMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, O
 
 	XpPurchaseTemplate* templateData = cast<XpPurchaseTemplate*>(sceneObject->getObjectTemplate());
 
-	if (templateData == nullptr) {
+	if (templateData == NULL) {
 		error("No XpPurchaseTemplate for: " + String::valueOf(sceneObject->getServerObjectCRC()));
 		return;
 	}
@@ -40,12 +41,12 @@ int XpPurchaseMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 
 		Reference<PlayerObject*> ghost = player->getSlottedObject("ghost").castTo<PlayerObject*>();
 
-		if (ghost == nullptr)
+		if (ghost == NULL)
 			return 0;
 
 		XpPurchaseTemplate* templateData = cast<XpPurchaseTemplate*>(sceneObject->getObjectTemplate());
 
-		if (templateData == nullptr) {
+		if (templateData == NULL) {
 			error("No XpPurchaseTemplate for: " + String::valueOf(sceneObject->getServerObjectCRC()));
 			return 0;
 		}
@@ -82,7 +83,7 @@ int XpPurchaseMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cr
 
 		int playerXp = ghost->getExperience(xpType);
 
-		if (playerXp == 0) {
+		if (playerXp == 0  && xpAmount != 0) {
 			UnicodeString type = stringIdManager->getStringId("@exp_n:" + xpType);
 			StringIdChatParameter stringID("item/xp_purchase", "msg_no_xp"); // You cannot learn from this item. You do not have any %TO experience.
 			stringID.setTO(type);

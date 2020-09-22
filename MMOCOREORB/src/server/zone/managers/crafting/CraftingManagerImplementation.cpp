@@ -7,6 +7,7 @@
 #include "server/zone/managers/crafting/labratories/ResourceLabratory.h"
 #include "server/zone/managers/crafting/labratories/GeneticLabratory.h"
 #include "server/zone/managers/crafting/labratories/DroidLabratory.h"
+#include "server/zone/managers/crafting/labratories/IncubationLabratory.h"
 
 void CraftingManagerImplementation::initialize() {
 	schematicMap = SchematicMap::instance();
@@ -15,7 +16,7 @@ void CraftingManagerImplementation::initialize() {
 }
 
 void CraftingManagerImplementation::stop() {
-	schematicMap = nullptr;
+	schematicMap = NULL;
 }
 
 void CraftingManagerImplementation::awardSchematicGroup(PlayerObject* playerObject, Vector<String>& schematicgroups, bool updateClient) {
@@ -87,7 +88,7 @@ int CraftingManagerImplementation::calculateExperimentationSuccess(CreatureObjec
 	if (player->hasBuff(BuffCRC::FOOD_EXPERIMENT_BONUS)) {
 		Buff* buff = player->getBuff(BuffCRC::FOOD_EXPERIMENT_BONUS);
 
-		if (buff != nullptr) {
+		if (buff != NULL) {
 			expbonus = buff->getSkillModifierValue("experiment_bonus");
 			toolModifier *= 1.0f + (expbonus / 100.0f);
 		}
@@ -178,9 +179,12 @@ void CraftingManagerImplementation::configureLabratories() {
 	droidLab->initialize(zoneServer.get());
 	labs.put(static_cast<int>(DraftSchematicObjectTemplate::DROID_LAB), droidLab); //DROID_LAB
 
+	IncubationLabratory* incLab = new IncubationLabratory();
+	incLab->initialize(zoneServer.get());
+	labs.put(static_cast<int>(DraftSchematicObjectTemplate::INCUBATION_LAB), incLab); //INCUBATION_LAB
 }
 void CraftingManagerImplementation::setInitialCraftingValues(TangibleObject* prototype, ManufactureSchematic* manufactureSchematic, int assemblySuccess) {
-	if(manufactureSchematic == nullptr || manufactureSchematic->getDraftSchematic() == nullptr)
+	if(manufactureSchematic == NULL || manufactureSchematic->getDraftSchematic() == NULL)
 		return;
 	int labratory = manufactureSchematic->getLabratory();
 	SharedLabratory* lab = labs.get(labratory);

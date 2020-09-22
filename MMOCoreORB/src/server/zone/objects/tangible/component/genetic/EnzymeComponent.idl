@@ -1,0 +1,80 @@
+/* Tarkin's Revenge
+ * May 2017 
+ */
+
+package server.zone.objects.tangible.component.enzyme;
+
+import server.zone.objects.tangible.component.Component;
+include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
+import server.zone.packets.scene.AttributeListMessage;
+import server.zone.objects.creature.CreatureObject;
+import server.zone.objects.tangible.TangibleObject;
+
+@json
+class EnzymeComponent extends Component {
+	protected int color;
+	protected int purity;
+	protected int mutagen;
+	protected int type;
+	protected int baseline;
+
+	public EnzymeComponent() {
+		Logger.setLoggingName("EnzymeComponent");
+	}
+
+	public native void initializeTransientMembers();
+
+	@local
+	public native void updateCraftingValues(CraftingValues values, boolean firstUpdate);
+
+	@local
+	public native void fillAttributeList(AttributeListMessage msg, CreatureObject object);
+
+	public native void updateEnzyme(int value);
+
+
+	@read
+	public int getColor() {
+		return color;
+	}
+
+	@read
+	public int getType() {
+		return type;
+	}
+
+	@read
+	public int getPurity() {
+		return purity;
+	}
+
+	@read
+	public int getMutagen() {
+		return mutagen;
+	}
+
+	@read
+	public int getBaseline() {
+		return baseline;
+	}
+
+	public void setColor(int value) {
+		color = value;
+	}
+
+	public void setPurity(int value) {
+		purity = value;
+	}
+
+	public void setMutagen(int value) {
+		mutagen = value;
+	}
+
+	public void setType(int value) {
+		type = value;
+	}
+
+	public void setBaseline(int value) {
+		baseline = value;
+	}
+}

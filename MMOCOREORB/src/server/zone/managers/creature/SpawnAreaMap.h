@@ -35,12 +35,6 @@ public:
 		NOBUILDZONEAREA     = 0x00000100
 	};
 
-	enum {
-		CIRCLE = 1,
-		RECTANGLE,
-		RING
-	};
-
 	SpawnAreaMap() : Logger("SpawnAreaMap") {
 		lua = new Lua();
 		setAllowDuplicateInsertPlan();
@@ -53,9 +47,9 @@ public:
 	}
 
 	virtual ~SpawnAreaMap() {
-		if (lua != nullptr) {
+		if (lua != NULL) {
 			delete lua;
-			lua = nullptr;
+			lua = NULL;
 		}
 	}
 

@@ -56,18 +56,9 @@ class MissionManager extends Observer implements Logger {
 	protected boolean enableSameAccountBountyMissions;
 
 	public static final unsigned int UNKNOWN_TARGET = 0xB911DA26;
-
+	
 	unsigned long playerBountyKillBuffer;
 	unsigned long playerBountyDebuffLength;
-
-	unsigned long destroyMissionBaseDistance;
-	unsigned long destroyMissionDifficultyDistanceFactor;
-	unsigned long destroyMissionRandomDistance;
-	unsigned long destroyMissionDifficultyRandomDistance;
-	unsigned long destroyMissionBaseReward;
-	unsigned long destroyMissionDifficultyRewardFactor;
-	unsigned long destroyMissionRandomReward;
-	unsigned long destroyMissionDifficultyRandomReward;
 
 	public MissionManager(ZoneServer srv, ZoneProcessServer impl) {
 		server = srv;
@@ -100,12 +91,12 @@ class MissionManager extends Observer implements Logger {
 
 	private native void populateMissionList(MissionTerminal missionTerminal, CreatureObject player, int counter);
 
-	private native void randomizeGeneralTerminalMissions(CreatureObject player, int counter, boolean slicer);
-	private native void randomizeArtisanTerminalMissions(CreatureObject player, int counter, boolean slicer);
-	private native void randomizeEntertainerTerminalMissions(CreatureObject player, int counter, boolean slicer);
-	private native void randomizeScoutTerminalMissions(CreatureObject player, int counter, boolean slicer);
+	private native void randomizeGeneralTerminalMissions(CreatureObject player, int counter, boolean slicer, float infamy);
+	private native void randomizeArtisanTerminalMissions(CreatureObject player, int counter, boolean slicer, float infamy);
+	private native void randomizeEntertainerTerminalMissions(CreatureObject player, int counter, boolean slicer, float infamy);
+	private native void randomizeScoutTerminalMissions(CreatureObject player, int counter, boolean slicer, float infamy);
 	private native void randomizeBountyTerminalMissions(CreatureObject player, int counter);
-	private native void randomizeFactionTerminalMissions(CreatureObject player, int counter, boolean slicer, final unsigned int faction);
+	private native void randomizeFactionTerminalMissions(CreatureObject player, int counter, boolean slicer, float infamy, final unsigned int faction);
 
 	private native void randomizeGenericBountyMission(CreatureObject player, MissionObject mission, final unsigned int faction, Vector<PlayerBounty> potentialTargets);
 	private native void randomizeGenericCraftingMission(CreatureObject player, MissionObject mission, final unsigned int faction);
@@ -131,7 +122,6 @@ class MissionManager extends Observer implements Logger {
 	private native void createCraftingMissionObjectives(MissionObject mission, MissionTerminal missionTerminal, CreatureObject player);
 
 	@local
-	@dirty
 	public native NpcSpawnPoint getFreeNpcSpawnPoint(final unsigned int planetCRC, final float x, final float y, final int spawnType);
 	public native void createSpawnPoint(CreatureObject player, final string spawnTypes);
 
@@ -152,12 +142,14 @@ class MissionManager extends Observer implements Logger {
 	private native int getDeliverMissionNumberOfMissions(final unsigned int faction);
 	private native int getDeliverMissionSpawnType(final unsigned int faction);
 
-	public native void addPlayerToBountyList(unsigned long targetId, int reward);
+	public native void addPlayerToBountyList(unsigned long targetId, int reward, int type);
 	public native void removePlayerFromBountyList(unsigned long targetId);
-	public native void updatePlayerBountyReward(unsigned long targetId, int reward);
+	public native void updatePlayerBountyReward(unsigned long targetId, int reward, int type);
+	public native void updatePlayerBountyType(unsigned long targetId, int type);
 	public native void updatePlayerBountyOnlineStatus(unsigned long targetId, boolean status);
 	public native void completePlayerBounty(unsigned long targetId, unsigned long bountyHunter);
 	public native void failPlayerBountyMission(unsigned long bountyHunter);
+	public native int getPlayerBountyType(unsigned long targetId);
 
 	@local
 	@dereferenced
@@ -168,20 +160,15 @@ class MissionManager extends Observer implements Logger {
 
 	@dirty
 	public boolean hasPlayerBountyTargetInList(unsigned long targetId) {
-		synchronized(playerBountyListMutex) {
-			return playerBountyList.contains(targetId);
-		}
+		return playerBountyList.contains(targetId);
 	}
 
 	@dirty
 	public boolean hasBountyHunterInPlayerBounty(unsigned long targetId, unsigned long bhId) {
-		synchronized(playerBountyListMutex) {
-			return playerBountyList.contains(targetId) && playerBountyList.get(targetId).hasBountyHunter(bhId);
-		}
+		return playerBountyList.contains(targetId) && playerBountyList.get(targetId).hasBountyHunter(bhId);
 	}
 
 	@local
-	@dereferenced
 	public native Vector<unsigned long> getHuntersHuntingTarget(unsigned long targetId);
 
 	@local
@@ -193,7 +180,7 @@ class MissionManager extends Observer implements Logger {
 
 	public native void deactivateMissions(CreatureObject player);
 	public native string getRandomBountyPlanet();
-
+	
 	@arg1preLocked
 	public native boolean sendPlayerBountyDebug(CreatureObject player, CreatureObject target);
 }

@@ -25,14 +25,14 @@ void VehicleControlDeviceImplementation::generateObject(CreatureObject* player) 
 	if (!isASubChildOf(player))
 		return;
 
-	if (player->getParent() != nullptr || player->isInCombat()) {
+	if (player->getParent() != NULL || player->isInCombat()) {
 		player->sendSystemMessage("@pet/pet_menu:cant_call_vehicle"); // You can only unpack vehicles while Outside and not in Combat.
 		return;
 	}
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr)
+	if (controlledObject == NULL)
 		return;
 
 	if (controlledObject->isInQuadTree())
@@ -40,11 +40,11 @@ void VehicleControlDeviceImplementation::generateObject(CreatureObject* player) 
 
 	ManagedReference<TradeSession*> tradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-	if (tradeContainer != nullptr) {
+	if (tradeContainer != NULL) {
 		server->getZoneServer()->getPlayerManager()->handleAbortTradeMessage(player);
 	}
 
-	if(player->getPendingTask("call_mount") != nullptr) {
+	if(player->getPendingTask("call_mount") != NULL) {
 		StringIdChatParameter waitTime("pet/pet_menu", "call_delay_finish_vehicle");
 		AtomicTime nextExecution;
 		Core::getTaskManager()->getNextExecutionTime(player->getPendingTask("call_mount"), nextExecution);
@@ -57,7 +57,7 @@ void VehicleControlDeviceImplementation::generateObject(CreatureObject* player) 
 
 	ManagedReference<SceneObject*> datapad = player->getSlottedObject("datapad");
 
-	if (datapad == nullptr)
+	if (datapad == NULL)
 		return;
 
 	int currentlySpawned = 0;
@@ -70,7 +70,7 @@ void VehicleControlDeviceImplementation::generateObject(CreatureObject* player) 
 
 			ManagedReference<SceneObject*> vehicle = device->getControlledObject();
 
-			if (vehicle != nullptr && vehicle->isInQuadTree()) {
+			if (vehicle != NULL && vehicle->isInQuadTree()) {
 				if (++currentlySpawned > 2)
 					player->sendSystemMessage("@pet/pet_menu:has_max_vehicle");
 
@@ -79,17 +79,17 @@ void VehicleControlDeviceImplementation::generateObject(CreatureObject* player) 
 		}
 	}
 
-	if(player->getCurrentCamp() == nullptr && player->getCityRegion() == nullptr) {
+	if(player->getCurrentCamp() == NULL && player->getCityRegion() == NULL) {
 
 		Reference<CallMountTask*> callMount = new CallMountTask(_this.getReferenceUnsafeStaticCast(), player, "call_mount");
 
 		StringIdChatParameter message("pet/pet_menu", "call_vehicle_delay");
-		message.setDI(15);
+		message.setDI(5);
 		player->sendSystemMessage(message);
 
-		player->addPendingTask("call_mount", callMount, 15 * 1000);
+		player->addPendingTask("call_mount", callMount, 5 * 1000);
 
-		if (vehicleControlObserver == nullptr) {
+		if (vehicleControlObserver == NULL) {
 			vehicleControlObserver = new VehicleControlObserver(_this.getReferenceUnsafeStaticCast());
 			vehicleControlObserver->deploy();
 		}
@@ -109,25 +109,25 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr)
+	if (controlledObject == NULL)
 		return;
 
 	if (!isASubChildOf(player))
 		return;
 
-	if (player->getParent() != nullptr || player->isInCombat()) {
+	if (player->getParent() != NULL || player->isInCombat()) {
 		player->sendSystemMessage("@pet/pet_menu:cant_call_vehicle"); // You can only unpack vehicles while Outside and not in Combat.
 		return;
 	}
 
 	ManagedReference<TradeSession*> tradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
-	if (tradeContainer != nullptr) {
+	if (tradeContainer != NULL) {
 		server->getZoneServer()->getPlayerManager()->handleAbortTradeMessage(player);
 	}
 
 	controlledObject->initializePosition(player->getPositionX(), player->getPositionZ(), player->getPositionY());
-	ManagedReference<CreatureObject*> vehicle = nullptr;
+	ManagedReference<CreatureObject*> vehicle = NULL;
 
 	if (controlledObject->isCreatureObject()) {
 		vehicle = cast<CreatureObject*>(controlledObject.get());
@@ -137,7 +137,7 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	Zone* zone = player->getZone();
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return;
 
 	//controlledObject->insertToZone(player->getZone());
@@ -145,7 +145,7 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	Reference<VehicleDecayTask*> decayTask = new VehicleDecayTask(controlledObject);
 	decayTask->execute();
 
-	if (vehicle != nullptr && controlledObject->getServerObjectCRC() == 0x32F87A54) // Jetpack
+	if (vehicle != NULL && controlledObject->getServerObjectCRC() == 0x32F87A54) // Jetpack
 	{
 		controlledObject->setCustomizationVariable("/private/index_hover_height", 40, true); // Illusion of flying.
 		player->executeObjectControllerAction(STRING_HASHCODE("mount"), controlledObject->getObjectID(), ""); // Auto mount.
@@ -153,7 +153,7 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 
 	updateStatus(1);
 
-	if (vehicleControlObserver != nullptr)
+	if (vehicleControlObserver != NULL)
 		player->dropObserver(ObserverEventType::STARTCOMBAT, vehicleControlObserver);
 }
 
@@ -165,14 +165,14 @@ void VehicleControlDeviceImplementation::cancelSpawnObject(CreatureObject* playe
 		player->removePendingTask("call_mount");
 	}
 
-	if (vehicleControlObserver != nullptr)
+	if (vehicleControlObserver != NULL)
 		player->dropObserver(ObserverEventType::STARTCOMBAT, vehicleControlObserver);
 }
 
 void VehicleControlDeviceImplementation::storeObject(CreatureObject* player, bool force) {
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject == nullptr)
+	if (controlledObject == NULL)
 		return;
 
 	/*if (!controlledObject->isInQuadTree())
@@ -196,7 +196,7 @@ void VehicleControlDeviceImplementation::storeObject(CreatureObject* player, boo
 
 	Reference<Task*> decayTask = controlledObject->getPendingTask("decay");
 
-	if (decayTask != nullptr) {
+	if (decayTask != NULL) {
 		decayTask->cancel();
 		controlledObject->removePendingTask("decay");
 	}
@@ -204,7 +204,7 @@ void VehicleControlDeviceImplementation::storeObject(CreatureObject* player, boo
 	controlledObject->destroyObjectFromWorld(true);
 
 	if (controlledObject->isCreatureObject())
-		(cast<CreatureObject*>(controlledObject.get()))->setCreatureLink(nullptr);
+		(cast<CreatureObject*>(controlledObject.get()))->setCreatureLink(NULL);
 
 	updateStatus(0);
 }
@@ -212,24 +212,24 @@ void VehicleControlDeviceImplementation::storeObject(CreatureObject* player, boo
 void VehicleControlDeviceImplementation::destroyObjectFromDatabase(bool destroyContainedObjects) {
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject != nullptr) {
+	if (controlledObject != NULL) {
 		Locker locker(controlledObject);
 
 		ManagedReference<CreatureObject*> object = controlledObject->getSlottedObject("rider").castTo<CreatureObject*>();
 
-		if (object != nullptr) {
+		if (object != NULL) {
 			Locker clocker(object, controlledObject);
 
 			object->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 			object = controlledObject->getSlottedObject("rider").castTo<CreatureObject*>();
 
-			if (object != nullptr) {
-				controlledObject->removeObject(object, nullptr, true);
+			if (object != NULL) {
+				controlledObject->removeObject(object, NULL, true);
 
 				Zone* zone = getZone();
 
-				if (zone != nullptr)
+				if (zone != NULL)
 					zone->transferObject(object, -1, false);
 			}
 		}
@@ -243,7 +243,7 @@ void VehicleControlDeviceImplementation::destroyObjectFromDatabase(bool destroyC
 int VehicleControlDeviceImplementation::canBeDestroyed(CreatureObject* player) {
 	ManagedReference<TangibleObject*> controlledObject = this->controlledObject.get();
 
-	if (controlledObject != nullptr) {
+	if (controlledObject != NULL) {
 		if (controlledObject->isInQuadTree())
 			return 1;
 	}
@@ -254,7 +254,7 @@ int VehicleControlDeviceImplementation::canBeDestroyed(CreatureObject* player) {
 bool VehicleControlDeviceImplementation::canBeTradedTo(CreatureObject* player, CreatureObject* receiver, int numberInTrade) {
 	ManagedReference<SceneObject*> datapad = receiver->getSlottedObject("datapad");
 
-	if (datapad == nullptr)
+	if (datapad == NULL)
 		return false;
 
 	ManagedReference<PlayerManager*> playerManager = player->getZoneServer()->getPlayerManager();
@@ -265,7 +265,7 @@ bool VehicleControlDeviceImplementation::canBeTradedTo(CreatureObject* player, C
 	for (int i = 0; i < datapad->getContainerObjectsSize(); i++) {
 		Reference<SceneObject*> obj =  datapad->getContainerObject(i).castTo<SceneObject*>();
 
-		if (obj != nullptr && obj->isVehicleControlDevice() ){
+		if (obj != NULL && obj->isVehicleControlDevice() ){
 			vehiclesInDatapad++;
 		}
 	}
@@ -282,11 +282,11 @@ bool VehicleControlDeviceImplementation::canBeTradedTo(CreatureObject* player, C
 void VehicleControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm, CreatureObject* object) {
 	SceneObjectImplementation::fillAttributeList(alm, object);
 
-	if( this->controlledObject == nullptr )
+	if( this->controlledObject == NULL )
 		return;
 
 	ManagedReference<VehicleObject*> vehicle = this->controlledObject.get().castTo<VehicleObject*>();
-	if( vehicle == nullptr )
+	if( vehicle == NULL )
 		return;
 
 	if (vehicle->getPaintCount() > 0){

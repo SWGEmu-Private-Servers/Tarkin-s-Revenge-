@@ -33,7 +33,7 @@ public:
 
 		Zone* zone = player->getZone();
 
-		if (zone == nullptr)
+		if (zone == NULL)
 			return GENERALERROR;
 
 		PlanetManager* planetManager = zone->getPlanetManager();
@@ -43,7 +43,7 @@ public:
 
 		ManagedReference<CityRegion*> city = player->getCityRegion().get();
 
-		if (city != nullptr) {
+		if (city != NULL) {
 			cityPlayerCount = city->getCurrentPlayerCount();
 		}
 
@@ -51,10 +51,10 @@ public:
 
 		int cellid = 0;
 		uint32 buildingTemplate = 0;
-		SharedStructureObjectTemplate* buildingTemplateObject = nullptr;
+		SharedStructureObjectTemplate* buildingTemplateObject = NULL;
 		ManagedReference<SceneObject*> building;
 
-		if (cell != nullptr && cell->isCellObject()) {
+		if (cell != NULL && cell->isCellObject()) {
 			cellid = (cast<CellObject*>(cell.get()))->getCellNumber();
 			building = cell->getParent().get();
 			buildingTemplate = building->getServerObjectCRC();
@@ -64,7 +64,7 @@ public:
 		StringBuffer msg;
 
 		float posX = creature->getPositionX(), posZ = creature->getPositionZ(), posY = creature->getPositionY();
-		const Quaternion* direction = creature->getDirection();
+		Quaternion* direction = creature->getDirection();
 
 		msg << "x = " << posX << ", z = " << posZ << ", y = " << posY << ", ow = " << direction->getW()
 				<< ", ox = " << direction->getX() << ", oz = " << direction->getZ() << ", oy = " << direction->getY()
@@ -75,10 +75,10 @@ public:
 
 		if (cityPlayerCount != 0)
 			msg << endl << "current players in the city:" << cityPlayerCount;
-
+			
 		CloseObjectsVector* vec = (CloseObjectsVector*) player->getCloseObjects();
-
-		if (vec != nullptr) {
+		
+		if (vec != NULL) {
 			msg << endl << "in range object count = " << vec->size() << endl;
 		}
 

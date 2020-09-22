@@ -96,13 +96,13 @@ public:
 		j["badgeTotal"] = b.badgeTotal;
 	}
 
-	void setBadge(const uint32 badgeid) {
+	void setBadge(const uint badgeid) {
 		const Badge* badge = BadgeList::instance()->get(badgeid);
 		setBadge(badge);
 	}
 
 	void setBadge(const Badge* badge) {
-		if (badge == nullptr) return;
+		if (badge == NULL) return;
 
 		Locker locker(this);
 
@@ -128,7 +128,7 @@ public:
 	}
 
 	void unsetBadge(Badge* badge) {
-		if (badge == nullptr) return;
+		if (badge == NULL) return;
 		Locker locker(this);
 
 		const int badgeIndex = badge->getIndex();
@@ -152,7 +152,9 @@ public:
 
 	}
 
-	bool hasBadge(int badgeindex) const {
+
+
+	bool hasBadge(int badgeindex) {
 		int bitmaskNumber = badgeindex >> 5;
 
 		if (bitmaskNumber > 4 || bitmaskNumber < 0) {
@@ -164,9 +166,11 @@ public:
 		uint32 bit = badgeindex % 32;
 		uint32 value = 1 << bit;
 
-		ReadLocker locker(this);
+		rlock();
 
 		bool res = badgeBitmask[bitmaskNumber] & value;
+
+		runlock();
 
 		return res;
 	}
@@ -183,7 +187,7 @@ public:
 		badgeBitmask[index] = bitmask;
 	}
 
-	uint32 getBitmask(int index) const {
+	uint32 getBitmask(int index) {
 		uint32 res = 0;
 
 		if (index > 4 || index < 0) {
@@ -192,9 +196,11 @@ public:
 			return res;
 		}
 
-		ReadLocker locker(this);
+		rlock();
 
 		res = badgeBitmask[index];
+
+		runlock();
 
 		return res;
 	}
@@ -208,18 +214,22 @@ public:
 		badgeTypeCounts[index] = value;
 	}
 
-	uint8 getTypeCount(uint8 type) const {
-		ReadLocker locker(this);
+	uint8 getTypeCount(uint8 type) {
+		rlock();
 
 		uint8 res = badgeTypeCounts[type];
+
+		runlock();
 
 		return res;
 	}
 
-	uint8 getNumBadges() const {
-		ReadLocker locker(this);
+	uint8 getNumBadges() {
+		rlock();
 
 		uint8 res = badgeTotal;
+
+		runlock();
 
 		return res;
 	}

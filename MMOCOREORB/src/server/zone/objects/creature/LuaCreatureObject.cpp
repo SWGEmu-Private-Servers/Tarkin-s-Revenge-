@@ -17,13 +17,15 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/skill/SkillManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
+#include "server/zone/managers/visibility/tarkin_custom/InfamyManager.h"
 
 const char LuaCreatureObject::className[] = "LuaCreatureObject";
 
 Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "_setObject", &LuaCreatureObject::_setObject },
 		{ "_getObject", &LuaSceneObject::_getObject },
+		{ "getBankCredits", &LuaCreatureObject::getBankCredits },
+		{ "setBankCredits", &LuaCreatureObject::setBankCredits },
 		{ "sendSystemMessage", &LuaCreatureObject::sendSystemMessage },
 		{ "sendSystemMessageWithDI", &LuaCreatureObject::sendSystemMessageWithDI },
 		{ "sendSystemMessageWithTO", &LuaCreatureObject::sendSystemMessageWithTO },
@@ -69,6 +71,7 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "setMoodString", &LuaCreatureObject::setMoodString},
 		{ "hasSkill", &LuaCreatureObject::hasSkill},
 		{ "removeSkill", &LuaCreatureObject::removeSkill},
+		{ "addSkill", &LuaCreatureObject::addSkill},
 		{ "surrenderSkill", &LuaCreatureObject::surrenderSkill},
 		{ "getConversationSession", &LuaCreatureObject::getConversationSession},
 		{ "doAnimation", &LuaCreatureObject::doAnimation},
@@ -88,11 +91,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "setFactionRank", &LuaCreatureObject::setFactionRank},
 		{ "getFactionRank", &LuaCreatureObject::getFactionRank},
 		{ "getCashCredits", &LuaCreatureObject::getCashCredits},
-		{ "getBankCredits", &LuaCreatureObject::getBankCredits },
 		{ "subtractCashCredits", &LuaCreatureObject::subtractCashCredits},
-		{ "subtractBankCredits", &LuaCreatureObject::subtractBankCredits},
 		{ "addCashCredits", &LuaCreatureObject::addCashCredits},
-		{ "addBankCredits", &LuaCreatureObject::addBankCredits},
 		{ "removeScreenPlayState", &LuaCreatureObject::removeScreenPlayState},
 		{ "isGrouped", &LuaCreatureObject::isGrouped},
 		{ "isGroupedWith", &LuaCreatureObject::isGroupedWith},
@@ -141,8 +141,20 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "getHealingThreatList", &LuaCreatureObject::getHealingThreatList },
 		{ "getSkillMod", &LuaCreatureObject::getSkillMod },
 		{ "getGender", &LuaCreatureObject::getGender },
-		{ "isRidingMount", &LuaCreatureObject::isRidingMount },
-		{ "dismount", &LuaCreatureObject::dismount },
+		{ "buffSingleStat", &LuaCreatureObject::buffSingleStat },
+		{ "removeBuffs", &LuaCreatureObject::removeBuffs },
+		{ "emptyStomach", &LuaCreatureObject::emptyStomach },
+		{ "getActivePetsSize", &LuaCreatureObject::getActivePetsSize },
+		{ "getActivePet", &LuaCreatureObject::getActivePet },
+
+		// Tarkin's Revenge Custom Lua Calls
+		{ "getFoodFilling", &LuaCreatureObject::getFoodFilling },
+		{ "getDrinkFilling", &LuaCreatureObject::getDrinkFilling },
+		{ "setFoodFilling", &LuaCreatureObject::setFoodFilling },
+		{ "setDrinkFilling", &LuaCreatureObject::setDrinkFilling },
+		{ "getGroupLeader", &LuaCreatureObject::getGroupLeader },
+		{ "increaseInfamy", &LuaCreatureObject::increaseInfamy },
+		{ "clearInfamy", &LuaCreatureObject::clearInfamy },
 		{ 0, 0 }
 };
 
@@ -150,7 +162,7 @@ LuaCreatureObject::LuaCreatureObject(lua_State *L) : LuaTangibleObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<CreatureObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != NULL);
 #else
 	realObject = static_cast<CreatureObject*>(lua_touserdata(L, 1));
 #endif
@@ -168,7 +180,7 @@ int LuaCreatureObject::_setObject(lua_State* L) {
 	if (obj != realObject)
 		realObject = obj;
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != NULL);
 #else
 	auto obj = static_cast<CreatureObject*>(lua_touserdata(L, -1));
 
@@ -341,7 +353,7 @@ int LuaCreatureObject::sendSystemMessageWithTT(lua_State* L) {
 int LuaCreatureObject::sendGroupMessage(lua_State* L) {
 	String value = lua_tostring(L, -1);
 
-	if (realObject == nullptr)
+	if (realObject == NULL)
 		return 0;
 
 	if (!realObject->isGrouped()) {
@@ -391,6 +403,14 @@ int LuaCreatureObject::setMaxHAM(lua_State* L) {
 int LuaCreatureObject::playMusicMessage(lua_State *L) {
 	String value = lua_tostring(L, -1);
 	realObject->playMusicMessage(value);
+
+	return 0;
+}
+
+int LuaCreatureObject::setBankCredits(lua_State *L) {
+	uint32 credits = (uint32) lua_tonumber(L, -1);
+
+	realObject->setBankCredits(credits);
 
 	return 0;
 }
@@ -453,6 +473,15 @@ int LuaCreatureObject::removeSkill(lua_State* L) {
 	return 0;
 }
 
+int LuaCreatureObject::addSkill(lua_State* L) {
+	String value = lua_tostring(L, -1);
+ 	Locker locker(realObject);
+	
+	SkillManager* skillManager = SkillManager::instance();
+	skillManager->awardSkill(value, realObject, true, true, true);
+	return 0;
+}
+
 int LuaCreatureObject::surrenderSkill(lua_State* L) {
 	String value = lua_tostring(L, -1);
 
@@ -465,7 +494,7 @@ int LuaCreatureObject::surrenderSkill(lua_State* L) {
 int LuaCreatureObject::getInCellNumber(lua_State* L) {
 	SceneObject* parent = realObject->getParent().get().get();
 
-	if (parent == nullptr || !parent->isCellObject())
+	if (parent == NULL || !parent->isCellObject())
 		lua_pushnumber(L, -1);
 	else {
 		int cellId = ((CellObject*)parent)->getCellNumber();
@@ -479,7 +508,7 @@ int LuaCreatureObject::getInCellNumber(lua_State* L) {
 int LuaCreatureObject::getBuildingParentID(lua_State* L) {
 	ManagedReference<SceneObject*> parent = realObject->getParentRecursively(SceneObjectType::BUILDING);
 
-	if (parent == nullptr)
+	if (parent == NULL)
 		lua_pushnumber(L, 0);
 	else
 		lua_pushnumber(L, parent->getObjectID());
@@ -500,7 +529,7 @@ int LuaCreatureObject::removeScreenPlayState(lua_State* L) {
 	String play = lua_tostring(L, -1);
 	uint64 stateToClear = lua_tointeger(L, -2);
 
-	if (realObject != nullptr) {
+	if (realObject != NULL) {
 		realObject->setScreenPlayState(play, realObject->getScreenPlayState(play) & (~stateToClear));
 		realObject->notifyObservers(ObserverEventType::SCREENPLAYSTATECHANGED, realObject);
 	}
@@ -555,7 +584,7 @@ int LuaCreatureObject::inflictDamage(lua_State* L) {
 
 	TangibleObject* attacker = cast<TangibleObject*>(scene);
 
-	E3_ASSERT(attacker);
+	assert(attacker);
 
 	Locker locker(realObject);
 
@@ -575,7 +604,7 @@ int LuaCreatureObject::getBankCredits(lua_State *L) {
 int LuaCreatureObject::getConversationSession(lua_State* L) {
 	Reference<ConversationSession*> session = realObject->getActiveSession(SessionFacadeType::CONVERSATION).castTo<ConversationSession*>();
 
-	if (session != nullptr) {
+	if (session != NULL) {
 		session->_setUpdated(true);
 		lua_pushlightuserdata(L, session);
 	} else
@@ -587,7 +616,7 @@ int LuaCreatureObject::getConversationSession(lua_State* L) {
 int LuaCreatureObject::doAnimation(lua_State* L) {
 	String animString = lua_tostring(L, -1);
 
-	if (realObject != nullptr)
+	if (realObject != NULL)
 		realObject->doAnimation(animString);
 
 	return 0;
@@ -598,7 +627,7 @@ int LuaCreatureObject::engageCombat(lua_State* L) {
 
 	Locker locker(realObject);
 
-	if (enemy != nullptr)
+	if (enemy != NULL)
 		realObject->addDefender(enemy);
 
 	return 0;
@@ -607,7 +636,7 @@ int LuaCreatureObject::engageCombat(lua_State* L) {
 int LuaCreatureObject::getPlayerObject(lua_State* L) {
 	Reference<PlayerObject*> obj = realObject->getPlayerObject();
 
-	if (obj != nullptr) {
+	if (obj != NULL) {
 		obj->_setUpdated(true);
 		lua_pushlightuserdata(L, obj);
 	} else
@@ -677,21 +706,7 @@ int LuaCreatureObject::getCashCredits(lua_State* L) {
 int LuaCreatureObject::subtractCashCredits(lua_State* L) {
 	Locker locker(realObject);
 
-	int credits = lua_tointeger(L, -1);
-	TransactionLog trx(realObject, TrxCode::LUASCRIPT, credits, true);
-	trx.addContextFromLua(L);
-	realObject->subtractCashCredits(credits);
-
-	return 0;
-}
-
-int LuaCreatureObject::subtractBankCredits(lua_State* L) {
-	Locker locker(realObject);
-
-	int credits = lua_tointeger(L, -1);
-	TransactionLog trx(realObject, TrxCode::LUASCRIPT, credits, false);
-	trx.addContextFromLua(L);
-	realObject->subtractBankCredits(credits);
+	realObject->subtractCashCredits(lua_tointeger(L, -1));
 
 	return 0;
 }
@@ -702,22 +717,7 @@ int LuaCreatureObject::addCashCredits(lua_State* L) {
 
 	Locker locker(realObject);
 
-	TransactionLog trx(TrxCode::LUASCRIPT, realObject, credits, true);
-	trx.addContextFromLua(L);
 	realObject->addCashCredits(credits, notifyClient);
-
-	return 0;
-}
-
-int LuaCreatureObject::addBankCredits(lua_State* L) {
-	bool notifyClient = lua_toboolean(L, -1);
-	int credits = lua_tonumber(L, -2);
-
-	Locker locker(realObject);
-
-	TransactionLog trx(TrxCode::LUASCRIPT, realObject, credits, false);
-	trx.addContextFromLua(L);
-	realObject->addBankCredits(credits, notifyClient);
 
 	return 0;
 }
@@ -741,12 +741,12 @@ int LuaCreatureObject::isGrouped(lua_State* L) {
 int LuaCreatureObject::isGroupedWith(lua_State* L) {
 	CreatureObject* groupMember = (CreatureObject*) lua_touserdata(L, -1);
 
-	if (realObject == nullptr || groupMember == nullptr || !realObject->isGrouped())
+	if (realObject == NULL || groupMember == NULL || !realObject->isGrouped())
 		return 0;
 
 	GroupObject* group = realObject->getGroup();
 
-	lua_pushboolean(L, group != nullptr && group->hasMember(groupMember));
+	lua_pushboolean(L, group != NULL && group->hasMember(groupMember));
 
 	return 1;
 }
@@ -754,18 +754,18 @@ int LuaCreatureObject::isGroupedWith(lua_State* L) {
 int LuaCreatureObject::setLootRights(lua_State* L) {
 	CreatureObject* player = (CreatureObject*) lua_touserdata(L, -1);
 
-	if (realObject == nullptr)
+	if (realObject == NULL)
 		return 0;
 
 	uint64 ownerID = 0;
 
-	if (player != nullptr) {
+	if (player != NULL) {
 		ownerID = player->getObjectID();
 	}
 
 	SceneObject* inventory = realObject->getSlottedObject("inventory");
 
-	if (inventory == nullptr)
+	if (inventory == NULL)
 		return 0;
 
 	Locker locker(inventory);
@@ -779,7 +779,7 @@ int LuaCreatureObject::getGroupSize(lua_State* L) {
 
 	GroupObject* group = realObject->getGroup();
 
-	if (group == nullptr) {
+	if (group == NULL) {
 		lua_pushnumber(L, 0);
 		return 1;
 	}
@@ -811,7 +811,7 @@ int LuaCreatureObject::getGroupMember(lua_State* L) {
 
 	GroupObject* group = realObject->getGroup();
 
-	if (group == nullptr) {
+	if (group == NULL) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -825,8 +825,8 @@ int LuaCreatureObject::getGroupMember(lua_State* L) {
 
 	CreatureObject* creo = group->getGroupMember(i);
 
-	if (creo == nullptr) {
-		realObject->info("LuaCreatureObject::getGroupMember GroupMember is nullptr.");
+	if (creo == NULL) {
+		realObject->info("LuaCreatureObject::getGroupMember GroupMember is NULL.");
 		lua_pushnil(L);
 	} else {
 		creo->_setUpdated(true);
@@ -901,14 +901,14 @@ int LuaCreatureObject::isPlayingMusic(lua_State* L) {
 int LuaCreatureObject::getPerformanceName(lua_State* L) {
 	ManagedReference<Facade*> facade = realObject->getActiveSession(SessionFacadeType::ENTERTAINING);
 
-	if (facade == nullptr) {
+	if (facade == NULL) {
 		lua_pushnil(L);
 		return 1;
 	}
 
 	ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*> (facade.get());
 
-	if (session == nullptr) {
+	if (session == NULL) {
 		lua_pushnil(L);
 		return 1;
 	}
@@ -972,7 +972,7 @@ int LuaCreatureObject::awardExperience(lua_State* L) {
 int LuaCreatureObject::getOwner(lua_State* L) {
 	CreatureObject* retVal = realObject->getLinkedCreature().get();
 
-	if (retVal == nullptr)
+	if (retVal == NULL)
 		lua_pushnil(L);
 	else
 		lua_pushlightuserdata(L, retVal);
@@ -1116,15 +1116,217 @@ int LuaCreatureObject::getGender(lua_State* L) {
 	return 1;
 }
 
-int LuaCreatureObject::isRidingMount(lua_State* L) {
-	bool isMounted = realObject->isRidingMount();
+// Apply custom buff for a single stat
+// buffSingleStat(String stat, int buffPower, int buffDuration)
+int LuaCreatureObject::buffSingleStat(lua_State* L) {
+	String stat = lua_tostring(L, -3);
+	int buffPower = lua_tointeger(L, -2);
+	int buffDuration = lua_tointeger(L, -1);
+	
+	PlayerManager* playerManager = realObject->getZoneServer()->getPlayerManager();
+	
+	bool appliedBuff = true; // Because doEnhanceCharacter() is a bool function...
+	
+	if (stat == "health"){
+		appliedBuff = playerManager->doEnhanceCharacter(0x98321369, realObject, buffPower, buffDuration, BuffType::MEDICAL, 0); // medical_enhance_health
+	} else if (stat == "strength") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x815D85C5, realObject, buffPower, buffDuration, BuffType::MEDICAL, 1); // medical_enhance_strength
+	} else if (stat == "constitution") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x7F86D2C6, realObject, buffPower, buffDuration, BuffType::MEDICAL, 2); // medical_enhance_constitution
+	} else if (stat == "action") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x4BF616E2, realObject, buffPower, buffDuration, BuffType::MEDICAL, 3); // medical_enhance_action
+	} else if (stat == "quickness") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x71B5C842, realObject, buffPower, buffDuration, BuffType::MEDICAL, 4); // medical_enhance_quickness
+	} else if (stat == "stamina") {
+		appliedBuff = playerManager->doEnhanceCharacter(0xED0040D9, realObject, buffPower, buffDuration, BuffType::MEDICAL, 5); // medical_enhance_stamina
+	} else if (stat == "mind") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x11C1772E, realObject, buffPower, buffDuration, BuffType::PERFORMANCE, 6); // performance_enhance_dance_mind
+	} else if (stat == "focus") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x2E77F586, realObject, buffPower, buffDuration, BuffType::PERFORMANCE, 7); // performance_enhance_music_focus
+	} else if (stat == "willpower") {
+		appliedBuff = playerManager->doEnhanceCharacter(0x3EC6FCB6, realObject, buffPower, buffDuration, BuffType::PERFORMANCE, 8); // performance_enhance_music_willpower
+	} else {
+		appliedBuff = false;
+	}
+	
+	return 0;
+}
+ int LuaCreatureObject::removeBuffs(lua_State* L) {
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	realObject->clearBuffs(true, true);
+	
+	return 0;
+}
+ int LuaCreatureObject::emptyStomach(lua_State* L) {
+	
+	if (!realObject->isPlayerCreature())
+		return 0;
+	
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	player->setFoodFilling(0);
+	player->setDrinkFilling(0);
+	
+	return 0;
+}
+ // Return the number of pets a player has out
+int LuaCreatureObject::getActivePetsSize(lua_State* L) {
+	ManagedReference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	lua_pushinteger(L, player->getActivePetsSize());
+	
+	return 1;	
+}
+ // Return a pointer to the specified pet
+// local pBob = CreatureObject(pPlayer):getActivePet(0)
+int LuaCreatureObject::getActivePet(lua_State* L) {
+	int petNumber = lua_tointeger(L, -1);
+	
+	petNumber = Math::max(0, petNumber);
+	
+	Logger::console.info("petNumber: " + String::valueOf(petNumber), true);
+	
+	ManagedReference<PlayerObject*> player = realObject->getPlayerObject();
+	ManagedReference<CreatureObject*> pet = player->getActivePet(petNumber);
+	
+	if (pet != NULL) {
+		String petName = pet->getFirstName();
+		Logger::console.info("Pet Name: " + petName, true);
+	}
+		
+	lua_pushlightuserdata(L, pet);
+ 	return 1;	
+}
 
-	lua_pushboolean(L, isMounted);
+/*
+* Tarkin's Revenge
+* Returns the player's "food" filling
+* lua: CreatureObject(pPlayer):getFoodFilling()
+*/
+ int LuaCreatureObject::getFoodFilling(lua_State* L) {
+	
+	if (!realObject->isPlayerCreature())
+		return 0;
+	
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	int filling = player->getFoodFilling();
+
+	lua_pushnumber(L, filling);
 
 	return 1;
 }
 
-int LuaCreatureObject::dismount(lua_State* L) {
-	realObject->dismount();
+/*
+* Tarkin's Revenge
+* Returns the player's "drink" filling
+* lua: CreatureObject(pPlayer):getDrinkFilling()
+*/
+ int LuaCreatureObject::getDrinkFilling(lua_State* L) {
+	
+	if (!realObject->isPlayerCreature())
+		return 0;
+	
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	int filling = player->getDrinkFilling();
+
+	lua_pushnumber(L, filling);
+
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Sets the player's "food" filling
+* lua: CreatureObject(pPlayer):setFoodFilling(amount)
+*/
+ int LuaCreatureObject::setFoodFilling(lua_State* L) {
+	
+	if (!realObject->isPlayerCreature())
+		return 0;
+
+	int amount = lua_tointeger(L, -1);
+	
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	player->setFoodFilling(amount);
+
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Sets the player's "drink" filling
+* lua: CreatureObject(pPlayer):setDrinkFilling(amount)
+*/
+ int LuaCreatureObject::setDrinkFilling(lua_State* L) {
+	
+	if (!realObject->isPlayerCreature())
+		return 0;
+	
+	int amount = lua_tointeger(L, -1);
+	
+	Reference<PlayerObject*> player = realObject->getPlayerObject();
+	
+	player->setDrinkFilling(amount);
+
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Get the creatureObject of the group leader
+* lua: CreatureObject(pPlayer):getGroupLeader()
+*/
+int LuaCreatureObject::getGroupLeader(lua_State* L) {
+	Locker locker(realObject);
+	
+	GroupObject* group = realObject->getGroup();
+
+	if (group == NULL) {
+		realObject->info("LuaCreatureObject::getGroupLeader group is NULL.");
+		lua_pushnil(L);	
+		return 1;
+	}
+
+	Locker lock(group, realObject);
+	
+	Reference<CreatureObject*> leader = group->getLeader();
+	
+	if (leader == NULL) {
+		realObject->info("LuaCreatureObject::getGroupLeader leader is NULL.");
+		lua_pushnil(L);	
+	} else {
+		leader->_setUpdated(true);
+		lua_pushlightuserdata(L, leader);
+	}
+	return 1;
+}
+
+/*
+* Tarkin's Revenge
+* Increase the infamy value of a player
+* lua: CreatureObject(pPlayer):increaseInfamy()
+*/
+int LuaCreatureObject::increaseInfamy(lua_State* L) {
+	int arenaNum = lua_tointeger(L, -1);
+	CreatureObject* opponent = (CreatureObject*) lua_touserdata(L, -2);
+
+	InfamyManager::instance()->increaseInfamy(realObject, opponent, arenaNum);
+
+	return 0;
+}
+
+/*
+* Tarkin's Revenge
+* Clear the infamy value of a player
+* lua: CreatureObject(pPlayer):clearInfamy()
+*/
+int LuaCreatureObject::clearInfamy(lua_State* L) {
+
+	InfamyManager::instance()->clearInfamy(realObject);
+
 	return 0;
 }

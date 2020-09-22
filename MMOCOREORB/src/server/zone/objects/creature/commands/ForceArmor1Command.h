@@ -17,11 +17,11 @@ public:
 		skillMods.put("force_armor", 25);
 	}
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const override {
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 		return doJediSelfBuffCommand(creature);
 	}
 
-	void handleBuff(SceneObject* sceneObject, ManagedObject* object, int64 param) const override {
+	void handleBuff(SceneObject* sceneObject, ManagedObject* object, int64 param) {
 		ManagedReference<CreatureObject*> player = sceneObject->asCreatureObject();
 
 		if (player == nullptr)

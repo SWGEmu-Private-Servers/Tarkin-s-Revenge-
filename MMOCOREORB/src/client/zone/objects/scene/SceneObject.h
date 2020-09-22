@@ -135,6 +135,7 @@ public:
 	const static int REPAIRTOOL = 0x8003;
 	const static int CAMPKIT = 0x8004;
 	const static int SHIPCOMPONENTREPAIRITEM = 0x8005;
+	const static int RETOOL = 0x8006;
 
 	const static int VEHICLE = 0x10000;
 	const static int HOVERVEHICLE = 0x10001;
@@ -172,6 +173,8 @@ public:
 	const static int RANGEDWEAPONCOMPONENT = 0x4000B;
 	const static int STRUVTURECOMPONENT = 0x4000C;
 	const static int TISSUECOMPONENT = 0x4000D;
+	const static int ENZYMECOMPONENT = 0x4000E;
+	const static int INCUBATIONCOMPONENT = 0x400010;
 
 	const static int WEAPONPOWERUP = 0x80000;
 	const static int MELEEWEAPONPOWERUP = 0x80001;

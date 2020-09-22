@@ -6,6 +6,12 @@
 #define STATISTICSMANAGER_H_
 
 #include "server/zone/objects/mission/MissionTypes.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/login/account/Account.h"
+#include "server/zone/ZoneClientSession.h"
+#include "server/ServerCore.h"
+#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
 
 class StatisticsManager : public Singleton<StatisticsManager>, public Logger, public Object {
 	AtomicLong numberOfCompletedMissionsBounty;
@@ -85,6 +91,498 @@ public:
 
 	void reset() {
 		resetMissionStatistics();
+	}
+	
+	/**
+	 * Returns the most recently used ip address on an account (or 0.0.0.0 if a result was not found)
+	 * @param account Account object obtained from PlayerObject->getAccount()
+	 */
+	String getLastIP(Account* account){
+		String ip = "0.0.0.0";
+		
+		StringBuffer query;
+		query << "SELECT ip_address, MIN(timestamp) FROM account_log WHERE account_id = '" << account->getAccountID() << "';";
+		ResultSet* result = ServerDatabase::instance()->executeQuery(query);
+		
+		if (result->next())
+			ip = result->getString(0);
+		
+		return ip;
+	}
+	
+	/**
+	 * Writes and additional line to a file on the server
+	 * @param pathAndFile String The path to the file as well as the file name, such as log/mylog.log
+	 * @param content String The content to be written
+	 */
+	void logToFile(String pathAndFile, String content){
+		File* file = new File(pathAndFile);
+		FileWriter* writer = new FileWriter(file, true); // true for appending new lines
+
+		writer->writeLine(content);
+
+		writer->close();
+		delete file;
+		delete writer;
+	}
+	
+	/**
+	 * Logs player credit transactions
+	 * @param sender Creature object of character who sent credits or bought an item. Also used for the character that was deleted when logged deleted character.
+	 * @param receiver Creature object of character that received the credits.
+	 * @param vendor Scene object of vendor or bazaar terminal that made the sale. Use nullptr in cases where vendor is not applicable.
+	 * @param value The amount of credits that were exchanged.
+	 * @param name Name of the item bought from the vendor/bazaar.
+	 * @param transactionType The use case for this function. Transaction Types: tip 1, bank tip 2, bazaar sale 3, vendor sale 4.
+	 */
+	void lumberjack(CreatureObject* sender, CreatureObject* receiver, SceneObject* vendor, int value, String name, int transactionType){
+		// Get server config
+		int logTips = ConfigManager::instance()->getLumberjackTips();
+		int logBazaar = ConfigManager::instance()->getLumberjackBazaar();
+		int logVendor = ConfigManager::instance()->getLumberjackVendor();
+		int logToTXT = ConfigManager::instance()->getLumberjackTXT();
+		int logToSQL = ConfigManager::instance()->getLumberjackSQL();
+		
+		if ((transactionType == 1 || transactionType == 2) && !logTips && value < logTips){
+			Logger::console.info("Lumberjack: Tip logging is off.", true);
+			return;
+		}
+		
+		if (transactionType == 3 && !logBazaar && value < logBazaar){
+			Logger::console.info("Lumberjack: Bazaar logging is off.", true);
+			return;
+		}
+			
+		if (transactionType == 4 && !logVendor && value < logVendor){
+			Logger::console.info("Lumberjack: Vendor logging is off.", true);
+			return;
+		}
+		
+		if (sender == nullptr || receiver == nullptr){
+			Logger::console.error("Lumberjack: CreatureObject for sender or receiver not found.");
+			return;
+		}
+		
+		if (transactionType > 2 && vendor == nullptr){
+			Logger::console.error("Lumberjack: SceneObject for vendor or terminal not found.");
+			return;
+		}
+		
+		Reference<PlayerObject*> senderGhost = sender->getPlayerObject();
+		ManagedReference<Account*> senderAccount = senderGhost->getAccount();	
+		Reference<PlayerObject*> receiverGhost = receiver->getPlayerObject();
+		ManagedReference<Account*> receiverAccount = receiverGhost->getAccount();
+		
+		// Gather data
+		Time now;
+		String timestamp = now.getFormattedTime();
+		name.replaceAll(",", "-");
+
+		// Sender
+		String sAccID = String::valueOf(senderAccount->getAccountID());
+		String sAccName = senderAccount->getUsername();
+		Time sCreatedTime(senderAccount->getTimeCreated());
+		String sAccBorn = sCreatedTime.getFormattedTime();
+		String sIP = getLastIP(senderAccount);		
+		String sCharName = sender->getFirstName();
+		String sCharAge = String::valueOf(senderGhost->getCharacterAgeInDays());
+		
+		// Reciever
+		String rAccID = "";
+		String rAccName = "";
+		String rAccBorn = "";
+		String rIP = "0.0.0.0:0";
+		String rCharName = "";
+		String rCharAge = "";
+		
+		// Don't pull data that won't be used
+		if (sender != receiver){
+			rAccID = String::valueOf(receiverAccount->getAccountID());
+			rAccName = receiverAccount->getUsername();		
+			Time rCreatedTime(receiverAccount->getTimeCreated());		
+			rAccBorn = rCreatedTime.getFormattedTime();		
+			rIP = getLastIP(receiverAccount);
+			rCharName = receiver->getFirstName();		
+			rCharAge = String::valueOf(receiverGhost->getCharacterAgeInDays());
+		}
+		
+		// Vendor
+		String vID = "";
+		StringBuffer vPos;
+		String vOffer = "no";
+		
+		if (vendor != nullptr){
+			vID = String::valueOf(vendor->getObjectID());
+			vPos << int(vendor->getWorldPositionX()) << " " << int(vendor->getWorldPositionY()) << " " << vendor->getZone()->getZoneName();
+		
+		
+			// If receiver of credits was not the vendor owner then item was offered to the vendor
+			if (vendor->isVendor()){
+				DataObjectComponentReference* data = vendor->getDataObjectComponent();
+				if(data == NULL || data->get() == NULL || !data->get()->isVendorData()) {
+					Logger::console.error("Lumberjack: Vendor has no data component");
+					return;
+				}
+
+				VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
+				if(vendorData == NULL) {
+					Logger::console.error("Lumberjack: Vendor has wrong data component");
+					return;
+				}
+				
+				ZoneServer* server = ServerCore::getZoneServer();
+				ManagedReference<CreatureObject*> vendorOwner = server->getObject(vendorData->getOwnerId()).castTo<CreatureObject*>();
+				
+				if (vendorOwner == nullptr){
+					Logger::console.error("Lumberjack: CreatureObject for vendor owner not found.");
+					return;
+				}
+				
+				if (vendorOwner != receiver) 
+					vOffer = "yes";	
+			}
+		}
+		
+		// Log to file
+		if (logToTXT){			
+			String outputText = "";	
+			String fileName = "tips";
+
+			if (transactionType == 1){
+				outputText = timestamp + "," + sAccID + "," + sAccName + "," + sAccBorn + "," + sIP + "," + sCharName + "," + sCharAge + "," + String::valueOf(value) + "," + rAccID + "," + rAccName + "," + rAccBorn + "," + rIP + "," + rCharName + "," + rCharAge + ",";
+			} else if (transactionType == 2) {
+				fileName = "banktips";
+				outputText = timestamp + "," + sAccID + "," + sAccName + "," + sAccBorn + "," + sIP + "," + sCharName + "," + sCharAge + "," + String::valueOf(value) + "," + rAccID + "," + rAccName + "," + rAccBorn + "," + rIP + "," + rCharName + "," + rCharAge + ",";
+			} else if  (transactionType == 3){
+				fileName = "bazaarsales";
+				outputText = timestamp + "," + sAccID + "," + sAccName + "," + sAccBorn + "," + sIP + "," + sCharName + "," + sCharAge + "," + String::valueOf(value) + "," + rAccID + "," + rAccName + "," + rAccBorn + "," + rIP + "," + rCharName + "," + rCharAge + "," + name + "," + vID + "," + vPos.toString() + ",";
+			} else if  (transactionType == 4){
+				fileName = "vendorsales";
+				outputText = timestamp + "," + sAccID + "," + sAccName + "," + sAccBorn + "," + sIP + "," + sCharName + "," + sCharAge + "," + String::valueOf(value) + "," + rAccID + "," + rAccName + "," + rAccBorn + "," + rIP + "," + rCharName + "," + rCharAge + "," + name + "," + vID + "," + vPos.toString() + "," + vOffer + ",";
+			}
+			
+			logToFile("log/lumberjack/" + fileName + ".log", outputText);
+		}
+		
+		// Log to SQL
+		if (logToSQL){
+			// This functionality will be created at a later date. It will push data to separate DB that is dedicated to logging player activity.
+		}
+	}
+	
+	/**
+	 * Logs player activity
+	 * @param accountId Account ID
+	 * @param charId Character ID
+	 */
+	void lumberjack(uint32 accountId, uint64 charId){
+		int logDeleted = ConfigManager::instance()->getLumberjackDeleted();
+		
+		if (!logDeleted){
+			Logger::console.info("Lumberjack: Deleted character logging is off.", true);
+			return;
+		}
+		
+		int logToTXT = ConfigManager::instance()->getLumberjackTXT();
+		int logToSQL = ConfigManager::instance()->getLumberjackSQL();
+		
+		ZoneServer* server = ServerCore::getZoneServer();
+		ManagedReference<CreatureObject*> creature = server->getObject(charId).castTo<CreatureObject*>();
+		
+		if (creature == nullptr){
+			Logger::console.info("Lumberjack: Character not found when logging deletion of charID: " + String::valueOf(charId) + " on accountID: " + String::valueOf(accountId), true);
+			return;
+		}
+		
+		Reference<PlayerObject*> ghost = creature->getPlayerObject();
+		ManagedReference<Account*> account = ghost->getAccount();
+		
+		// Gather data
+		Time now;
+		String timestamp = now.getFormattedTime();
+		String accName = account->getUsername();
+		Time rCreatedTime(account->getTimeCreated());
+		String accBorn = rCreatedTime.getFormattedTime();
+		String charName = creature->getFirstName();		
+		String charAge = String::valueOf(ghost->getCharacterAgeInDays());
+		String sIP = getLastIP(account);
+		
+		String outputText = timestamp + "," + String::valueOf(accountId) + "," + accName + "," + accBorn + "," + charName + "," + charAge + "," + sIP + ",";
+		
+		if (logToTXT){	
+			logToFile("log/lumberjack/deletedcharacters.log", outputText);
+		}
+		
+		if (logToSQL){
+			// This functionality will be created at a later date. It will push data to separate DB that is dedicated to logging player activity.
+		}
+		
+	}
+	
+	/**
+	 * Logs player activity
+	 * @param player1 Creature object of a player
+	 * @param player2 Creature object of a player
+	 * @param p1Value Credit value sent by player
+	 * @param p1Before Cash on hand balance before trade
+	 * @param p1After Cash on hand after trade
+	 * @param p2Value Credit value sent by player
+	 * @param p2Before Cash on hand balance before trade
+	 * @param p3After Cash on hand after trade
+	 */
+	void lumberjack(CreatureObject* player1, CreatureObject* player2, uint32 p1Value, uint32 p1Before, uint32 p1After, uint32 p2Value, uint32 p2Before, uint32 p2After){
+		// Don't log trades where credits were not exchanged
+		if (p1Value < 1 && p2Value < 1)
+			return;
+			
+		int logTradeCredits = ConfigManager::instance()->getLumberjackTradedCredits();
+		
+		if (!logTradeCredits || ( p1Value < logTradeCredits && p2Value < logTradeCredits))
+			return;
+			
+		int logToTXT = ConfigManager::instance()->getLumberjackTXT();
+		int logToSQL = ConfigManager::instance()->getLumberjackSQL();
+			
+		Reference<PlayerObject*> player1Ghost = player1->getPlayerObject();
+		ManagedReference<Account*> player1Account = player1Ghost->getAccount();	
+		Reference<PlayerObject*> player2Ghost = player2->getPlayerObject();
+		ManagedReference<Account*> player2Account = player2Ghost->getAccount();
+		
+		// Gather data
+		Time now;
+		String timestamp = now.getFormattedTime();
+		
+		// Player 1
+		String p1AccID = String::valueOf(player1Account->getAccountID());
+		String p1accName = player1Account->getUsername();
+		Time p1CreatedTime(player1Account->getTimeCreated());
+		String p1accBorn = p1CreatedTime.getFormattedTime();
+		String p1LastIP = getLastIP(player1Account);
+		String p1charName = player1->getFirstName();		
+		String p1charAge = String::valueOf(player1Ghost->getCharacterAgeInDays());
+		
+		// Player 2
+		String p2AccID = String::valueOf(player2Account->getAccountID());
+		String p2accName = player2Account->getUsername();
+		Time p2CreatedTime(player2Account->getTimeCreated());
+		String p2accBorn = p2CreatedTime.getFormattedTime();
+		String p2LastIP = getLastIP(player2Account);
+		String p2charName = player2->getFirstName();		
+		String p2charAge = String::valueOf(player2Ghost->getCharacterAgeInDays());
+		
+		if (logToTXT){	
+			// Transaction Datestamp, player1 account ID, player1 account name, player1 born, player1 ip, player1 character, player1 char age, credits (not used here), player2 account id, player2 account name, player2 born, player2 ip, player2 character, player2 char age, player1 balance before, player1 credits sent, player1 balance after, player2 balance before, player2 credits sent, player2 balance after,
+			StringBuffer toLog;
+			toLog << timestamp << ","; 
+			toLog << p1AccID  << "," <<  p1accName << "," <<  p1accBorn << "," <<  p1LastIP << "," <<  p1charName << "," <<  p1charAge << ",";
+			toLog << "0" << ",";
+			toLog << p2AccID  << "," <<  p2accName << "," <<  p2accBorn << "," <<  p2LastIP << "," <<  p2charName << "," <<  p2charAge << ",";
+			// And now the credit trade data
+			toLog << p1Before  << "," <<  p1Value  << "," <<  p1After  << "," <<  p2Before  << "," <<  p2Value  << "," <<  p2After  << ",";
+			
+			logToFile("log/lumberjack/tradecredits.log", toLog.toString());
+		}
+		
+		if (logToSQL){
+			// This functionality will be created at a later date. It will push data to separate DB that is dedicated to logging player activity.
+		}
+	}
+
+	/**
+	 * Logs important loot information
+	 * @param lootItem SceneObject item that is the piece of loot
+	 * @param player CreatureObject of player who looted the item
+	 * @param lootsParent SceneObject "inventory" of container or aiAgent 
+	 * @param level int Exceptional 0, Legendary 1
+	 */
+	void lumberjack(SceneObject* lootItem, CreatureObject* player, SceneObject* lootsParent, int lootType){
+		String itemName = lootItem->getDisplayedName();
+
+		if (!itemName.contains("(Legendary)") && !itemName.contains("(Exceptional)"))
+			return;
+		
+		int logRareLoot = ConfigManager::instance()->getLumberjackRareLoot();
+		
+		if (!logRareLoot)
+			return; 
+			
+		int logToTXT = ConfigManager::instance()->getLumberjackTXT();
+		int logToSQL = ConfigManager::instance()->getLumberjackSQL();
+		
+		ManagedReference<TangibleObject*> tano = lootItem->asTangibleObject();
+		Reference<PlayerObject*> ghost = player->getPlayerObject();
+		ManagedReference<Account*> account = ghost->getAccount();	
+		
+		// Gather data
+		String itemType = "Exceptional";
+		if (lootType == 1)
+			itemType = "Legendary";
+				
+		Time now;
+		String timestamp = now.getFormattedTime();
+		StringBuffer location;
+		location << int(player->getWorldPositionX()) << " " << int(player->getWorldPositionY()) << " " << player->getZone()->getZoneName();
+		
+		String parentName = lootsParent->getParent().get()->getDisplayedName();
+		if (parentName == "")
+			parentName = "a loot crate";
+		
+		itemName.replaceAll(",", "-");
+		
+		// Prevent resetting original looted info. If item has this value, it has already been logged. This should not occur in normal play.
+		if (tano->getLuaStringData("lj") != ""){
+			String msg = "Lumberjack Error: Second attempt to loot  " + itemName + " with ObjectID " + String::valueOf(lootItem->getObjectID()) + " by " + player->getFirstName() + " using container " + parentName + " at " + location.toString();
+			Logger::console.info(msg, true);
+			return;
+		}	
+		
+		// Set hidden attribute on item
+		String lj = player->getFirstName() + " looted this from " + parentName + " at " + location.toString() + " on " + timestamp;
+		tano->setLuaStringData("lj", lj);
+		
+		StringBuffer toLog;
+		toLog << timestamp << "," << account->getAccountID() << "," << account->getUsername() << "," << player->getFirstName() << "," << itemType << ",";
+		toLog << itemName << "," << lootItem->getObjectID() << "," << parentName << "," << location.toString();
+
+		if (logToTXT){
+			logToFile("log/lumberjack/rareloot.log", toLog.toString());
+		}
+		
+		if (logToSQL){
+			// This functionality will be created at a later date. It will push data to separate DB that is dedicated to logging player activity.
+		}
+	}
+	
+	/**
+	 * Missions
+	 * @param player1 CreatureObject The player who gets the mission payout
+	 * @param player2 CreatureObject The defeated player in a bounty mission. Use nullptr for all other mission types.
+	 * @param value int Mission payout in credits
+	 * @param missionType int Constant indicating mission type completed
+	 */
+	void lumberjack(CreatureObject* player1, CreatureObject* player2, int value, int missionType){
+		if (player1 == nullptr)
+			return;
+			
+		String fileName = "log/lumberjack/error.log";
+		bool ignore = false;
+		
+		// Min mission payouts to log and set log file names
+		switch (missionType) {
+			case MissionTypes::BOUNTY:
+				fileName = "log/lumberjack/mission_bounty.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::CRAFTING:
+				fileName = "log/lumberjack/mission_crafting.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::DANCER:
+				fileName = "log/lumberjack/mission_dancer.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::DELIVER:
+				fileName = "log/lumberjack/mission_deliver.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::DESTROY:
+				fileName = "log/lumberjack/mission_destroy.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::HUNTING:
+				fileName = "log/lumberjack/mission_hunting.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::MUSICIAN:
+				fileName = "log/lumberjack/mission_musician.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::RECON:
+				fileName = "log/lumberjack/mission_recon.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+			case MissionTypes::SURVEY:
+				fileName = "log/lumberjack/mission_survey.log";
+				if (value < 50000)
+					ignore = true;
+					
+				break;
+		}
+		
+		if (ignore)
+			return;
+		
+		// Player Bounty min mission value
+		if (player2 != nullptr && value < 50000)
+			return;
+		
+		int logToTXT = ConfigManager::instance()->getLumberjackTXT();
+		int logToSQL = ConfigManager::instance()->getLumberjackSQL();
+		
+		Reference<PlayerObject*> player1Ghost = player1->getPlayerObject();
+		ManagedReference<Account*> player1Account = player1Ghost->getAccount();
+		
+		StringBuffer toLog;
+		
+		// Gather data
+		Time now;
+		String timestamp = now.getFormattedTime();
+		
+		// Player 1
+		String p1AccID = String::valueOf(player1Account->getAccountID());
+		String p1accName = player1Account->getUsername();
+		Time p1CreatedTime(player1Account->getTimeCreated());
+		String p1accBorn = p1CreatedTime.getFormattedTime();
+		String p1LastIP = getLastIP(player1Account);
+		String p1charName = player1->getFirstName();		
+		String p1charAge = String::valueOf(player1Ghost->getCharacterAgeInDays());
+		
+		// All other missions
+		// Transaction Datestamp, player1 account ID, player1 account name, player1 born, player1 ip, player1 character, player1 char age, credits
+		toLog << timestamp << ","; 
+		toLog << p1AccID  << "," <<  p1accName << "," <<  p1accBorn << "," <<  p1LastIP << "," <<  p1charName << "," <<  p1charAge << "," << value << ",";
+		
+		// Player Bounty Hunter	Target
+		// Transaction Datestamp, player1 account ID, player1 account name, player1 born, player1 ip, player1 character, player1 char age, credits, player2 account id, player2 account name, player2 born, player2 ip, player2 character, player2 char age
+		if (player2 != nullptr){
+			Reference<PlayerObject*> player2Ghost = player2->getPlayerObject();
+			ManagedReference<Account*> player2Account = player2Ghost->getAccount();
+			
+			String p2AccID = String::valueOf(player2Account->getAccountID());
+			String p2accName = player2Account->getUsername();
+			Time p2CreatedTime(player2Account->getTimeCreated());
+			String p2accBorn = p2CreatedTime.getFormattedTime();
+			String p2LastIP = getLastIP(player2Account);
+			String p2charName = player2->getFirstName();		
+			String p2charAge = String::valueOf(player2Ghost->getCharacterAgeInDays());
+			
+			toLog << p2AccID  << "," <<  p2accName << "," <<  p2accBorn << "," <<  p2LastIP << "," <<  p2charName << "," <<  p2charAge << ",";
+			fileName = "log/lumberjack/mission_player_bounty.log";
+		} 
+		
+		if (logToTXT){
+			logToFile(fileName, toLog.toString());
+		}
+		
+		if (logToSQL){
+			// This functionality will be created at a later date. It will push data to separate DB that is dedicated to logging player activity.
+		}
 	}
 
 private:

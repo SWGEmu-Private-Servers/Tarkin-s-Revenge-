@@ -37,6 +37,8 @@ class CreatureManager extends ZoneManager {
 	public static final short HASDNA = 0x00;
 	public static final short DNASAMPLED = 0x01;
 	public static final short DNADEATH = 0x03;
+	public static final short HASENZYME = 0x04;
+	public static final short ENZYMESAMPLED = 0x05;
 
 	public CreatureManager(Zone planet) {
 		super("CreatureManager " + planet.getZoneName());
@@ -75,9 +77,9 @@ class CreatureManager extends ZoneManager {
 	public native CreatureObject spawnCreatureAsBaby(unsigned int templateCRC, float x, float z, float y, unsigned long parentID = 0);
 	public native CreatureObject spawnCreatureAsEventMob(unsigned int templateCRC, int level, float x, float z, float y, unsigned long parentID = 0);
 	public native CreatureObject spawnCreature(unsigned int templateCRC, float x, float z, float y, unsigned long parentID = 0);
-	public native CreatureObject spawnCreature(unsigned int templateCRC, unsigned int objectCRC, float x, float z, float y, unsigned long parentID = 0, boolean persistent = false, float direction = 0);
+	public native CreatureObject spawnCreature(unsigned int templateCRC, unsigned int objectCRC, float x, float z, float y, unsigned long parentID = 0, boolean persistent = false);
 	public native CreatureObject createCreature(unsigned int templateCRC, boolean persistent = false, unsigned int mobileTemplate = 0);
-	public native void placeCreature(CreatureObject creature, float x, float z, float y, unsigned long parentID, float direction = 0);
+	public native void placeCreature(CreatureObject creature, float x, float z, float y, unsigned long parentID);
 
 	@dereferenced
 	public native string getTemplateToSpawn(unsigned int templateCRC);

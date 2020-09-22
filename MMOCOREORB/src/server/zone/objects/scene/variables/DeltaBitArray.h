@@ -53,7 +53,7 @@ public:
 		set(vectorIndex, currentVal);
 	}
 
-	bool getBitValue(uint32 bitIndex) const {
+	bool getBitValue(uint32 bitIndex) {
 		int vectorIndex = bitIndex / 8;
 		byte vectorBitIndex = 1 << (bitIndex % 8);
 
@@ -69,7 +69,7 @@ public:
 		setBit(bitIndex, 0);
 	}
 
-	int bitCount() const {
+	int bitCount() {
 		return size() * 8;
 	}
 };

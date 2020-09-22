@@ -28,12 +28,12 @@ public:
 
 		PlayerObject* ghost = creature->getPlayerObject();
 
-		if (ghost == nullptr)
+		if (ghost == NULL)
 			return GENERALERROR;
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
-		if (object == nullptr || !object->isCreatureObject()) {
+		if (object == NULL || !object->isCreatureObject()) {
 			creature->sendSystemMessage("@healing_response:healing_response_b6"); //You cannot diagnose that.
 			return GENERALERROR;
 		}

@@ -91,7 +91,6 @@ int DestroyStructureSessionImplementation::sendDestroyCode() {
 
 	ManagedReference<SuiInputBox*> sui = new SuiInputBox(player);
 	sui->setCallback(new DestroyStructureCodeSuiCallback(player->getZoneServer()));
-	sui->setUsingObject(structureObject);
 	sui->setPromptTitle("@player_structure:confirm_destruction_t"); //Confirm Structure Deletion
 	sui->setPromptText(entry.toString());
 	sui->setCancelButton(true, "@cancel");
@@ -106,16 +105,16 @@ int DestroyStructureSessionImplementation::sendDestroyCode() {
 int DestroyStructureSessionImplementation::destroyStructure() {
 	creatureObject->sendSystemMessage("@player_structure:processing_destruction"); //Processing confirmed structure destruction...
 
-	if (structureObject == nullptr || structureObject->getZone() == nullptr)
+	if (structureObject == NULL || structureObject->getZone() == NULL)
 		return cancelSession();
 
 	if (structureObject->isGCWBase()) {
 		Zone* zone = structureObject->getZone();
-		if (zone == nullptr)
+		if (zone == NULL)
 			return cancelSession();
 
 		GCWManager* gcwMan = zone->getGCWManager();
-		if (gcwMan == nullptr)
+		if (gcwMan == NULL)
 			return cancelSession();
 
 		gcwMan->doBaseDestruction(structureObject);

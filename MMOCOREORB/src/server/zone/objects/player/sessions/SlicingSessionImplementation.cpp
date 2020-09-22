@@ -711,6 +711,12 @@ void SlicingSessionImplementation::handleContainerSlice() {
 	if (tangibleObject->getGameObjectType() == SceneObjectType::PLAYERLOOTCRATE) {
 		Reference<SceneObject*> containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/container/loot/loot_crate.iff"), 1);
 
+		if (tangibleObject->getClientObjectCRC() == 0x6C34F325) {
+			containerSceno->destroyObjectFromDatabase(true);
+			containerSceno = player->getZoneServer()->createObject(STRING_HASHCODE("object/tangible/tarkin_custom/decorative/unlocked_briefcase.iff"), 1);
+		}
+
+
 		if (containerSceno == nullptr)
 			return;
 
@@ -723,16 +729,11 @@ void SlicingSessionImplementation::handleContainerSlice() {
 			return;
 		}
 
-		TransactionLog trx(TrxCode::SLICECONTAINER, player, container);
-
-		if (System::random(10) != 4) {
-			lootManager->createLoot(trx, container, "looted_container");
-		}
+		if (System::random(10) != 4)
+			lootManager->createLoot(container, "looted_container");
 
 		inventory->transferObject(container, -1);
 		container->sendTo(player, true);
-
-		trx.commit();
 
 		if (inventory->hasObjectInContainer(tangibleObject->getObjectID())) {
 			//inventory->removeObject(tangibleObject, true);

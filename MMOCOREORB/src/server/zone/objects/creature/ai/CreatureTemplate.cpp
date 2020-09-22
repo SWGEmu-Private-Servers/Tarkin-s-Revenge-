@@ -76,7 +76,7 @@ CreatureTemplate::~CreatureTemplate() {
 	weapons.removeAll();
 
 	delete attacks;
-	attacks = nullptr;
+	attacks = NULL;
 }
 
 void CreatureTemplate::readObject(LuaObject* templateData) {

@@ -201,6 +201,7 @@ public:
 	const static int REPAIRTOOL = 0x8003;
 	const static int CAMPKIT = 0x8004;
 	const static int SHIPCOMPONENTREPAIRITEM = 0x8005;
+	const static int RETOOL = 0x80007;
 
 	// Not in client ******************
 	const static int SLICINGTOOL = 0x8006;
@@ -245,6 +246,8 @@ public:
 	const static int LIGHTSABERCRYSTAL = 0x4000C;
 	const static int COMMUNITYCRAFTINGCOMPONENT = 0x4000D;
 	const static int DNACOMPONENT = 0x4000E;
+	const static int ENZYMECOMPONENT = 0x4000F;
+	const static int INCUBATIONCOMPONENT = 0x400010;
 
 	const static int WEAPONPOWERUP = 0x80000;
 	const static int MELEEWEAPONPOWERUP = 0x80001;

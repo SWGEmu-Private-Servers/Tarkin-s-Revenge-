@@ -9,7 +9,6 @@
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
-#include "server/zone/objects/structure/StructureObject.h"
 
 int FishObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
 	if (selectedID == 245) {
@@ -26,31 +25,9 @@ int FishObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 void FishObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	TangibleObjectImplementation::fillObjectMenuResponse(menuResponse, player);
 	if (getContainerObjectsSize() > 0) {
-
 		String text = "@fishing:mnu_filet";
-          
-          	SceneObject* parent = getRootParent();
 
-		if (parent == nullptr)
-			return;
-
-		if (parent->isStructureObject())
-		{
-			StructureObject* house = cast<StructureObject*>(parent);
-
-			if (house != nullptr && house->isOnAdminList(player))
-			{
-				menuResponse->addRadialMenuItem(245, 3, text);
-			}
-		}
-
-		SceneObject* inventory = player->getSlottedObject("inventory");
-		SceneObject* thisParent = getParent().get();
-
-		if (inventory != nullptr && thisParent != nullptr && thisParent == inventory)
-		{
-			menuResponse->addRadialMenuItem(245, 3, text);
-		}
+		menuResponse->addRadialMenuItem(245, 3, text);
 	}
 }
 
@@ -58,7 +35,7 @@ void FishObjectImplementation::filet(CreatureObject* player) {
 	if (getContainerObjectsSize() > 0) {
 		ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
 
-		if ((inventory->isContainerFullRecursive()) || ((inventory->getCountableObjectsRecursive() + getContainerObjectsSize()) > 80)) {
+		if ((inventory->isContainerFullRecursive()) || ((inventory->getCountableObjectsRecursive() + getContainerObjectsSize()) > 100)) {
 			StringIdChatParameter body("fishing","units_inventory");
 			body.setDI(getContainerObjectsSize());
 			player->sendSystemMessage(body);
@@ -84,6 +61,9 @@ void FishObjectImplementation::fillAttributeList(AttributeListMessage* alm, Crea
 
 	String lengthText = String::valueOf(length) + "m";
 	alm->insertAttribute("length", lengthText);
+	alm->insertAttribute("caught_by", player);
+	alm->insertAttribute("fish_time_caught", timeCaught);
+	alm->insertAttribute("planet", zoneName);
 
 	//TODO: Reenable with new zone system.
 	//String planetText = Planet::getPlanetName(planet);

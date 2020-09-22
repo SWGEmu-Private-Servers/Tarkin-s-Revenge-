@@ -95,7 +95,7 @@ public:
 		return true;
 	}
 
-	SkillModEntry getVisibleSkillMod(const String& skillMod) const {
+	SkillModEntry getVisibleSkillMod(const String& skillMod) {
 		SkillModEntry newEntry;
 
 		for (int i = 0; i < mods.size(); ++i) {
@@ -145,12 +145,14 @@ public:
 		return &mods.get(type);
 	}
 
-	int getSkillMod(const String& skillMod) const {
+	int getSkillMod(const String& skillMod) {
+
 		int skill = 0;
 
 		for (int i = 0; i < mods.size(); ++i) {
+
 			uint32 modType = mods.elementAt(i).getKey();
-			const SkillModGroup* group = &mods.elementAt(i).getValue();
+			SkillModGroup* group = &mods.elementAt(i).getValue();
 
 			if (group->contains(skillMod)) {
 
@@ -174,7 +176,7 @@ public:
 	}
 
 	int getSkillModOfType(const String& skillMod, const uint32 modType) {
-		const SkillModGroup* group = getSkillModGroup(modType);
+		SkillModGroup* group = getSkillModGroup(modType);
 
 		if (group->contains(skillMod)) {
 			return group->get(skillMod);
@@ -183,15 +185,19 @@ public:
 		return 0;
 	}
 
-	String getPrintableSkillModList() const {
+	String getPrintableSkillModList() {
+
+
 		VectorMap<String, int> skills;
 		skills.setAllowOverwriteInsertPlan();
 
 		for (int i = 0; i < mods.size(); ++i) {
+
 			uint32 modType = mods.elementAt(i).getKey();
-			const SkillModGroup* group = &mods.elementAt(i).getValue();
+			SkillModGroup* group = &mods.elementAt(i).getValue();
 
 			for(int j = 0; j < group->size(); ++j) {
+
 				String skillMod = group->elementAt(j).getKey();
 				int skillModValue = group->get(skillMod);
 

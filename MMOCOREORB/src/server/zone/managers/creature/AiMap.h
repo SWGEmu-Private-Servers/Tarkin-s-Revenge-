@@ -64,12 +64,12 @@ public:
 	Mutex guard;
 
 	AiMap() : Logger("AiMap") {
-		aiMap.setNullValue(nullptr);
-		behaviors.setNullValue(nullptr);
-		getTargets.setNullValue(nullptr);
-		selectAttacks.setNullValue(nullptr);
-		combatMoves.setNullValue(nullptr);
-		idles.setNullValue(nullptr);
+		aiMap.setNullValue(NULL);
+		behaviors.setNullValue(NULL);
+		getTargets.setNullValue(NULL);
+		selectAttacks.setNullValue(NULL);
+		combatMoves.setNullValue(NULL);
+		idles.setNullValue(NULL);
 
 		loaded = false;
 	}
@@ -78,7 +78,7 @@ public:
 	}
 
 	void initialize(Lua* lua) {
-		if (lua == nullptr) {
+		if (lua == NULL) {
 			error("Could not get lua AiMap::instance from DirectorManager");
 			return;
 		}
@@ -93,7 +93,7 @@ public:
 	}
 
 	void loadTemplates(Lua* lua) {
-		if (lua == nullptr) {
+		if (lua == NULL) {
 			error("Could not get lua AiMap::instance from DirectorManager");
 			return;
 		}
@@ -136,7 +136,7 @@ public:
 
 	Reference<AiTemplate*> getTemplate(const String& name) {
 		if (name == "none")
-			return nullptr;
+			return NULL;
 
 		return aiMap.get(name);
 	}
@@ -171,9 +171,9 @@ private:
 	static const bool DEBUG_MODE = false;
 
 	void registerFunctions(Lua* lua) {
-		lua->registerFunction("addAiTemplate", addAiTemplate);
-		lua->registerFunction("addAiBehavior", addAiBehavior);
-		lua->registerFunction("includeAiFile", includeFile);
+		lua_register(lua->getLuaState(), "addAiTemplate", addAiTemplate);
+		lua_register(lua->getLuaState(), "addAiBehavior", addAiBehavior);
+		lua_register(lua->getLuaState(), "includeAiFile", includeFile);
 	}
 
 	void registerGlobals(Lua* lua) {

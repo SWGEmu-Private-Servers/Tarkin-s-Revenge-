@@ -9,6 +9,7 @@ include system.lang.ref.Reference;
 include system.lang.Math;
 include system.util.SortedVector;
 
+include engine.stm.TransactionalReference;
 include server.zone.CloseObjectsVector;
 
 import engine.core.ManagedObject;
@@ -24,6 +25,7 @@ class QuadTreeEntry extends Observable {
 	@dereferenced
 	protected Coordinate coordinates;
 
+	@transactional
 	transient protected QuadTreeNode node;
 
 	protected boolean bounding;
@@ -116,7 +118,7 @@ class QuadTreeEntry extends Observable {
 			return false;
 	}
 
-	@read
+	@dirty
 	public float getDistanceTo(QuadTreeEntry obj) {
 		float x = obj.getPositionX();
 		float y = obj.getPositionY();
@@ -145,7 +147,7 @@ class QuadTreeEntry extends Observable {
 	@dirty
 	public native QuadTreeEntry getRootParentUnsafe();
 
-	@read
+	@dirty
 	public abstract native boolean containsPoint(float x, float y);
 
 	@dirty
@@ -212,13 +214,6 @@ class QuadTreeEntry extends Observable {
 	@local
 	@dereferenced
 	@read
-	public Vector3 getPreviousPosition() {
-		return coordinates.getPreviousPosition();
-	}
-
-	@local
-	@dereferenced
-	@read
 	public Vector3 getPosition() {
 		return coordinates.getPosition();
 	}
@@ -227,7 +222,6 @@ class QuadTreeEntry extends Observable {
 		coordinates.setPosition(x, z, y);
 	}
 
-	@dirty
 	public void initializePosition(float x, float z, float y) {
 		coordinates.initializePosition(x, z, y);
 	}
@@ -241,14 +235,14 @@ class QuadTreeEntry extends Observable {
 	    return receiverFlags;
 	}
 
-	@read
+	@dirty
 	public abstract int getReceiverFlags() {
 	    return receiverFlags;
 	}
 
 	@read
 	public boolean isInQuadTree() {
-		return node;
+		return node != null;
 	}
 
 	/*@read
@@ -256,10 +250,10 @@ class QuadTreeEntry extends Observable {
 		return closeobjects.size();
 	}*/
 
-	@reference
-	@read
 	@local
-	public QuadTreeNode getNode() {
+	@dereferenced
+	@read
+	public TransactionalReference<QuadTreeNode> getNode() {
 		return node;
 	}
 
@@ -302,7 +296,6 @@ class QuadTreeEntry extends Observable {
 		bounding = false;
 	}
 
-	@dirty
 	public abstract void setParent(QuadTreeEntry par) {
 		parent = par;
 	}

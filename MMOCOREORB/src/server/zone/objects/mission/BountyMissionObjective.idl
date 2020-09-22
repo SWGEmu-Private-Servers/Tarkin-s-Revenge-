@@ -11,6 +11,7 @@ import server.zone.objects.mission.MissionObserver;
 import server.zone.objects.scene.SceneObject;
 import server.zone.objects.creature.ai.AiAgent;
 import server.zone.objects.creature.CreatureObject;
+import server.zone.objects.tangible.TangibleObject;
 include templates.TemplateReference;
 include templates.SharedObjectTemplate;
 import server.zone.objects.mission.bountyhunter.BountyHunterDroid;
@@ -23,6 +24,8 @@ include engine.util.u3d.Vector3;
 
 @json
 class BountyMissionObjective extends MissionObjective {
+	protected TangibleObject trophy;
+
 	@dereferenced
 	protected TemplateReference<SharedObjectTemplate> npcTemplateToSpawn;
 
@@ -43,6 +46,7 @@ class BountyMissionObjective extends MissionObjective {
 
 	@dereferenced
 	protected transient Mutex syncMutex;
+
 
 	public static final int INITSTATUS = 0;
 	public static final int HASBIOSIGNATURESTATUS = 1;

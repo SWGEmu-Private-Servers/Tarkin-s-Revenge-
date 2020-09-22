@@ -8,15 +8,12 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-#include "server/db/MySqlDatabase.h"
-#include "server/db/ServerDatabase.h"
 #include "server/zone/Zone.h"
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/area/ActiveArea.h"
 #include "conf/ConfigManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
-#include "server/login/objects/GalaxyList.h"
 
 using ::testing::_;
 using ::testing::Return;
@@ -26,7 +23,6 @@ using ::testing::An;
 
 class ZoneTest : public ::testing::Test {
 protected:
-	ServerDatabase* database = nullptr;
 	Reference<ZoneServer*> zoneServer;
 	Reference<Zone*> zone;
 	Reference<ZoneProcessServer*> processServer;
@@ -84,10 +80,7 @@ public:
 		// Perform setup of common constructs here.
 		ConfigManager::instance()->loadConfigData();
 		ConfigManager::instance()->setProgressMonitors(false);
-		auto configManager = ConfigManager::instance();
-
-		database = new ServerDatabase(configManager);
-		zoneServer = new ZoneServer(configManager);
+		zoneServer = new ZoneServer(ConfigManager::instance());
 		processServer = new ZoneProcessServer(zoneServer);
 		zone = new Zone(processServer, "test_zone");
 		zone->createContainerComponent();
@@ -96,41 +89,19 @@ public:
 
 	void TearDown() {
 		// Perform clean up of common constructs here.
-		if (database != nullptr) {
-			delete database;
-			database = nullptr;
-		}
-
-		if (playerManager != nullptr) {
+		if (playerManager != NULL) {
 			playerManager->finalize();
-			playerManager = nullptr;
+			playerManager = NULL;
 		}
 
-		zone = nullptr;
-		processServer = nullptr;
-		zoneServer = nullptr;
+		zone = NULL;
+		processServer = NULL;
+		zoneServer = NULL;
 	}
 };
 
-TEST_F(ZoneTest, GalaxyList) {
-	auto galaxies = GalaxyList("admin");
-
-	while(galaxies.next()) {
-		std::cerr << "[>>>>>>>>>>] " << galaxies.toString().toCharArray() << std::endl;
-
-#ifdef USE_RANDOM_EXTRA_PORTS
-		// Make a couple calls to getRandomPort()
-		std::cerr << "[>>>>>>>>>>] getRandomPort " << galaxies.getRandomPort();
-		for (int i = 0; i < 3;i++) {
-			std::cerr << " " << galaxies.getRandomPort();
-		}
-		std::cerr<< std::endl;
-#endif // USE_RANDOM_EXTRA_PORTS
-	}
-}
-
 TEST_F(ZoneTest, PlayerManager) {
-	playerManager = new PlayerManager( zoneServer, processServer, false);
+	playerManager = new PlayerManager( zoneServer, processServer );
 }
 
 TEST_F(ZoneTest, TreLoad) {
@@ -200,7 +171,7 @@ TEST_F(ZoneTest, InRangeTest) {
 
 	zone->transferObject(scene, -1);
 
-	ASSERT_TRUE(scene->getZone() != nullptr);
+	ASSERT_TRUE(scene->getZone() != NULL);
 
 	SortedVector<ManagedReference<QuadTreeEntry*> > objects;
 

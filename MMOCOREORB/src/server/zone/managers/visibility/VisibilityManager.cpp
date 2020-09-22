@@ -11,21 +11,21 @@
 
 const String VisibilityManager::factionStringRebel = "rebel";
 const String VisibilityManager::factionStringImperial = "imperial";
-const unsigned int VisibilityManager::factionRebel = STRING_HASHCODE("rebel");
-const unsigned int VisibilityManager::factionImperial = STRING_HASHCODE("imperial");
+const unsigned int VisibilityManager::factionRebel = factionStringRebel.hashCode();
+const unsigned int VisibilityManager::factionImperial = factionStringImperial.hashCode();
 
 float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 	Zone* zone = creature->getZone();
 
 	float visibilityIncrease = 0;
 
-	if (zone == nullptr)
+	if (zone == NULL)
 		return visibilityIncrease;
 
 
 	SortedVector<QuadTreeEntry*> closeObjects;
 	CloseObjectsVector* closeObjectsVector = (CloseObjectsVector*) creature->getCloseObjects();
-	if (closeObjectsVector == nullptr) {
+	if (closeObjectsVector == NULL) {
 		zone->getInRangeObjects(creature->getWorldPositionX(), creature->getWorldPositionY(), 32, &closeObjects, true);
 	} else {
 		closeObjectsVector->safeCopyReceiversTo(closeObjects, CloseObjectsVector::CREOTYPE);
@@ -34,7 +34,7 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 	for (int i = 0; i < closeObjects.size(); ++i) {
 		SceneObject* obj = static_cast<SceneObject*>(closeObjects.get(i));
 
-		if (obj == nullptr)
+		if (obj == NULL)
 			continue;
 
 		if (obj->getObjectID() == creature->getObjectID())
@@ -42,10 +42,10 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		CreatureObject* c = obj->asCreatureObject();
 
-		if (c == nullptr || (!c->isNonPlayerCreatureObject() && !c->isPlayerCreature()))
+		if (c == NULL || (!c->isNonPlayerCreatureObject() && !c->isPlayerCreature()))
 			continue;
 
-		if (c->isDead() || c->isIncapacitated() || (c->isPlayerCreature() && c->getPlayerObject()->hasGodMode()))
+		if ((c->isDead()) || (c->isIncapacitated()) || (c->isPlayerCreature() && c->getPlayerObject()->hasGodMode()) || (c->isPlayerCreature() && c->hasSkill("force_title_jedi_novice")))
 			continue;
 
 		if (!creature->isInRange(c, 32) || !CollisionManager::checkLineOfSight(creature, c))
@@ -53,20 +53,19 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		if (creature->getFaction() == 0 || (c->getFaction() != factionImperial && c->getFaction() != factionRebel)) {
 			visibilityIncrease += 0.5;
-			//info(c->getCreatureName().toString() + " generating a 0.5 visibility modifier", true);
+//			info(c->getCreatureName().toString() + " generating a 0.5 visibility modifier", true);
 		} else {
 			if (creature->getFaction() == c->getFaction()) {
 				visibilityIncrease += 0.25;
-				//info(c->getCreatureName().toString() + " generating a 0.25 visibility modifier", true);
+//				info(c->getCreatureName().toString() + " generating a 0.25 visibility modifier", true);
 			} else {
 				visibilityIncrease += 1;
-				//info( c->getCreatureName().toString() + " generating a 1.0 visibility modifier", true);
+//				info( c->getCreatureName().toString() + " generating a 1.0 visibility modifier", true);
 			}
 		}
 
 	}
-
-	//info("Increasing visibility for player " + String::valueOf(creature->getObjectID()) + " with " + String::valueOf(visibilityIncrease), true);
+//	info("Increasing visibility for player " + String::valueOf(creature->getObjectID()) + " with " + String::valueOf(visibilityIncrease), true);
 	return visibilityIncrease;
 }
 
@@ -74,7 +73,7 @@ void VisibilityManager::decreaseVisibility(CreatureObject* creature) {
 
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
 
-	if (ghost != nullptr) {
+	if (ghost != NULL) {
 		Locker locker(ghost);
 		if (ghost->getVisibility() > 0)
 		{
@@ -103,7 +102,7 @@ void VisibilityManager::addToVisibilityList(CreatureObject* creature) {
 	//info("Logging in " + creature->getFirstName(), true);
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
 
-	if (ghost != nullptr) {
+	if (ghost != NULL) {
 		decreaseVisibility(creature);
 
 		Locker locker(&visibilityListLock);
@@ -135,7 +134,7 @@ void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibil
 	//info("Increasing visibility for " + creature->getFirstName(), true);
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
 
-	if (ghost != nullptr  && !ghost->hasGodMode()) {
+	if (ghost != NULL  && !ghost->hasGodMode()) {
 		Locker locker(ghost);
 		decreaseVisibility(creature);
 
@@ -145,6 +144,9 @@ void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibil
 		ghost->setVisibility(newVis);
 
 		//info("New visibility for " + creature->getFirstName() + " is " + String::valueOf(ghost->getVisibility()), true);
+
+	//DEBUG MESSAGE
+//		creature->sendSystemMessage("New visibility:" + String::valueOf(ghost->getVisibility()));
 		locker.release();
 
 		addToVisibilityList(creature);
@@ -154,7 +156,7 @@ void VisibilityManager::increaseVisibility(CreatureObject* creature, int visibil
 void VisibilityManager::clearVisibility(CreatureObject* creature) {
 	Reference<PlayerObject*> ghost = creature->getSlottedObject("ghost").castTo<PlayerObject*>();
 
-	if (ghost != nullptr  && !ghost->hasGodMode()) {
+	if (ghost != NULL  && !ghost->hasGodMode()) {
 		//info("Clearing visibility for player " + String::valueOf(creature->getObjectID()), true);
 
 		Locker locker(ghost);
